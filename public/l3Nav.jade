@@ -1,0 +1,11 @@
+div(Id="l2ItemDiv" ng-controller='l2Controller')
+  != partial('_partials/secondaryNav')
+        
+  .content-area
+    h2 {{currentItem.Name}}
+        
+script(src='js/app/l2Item/dataService.js')
+script(src='js/app/l2Item/controller.js')
+script(src='js/app/l2Item/main.js')
+script.
+  angular.bootstrap(document.getElementById('l2ItemDiv'),["l2App"])

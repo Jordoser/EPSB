@@ -1,0 +1,17 @@
+{
+  "globals": {
+
+    "title": "Prototype Databinding",
+
+    "mainNav": [
+      {
+        "label": "About",
+        "href": "about.html"
+      },
+      {
+        "label": "Contact",
+        "href": "contact.html"
+      }
+    ]
+  }
+}

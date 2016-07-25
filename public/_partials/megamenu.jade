@@ -1,0 +1,7 @@
+.mega-menu(ng-class="{'mega-menu-closed': menuClosed, 'mega-menu-open' : !menuClosed}")
+  .l2wrapper.col-sm-12(ng-repeat="row in l2NavItems" ng-class="{'bottom-border' : ($index != l2NavItems.length -1)}")
+    div.col-sm-4.l2-nav-item(ng-repeat="item in row")
+      span.l2-nav-heading(ng-click="ctrl.redirectToL2Nav(item)" ng-class="{'selected-nav': selectedL2Item == item.Id}") {{item.Name}}
+      .nav-flex
+        div.l3-nav-item(ng-repeat="subitem in item.L3Items" ng-class="{'selected-nav': selectedL3Item == subitem.Id}" ng-click="ctrl.redirectToL3Nav(subitem,item)")
+          span.l3-nav-heading {{subitem.Name}}

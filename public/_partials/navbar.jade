@@ -1,0 +1,54 @@
+div(ng-controller='navController' Id="navDiv")
+  .left-nav
+    a.popover-dismiss(tabindex="0" style="display: block;" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?")
+      .user-pane
+        img.user-icon(src="images/usericon.png")
+        .user-dropdown
+          span.muted-text Test User
+          i(class="fa fa-sort-desc fa-1")
+    .nav-items
+      ul.main-nav
+        li(ng-click="ctrl.openL2NavForItem(item)" ng-repeat="item in navItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}")
+          div {{item.Name}}
+      ul.secondary-nav
+        li
+          div Forms
+        li
+          div Contacts
+        li
+          div Careers
+        li
+          div Emergency
+  .top-nav
+    .top-wrapper
+      .top-row
+        img.logo(src="images/epsblogo.png")
+        .my-apps.pull-right(ng-click="ctrl.displayApps()")
+        .my-notifications.pull-right
+        .date-time.pull-right
+          span.time
+          span.period
+          br
+          span.date
+      .app-row
+          span.app-row-text No apps available 
+      .search-bar.col-md-12.no-padding
+        label(for="searchText" id="searchLabel")
+          i.fa.fa-search.fa-3
+          input.search-input(type="text" id="searchText")
+        .search-filter.pull-right
+          select.search-select(ng-model="searchArea")
+            option(value="" selected) Search Entire Site
+            option(ng-repeat="item in navItems" value="{{item.Id}}") {{item.Name}}
+      .bread-crumb.col-sm-12
+        span.bread-crumb-l2(ng-show="selectedL2Item != null" ng-click="ctrl.redirectToL2Nav(selectedL2Item,true)" ng-class="{'navigateable' : navLevel != '2'}") {{selectedL2Item}}
+        span.bread-crumb-l3(ng-show="selectedL3Item != null" ng-click="ctrl.redirectToL3Nav(selectedL3Item,selectedL2Item,true)")  >
+          span(ng-class="{'navigateable' : navLevel != '3'}")  {{selectedL3Item}}
+        span.bread-crumb-l4(ng-show="selectedL4Item != null")  >
+          span(ng-class="{'navigateable' : navLevel != '4'}")  {{selectedL4Item}}
+      != partial('megamenu')
+  script(src='js/app/nav/dataService.js')
+  script(src='js/app/nav/controller.js')
+  script(src='js/app/nav/main.js')
+  script.
+    angular.bootstrap(document.getElementById('navDiv'),["navApp"])

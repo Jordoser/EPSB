@@ -1,0 +1,10 @@
+.l2-side-nav.pull-left
+  .secondary-nav-header-wrapper
+    span.secondary-nav-header {{selectedL2.Name}}
+  ul.secondary-item-wrapper
+    li.secondary-item(ng-repeat="item in L3Items" id="l3{{item.Id}}" ng-class="{'selected-nav': item.Id == navigatedL3}")
+      i.fa.fa-caret-square-o-down.pull-right(ng-click="ctrl.expandL3(item.Id)")
+      div.l3-heading(ng-click="ctrl.redirectToL3Nav(item,selectedL2)") {{item.Name}}
+      .l4-item-wrapper
+        div.l4-item(ng-repeat="subItem in item.L4Items"  ng-class="{'selected-nav': subItem.Id == navigatedL4}" ng-click="ctrl.redirectToL4Nav(subItem, item, selectedL2)")
+          {{subItem.Name}}

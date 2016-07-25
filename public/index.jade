@@ -1,0 +1,15 @@
+div(Id="homeIndexDiv" ng-controller='homeIndexController')
+  p {{name}}
+  input(type="text" ng-model='searchString')
+  button(ng-click='ctrl.alert()' ng-disabled="searchString == ''") Search
+  br
+  p Results:
+  div(ng-repeat="object in searchResults")
+    p {{object.Name}}
+    a(ng-click='ctrl.redirectToObject(object.Id)') View Object
+  a(ng-click='ctrl.redirectToObject()') New Object
+script(src='js/app/home/dataService.js')
+script(src='js/app/home/index/controller.js')
+script(src='js/app/home/index/main.js')
+script.
+  angular.bootstrap(document.getElementById('homeIndexDiv'),["homeIndexApp"])

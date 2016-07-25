@@ -1,0 +1,56 @@
+{
+     "filesGlob": [
+          "./typescript/**/*.ts",
+          "./typescript/**/*.tsx",
+          "./public/js/typings/**/*.d.ts",
+          "./public/js/app/**/**/*.ts",
+          "./public/js/app/*.ts",
+          "./public/js/*.ts",
+          "./public/libraries/*.min.js",
+          "./public/libraries/*.js"
+     ],
+     "compilerOptions": {
+          "sourceMap": true
+     },
+     "files": [
+          "./public/js/typings/angularjs/angular-animate.d.ts",
+          "./public/js/typings/angularjs/angular-cookies.d.ts",
+          "./public/js/typings/angularjs/angular-mocks.d.ts",
+          "./public/js/typings/angularjs/angular-resource.d.ts",
+          "./public/js/typings/angularjs/angular-route.d.ts",
+          "./public/js/typings/angularjs/angular-sanitize.d.ts",
+          "./public/js/typings/angularjs/angular-scenario.d.ts",
+          "./public/js/typings/angularjs/angular.d.ts",
+          "./public/js/typings/bootbox/bootbox.d.ts",
+          "./public/js/typings/bootstrap/bootstrap.d.ts",
+          "./public/js/typings/jquery/jquery.d.ts",
+          "./public/js/typings/lodash/lodash.d.ts",
+          "./public/js/typings/modernizr/modernizr.d.ts",
+          "./public/js/typings/moment/moment.d.ts",
+          "./public/js/typings/q/Q.d.ts",
+          "./public/js/app/database.ts",
+          "./public/js/app/gradeAndSubject/controller.ts",
+          "./public/js/app/gradeAndSubject/dataservice.ts",
+          "./public/js/app/gradeAndSubject/main.ts",
+          "./public/js/app/home/dataservice.ts",
+          "./public/js/app/home/edit/controller.ts",
+          "./public/js/app/home/edit/main.ts",
+          "./public/js/app/home/index/controller.ts",
+          "./public/js/app/home/index/main.ts",
+          "./public/js/app/l2Item/controller.ts",
+          "./public/js/app/l2Item/dataservice.ts",
+          "./public/js/app/l2Item/main.ts",
+          "./public/js/app/nav/controller.ts",
+          "./public/js/app/nav/dataservice.ts",
+          "./public/js/app/nav/main.ts",
+          "./public/js/app/utils.ts",
+          "./public/libraries/angular.min.js",
+          "./public/libraries/html5shiv-3.7.2.min.js",
+          "./public/libraries/jquery-1.12.3.min.js",
+          "./public/libraries/lodash.min.js",
+          "./public/libraries/respond-1.4.2.min.js"
+     ],
+     "atom": {
+          "rewriteTsconfig": true
+     }
+}

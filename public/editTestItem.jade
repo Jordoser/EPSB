@@ -1,0 +1,16 @@
+div(ng-app='homeEditApp' ng-controller='homeEditController')
+  p Id {{object.Id}}
+  div(ng-if="!editObject")
+    p Name {{object.Name}}
+  div(ng-if="editObject")
+    input(type="text" ng-model="object.Name")
+  textarea(ng-model="object.Description")
+  br
+  button(ng-click="ctrl.saveTestObject()") Save
+  br
+  p Related Objects
+  div(ng-repeat="related in searchResults" style="border: 1px solid black; margin-bottom: 5px")
+      p(ng-repeat="(property, value) in related") {{property}} : {{value}}
+script(src='js/app/home/dataService.js')
+script(src='js/app/home/edit/controller.js')
+script(src='js/app/home/edit/main.js')

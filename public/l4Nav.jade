@@ -1,0 +1,60 @@
+div(Id="l2ItemDiv" ng-controller='l2Controller')
+  != partial('_partials/secondaryNav')
+        
+  .content-area
+    .info-wrapper
+      .primary-info
+        .info-top
+          h2(style="margin-top: 0px;") {{currentItem.Name}}
+          .primary-image
+          .primary-description
+            span {{pageContent.Description}}
+        .info-tabs
+          ul.nav.nav-tabs.custom-tab(role="tablist")
+            li.active(role="presentation")
+              a(href="#home" role="tab") Related Topics
+            li(role="presentation") 
+              a(href="#lorem" role="tab") Lorem Ipsum
+              
+          .tab-content
+            .tab-pane.active(id="home" role="tabpanel")
+              div stuff
+                div stuff
+                div stuff
+                div stuff
+                div stuff
+                div stuff
+                div stuff
+                div stuff
+                div stuff
+            .tab-pane(id="lorem" role="tabpanel")
+              div other stuff
+        .relatedNewsItems
+          h4.bold News
+          hr.thin-padding-hr
+          .news-items-container
+            .news-item-wrapper(ng-repeat="newsItem in relatedNewsItems")
+              .news-title.bold {{newsItem.Name}}
+              .news-desc {{newsItem.Description}}
+              .news-tags
+                span.navigateable.tag-items(ng-repeat="tag in newsItem.Tags") {{tag}}
+            
+      .secondary-info
+        .page-audit Page last updated
+          span  {{pageAudit.LastUpdatedDate}} by
+          span  {{pageAudit.LastUpdatedBy}}
+        .key-contacts
+          h4.bold Key Contacts
+          hr.thin-padding-hr
+          .contact-wrapper(ng-repeat="contact in pageContent.UserContacts")
+            .contact-name {{contact.Name}}
+            .contact-position {{contact.PositionId}}
+            .contact-phone {{contact.PhoneNumber}}
+            .contact-emal {{contact.Email}}
+    
+        
+script(src='js/app/l2Item/dataService.js')
+script(src='js/app/l2Item/controller.js')
+script(src='js/app/l2Item/main.js')
+script.
+  angular.bootstrap(document.getElementById('l2ItemDiv'),["l2App"])
