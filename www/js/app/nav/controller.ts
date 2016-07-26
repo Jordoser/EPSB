@@ -6,6 +6,7 @@ export class NavController extends BaseController{
     public navigatedL1;
     public navigatedL2;
     public navigatedL3;
+    public navigatedL4;
     public clickToClose;
     constructor(public $scope: INavScope,  public $timeout: ng.ITimeoutService, public dataService: NavDataService){
       super($scope,$timeout,$timeout);
@@ -14,26 +15,20 @@ export class NavController extends BaseController{
       this.$scope.openItemId = "";
       this.$scope.navItems = [];
       this.$scope.l2NavItems = [];
+      this.$scope.l3NavItems = [];
+      this.$scope.l4NavItems = [];
+      this.$scope.navigatedItems = []
+      this.$scope.selectedItemIds = []
       this.loadNav();
       this.initiateClock();
       this.initiateDay();
 
 
-      $(function () {
-        $('[data-toggle="popover"]').popover()
-      });
+      $('.popover-dismiss').popover({
+        trigger: 'focus'
+      })
 
-      this.navigatedL1 = sessionStorage.getItem("SelectedL1");
-      this.$scope.selectedL2Id = sessionStorage.getItem("SelectedL2");
-      this.$scope.selectedL3Id = sessionStorage.getItem("SelectedL3");
-
-      this.clickToClose = () =>{
-        this.openL2NavForItem("",true)
-      };
-      if(this.navigatedL1){
-        this.$scope.selectedItemId = this.navigatedL1;
-      }
-
+      this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
     }
 
     public loadNav(){
@@ -49,31 +44,133 @@ export class NavController extends BaseController{
     }
 
     public openL2NavForItem(item, forceClose = false){
-
-      if(forceClose || this.$scope.openItemId == item.Id){
-        this.$scope.menuClosed = true;
-        this.$scope.openItemId = "";
-        var contentArea = $(".content-area")
-        contentArea.unbind("click", this.clickToClose);
-        this.$scope.$apply();
+      if(this.IsOpenItem(item.Id)){
+        this.closeL2Nav();
         return;
       }
-
-      if(this.$scope.openItemId == ""){
-        this.loadNavItems(item)
-        return;
+      if(this.$scope.selectedItemIds[0] && this.$scope.selectedItemIds[0] != ""){
+        this.closeL3Nav();
       }
-
-      if(this.$scope.openItemId != ""){
-        this.$scope.menuClosed = true;
-        var contentArea = $(".content-area")
-        contentArea.unbind("click", this.clickToClose);
-        this.$timeout(()=>{
-          this.loadNavItems(item);
-        },100);
-        return;
-      }
+      this.$scope.selectedItemIds[0] = item
+      var l1nav = $('.l1-nav');
+      var l1Width = l1nav.width();
+      $('.l2-nav').animate({"left": l1Width+"px"},10);
       this.loadNavItems(item)
+      if(this.IsNavigated(item.Id) && (this.$scope.navigatedItems[1] && this.$scope.navigatedItems[1] != "")){
+        this.openL3NavForItem(this.$scope.navigatedItems[1], true, l1Width);
+      }
+  
+    }
+
+    public closeL2Nav(){
+      this.closeL3Nav(true);
+
+        $('.l2-nav').animate({"left": "0"},10);
+
+        this.$timeout(() =>{
+            this.$scope.selectedItemIds[0] = '';
+        },500)
+
+    }
+
+    public closeL3Nav(isChain = false){
+      if(this.$scope.selectedItemIds[1] == "" || !this.$scope.selectedItemIds[1]){
+        return
+      }
+      this.closeL4Nav(true);
+
+      if(!isChain){
+        var l2Offset = $('.l2-nav').offset().left;
+          $('.l3-nav').animate({"left": l2Offset + "px"},10, () => {
+            this.$timeout(() =>{
+              $('.l3-nav').css({"left": "0"})
+            },500)
+          });
+        }else{
+          $('.l3-nav').animate({"left": "0"},10)
+        }
+        this.$timeout(() =>{
+          this.$scope.selectedItemIds[1] = '';
+        },500)
+
+    }
+
+    public closeL4Nav(isChain = false){
+      if(this.$scope.selectedItemIds[2] == "" || !this.$scope.selectedItemIds[2]){
+        return
+      }
+
+
+      var l3Offset = $('.l3-nav').offset().left;
+      if(!isChain){
+        $('.l4-nav').animate({"left": l3Offset + "px"},10, () => {
+            this.$timeout(() =>{
+          $('.l4-nav').css({"left": "0"})
+        },500);
+        });
+      }else{
+        $('.l4-nav').animate({"left": "0"},10)
+      }
+      this.$timeout(() =>{
+          this.$scope.selectedItemIds[2] = '';
+      },500)
+
+    }
+
+
+
+    public openL3NavForItem(item, isChain = false, extraOffset = 0){
+      if(this.IsOpenItem(item.Id) && !isChain){
+        this.closeL3Nav();
+        return;
+      }
+      if(this.$scope.selectedItemIds[1] && this.$scope.selectedItemIds[1] != ""){
+        this.closeL4Nav();
+      }
+      this.$scope.selectedItemIds[1] = item
+      var l2nav = $('.l2-nav');
+      var l2Width = l2nav.width();
+      var l2Offset = l2nav.offset().left
+      var overallOffest = (!l2Offset)? extraOffset : l2Offset
+      var offset = l2Width + overallOffest
+      $('.l3-nav').css("left", l2Offset + "px")
+      $('.l3-nav').animate({"left": (offset) +"px"},10);
+      this.loadL3NavItems(item)
+      if(this.IsNavigated(item.Id) && (this.$scope.navigatedItems[2] && this.$scope.navigatedItems[2] != "")){
+        this.openL4NavForItem(this.$scope.navigatedItems[2], true, offset);
+      }
+    }
+    public loadL3NavItems(item){
+      this.dataService.getL3NavItems(item.Id)
+      .then(data => {
+
+          App.Common.replaceArrayContents(this.$scope.l3NavItems,data)
+
+      })
+    }
+
+    public openL4NavForItem(item, isChain = false, extraOffset = 0){
+      if(this.IsOpenItem(item.Id) && !isChain){
+        this.closeL4Nav();
+        return;
+      }
+      this.$scope.selectedItemIds[2] = item
+      var l3nav = $('.l3-nav');
+      var l3Width = l3nav.width();
+      var l3Offset = l3nav.offset().left
+      var offsetOverall = (!l3Offset)? extraOffset : l3Offset;
+      var offset = l3Width + offsetOverall;
+      $('.l4-nav').css("left", l3Offset + "px")
+      $('.l4-nav').animate({"left": (offset) +"px"},10);
+      this.loadL4NavItems(item)
+    }
+    public loadL4NavItems(item){
+      this.dataService.getL4NavItems(item.Id)
+      .then(data => {
+
+          App.Common.replaceArrayContents(this.$scope.l4NavItems,data)
+
+      })
     }
 
     public displayApps(){
@@ -96,28 +193,51 @@ export class NavController extends BaseController{
       }
     }
 
-    public redirectToL2Nav(item){
-      if(item.Id){
-        sessionStorage.setItem("SelectedL2",item.Id);
-        sessionStorage.setItem("NavLevel", "2");
-      }
-      if(this.$scope.openItemId){
-        sessionStorage.setItem("SelectedL1", this.$scope.openItemId);
-      }
-      window.location.href = "l2Nav.html";
+    public redirectToL1Nav(item, IsBreadCrumb = false){
+        var navArray = (IsBreadCrumb)? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
+        navArray[0] = item
+        App.Common.navigateL1(navArray)
     }
 
-    public redirectToL3Nav(item, parent){
-      if(item.Id){
-        sessionStorage.setItem("SelectedL2",parent.Id);
-        sessionStorage.setItem("SelectedL3", item.Id)
-        sessionStorage.setItem("NavLevel", "3");
-      }
-      if(this.$scope.openItemId){
-        sessionStorage.setItem("SelectedL1", this.$scope.openItemId);
-      }
-      window.location.href = "l3Nav.html";
+    public redirectToL2Nav(item, IsBreadCrumb = false){
+      var navArray = (IsBreadCrumb)? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
+      navArray[1] = item
+      App.Common.navigateL2(navArray)
     }
+
+
+    public redirectToL3Nav(item, IsBreadCrumb = false){
+      var navArray = (IsBreadCrumb)? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
+      navArray[2] = item
+      App.Common.navigateL3(navArray)
+    }
+
+    public redirectToL4Nav(item, IsBreadCrumb = false){
+      var navArray = (IsBreadCrumb)? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
+      navArray[3] = item
+      App.Common.navigateL4(navArray)
+    }
+
+    public redirectFromBreadCrumb(itemIndex, navItem){
+      switch(itemIndex){
+        case 0:
+          this.redirectToL1Nav(navItem, true)
+          break;
+        case 1:
+          this.redirectToL2Nav(navItem, true)
+          break;
+        case 2:
+          this.redirectToL3Nav(navItem, true)
+          break;
+        case 3:
+          this.redirectToL4Nav(navItem, true)
+          break;
+        default:
+          break;
+      }
+    }
+
+
 
     public loadNavItems(item){
       var contentArea = $(".content-area")
@@ -126,36 +246,26 @@ export class NavController extends BaseController{
             this.$scope.openItemId = item.Id
       this.dataService.getL2NavItems(item.Id)
       .then(data =>{
-        var row = []
-        var rowIndex = 0;
-        for(var i = 0; i < data.length; i++){
-          data[i].L3Items = [];
-          row.push(data[i])
-          var returnIndex = row.indexOf(data[i])
-          this.getL3NavForL2(returnIndex,rowIndex, data[i].Id)
-          if(row.length == 3 || i == data.length - 1){
-            var test = this.$scope.l2NavItems;
-            this.$scope.l2NavItems[rowIndex] = (row);
-            rowIndex++;
-            row = [];
-            }
-          }
-          this.$scope.menuClosed = false;
+          App.Common.replaceArrayContents(this.$scope.l2NavItems,data)
         })
     }
 
-    public IsOpenItem(itemId){
-      return (this.$scope.openItemId == itemId) || (this.$scope.selectedItemId == itemId);
+    public IsOpenItem(itemId):boolean{
+      var matchingItems = $.grep(this.$scope.selectedItemIds, (item) =>{
+        return item.Id == itemId
+      });
+      return matchingItems.length > 0;
     }
 
-    public getL3NavForL2(returnIndex,rowIndex,  l2Id){
-      this.dataService.getL3NavItems(l2Id)
-      .then(data => {
-          for(var i = 0; i < data.length; i++){
-            this.$scope.l2NavItems[rowIndex][returnIndex].L3Items.push(data[i]);
-          }
-      })
+    public IsNavigated(itemId):boolean{
+      var matchingItems = $.grep(this.$scope.navigatedItems, (item) =>{
+        return item.Id == itemId
+      });
+      return matchingItems.length > 0;
     }
+
+
+
     private initiateClock(){
       var date = new Date();
       var hour = date.getHours();

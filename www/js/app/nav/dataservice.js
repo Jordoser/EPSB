@@ -23,6 +23,9 @@ var App;
             NavDataService.prototype.getL3NavItems = function (levelTwoId) {
                 return this.getItemByKeyValue("LevelThreeNavItems", "l2NavId", levelTwoId);
             };
+            NavDataService.prototype.getL4NavItems = function (levelThreeId) {
+                return this.getItemByKeyValue("LevelFourNavItems", "l3NavId", levelThreeId);
+            };
             return NavDataService;
         }(App.BaseJsonDataService));
         Nav.NavDataService = NavDataService;

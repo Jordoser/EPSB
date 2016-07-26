@@ -93,6 +93,38 @@ module App {
         return deferred.promise
       }
 
+      public expandPropery(dataArray, dataBase, key): ng.IPromise<Array<any>>{
+        var deferred = this.$q.defer();
+        this.getItems(dataBase)
+        .then(data => {
+            var filtered = $.grep(data, (item) => {
+              return dataArray.indexOf(item.Id) > -1;
+            })
+            deferred.resolve(filtered)
+          })
+          .catch((reason) =>{
+            deferred.reject(reason);
+          });
+        return deferred.promise
+      }
+
+
+      public getItemsByTag(tags: Array<string>, database: string){
+        var deferred = this.$q.defer();
+        this.getItems(database)
+        .then(data => {
+          _.remove(tags, (item) => item == "");
+            var filtered = $.grep(data, (item) => {
+              var intersectionArray = _.intersection(item.Tags, tags);
+              return (intersectionArray.length >= tags.length);
+            })
+            deferred.resolve(filtered)
+          })
+          .catch((reason) =>{
+            deferred.reject(reason);
+          });
+        return deferred.promise
+      }
 
       /*
            -Updates specific object if the object exists
@@ -149,6 +181,38 @@ module App {
           minute = this.addZero(minute);
 
           return(updatedhour+":"+minute)
+      }
+
+      static replaceArrayContents(existingArray: Array<any>, newContents: Array<any>) {
+           if (existingArray) {
+               var args = [0, existingArray.length].concat(newContents);
+               Array.prototype.splice.apply(existingArray, args);
+           }
+       }
+
+       static navigate(location: string, navArray: Array<any>){
+         var navString = JSON.stringify(navArray)
+         sessionStorage.setItem("NavArray", navString)
+         window.location.href = location;
+       }
+
+        static navigateL4(navArray: Array<any>){
+          this.navigate("levelFour.html", navArray);
+        }
+
+      static navigateL3(navArray: Array<any>){
+        navArray = navArray.splice(0,3)
+        this.navigate("levelThree.html", navArray);
+      }
+
+      static navigateL2(navArray: Array<any>){
+          navArray = navArray.splice(0,2)
+          this.navigate("levelTwo.html", navArray);
+      }
+
+      static navigateL1(navArray: Array<any>){
+          navArray = navArray.splice(0,1)
+          this.navigate("levelOne.html", navArray);
       }
 
       private static addZero(integer){

@@ -9,11 +9,15 @@ module App.Nav{
   export interface INavScope extends IBaseScope{
       navItems: Array<any>;
       l2NavItems: Array<any>;
+      l3NavItems: Array<any>;
+      l4NavItems: Array<any>;
+
+      navigatedItems: Array<any>
+      selectedItemIds : Array<any>
       searchArea: string;
       menuClosed: boolean;
       openItemId: string;
       selectedItemId: string;
-      selectedL2Id: string;
-      selectedL3Id: string;
+      navLevel: string;
   }
 }

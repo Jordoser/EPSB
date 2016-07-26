@@ -67,6 +67,36 @@ var App;
             });
             return deferred.promise;
         };
+        BaseJsonDataService.prototype.expandPropery = function (dataArray, dataBase, key) {
+            var deferred = this.$q.defer();
+            this.getItems(dataBase)
+                .then(function (data) {
+                var filtered = $.grep(data, function (item) {
+                    return dataArray.indexOf(item.Id) > -1;
+                });
+                deferred.resolve(filtered);
+            })
+                .catch(function (reason) {
+                deferred.reject(reason);
+            });
+            return deferred.promise;
+        };
+        BaseJsonDataService.prototype.getItemsByTag = function (tags, database) {
+            var deferred = this.$q.defer();
+            this.getItems(database)
+                .then(function (data) {
+                _.remove(tags, function (item) { return item == ""; });
+                var filtered = $.grep(data, function (item) {
+                    var intersectionArray = _.intersection(item.Tags, tags);
+                    return (intersectionArray.length >= tags.length);
+                });
+                deferred.resolve(filtered);
+            })
+                .catch(function (reason) {
+                deferred.reject(reason);
+            });
+            return deferred.promise;
+        };
         BaseJsonDataService.prototype.setItem = function (dataBase, key, object) {
             var deferred = this.$q.defer();
             this.getItems(dataBase)
@@ -112,6 +142,32 @@ var App;
             var updatedhour = ((hour + 11) % 12 + 1);
             minute = this.addZero(minute);
             return (updatedhour + ":" + minute);
+        };
+        Common.replaceArrayContents = function (existingArray, newContents) {
+            if (existingArray) {
+                var args = [0, existingArray.length].concat(newContents);
+                Array.prototype.splice.apply(existingArray, args);
+            }
+        };
+        Common.navigate = function (location, navArray) {
+            var navString = JSON.stringify(navArray);
+            sessionStorage.setItem("NavArray", navString);
+            window.location.href = location;
+        };
+        Common.navigateL4 = function (navArray) {
+            this.navigate("levelFour.html", navArray);
+        };
+        Common.navigateL3 = function (navArray) {
+            navArray = navArray.splice(0, 3);
+            this.navigate("levelThree.html", navArray);
+        };
+        Common.navigateL2 = function (navArray) {
+            navArray = navArray.splice(0, 2);
+            this.navigate("levelTwo.html", navArray);
+        };
+        Common.navigateL1 = function (navArray) {
+            navArray = navArray.splice(0, 1);
+            this.navigate("levelOne.html", navArray);
         };
         Common.addZero = function (integer) {
             if (integer < 10) {

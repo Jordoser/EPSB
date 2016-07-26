@@ -4,22 +4,77 @@ module App.l2item{
 export class L2Controller extends BaseController{
     public static $inject = ['$scope','$timeout','dataService'];
 
-    public navigatedL2: string;
+
     public navLevel: string;
-    public navigatedL3;
+
 
     constructor(public $scope: IL2ItemScope,  public $timeout: ng.ITimeoutService, public dataService: L2DataService){
       super($scope,$timeout,$timeout);
       this.$scope.L3Items = [];
-      this.navigatedL2 = sessionStorage.getItem("SelectedL2");
+      this.$scope.relatedNewsItems = [];
+      this.$scope.navigatedL2 = sessionStorage.getItem("SelectedL2");
       this.navLevel = sessionStorage.getItem("NavLevel");
-      this.navigatedL3 = sessionStorage.getItem("SelectedL3");
+      this.$scope.navigatedL3 = sessionStorage.getItem("SelectedL3");
+      this.$scope.navigatedL4 = sessionStorage.getItem("SelectedL4");
 
-      if(this.navigatedL2){
-        this.LoadCurrentL2(this.navigatedL2);
+      if(this.$scope.navigatedL2){
+        this.LoadCurrentL2(this.$scope.navigatedL2);
       }
+
+      this.loadPage();
+
+      $('.custom-tab a').click(function (e) {
+          e.preventDefault()
+          $(this).tab('show')
+        })
     }
 
+
+    public loadPage(){
+      switch(this.navLevel){
+        case "1":
+          break;
+        case "2":
+          break;
+        case "3":
+          break;
+        case "4":
+          this.dataService.loadL4Content(this.$scope.navigatedL4)
+          .then(data => {
+              this.$scope.pageContent = data[0]
+            this.dataService.expandUserContacts(data[0].UserContacts)
+            .then(expandedData =>{
+              this.$scope.pageContent.UserContacts = expandedData
+            });
+
+            this.loadRelatedNews(data[0].Id)
+
+
+            this.loadPageAudit(data[0].PageAuditId);
+          });
+          break;
+        default:
+          break;
+      }
+
+
+    }
+
+
+    public loadRelatedNews(topic: string){
+        this.dataService.getRelatedNews(topic)
+        .then(data => {
+          for(var i= 0; i < data.length; i++){
+            this.$scope.relatedNewsItems.push(data[i]);
+          }
+        })
+    }
+    public loadPageAudit(auditId){
+      this.dataService.getPageAudit(auditId)
+      .then(data => {
+        this.$scope.pageAudit = data[0];
+      })
+    }
     public LoadCurrentL2(objectId){
       this.dataService.getL2ItemById(objectId)
       .then(data =>{
@@ -34,6 +89,7 @@ export class L2Controller extends BaseController{
         alert(ex);
       });
     }
+
 
     public loadRelatedL3Items(id){
       this.dataService.getL3NavItems(id)
@@ -51,11 +107,16 @@ export class L2Controller extends BaseController{
       .then(data =>{
         for(var i = 0; i < data.length; i++){
           this.$scope.L3Items[index].L4Items.push(data[i]);
+          if(this.navLevel == '4' && data[i].Id == this.$scope.navigatedL4){
+            this.$scope.currentItem = data[i];
+          }
         }
-        if(id == this.navigatedL3 && this.navLevel == '3'){
+        if(this.navLevel == '3' || this.navLevel == '4'){
           this.$timeout(() =>
           {
-            this.$scope.currentItem = this.$scope.L3Items[index];
+            if(id == this.$scope.navigatedL3 && this.navLevel == '3'){
+                this.$scope.currentItem = this.$scope.L3Items[index];
+            }
             this.expandL3(id, true);
           },100);
         }
@@ -85,8 +146,12 @@ export class L2Controller extends BaseController{
 
     }
 
-    public redirectToL4Nav(item){
+    public redirectToL4Nav(item, parent, grandParent){
+      App.Common.navigateL4(item, parent, grandParent)
+    }
 
+    public redirectToL3Nav(item, parent){
+      App.Common.navigateL3(item,parent);
     }
 
   }

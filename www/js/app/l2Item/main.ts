@@ -9,6 +9,13 @@ module App.l2item{
   export interface IL2ItemScope extends IBaseScope{
       currentItem: any;
       L3Items: Array<any>;
+      relatedNewsItems: Array<any>;
       selectedL2: any
+      pageContent: any;
+      pageAudit: any;
+
+      navigatedL2;
+      navigatedL3;
+      navigatedL4;
   }
 }

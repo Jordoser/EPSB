@@ -26,5 +26,23 @@ module App.l2item{
       return this.getItemByKeyValue("LevelFourNavItems", "l3NavId", levelThreeId)
     }
 
+
+    public loadL4Content(contentId: string): ng.IPromise<Array<any>>{
+      return this.getItemByKeyValue("LevelFourContent", "Id", contentId)
+    }
+
+    public getPageAudit(auditId : string): ng.IPromise<Array<any>>{
+      return this.getItemByKeyValue("PageAudits", "Id", auditId);
+    }
+
+    public expandUserContacts(data): ng.IPromise<Array<any>>{
+      return this.expandPropery(data, "UserContacts", "Id");
+    }
+
+
+    public getRelatedNews(topic: string): ng.IPromise<Array<any>>{
+      return this.getItemsByTag([topic], "NewsItems")
+    }
+
   }
 }

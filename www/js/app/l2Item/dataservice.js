@@ -26,6 +26,18 @@ var App;
             L2DataService.prototype.getL4Items = function (levelThreeId) {
                 return this.getItemByKeyValue("LevelFourNavItems", "l3NavId", levelThreeId);
             };
+            L2DataService.prototype.loadL4Content = function (contentId) {
+                return this.getItemByKeyValue("LevelFourContent", "Id", contentId);
+            };
+            L2DataService.prototype.getPageAudit = function (auditId) {
+                return this.getItemByKeyValue("PageAudits", "Id", auditId);
+            };
+            L2DataService.prototype.expandUserContacts = function (data) {
+                return this.expandPropery(data, "UserContacts", "Id");
+            };
+            L2DataService.prototype.getRelatedNews = function (topic) {
+                return this.getItemsByTag([topic], "NewsItems");
+            };
             return L2DataService;
         }(App.BaseJsonDataService));
         l2item.L2DataService = L2DataService;
