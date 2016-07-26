@@ -67,7 +67,10 @@ export class NavController extends BaseController{
         this.closeL2Nav();
         return;
       }
-      this.$scope.selectedItemIds[0] = item.Id
+      if(this.$scope.selectedItemIds[0] && this.$scope.selectedItemIds[0] != ""){
+        this.closeL3Nav();
+      }
+      this.$scope.selectedItemIds[0] = item
       var l1nav = $('.l1-nav');
       var l1Width = l1nav.width();
       $('.l2-nav').animate({"left": l1Width+"px"},10);
@@ -102,8 +105,12 @@ export class NavController extends BaseController{
 
     public closeL2Nav(){
       this.closeL3Nav(true);
-      this.$scope.selectedItemIds[0] = '';
+
         $('.l2-nav').animate({"left": "0"},10);
+
+        this.$timeout(() =>{
+            this.$scope.selectedItemIds[0] = '';
+        },500)
 
     }
 
@@ -112,7 +119,7 @@ export class NavController extends BaseController{
         return
       }
       this.closeL4Nav(true);
-      this.$scope.selectedItemIds[1] = '';
+
       if(!isChain){
         var l2Offset = $('.l2-nav').offset().left;
           $('.l3-nav').animate({"left": l2Offset + "px"},10, () => {
@@ -123,6 +130,9 @@ export class NavController extends BaseController{
         }else{
           $('.l3-nav').animate({"left": "0"},10)
         }
+        this.$timeout(() =>{
+          this.$scope.selectedItemIds[1] = '';
+        },500)
 
     }
 
@@ -130,7 +140,8 @@ export class NavController extends BaseController{
       if(this.$scope.selectedItemIds[2] == "" || !this.$scope.selectedItemIds[2]){
         return
       }
-      this.$scope.selectedItemIds[2] = '';
+
+
       var l3Offset = $('.l3-nav').offset().left;
       if(!isChain){
         $('.l4-nav').animate({"left": l3Offset + "px"},10, () => {
@@ -141,6 +152,9 @@ export class NavController extends BaseController{
       }else{
         $('.l4-nav').animate({"left": "0"},10)
       }
+      this.$timeout(() =>{
+          this.$scope.selectedItemIds[2] = '';
+      },500)
 
     }
 
@@ -151,7 +165,10 @@ export class NavController extends BaseController{
         this.closeL3Nav();
         return;
       }
-      this.$scope.selectedItemIds[1] = item.Id
+      if(this.$scope.selectedItemIds[1] && this.$scope.selectedItemIds[0] != ""){
+        this.closeL4Nav();
+      }
+      this.$scope.selectedItemIds[1] = item
       var l2nav = $('.l2-nav');
       var l2Width = l2nav.width();
       var l2Offset = l2nav.offset().left
@@ -174,7 +191,7 @@ export class NavController extends BaseController{
         this.closeL4Nav();
         return;
       }
-      this.$scope.selectedItemIds[2] = item.Id
+      this.$scope.selectedItemIds[2] = item
       var l3nav = $('.l3-nav');
       var l3Width = l3nav.width();
       var l3Offset = l3nav.offset().left
@@ -253,7 +270,10 @@ export class NavController extends BaseController{
     }
 
     public IsOpenItem(itemId):boolean{
-      return (this.$scope.selectedItemIds.indexOf(itemId) > -1);
+      var matchingItems = $.grep(this.$scope.selectedItemIds, (item) =>{
+        return item.Id == itemId
+      });
+      return matchingItems.length > 0;
     }
 
 

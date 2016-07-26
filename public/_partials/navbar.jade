@@ -21,18 +21,21 @@ div(ng-controller='navController' Id="navDiv")
         li
           div Emergency
   .left-nav.l2-nav(style='z-index: 900')
-    .nav-items        
-      ul.hidden-nav.main-nav
+    .nav-items
+      .nav-header {{selectedItemIds[0].Name}}
+      ul.hidden-nav.sub-nav
         li(ng-repeat="item in l2NavItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}" ng-click="ctrl.openL3NavForItem(item)")
           div {{item.Name}}
   .left-nav.l3-nav(style='z-index: 800')
-    .nav-items        
-      ul.hidden-nav.main-nav
+    .nav-items
+      .nav-header {{selectedItemIds[1].Name}}        
+      ul.hidden-nav.sub-nav
         li(ng-repeat="item in l3NavItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}" ng-click="ctrl.openL4NavForItem(item)")
           div {{item.Name}}
   .left-nav.l4-nav(style='z-index: 700')
+    .nav-header {{selectedItemIds[2].Name}}
     .nav-items        
-      ul.hidden-nav.main-nav
+      ul.hidden-nav.sub-nav
         li(ng-repeat="item in l4NavItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}" ng-click="ctlr.openL4NavForItem(item)")
           div {{item.Name}}
   .top-nav

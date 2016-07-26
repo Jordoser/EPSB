@@ -54,6 +54,8 @@
 
 @topNavBarHeight: 100px;
 @NavItemHeight: 60px;
+@SubNavItemHeight: 30px;
+@NavWidth:250px;
 @l2NavColor: #0E0081;
 @l3NavColor: #341989;
 @l4NavColor: #4A457A;
@@ -67,6 +69,41 @@
 .l4-nav{
   background-color: @l4NavColor !important;
 }
+
+.nav-header{
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+    padding-left: 25px;
+    padding-bottom: 5px;
+    padding-top: 25px;
+}
+.sub-nav{
+  padding-left: 0;
+
+  ul{
+      padding-left: 0;
+
+  }
+  li{
+
+    list-style-type: none;
+    height: @SubNavItemHeight;
+
+    cursor: pointer;
+    div{
+      padding-left: 25px;
+      height: @SubNavItemHeight;
+      display:table-cell;
+      vertical-align : middle;
+
+    }
+
+  }
+}
+
 .content-flex-wrapper{
   display: flex;
 }
@@ -310,7 +347,7 @@ display: block;
     position: absolute;
 overflow-y: auto;
     margin-top: 215px;
-padding-left: 225px;
+padding-left: @NavWidth;
 
   .content-area{
 
@@ -543,7 +580,7 @@ justify-content: flex-start;
 
 .top-wrapper{
   position: fixed;
-  padding-left: 225px;
+  padding-left: @NavWidth;
   height: 200px;
   width: 100%;
   .top-row{
@@ -661,7 +698,7 @@ position: absolute;
   z-index: 9999 !important;
 }
 .left-nav{
-  width: 225px;
+  width: @NavWidth;
   height: 100%;
   background-color: white;
   border-right: 1px solid @gray-light;
