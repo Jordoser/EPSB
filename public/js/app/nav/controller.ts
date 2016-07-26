@@ -16,7 +16,8 @@ export class NavController extends BaseController{
       this.$scope.navItems = [];
       this.$scope.l2NavItems = [];
       this.$scope.l3NavItems = [];
-      this.$scope.l4NavItems = []
+      this.$scope.l4NavItems = [];
+      this.$scope.navigatedItems = []
       this.$scope.selectedItemIds = []
       this.loadNav();
       this.initiateClock();
@@ -27,27 +28,7 @@ export class NavController extends BaseController{
         trigger: 'focus'
       })
 
-
-
-      this.navigatedL1 = sessionStorage.getItem("SelectedL1");
-      this.navigatedL2 = sessionStorage.getItem("SelectedL2");
-      this.navigatedL3 = sessionStorage.getItem("SelectedL3");
-      this.navigatedL4 = sessionStorage.getItem("SelectedL4");
-
-
-      this.$scope.selectedL2Item =sessionStorage.getItem("SelectedL2Name");
-      this.$scope.selectedL3Item =sessionStorage.getItem("SelectedL3Name");
-      this.$scope.selectedL4Item =sessionStorage.getItem("SelectedL4Name");
-
-
-      this.$scope.navLevel = sessionStorage.getItem("NavLevel")
-      this.clickToClose = () =>{
-        this.openL2NavForItem("",true)
-      };
-      if(this.navigatedL1){
-        this.$scope.selectedItemId = this.navigatedL1;
-      }
-
+      this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
     }
 
     public loadNav(){
@@ -229,34 +210,51 @@ export class NavController extends BaseController{
       }
     }
 
-    public redirectToL2Nav(item, breadCrubmNav = false){
-      if(this.$scope.openItemId){
-        sessionStorage.setItem("SelectedL1", this.$scope.openItemId);
-      }
-      if(item){
-        if(!breadCrubmNav){
-          App.Common.navigateL2(item.Name, item.Id)
+    public redirectToL1Nav(item, IsBreadCrumb = false){
+        var navArray = (IsBreadCrumb)? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
+        navArray[0] = item
+        App.Common.navigateL1(navArray)
+    }
 
-        }else{
-          App.Common.navigateL2(item, this.$scope.selectedL2Item)
+    public redirectToL2Nav(item, IsBreadCrumb = false){
+      var navArray = (IsBreadCrumb)? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
+      navArray[1] = item
+      App.Common.navigateL2(navArray)
+    }
 
-        }
+
+    public redirectToL3Nav(item, IsBreadCrumb = false){
+      var navArray = (IsBreadCrumb)? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
+      navArray[2] = item
+      App.Common.navigateL3(navArray)
+    }
+
+    public redirectToL4Nav(item, IsBreadCrumb = false){
+      var navArray = (IsBreadCrumb)? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
+      navArray[3] = item
+      App.Common.navigateL4(navArray)
+    }
+
+    public redirectFromBreadCrumb(itemIndex, navItem){
+      switch(itemIndex){
+        case 0:
+          this.redirectToL1Nav(navItem, true)
+          break;
+        case 1:
+          this.redirectToL2Nav(navItem, true)
+          break;
+        case 2:
+          this.redirectToL3Nav(navItem, true)
+          break;
+        case 3:
+          this.redirectToL4Nav(navItem, true)
+          break;
+        default:
+          break;
       }
     }
 
-    public redirectToL3Nav(item, parent, breadCrumbNav = false){
-      if(this.$scope.openItemId){
-        sessionStorage.setItem("SelectedL1", this.$scope.openItemId);
-      }
 
-      if(!breadCrumbNav){
-          App.Common.navigateL3(item,parent);
-      }else{
-        var childItem =  {Name: item, Id: this.navigatedL3}
-        var parentItem = {Name: parent, Id: this.navigatedL2}
-        App.Common.navigateL3(childItem, parentItem)
-      }
-    }
 
     public loadNavItems(item){
       var contentArea = $(".content-area")

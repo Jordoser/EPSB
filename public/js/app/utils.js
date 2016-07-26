@@ -149,39 +149,25 @@ var App;
                 Array.prototype.splice.apply(existingArray, args);
             }
         };
-        Common.navigateL4 = function (item, parent, grandParent) {
-            if (item.Id) {
-                sessionStorage.setItem("SelectedL2", grandParent.Id);
-                sessionStorage.setItem("SelectedL2Name", grandParent.Name);
-                sessionStorage.setItem("SelectedL3", parent.Id);
-                sessionStorage.setItem("SelectedL3Name", parent.Name);
-                sessionStorage.setItem("SelectedL4", item.Id);
-                sessionStorage.setItem("SelectedL4Name", item.Name);
-                sessionStorage.setItem("NavLevel", "4");
-            }
-            window.location.href = "l4Nav.html";
+        Common.navigate = function (location, navArray) {
+            var navString = JSON.stringify(navArray);
+            sessionStorage.setItem("NavArray", navString);
+            window.location.href = location;
         };
-        Common.navigateL3 = function (item, parent) {
-            if (item.Id) {
-                sessionStorage.setItem("SelectedL2", parent.Id);
-                sessionStorage.setItem("SelectedL2Name", parent.Name);
-                sessionStorage.setItem("SelectedL3", item.Id);
-                sessionStorage.setItem("SelectedL3Name", item.Name);
-                sessionStorage.setItem("NavLevel", "3");
-            }
-            sessionStorage.removeItem("SelectedL4");
-            sessionStorage.removeItem("SelectedL4Name");
-            window.location.href = "l3Nav.html";
+        Common.navigateL4 = function (navArray) {
+            this.navigate("l4Nav.html", navArray);
         };
-        Common.navigateL2 = function (itemName, itemId) {
-            sessionStorage.setItem("SelectedL2", itemId);
-            sessionStorage.setItem("SelectedL2Name", itemName);
-            sessionStorage.setItem("NavLevel", "2");
-            sessionStorage.removeItem("SelectedL3");
-            sessionStorage.removeItem("SelectedL3Name");
-            sessionStorage.removeItem("SelectedL4");
-            sessionStorage.removeItem("SelectedL4Name");
-            window.location.href = "l2Nav.html";
+        Common.navigateL3 = function (navArray) {
+            navArray = navArray.splice(0, 3);
+            this.navigate("l3Nav.html", navArray);
+        };
+        Common.navigateL2 = function (navArray) {
+            navArray = navArray.splice(0, 2);
+            this.navigate("l2Nav.html", navArray);
+        };
+        Common.navigateL1 = function (navArray) {
+            navArray = navArray.splice(0, 1);
+            this.navigate("l2Nav.html", navArray);
         };
         Common.addZero = function (integer) {
             if (integer < 10) {

@@ -190,48 +190,29 @@ module App {
            }
        }
 
-        static navigateL4(item, parent, grandParent){
-          if(item.Id){
-            sessionStorage.setItem("SelectedL2",grandParent.Id);
-            sessionStorage.setItem("SelectedL2Name",grandParent.Name);
-            sessionStorage.setItem("SelectedL3", parent.Id)
-            sessionStorage.setItem("SelectedL3Name",parent.Name);
-            sessionStorage.setItem("SelectedL4", item.Id)
-            sessionStorage.setItem("SelectedL4Name",item.Name);
-            sessionStorage.setItem("NavLevel", "4");
-          }
-          window.location.href = "l4Nav.html";
+       static navigate(location: string, navArray: Array<any>){
+         var navString = JSON.stringify(navArray)
+         sessionStorage.setItem("NavArray", navString)
+         window.location.href = location;
+       }
+
+        static navigateL4(navArray: Array<any>){
+          this.navigate("l4Nav.html", navArray);
         }
 
-      static navigateL3(item, parent){
-        if(item.Id){
-          sessionStorage.setItem("SelectedL2",parent.Id);
-          sessionStorage.setItem("SelectedL2Name",parent.Name);
-          sessionStorage.setItem("SelectedL3", item.Id)
-          sessionStorage.setItem("SelectedL3Name",item.Name);
-          sessionStorage.setItem("NavLevel", "3");
-        }
-
-        sessionStorage.removeItem("SelectedL4");
-        sessionStorage.removeItem("SelectedL4Name");
-        window.location.href = "l3Nav.html";
+      static navigateL3(navArray: Array<any>){
+        navArray = navArray.splice(0,3)
+        this.navigate("l3Nav.html", navArray);
       }
 
-      static navigateL2(itemName, itemId){
-          sessionStorage.setItem("SelectedL2",itemId);
-          sessionStorage.setItem("SelectedL2Name",itemName);
+      static navigateL2(navArray: Array<any>){
+          navArray = navArray.splice(0,2)
+          this.navigate("l2Nav.html", navArray);
+      }
 
-
-
-        sessionStorage.setItem("NavLevel", "2");
-
-        sessionStorage.removeItem("SelectedL3");
-        sessionStorage.removeItem("SelectedL3Name");
-        sessionStorage.removeItem("SelectedL4");
-        sessionStorage.removeItem("SelectedL4Name");
-
-        window.location.href = "l2Nav.html";
-
+      static navigateL1(navArray: Array<any>){
+          navArray = navArray.splice(0,1)
+          this.navigate("l2Nav.html", navArray);
       }
 
       private static addZero(integer){

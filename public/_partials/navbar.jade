@@ -22,21 +22,21 @@ div(ng-controller='navController' Id="navDiv")
           div Emergency
   .left-nav.l2-nav(style='z-index: 900')
     .nav-items
-      .nav-header {{selectedItemIds[0].Name}}
+      .nav-header(ng-click="ctrl.redirectToL1Nav(selectedItemIds[0])") {{selectedItemIds[0].Name}}
       ul.hidden-nav.sub-nav
         li(ng-repeat="item in l2NavItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}" ng-click="ctrl.openL3NavForItem(item)")
           div {{item.Name}}
   .left-nav.l3-nav(style='z-index: 800')
     .nav-items
-      .nav-header {{selectedItemIds[1].Name}}        
+      .nav-header(ng-click="ctrl.redirectToL2Nav(selectedItemIds[1])") {{selectedItemIds[1].Name}}        
       ul.hidden-nav.sub-nav
         li(ng-repeat="item in l3NavItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}" ng-click="ctrl.openL4NavForItem(item)")
           div {{item.Name}}
   .left-nav.l4-nav(style='z-index: 700')
-    .nav-header {{selectedItemIds[2].Name}}
+    .nav-header(ng-click="ctrl.redirectToL3Nav(selectedItemIds[2])") {{selectedItemIds[2].Name}}
     .nav-items        
       ul.hidden-nav.sub-nav
-        li(ng-repeat="item in l4NavItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}" ng-click="ctlr.openL4NavForItem(item)")
+        li(ng-repeat="item in l4NavItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}" ng-click="ctrl.redirectToL4Nav(item)")
           div {{item.Name}}
   .top-nav
     .top-wrapper
@@ -54,11 +54,8 @@ div(ng-controller='navController' Id="navDiv")
           i.fa.fa-search.fa-3
           input.search-input(type="text" id="searchText")
       .bread-crumb.col-sm-12
-        span.bread-crumb-l2(ng-show="selectedL2Item != null" ng-click="ctrl.redirectToL2Nav(selectedL2Item,true)" ng-class="{'navigateable' : navLevel != '2'}") {{selectedL2Item}}
-        span.bread-crumb-l3(ng-show="selectedL3Item != null" ng-click="ctrl.redirectToL3Nav(selectedL3Item,selectedL2Item,true)")  >
-          span(ng-class="{'navigateable' : navLevel != '3'}")  {{selectedL3Item}}
-        span.bread-crumb-l4(ng-show="selectedL4Item != null")  >
-          span(ng-class="{'navigateable' : navLevel != '4'}")  {{selectedL4Item}}
+        span.bread-crumb-l2(ng-click="ctrl.redirectFromBreadCrumb($index, navItem)" ng-repeat="navItem in navigatedItems") {{navItem.Name}}&nbsp;
+          span(ng-if="$index != navigatedItems.length -1")>&nbsp;
       != partial('megamenu')
   script(src='js/app/nav/dataService.js')
   script(src='js/app/nav/controller.js')

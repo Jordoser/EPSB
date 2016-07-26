@@ -11,7 +11,6 @@ var App;
         var NavController = (function (_super) {
             __extends(NavController, _super);
             function NavController($scope, $timeout, dataService) {
-                var _this = this;
                 _super.call(this, $scope, $timeout, $timeout);
                 this.$scope = $scope;
                 this.$timeout = $timeout;
@@ -23,6 +22,7 @@ var App;
                 this.$scope.l2NavItems = [];
                 this.$scope.l3NavItems = [];
                 this.$scope.l4NavItems = [];
+                this.$scope.navigatedItems = [];
                 this.$scope.selectedItemIds = [];
                 this.loadNav();
                 this.initiateClock();
@@ -30,20 +30,7 @@ var App;
                 $('.popover-dismiss').popover({
                     trigger: 'focus'
                 });
-                this.navigatedL1 = sessionStorage.getItem("SelectedL1");
-                this.navigatedL2 = sessionStorage.getItem("SelectedL2");
-                this.navigatedL3 = sessionStorage.getItem("SelectedL3");
-                this.navigatedL4 = sessionStorage.getItem("SelectedL4");
-                this.$scope.selectedL2Item = sessionStorage.getItem("SelectedL2Name");
-                this.$scope.selectedL3Item = sessionStorage.getItem("SelectedL3Name");
-                this.$scope.selectedL4Item = sessionStorage.getItem("SelectedL4Name");
-                this.$scope.navLevel = sessionStorage.getItem("NavLevel");
-                this.clickToClose = function () {
-                    _this.openL2NavForItem("", true);
-                };
-                if (this.navigatedL1) {
-                    this.$scope.selectedItemId = this.navigatedL1;
-                }
+                this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
             }
             NavController.prototype.loadNav = function () {
                 var _this = this;
@@ -182,32 +169,46 @@ var App;
                     item.animate({ height: "0" }, { duration: 200, queue: false });
                 }
             };
-            NavController.prototype.redirectToL2Nav = function (item, breadCrubmNav) {
-                if (breadCrubmNav === void 0) { breadCrubmNav = false; }
-                if (this.$scope.openItemId) {
-                    sessionStorage.setItem("SelectedL1", this.$scope.openItemId);
-                }
-                if (item) {
-                    if (!breadCrubmNav) {
-                        App.Common.navigateL2(item.Name, item.Id);
-                    }
-                    else {
-                        App.Common.navigateL2(item, this.$scope.selectedL2Item);
-                    }
-                }
+            NavController.prototype.redirectToL1Nav = function (item, IsBreadCrumb) {
+                if (IsBreadCrumb === void 0) { IsBreadCrumb = false; }
+                var navArray = (IsBreadCrumb) ? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
+                navArray[0] = item;
+                App.Common.navigateL1(navArray);
             };
-            NavController.prototype.redirectToL3Nav = function (item, parent, breadCrumbNav) {
-                if (breadCrumbNav === void 0) { breadCrumbNav = false; }
-                if (this.$scope.openItemId) {
-                    sessionStorage.setItem("SelectedL1", this.$scope.openItemId);
-                }
-                if (!breadCrumbNav) {
-                    App.Common.navigateL3(item, parent);
-                }
-                else {
-                    var childItem = { Name: item, Id: this.navigatedL3 };
-                    var parentItem = { Name: parent, Id: this.navigatedL2 };
-                    App.Common.navigateL3(childItem, parentItem);
+            NavController.prototype.redirectToL2Nav = function (item, IsBreadCrumb) {
+                if (IsBreadCrumb === void 0) { IsBreadCrumb = false; }
+                var navArray = (IsBreadCrumb) ? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
+                navArray[1] = item;
+                App.Common.navigateL2(navArray);
+            };
+            NavController.prototype.redirectToL3Nav = function (item, IsBreadCrumb) {
+                if (IsBreadCrumb === void 0) { IsBreadCrumb = false; }
+                var navArray = (IsBreadCrumb) ? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
+                navArray[2] = item;
+                App.Common.navigateL3(navArray);
+            };
+            NavController.prototype.redirectToL4Nav = function (item, IsBreadCrumb) {
+                if (IsBreadCrumb === void 0) { IsBreadCrumb = false; }
+                var navArray = (IsBreadCrumb) ? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
+                navArray[3] = item;
+                App.Common.navigateL4(navArray);
+            };
+            NavController.prototype.redirectFromBreadCrumb = function (itemIndex, navItem) {
+                switch (itemIndex) {
+                    case 0:
+                        this.redirectToL1Nav(navItem, true);
+                        break;
+                    case 1:
+                        this.redirectToL2Nav(navItem, true);
+                        break;
+                    case 2:
+                        this.redirectToL3Nav(navItem, true);
+                        break;
+                    case 3:
+                        this.redirectToL4Nav(navItem, true);
+                        break;
+                    default:
+                        break;
                 }
             };
             NavController.prototype.loadNavItems = function (item) {

@@ -12,15 +12,12 @@ module App.Nav{
       l3NavItems: Array<any>;
       l4NavItems: Array<any>;
 
+      navigatedItems: Array<any>
       selectedItemIds : Array<any>
       searchArea: string;
       menuClosed: boolean;
       openItemId: string;
       selectedItemId: string;
-      selectedL1Item: any;
-      selectedL2Item: any;
-      selectedL3Item: any;
-      selectedL4Item: any;
       navLevel: string;
   }
 }
