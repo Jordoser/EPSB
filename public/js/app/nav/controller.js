@@ -58,6 +58,9 @@ var App;
                 var l1Width = l1nav.width();
                 $('.l2-nav').animate({ "left": l1Width + "px" }, 10);
                 this.loadNavItems(item);
+                if (this.IsNavigated(item.Id) && (this.$scope.navigatedItems[1] && this.$scope.navigatedItems[1] != "")) {
+                    this.openL3NavForItem(this.$scope.navigatedItems[1], true, l1Width);
+                }
             };
             NavController.prototype.closeL2Nav = function () {
                 var _this = this;
@@ -110,22 +113,28 @@ var App;
                     _this.$scope.selectedItemIds[2] = '';
                 }, 500);
             };
-            NavController.prototype.openL3NavForItem = function (item) {
-                if (this.IsOpenItem(item.Id)) {
+            NavController.prototype.openL3NavForItem = function (item, isChain, extraOffset) {
+                if (isChain === void 0) { isChain = false; }
+                if (extraOffset === void 0) { extraOffset = 0; }
+                if (this.IsOpenItem(item.Id) && !isChain) {
                     this.closeL3Nav();
                     return;
                 }
-                if (this.$scope.selectedItemIds[1] && this.$scope.selectedItemIds[0] != "") {
+                if (this.$scope.selectedItemIds[1] && this.$scope.selectedItemIds[1] != "") {
                     this.closeL4Nav();
                 }
                 this.$scope.selectedItemIds[1] = item;
                 var l2nav = $('.l2-nav');
                 var l2Width = l2nav.width();
                 var l2Offset = l2nav.offset().left;
-                var offset = l2Width + l2Offset;
+                var overallOffest = (!l2Offset) ? extraOffset : l2Offset;
+                var offset = l2Width + overallOffest;
                 $('.l3-nav').css("left", l2Offset + "px");
                 $('.l3-nav').animate({ "left": (offset) + "px" }, 10);
                 this.loadL3NavItems(item);
+                if (this.IsNavigated(item.Id) && (this.$scope.navigatedItems[2] && this.$scope.navigatedItems[2] != "")) {
+                    this.openL4NavForItem(this.$scope.navigatedItems[2], true, offset);
+                }
             };
             NavController.prototype.loadL3NavItems = function (item) {
                 var _this = this;
@@ -134,8 +143,10 @@ var App;
                     App.Common.replaceArrayContents(_this.$scope.l3NavItems, data);
                 });
             };
-            NavController.prototype.openL4NavForItem = function (item) {
-                if (this.IsOpenItem(item.Id)) {
+            NavController.prototype.openL4NavForItem = function (item, isChain, extraOffset) {
+                if (isChain === void 0) { isChain = false; }
+                if (extraOffset === void 0) { extraOffset = 0; }
+                if (this.IsOpenItem(item.Id) && !isChain) {
                     this.closeL4Nav();
                     return;
                 }
@@ -143,7 +154,8 @@ var App;
                 var l3nav = $('.l3-nav');
                 var l3Width = l3nav.width();
                 var l3Offset = l3nav.offset().left;
-                var offset = l3Width + l3Offset;
+                var offsetOverall = (!l3Offset) ? extraOffset : l3Offset;
+                var offset = l3Width + offsetOverall;
                 $('.l4-nav').css("left", l3Offset + "px");
                 $('.l4-nav').animate({ "left": (offset) + "px" }, 10);
                 this.loadL4NavItems(item);
@@ -224,6 +236,12 @@ var App;
             };
             NavController.prototype.IsOpenItem = function (itemId) {
                 var matchingItems = $.grep(this.$scope.selectedItemIds, function (item) {
+                    return item.Id == itemId;
+                });
+                return matchingItems.length > 0;
+            };
+            NavController.prototype.IsNavigated = function (itemId) {
+                var matchingItems = $.grep(this.$scope.navigatedItems, function (item) {
                     return item.Id == itemId;
                 });
                 return matchingItems.length > 0;

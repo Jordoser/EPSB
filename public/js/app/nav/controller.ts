@@ -56,6 +56,9 @@ export class NavController extends BaseController{
       var l1Width = l1nav.width();
       $('.l2-nav').animate({"left": l1Width+"px"},10);
       this.loadNavItems(item)
+      if(this.IsNavigated(item.Id) && (this.$scope.navigatedItems[1] && this.$scope.navigatedItems[1] != "")){
+        this.openL3NavForItem(this.$scope.navigatedItems[1], true, l1Width);
+      }
       /*
       if(forceClose || this.$scope.openItemId == item.Id){
         this.$scope.menuClosed = true;
@@ -141,22 +144,26 @@ export class NavController extends BaseController{
 
 
 
-    public openL3NavForItem(item){
-      if(this.IsOpenItem(item.Id)){
+    public openL3NavForItem(item, isChain = false, extraOffset = 0){
+      if(this.IsOpenItem(item.Id) && !isChain){
         this.closeL3Nav();
         return;
       }
-      if(this.$scope.selectedItemIds[1] && this.$scope.selectedItemIds[0] != ""){
+      if(this.$scope.selectedItemIds[1] && this.$scope.selectedItemIds[1] != ""){
         this.closeL4Nav();
       }
       this.$scope.selectedItemIds[1] = item
       var l2nav = $('.l2-nav');
       var l2Width = l2nav.width();
       var l2Offset = l2nav.offset().left
-      var offset = l2Width + l2Offset
+      var overallOffest = (!l2Offset)? extraOffset : l2Offset
+      var offset = l2Width + overallOffest
       $('.l3-nav').css("left", l2Offset + "px")
       $('.l3-nav').animate({"left": (offset) +"px"},10);
       this.loadL3NavItems(item)
+      if(this.IsNavigated(item.Id) && (this.$scope.navigatedItems[2] && this.$scope.navigatedItems[2] != "")){
+        this.openL4NavForItem(this.$scope.navigatedItems[2], true, offset);
+      }
     }
     public loadL3NavItems(item){
       this.dataService.getL3NavItems(item.Id)
@@ -167,8 +174,8 @@ export class NavController extends BaseController{
       })
     }
 
-    public openL4NavForItem(item){
-      if(this.IsOpenItem(item.Id)){
+    public openL4NavForItem(item, isChain = false, extraOffset = 0){
+      if(this.IsOpenItem(item.Id) && !isChain){
         this.closeL4Nav();
         return;
       }
@@ -176,7 +183,8 @@ export class NavController extends BaseController{
       var l3nav = $('.l3-nav');
       var l3Width = l3nav.width();
       var l3Offset = l3nav.offset().left
-      var offset = l3Width + l3Offset;
+      var offsetOverall = (!l3Offset)? extraOffset : l3Offset;
+      var offset = l3Width + offsetOverall;
       $('.l4-nav').css("left", l3Offset + "px")
       $('.l4-nav').animate({"left": (offset) +"px"},10);
       this.loadL4NavItems(item)
@@ -269,6 +277,13 @@ export class NavController extends BaseController{
 
     public IsOpenItem(itemId):boolean{
       var matchingItems = $.grep(this.$scope.selectedItemIds, (item) =>{
+        return item.Id == itemId
+      });
+      return matchingItems.length > 0;
+    }
+
+    public IsNavigated(itemId):boolean{
+      var matchingItems = $.grep(this.$scope.navigatedItems, (item) =>{
         return item.Id == itemId
       });
       return matchingItems.length > 0;
