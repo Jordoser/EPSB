@@ -1,0 +1,11 @@
+div(Id="levelFourDiv" ng-controller='levelFourController')
+        
+  .content-area
+    h2 {{currentItem.Id}}
+    p {{currentItem.Description}}
+        
+script(src='js/app/levelFour/dataService.js')
+script(src='js/app/levelFour/controller.js')
+script(src='js/app/levelFour/main.js')
+script.
+  angular.bootstrap(document.getElementById('levelFourDiv'),["levelFourApp"])

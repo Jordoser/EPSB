@@ -155,19 +155,19 @@ var App;
             window.location.href = location;
         };
         Common.navigateL4 = function (navArray) {
-            this.navigate("l4Nav.html", navArray);
+            this.navigate("levelFour.html", navArray);
         };
         Common.navigateL3 = function (navArray) {
             navArray = navArray.splice(0, 3);
-            this.navigate("l3Nav.html", navArray);
+            this.navigate("levelThree.html", navArray);
         };
         Common.navigateL2 = function (navArray) {
             navArray = navArray.splice(0, 2);
-            this.navigate("l2Nav.html", navArray);
+            this.navigate("levelTwo.html", navArray);
         };
         Common.navigateL1 = function (navArray) {
             navArray = navArray.splice(0, 1);
-            this.navigate("l2Nav.html", navArray);
+            this.navigate("levelOne.html", navArray);
         };
         Common.addZero = function (integer) {
             if (integer < 10) {

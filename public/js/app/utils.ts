@@ -197,22 +197,22 @@ module App {
        }
 
         static navigateL4(navArray: Array<any>){
-          this.navigate("l4Nav.html", navArray);
+          this.navigate("levelFour.html", navArray);
         }
 
       static navigateL3(navArray: Array<any>){
         navArray = navArray.splice(0,3)
-        this.navigate("l3Nav.html", navArray);
+        this.navigate("levelThree.html", navArray);
       }
 
       static navigateL2(navArray: Array<any>){
           navArray = navArray.splice(0,2)
-          this.navigate("l2Nav.html", navArray);
+          this.navigate("levelTwo.html", navArray);
       }
 
       static navigateL1(navArray: Array<any>){
           navArray = navArray.splice(0,1)
-          this.navigate("l2Nav.html", navArray);
+          this.navigate("levelOne.html", navArray);
       }
 
       private static addZero(integer){

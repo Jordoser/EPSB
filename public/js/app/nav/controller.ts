@@ -59,32 +59,7 @@ export class NavController extends BaseController{
       if(this.IsNavigated(item.Id) && (this.$scope.navigatedItems[1] && this.$scope.navigatedItems[1] != "")){
         this.openL3NavForItem(this.$scope.navigatedItems[1], true, l1Width);
       }
-      /*
-      if(forceClose || this.$scope.openItemId == item.Id){
-        this.$scope.menuClosed = true;
-        this.$scope.openItemId = "";
-        var contentArea = $(".content-area")
-        contentArea.unbind("click", this.clickToClose);
-        this.$timeout(() => {this.$scope.$apply()},100);
-        return;
-      }
-
-      if(this.$scope.openItemId == ""){
-        this.loadNavItems(item)
-        return;
-      }
-
-      if(this.$scope.openItemId != ""){
-        this.$scope.menuClosed = true;
-        var contentArea = $(".content-area")
-        contentArea.unbind("click", this.clickToClose);
-        this.$timeout(()=>{
-          this.loadNavItems(item);
-        },100);
-        return;
-      }
-      this.loadNavItems(item)
-      */
+  
     }
 
     public closeL2Nav(){
