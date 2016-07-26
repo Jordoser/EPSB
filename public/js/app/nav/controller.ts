@@ -15,6 +15,9 @@ export class NavController extends BaseController{
       this.$scope.openItemId = "";
       this.$scope.navItems = [];
       this.$scope.l2NavItems = [];
+      this.$scope.l3NavItems = [];
+      this.$scope.l4NavItems = []
+      this.$scope.selectedItemIds = []
       this.loadNav();
       this.initiateClock();
       this.initiateDay();
@@ -24,7 +27,7 @@ export class NavController extends BaseController{
         trigger: 'focus'
       })
 
-    
+
 
       this.navigatedL1 = sessionStorage.getItem("SelectedL1");
       this.navigatedL2 = sessionStorage.getItem("SelectedL2");
@@ -60,7 +63,16 @@ export class NavController extends BaseController{
     }
 
     public openL2NavForItem(item, forceClose = false){
-
+      if(this.IsOpenItem(item.Id)){
+        this.closeL2Nav();
+        return;
+      }
+      this.$scope.selectedItemIds[0] = item.Id
+      var l1nav = $('.l1-nav');
+      var l1Width = l1nav.width();
+      $('.l2-nav').animate({"left": l1Width+"px"},10);
+      this.loadNavItems(item)
+      /*
       if(forceClose || this.$scope.openItemId == item.Id){
         this.$scope.menuClosed = true;
         this.$scope.openItemId = "";
@@ -85,6 +97,99 @@ export class NavController extends BaseController{
         return;
       }
       this.loadNavItems(item)
+      */
+    }
+
+    public closeL2Nav(){
+      this.closeL3Nav(true);
+      this.$scope.selectedItemIds[0] = '';
+        $('.l2-nav').animate({"left": "0"},10);
+
+    }
+
+    public closeL3Nav(isChain = false){
+      if(this.$scope.selectedItemIds[1] == "" || !this.$scope.selectedItemIds[1]){
+        return
+      }
+      this.closeL4Nav(true);
+      this.$scope.selectedItemIds[1] = '';
+      if(!isChain){
+        var l2Offset = $('.l2-nav').offset().left;
+          $('.l3-nav').animate({"left": l2Offset + "px"},10, () => {
+            this.$timeout(() =>{
+              $('.l3-nav').css({"left": "0"})
+            },500)
+          });
+        }else{
+          $('.l3-nav').animate({"left": "0"},10)
+        }
+
+    }
+
+    public closeL4Nav(isChain = false){
+      if(this.$scope.selectedItemIds[2] == "" || !this.$scope.selectedItemIds[2]){
+        return
+      }
+      this.$scope.selectedItemIds[2] = '';
+      var l3Offset = $('.l3-nav').offset().left;
+      if(!isChain){
+        $('.l4-nav').animate({"left": l3Offset + "px"},10, () => {
+            this.$timeout(() =>{
+          $('.l4-nav').css({"left": "0"})
+        },500);
+        });
+      }else{
+        $('.l4-nav').animate({"left": "0"},10)
+      }
+
+    }
+
+
+
+    public openL3NavForItem(item){
+      if(this.IsOpenItem(item.Id)){
+        this.closeL3Nav();
+        return;
+      }
+      this.$scope.selectedItemIds[1] = item.Id
+      var l2nav = $('.l2-nav');
+      var l2Width = l2nav.width();
+      var l2Offset = l2nav.offset().left
+      var offset = l2Width + l2Offset
+      $('.l3-nav').css("left", l2Offset + "px")
+      $('.l3-nav').animate({"left": (offset) +"px"},10);
+      this.loadL3NavItems(item)
+    }
+    public loadL3NavItems(item){
+      this.dataService.getL3NavItems(item.Id)
+      .then(data => {
+
+          App.Common.replaceArrayContents(this.$scope.l3NavItems,data)
+
+      })
+    }
+
+    public openL4NavForItem(item){
+      if(this.IsOpenItem(item.Id)){
+        this.closeL4Nav();
+        return;
+      }
+      this.$scope.selectedItemIds[2] = item.Id
+      var l3nav = $('.l3-nav');
+      var l3Width = l3nav.width();
+      var l3Offset = l3nav.offset().left
+      var offset = l3Width + l3Offset;
+      $('.l4-nav').css("left", l3Offset + "px")
+      $('.l4-nav').animate({"left": (offset) +"px"},10);
+      this.loadL4NavItems(item)
+    }
+    public loadL4NavItems(item){
+      this.dataService.getL4NavItems(item.Id)
+      .then(data => {
+
+          App.Common.replaceArrayContents(this.$scope.l4NavItems,data)
+
+      })
     }
 
     public displayApps(){
@@ -143,37 +248,16 @@ export class NavController extends BaseController{
             this.$scope.openItemId = item.Id
       this.dataService.getL2NavItems(item.Id)
       .then(data =>{
-        var row = []
-        var rowIndex = 0;
-        for(var i = 0; i < data.length; i++){
-          data[i].L3Items = [];
-          row.push(data[i])
-          var returnIndex = row.indexOf(data[i])
-          this.getL3NavForL2(returnIndex,rowIndex, data[i].Id)
-          if(row.length == 3 || i == data.length - 1){
-            var test = this.$scope.l2NavItems;
-            this.$scope.l2NavItems[rowIndex] = (row);
-            rowIndex++;
-            row = [];
-            }
-          }
-          this.$scope.menuClosed = false;
-          this.$timeout(() => {this.$scope.$apply()},100);
+          App.Common.replaceArrayContents(this.$scope.l2NavItems,data)
         })
     }
 
-    public IsOpenItem(itemId){
-      return (this.$scope.openItemId == itemId) || (this.$scope.selectedItemId == itemId);
+    public IsOpenItem(itemId):boolean{
+      return (this.$scope.selectedItemIds.indexOf(itemId) > -1);
     }
 
-    public getL3NavForL2(returnIndex,rowIndex,  l2Id){
-      this.dataService.getL3NavItems(l2Id)
-      .then(data => {
-          for(var i = 0; i < data.length; i++){
-            this.$scope.l2NavItems[rowIndex][returnIndex].L3Items.push(data[i]);
-          }
-      })
-    }
+
+
     private initiateClock(){
       var date = new Date();
       var hour = date.getHours();

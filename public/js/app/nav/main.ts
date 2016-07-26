@@ -9,6 +9,10 @@ module App.Nav{
   export interface INavScope extends IBaseScope{
       navItems: Array<any>;
       l2NavItems: Array<any>;
+      l3NavItems: Array<any>;
+      l4NavItems: Array<any>;
+
+      selectedItemIds : Array<any>
       searchArea: string;
       menuClosed: boolean;
       openItemId: string;

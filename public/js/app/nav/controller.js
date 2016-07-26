@@ -21,6 +21,9 @@ var App;
                 this.$scope.openItemId = "";
                 this.$scope.navItems = [];
                 this.$scope.l2NavItems = [];
+                this.$scope.l3NavItems = [];
+                this.$scope.l4NavItems = [];
+                this.$scope.selectedItemIds = [];
                 this.loadNav();
                 this.initiateClock();
                 this.initiateDay();
@@ -55,30 +58,102 @@ var App;
                 });
             };
             NavController.prototype.openL2NavForItem = function (item, forceClose) {
-                var _this = this;
                 if (forceClose === void 0) { forceClose = false; }
-                if (forceClose || this.$scope.openItemId == item.Id) {
-                    this.$scope.menuClosed = true;
-                    this.$scope.openItemId = "";
-                    var contentArea = $(".content-area");
-                    contentArea.unbind("click", this.clickToClose);
-                    this.$timeout(function () { _this.$scope.$apply(); }, 100);
+                if (this.IsOpenItem(item.Id)) {
+                    this.closeL2Nav();
                     return;
                 }
-                if (this.$scope.openItemId == "") {
-                    this.loadNavItems(item);
-                    return;
-                }
-                if (this.$scope.openItemId != "") {
-                    this.$scope.menuClosed = true;
-                    var contentArea = $(".content-area");
-                    contentArea.unbind("click", this.clickToClose);
-                    this.$timeout(function () {
-                        _this.loadNavItems(item);
-                    }, 100);
-                    return;
-                }
+                this.$scope.selectedItemIds[0] = item.Id;
+                var l1nav = $('.l1-nav');
+                var l1Width = l1nav.width();
+                $('.l2-nav').animate({ "left": l1Width + "px" }, 10);
                 this.loadNavItems(item);
+            };
+            NavController.prototype.closeL2Nav = function () {
+                this.closeL3Nav(true);
+                this.$scope.selectedItemIds[0] = '';
+                $('.l2-nav').animate({ "left": "0" }, 10);
+            };
+            NavController.prototype.closeL3Nav = function (isChain) {
+                var _this = this;
+                if (isChain === void 0) { isChain = false; }
+                if (this.$scope.selectedItemIds[1] == "" || !this.$scope.selectedItemIds[1]) {
+                    return;
+                }
+                this.closeL4Nav(true);
+                this.$scope.selectedItemIds[1] = '';
+                if (!isChain) {
+                    var l2Offset = $('.l2-nav').offset().left;
+                    $('.l3-nav').animate({ "left": l2Offset + "px" }, 10, function () {
+                        _this.$timeout(function () {
+                            $('.l3-nav').css({ "left": "0" });
+                        }, 500);
+                    });
+                }
+                else {
+                    $('.l3-nav').animate({ "left": "0" }, 10);
+                }
+            };
+            NavController.prototype.closeL4Nav = function (isChain) {
+                var _this = this;
+                if (isChain === void 0) { isChain = false; }
+                if (this.$scope.selectedItemIds[2] == "" || !this.$scope.selectedItemIds[2]) {
+                    return;
+                }
+                this.$scope.selectedItemIds[2] = '';
+                var l3Offset = $('.l3-nav').offset().left;
+                if (!isChain) {
+                    $('.l4-nav').animate({ "left": l3Offset + "px" }, 10, function () {
+                        _this.$timeout(function () {
+                            $('.l4-nav').css({ "left": "0" });
+                        }, 500);
+                    });
+                }
+                else {
+                    $('.l4-nav').animate({ "left": "0" }, 10);
+                }
+            };
+            NavController.prototype.openL3NavForItem = function (item) {
+                if (this.IsOpenItem(item.Id)) {
+                    this.closeL3Nav();
+                    return;
+                }
+                this.$scope.selectedItemIds[1] = item.Id;
+                var l2nav = $('.l2-nav');
+                var l2Width = l2nav.width();
+                var l2Offset = l2nav.offset().left;
+                var offset = l2Width + l2Offset;
+                $('.l3-nav').css("left", l2Offset + "px");
+                $('.l3-nav').animate({ "left": (offset) + "px" }, 10);
+                this.loadL3NavItems(item);
+            };
+            NavController.prototype.loadL3NavItems = function (item) {
+                var _this = this;
+                this.dataService.getL3NavItems(item.Id)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.l3NavItems, data);
+                });
+            };
+            NavController.prototype.openL4NavForItem = function (item) {
+                if (this.IsOpenItem(item.Id)) {
+                    this.closeL4Nav();
+                    return;
+                }
+                this.$scope.selectedItemIds[2] = item.Id;
+                var l3nav = $('.l3-nav');
+                var l3Width = l3nav.width();
+                var l3Offset = l3nav.offset().left;
+                var offset = l3Width + l3Offset;
+                $('.l4-nav').css("left", l3Offset + "px");
+                $('.l4-nav').animate({ "left": (offset) + "px" }, 10);
+                this.loadL4NavItems(item);
+            };
+            NavController.prototype.loadL4NavItems = function (item) {
+                var _this = this;
+                this.dataService.getL4NavItems(item.Id)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.l4NavItems, data);
+                });
             };
             NavController.prototype.displayApps = function () {
                 var item = $(".app-row");
@@ -130,35 +205,11 @@ var App;
                 this.$scope.openItemId = item.Id;
                 this.dataService.getL2NavItems(item.Id)
                     .then(function (data) {
-                    var row = [];
-                    var rowIndex = 0;
-                    for (var i = 0; i < data.length; i++) {
-                        data[i].L3Items = [];
-                        row.push(data[i]);
-                        var returnIndex = row.indexOf(data[i]);
-                        _this.getL3NavForL2(returnIndex, rowIndex, data[i].Id);
-                        if (row.length == 3 || i == data.length - 1) {
-                            var test = _this.$scope.l2NavItems;
-                            _this.$scope.l2NavItems[rowIndex] = (row);
-                            rowIndex++;
-                            row = [];
-                        }
-                    }
-                    _this.$scope.menuClosed = false;
-                    _this.$timeout(function () { _this.$scope.$apply(); }, 100);
+                    App.Common.replaceArrayContents(_this.$scope.l2NavItems, data);
                 });
             };
             NavController.prototype.IsOpenItem = function (itemId) {
-                return (this.$scope.openItemId == itemId) || (this.$scope.selectedItemId == itemId);
-            };
-            NavController.prototype.getL3NavForL2 = function (returnIndex, rowIndex, l2Id) {
-                var _this = this;
-                this.dataService.getL3NavItems(l2Id)
-                    .then(function (data) {
-                    for (var i = 0; i < data.length; i++) {
-                        _this.$scope.l2NavItems[rowIndex][returnIndex].L3Items.push(data[i]);
-                    }
-                });
+                return (this.$scope.selectedItemIds.indexOf(itemId) > -1);
             };
             NavController.prototype.initiateClock = function () {
                 var _this = this;

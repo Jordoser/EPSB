@@ -1,11 +1,12 @@
 div(ng-controller='navController' Id="navDiv")
-  .left-nav
+  .left-nav.top.l1-nav
     a.popover-dismiss(tabindex="0" style="display: block;" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?")
       .user-pane
-        img.user-icon(src="images/usericon.png")
-        .user-dropdown
-          span.muted-text Test User
-          i(class="fa fa-sort-desc fa-1")
+        .user-wrapper
+          img.user-icon(src="images/usericon.png")
+          .user-dropdown
+            span.muted-text Test User
+            i(class="fa fa-sort-desc fa-1")
     .nav-items
       ul.main-nav
         li(ng-click="ctrl.openL2NavForItem(item)" ng-repeat="item in navItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}")
@@ -19,6 +20,21 @@ div(ng-controller='navController' Id="navDiv")
           div Careers
         li
           div Emergency
+  .left-nav.l2-nav(style='z-index: 900')
+    .nav-items        
+      ul.hidden-nav.main-nav
+        li(ng-repeat="item in l2NavItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}" ng-click="ctrl.openL3NavForItem(item)")
+          div {{item.Name}}
+  .left-nav.l3-nav(style='z-index: 800')
+    .nav-items        
+      ul.hidden-nav.main-nav
+        li(ng-repeat="item in l3NavItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}" ng-click="ctrl.openL4NavForItem(item)")
+          div {{item.Name}}
+  .left-nav.l4-nav(style='z-index: 700')
+    .nav-items        
+      ul.hidden-nav.main-nav
+        li(ng-repeat="item in l4NavItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}" ng-click="ctlr.openL4NavForItem(item)")
+          div {{item.Name}}
   .top-nav
     .top-wrapper
       .top-row
@@ -30,16 +46,10 @@ div(ng-controller='navController' Id="navDiv")
           span.period
           br
           span.date
-      .app-row
-          span.app-row-text No apps available 
       .search-bar.col-md-12.no-padding
         label(for="searchText" id="searchLabel")
           i.fa.fa-search.fa-3
           input.search-input(type="text" id="searchText")
-        .search-filter.pull-right
-          select.search-select(ng-model="searchArea")
-            option(value="" selected) Search Entire Site
-            option(ng-repeat="item in navItems" value="{{item.Id}}") {{item.Name}}
       .bread-crumb.col-sm-12
         span.bread-crumb-l2(ng-show="selectedL2Item != null" ng-click="ctrl.redirectToL2Nav(selectedL2Item,true)" ng-class="{'navigateable' : navLevel != '2'}") {{selectedL2Item}}
         span.bread-crumb-l3(ng-show="selectedL3Item != null" ng-click="ctrl.redirectToL3Nav(selectedL3Item,selectedL2Item,true)")  >

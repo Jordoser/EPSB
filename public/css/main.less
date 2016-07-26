@@ -52,6 +52,21 @@
 // @import "../libraries/_bootstrap-3.3.6/less/carousel.less";
 
 
+@topNavBarHeight: 100px;
+@NavItemHeight: 60px;
+@l2NavColor: #0E0081;
+@l3NavColor: #341989;
+@l4NavColor: #4A457A;
+
+.l2-nav{
+  background-color: @l2NavColor !important;
+}
+.l3-nav{
+  background-color: @l3NavColor !important;
+}
+.l4-nav{
+  background-color: @l4NavColor !important;
+}
 .content-flex-wrapper{
   display: flex;
 }
@@ -343,7 +358,7 @@ padding-left: 225px;
 
 .secondary-nav-header-wrapper{
   width: 100%;
-  height: 60px;
+  height: @NavItemHeight;
     background-color: @gray;
     text-align: center;
     padding-left: 15px;
@@ -360,7 +375,7 @@ padding-left: 225px;
     text-align: center;
     width: 100%;
     font-weight: bold;
-    height: 60px;
+      height: @NavItemHeight;
     display: table-cell;
     vertical-align:middle;
     color: white;
@@ -371,7 +386,7 @@ padding-left: 225px;
     padding-left: 0;
     li.secondary-item{
       list-style-type: none;
-      min-height: 60px;
+      min-height: @NavItemHeight;
       cursor: pointer;
       border-left: 1px solid @gray;
       border-right: 1px solid @gray;
@@ -381,7 +396,7 @@ padding-left: 225px;
 
       .l3-heading{
         padding-left: 15px;
-        height: 60px;
+        height: @NavItemHeight;
           width: 150px;
         display:table-cell;
         vertical-align : middle;
@@ -391,7 +406,7 @@ padding-left: 225px;
       }
       i{
           vertical-align: middle;
-          line-height: 60px;
+          line-height: @NavItemHeight;
           display: table-cell;
           width: 50px;
           color: @gray;
@@ -529,10 +544,10 @@ justify-content: flex-start;
 .top-wrapper{
   position: fixed;
   padding-left: 225px;
-  height: 170px;
+  height: 200px;
   width: 100%;
   .top-row{
-    height: 100px;
+    height: @topNavBarHeight;
     width: 100%;
     background-color: white;
   }
@@ -540,13 +555,14 @@ justify-content: flex-start;
   .search-bar{
      display: table;
     width: 100%;
-    height: 70px;
+    height: @NavItemHeight;
     background-color:  @gray;
     position: relative;
+
   }
 
 .search-input{
-    height: 70px;
+    height: @NavItemHeight;
     border: 1px solid @gray;
     background-color: @gray-dark;
     overflow: auto;
@@ -560,14 +576,14 @@ justify-content: flex-start;
 }
 
 #searchLabel{
-      top: -29px;
+
   position: relative;
   width: 100%;
 display: table-cell;
 }
 
 #searchLabel .fa{
-  top: 49px;
+  top: 18px;
   left: 10px;
   position: absolute;
   color: white;
@@ -578,7 +594,6 @@ display: table-cell;
 .bread-crumb{
   line-height: 30px;
   position: relative;
-  top: -30px;
   height: 30px;
   background-color: white;
   border-bottom: 1px solid @gray-light;
@@ -642,7 +657,9 @@ position: absolute;
   margin-left: 30px;
 
 }
-
+.top{
+  z-index: 9999 !important;
+}
 .left-nav{
   width: 225px;
   height: 100%;
@@ -650,25 +667,32 @@ position: absolute;
   border-right: 1px solid @gray-light;
   position: fixed;
 z-index: 110;
+transition: all 0.5s;
   .user-pane{
     cursor:pointer;
     width: 100%;
-    height: 199px;
+    height: @topNavBarHeight;
+    display: table;
     background-color: @gray-lighter;
     text-align: center;
     border-right: none;
 
+    .user-wrapper{
+      display: table-cell;
+      vertical-align: middle;
+    }
     .user-icon{
-      width: 80px;
-      height: 80px;
-      margin-top: 40px;
+      width: 40px;
+      height: 40px;
+
       margin-left:auto;
       margin-right:auto;
       position: relative;
     }
 
   .user-dropdown{
-
+    margin-left: 15px;
+      display: inline-block;
     margin-top: 15px;
       color:@gray;
 
@@ -681,6 +705,12 @@ z-index: 110;
         vertical-align: middle;
       }
   }
+}
+
+.hidden-nav{
+  height: 100%;
+  width: 100%;
+  color: white;
 }
 
 
@@ -701,7 +731,7 @@ z-index: 110;
     li{
 
       list-style-type: none;
-      height: 60px;
+      height: @NavItemHeight;
       border-bottom: 1px solid @gray-light;
       background: linear-gradient(to left, white 50%, @gray 50%);
        background-size: 200% 100%;
@@ -712,7 +742,7 @@ z-index: 110;
       cursor: pointer;
       div{
         padding-left: 25px;
-        height: 60px;
+        height: @NavItemHeight;
         display:table-cell;
         vertical-align : middle;
 
