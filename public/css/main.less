@@ -60,6 +60,9 @@
 @l3NavColor: #341989;
 @l4NavColor: #4A457A;
 
+.l1-nav{
+  margin-top: 0 !important;
+}
 .l2-nav{
   background-color: @l2NavColor !important;
 }
@@ -635,13 +638,29 @@ display: table-cell;
 }
 
 .bread-crumb{
-  line-height: 30px;
+  line-height: 45px;
   position: relative;
-  height: 30px;
+  height: 45px;
   background-color: white;
-  border-bottom: 1px solid @gray-light;
-  border-left: 1px solid @gray-light;
-  border-right: 1px solid @gray-light;
+
+
+}
+
+.bread-crumb-l2{
+  color:blue;
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.bread-crumb-separator{
+  color: black;
+  display: inline-block;
+  cursor: default;
+  &:hover{
+    text-decoration: none !important;
+  }
 }
 .filters-box{
   position: fixed;
@@ -705,6 +724,7 @@ position: absolute;
 }
 .left-nav{
   width: @NavWidth;
+  margin-top: @topNavBarHeight;
   height: 100%;
   background-color: white;
   border-right: 1px solid @gray-light;

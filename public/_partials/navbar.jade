@@ -60,8 +60,8 @@ div(ng-controller='navController' Id="navDiv")
           i.fa.fa-search.fa-3
           input.search-input(type="text" id="searchText")
       .bread-crumb.col-sm-12
-        span.bread-crumb-l2(ng-click="ctrl.redirectFromBreadCrumb($index, navItem)" ng-repeat="navItem in navigatedItems") {{navItem.Name}}&nbsp;
-          span(ng-if="$index != navigatedItems.length -1") >&nbsp;
+        span.bread-crumb-l2(ng-click="ctrl.redirectFromBreadCrumb($index, navItem)" ng-repeat="navItem in navigatedItems") {{navItem.Name}}
+          span.bread-crumb-separator(ng-if="$index != navigatedItems.length -1") &nbsp>&nbsp;
       != partial('megamenu')
   script(src='js/app/nav/dataService.js')
   script(src='js/app/nav/controller.js')
