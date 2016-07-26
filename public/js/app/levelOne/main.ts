@@ -7,5 +7,6 @@ module App.levelOne{
 
   export interface ILevelOneScope extends IBaseScope{
     currentItem: any;
+    sectionItems: Array<any>;
   }
 }

@@ -37,37 +37,51 @@ var App;
                 "l2NavItem1": {
                     "Id": "Budget & Finance",
                     "Name": "Budget & Finance",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     "l1NavId": "School Administration"
                 },
                 "l2NavItem2": {
                     "Id": "Enrollment",
                     "Name": "Enrollment",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     "l1NavId": "School Administration"
                 },
                 "l2NavItem3": {
                     "Id": "Facilities & Equipment",
                     "Name": "Facilities & Equipment",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     "l1NavId": "School Administration",
                     "ContentId": "Facilities & Equipment"
                 },
                 "l2NavItem4": {
                     "Id": "FOIP",
                     "Name": "FOIP",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     "l1NavId": "School Administration"
                 },
                 "l2NavItem5": {
                     "Id": "Students",
                     "Name": "Students",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     "l1NavId": "School Administration"
                 },
                 "l2NavItem16": {
                     "Id": "Transportation",
                     "Name": "Transportation",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     "l1NavId": "School Administration"
                 },
                 "l2NavItem7": {
                     "Id": "Volunteers",
                     "Name": "Volunteers",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     "l1NavId": "School Administration"
                 }
             };

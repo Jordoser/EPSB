@@ -1,8 +1,20 @@
 div(Id="levelOneDiv" ng-controller='levelOneController')
         
   .content-area
-    h2 {{currentItem.Id}}
-    p {{currentItem.Description}}
+    h2 {{currentItem.Id}} Overview
+    .info-wrapper
+      .primary-info
+        .descripton-wrapper
+          div.primary-image
+          p {{currentItem.Description}}
+        .section-nav
+          h3 In this section
+          .section-flex-container
+            .section-flex-item(ng-repeat="item in sectionItems")
+              .section-item-header(ng-click="ctrl.redirectToL2Nav(item)") {{item.Name}}
+              .section-item-description {{item.Description}}
+      .secondary-info
+        p.text-muted test
         
 script(src='js/app/levelOne/dataService.js')
 script(src='js/app/levelOne/controller.js')

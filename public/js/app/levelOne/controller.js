@@ -15,15 +15,29 @@ var App;
                 this.$scope = $scope;
                 this.$timeout = $timeout;
                 this.dataService = dataService;
-                this.currentItemIdNav = JSON.parse(sessionStorage.getItem("NavArray"))[0];
+                this.$scope.sectionItems = [];
+                this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
+                this.currentItemIdNav = this.navArray[0];
                 this.loadl1Item(this.currentItemIdNav.ContentId);
             }
             LevelOneController.prototype.loadl1Item = function (Id) {
                 var _this = this;
-                this.dataService.loadItemById(Id)
+                this.dataService.getItemById(Id)
                     .then(function (data) {
                     _this.$scope.currentItem = data[0];
+                    _this.loadSectionItems(Id);
                 });
+            };
+            LevelOneController.prototype.loadSectionItems = function (Id) {
+                var _this = this;
+                this.dataService.getSectionItemsById(Id)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.sectionItems, data);
+                });
+            };
+            LevelOneController.prototype.redirectToL2Nav = function (item) {
+                this.navArray[1] = item;
+                App.Common.navigateL2(this.navArray);
             };
             LevelOneController.$inject = ['$scope', '$timeout', 'dataService'];
             return LevelOneController;

@@ -324,6 +324,39 @@ padding-bottom: 30px;
     margin-right: auto;
   }
 }
+
+.section-nav{
+  margin-top: 25px;
+}
+
+.section-flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  .section-flex-item{
+    min-width: 150px;
+    flex-grow: 2;
+      max-width: 225px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+  }
+  .section-item-header{
+    font-size: 1em;
+    color: blue;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .section-item-description{
+    padding-top: 5px;
+    font-weight: normal;
+    font-size: 0.9em;
+    color: @gray-dark;
+  }
+}
 .primary-image{
   float: left;
   margin-right: 25px;

@@ -10,8 +10,12 @@ module App.levelOne{
       super($http, $q);
     }
 
-    public loadItemById(Id: string): ng.IPromise<any>{
+    public getItemById(Id: string): ng.IPromise<any>{
       return this.getItemByKeyValue("LevelOneContent","Id",Id)
+    }
+
+    public getSectionItemsById(Id: string): ng.IPromise<Array<any>>{
+      return this.getItemByKeyValue("LevelTwoNavItems", "l1NavId", Id)
     }
   }
 }
