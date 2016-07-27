@@ -14,8 +14,20 @@ var App;
                 this.$http = $http;
                 this.$q = $q;
             }
-            LevelOneDataService.prototype.loadItemById = function (Id) {
+            LevelOneDataService.prototype.getItemById = function (Id) {
                 return this.getItemByKeyValue("LevelOneContent", "Id", Id);
+            };
+            LevelOneDataService.prototype.getSectionItemsById = function (Id) {
+                return this.getItemByKeyValue("LevelTwoNavItems", "l1NavId", Id);
+            };
+            LevelOneDataService.prototype.getRelatedNews = function (Tags) {
+                return this.getItemsByTag(Tags, "NewsItems");
+            };
+            LevelOneDataService.prototype.getRelatedApps = function (Tags) {
+                return this.getItemsByTag(Tags, "Applications");
+            };
+            LevelOneDataService.prototype.getMetadata = function (item) {
+                return this.expandPropery([item.MetadataId], "Metadata", "Id");
             };
             return LevelOneDataService;
         }(App.BaseJsonDataService));

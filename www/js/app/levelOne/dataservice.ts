@@ -10,8 +10,24 @@ module App.levelOne{
       super($http, $q);
     }
 
-    public loadItemById(Id: string): ng.IPromise<any>{
+    public getItemById(Id: string): ng.IPromise<any>{
       return this.getItemByKeyValue("LevelOneContent","Id",Id)
+    }
+
+    public getSectionItemsById(Id: string): ng.IPromise<Array<any>>{
+      return this.getItemByKeyValue("LevelTwoNavItems", "l1NavId", Id)
+    }
+
+    public getRelatedNews(Tags: Array<string>) : ng.IPromise<Array<any>>{
+      return this.getItemsByTag(Tags,"NewsItems")
+    }
+
+    public getRelatedApps(Tags: Array<string>) : ng.IPromise<Array<any>>{
+      return this.getItemsByTag(Tags,"Applications")
+    }
+
+    public getMetadata(item: any){
+      return this.expandPropery([item.MetadataId], "Metadata", "Id")
     }
   }
 }
