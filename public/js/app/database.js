@@ -229,6 +229,7 @@ var App;
            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     "RelatedTopics": "",
                     "PageAuditId": "School Administration",
+                    "Tags": ["School Administration"]
                 }
             };
             this.LevelTwoContent = {
@@ -369,9 +370,10 @@ var App;
             this.NewsItems = {
                 "NewsItem1": {
                     "Id": "News1",
-                    "Name": "This is the news 1 Title",
+                    "Name": "This is the news 1 Title the news here should be read",
                     "Description": "This is a breif description of the news item and what its all about",
-                    "Tags": ["Appliances", "Rental Services"]
+                    "Tags": ["Appliances", "Rental Services", "School Administration"],
+                    "MetadataId": "NewsItem1"
                 },
                 "NewsItem2": {
                     "Id": "News2",
@@ -541,6 +543,23 @@ var App;
                     "Tags": ["4-6", "Science", "Mathematics", "Research & Support"]
                 }
             };
+            this.Applications = {
+                "Application1": {
+                    "Id": "PowerTeacher",
+                    "Name": "PowerTeacher",
+                    "Tags": ["School Administration"]
+                },
+                "Application2": {
+                    "Id": "Pinpoint Student",
+                    "Name": "Pinpoint Student",
+                    "Tags": ["School Administration"]
+                },
+                "Application3": {
+                    "Id": "SchoolZone",
+                    "Name": "SchoolZone",
+                    "Tags": ["School Administration"]
+                }
+            };
             this.Metadata = {
                 "Metadata1": {
                     "Id": "Math 30 Assessment Metadata",
@@ -571,6 +590,11 @@ var App;
                     "Id": "4th Grade Math and Science Research & Support Metadata",
                     "CreatedBy": "Jordan Service",
                     "CreatedOn": "July 4th, 2016 "
+                },
+                "Metadata7": {
+                    "Id": "NewsItem1",
+                    "CreatedBy": "Mitchell Szpytma",
+                    "CreatedOn": "April 8th, 2013 "
                 }
             };
         }

@@ -10,6 +10,8 @@ export class LevelOneController extends BaseController{
       super($scope,$timeout,$timeout);
 
         this.$scope.sectionItems = []
+        this.$scope.relatedNews = [];
+        this.$scope.relatedApps = [];
         this.navArray = JSON.parse(sessionStorage.getItem("NavArray"))
         this.currentItemIdNav = this.navArray[0];
         this.loadl1Item(this.currentItemIdNav.ContentId);
@@ -20,6 +22,8 @@ export class LevelOneController extends BaseController{
       .then(data => {
         this.$scope.currentItem = data[0]
         this.loadSectionItems(Id);
+        this.loadRelatedNews(data[0].Tags);
+        this.loadRelatedApps(data[0].Tags)
       });
     }
 
@@ -33,6 +37,33 @@ export class LevelOneController extends BaseController{
     public redirectToL2Nav(item){
       this.navArray[1] = item;
       App.Common.navigateL2(this.navArray)
+    }
+
+    public loadRelatedNews(Tags: Array<string>){
+        this.dataService.getRelatedNews(Tags)
+        .then(data =>{
+          App.Common.replaceArrayContents(this.$scope.relatedNews, data)
+          for(var i = 0; i < this.$scope.relatedNews.length; i++){
+            this.loadMetadata(this.$scope.relatedNews[i], i, this.$scope.relatedNews);
+          }
+        })
+    }
+
+    public loadRelatedApps(Tags: Array<string>){
+      this.dataService.getRelatedApps(Tags)
+      .then(data =>{
+        App.Common.replaceArrayContents(this.$scope.relatedApps, data)
+        for(var i = 0; i < this.$scope.relatedApps.length; i++){
+          this.loadMetadata(this.$scope.relatedApps[i], i, this.$scope.relatedApps);
+        }
+      })
+    }
+
+    public loadMetadata(resource, index, returnArray){
+      this.dataService.getMetadata(resource)
+      .then(data =>{
+        returnArray[index].Metadata = data[0]
+      });
     }
   }
 }

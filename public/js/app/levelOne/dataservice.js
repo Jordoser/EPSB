@@ -20,6 +20,15 @@ var App;
             LevelOneDataService.prototype.getSectionItemsById = function (Id) {
                 return this.getItemByKeyValue("LevelTwoNavItems", "l1NavId", Id);
             };
+            LevelOneDataService.prototype.getRelatedNews = function (Tags) {
+                return this.getItemsByTag(Tags, "NewsItems");
+            };
+            LevelOneDataService.prototype.getRelatedApps = function (Tags) {
+                return this.getItemsByTag(Tags, "Applications");
+            };
+            LevelOneDataService.prototype.getMetadata = function (item) {
+                return this.expandPropery([item.MetadataId], "Metadata", "Id");
+            };
             return LevelOneDataService;
         }(App.BaseJsonDataService));
         levelOne.LevelOneDataService = LevelOneDataService;

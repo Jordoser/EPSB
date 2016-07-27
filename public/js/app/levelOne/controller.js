@@ -16,6 +16,8 @@ var App;
                 this.$timeout = $timeout;
                 this.dataService = dataService;
                 this.$scope.sectionItems = [];
+                this.$scope.relatedNews = [];
+                this.$scope.relatedApps = [];
                 this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
                 this.currentItemIdNav = this.navArray[0];
                 this.loadl1Item(this.currentItemIdNav.ContentId);
@@ -26,6 +28,8 @@ var App;
                     .then(function (data) {
                     _this.$scope.currentItem = data[0];
                     _this.loadSectionItems(Id);
+                    _this.loadRelatedNews(data[0].Tags);
+                    _this.loadRelatedApps(data[0].Tags);
                 });
             };
             LevelOneController.prototype.loadSectionItems = function (Id) {
@@ -38,6 +42,32 @@ var App;
             LevelOneController.prototype.redirectToL2Nav = function (item) {
                 this.navArray[1] = item;
                 App.Common.navigateL2(this.navArray);
+            };
+            LevelOneController.prototype.loadRelatedNews = function (Tags) {
+                var _this = this;
+                this.dataService.getRelatedNews(Tags)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.relatedNews, data);
+                    for (var i = 0; i < _this.$scope.relatedNews.length; i++) {
+                        _this.loadMetadata(_this.$scope.relatedNews[i], i, _this.$scope.relatedNews);
+                    }
+                });
+            };
+            LevelOneController.prototype.loadRelatedApps = function (Tags) {
+                var _this = this;
+                this.dataService.getRelatedApps(Tags)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.relatedApps, data);
+                    for (var i = 0; i < _this.$scope.relatedApps.length; i++) {
+                        _this.loadMetadata(_this.$scope.relatedApps[i], i, _this.$scope.relatedApps);
+                    }
+                });
+            };
+            LevelOneController.prototype.loadMetadata = function (resource, index, returnArray) {
+                this.dataService.getMetadata(resource)
+                    .then(function (data) {
+                    returnArray[index].Metadata = data[0];
+                });
             };
             LevelOneController.$inject = ['$scope', '$timeout', 'dataService'];
             return LevelOneController;
