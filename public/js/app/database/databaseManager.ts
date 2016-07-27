@@ -27,6 +27,8 @@ module App {
     public ResourceTypeFilters;
     public DocumentTypeFilters
 
+    public Documents;
+
     constructor(){
       var navItems = new NavItemsDatabase();
       this.LevelOneNavItems = navItems.LevelOneNavItems;
@@ -74,6 +76,9 @@ module App {
 
       var metadata = new MetadataDatabase();
       this.Metadata = metadata.Metadata;
+
+      var doucments = new DocumentsDatabase();
+      this.Documents = doucments.Documents;
 
     }
   }

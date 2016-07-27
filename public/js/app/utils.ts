@@ -166,6 +166,10 @@ module App {
           return this.getItems("DocumentTypeFilters");
         }
 
+        public getTaggedDocuments(TagArray: Array<any>): ng.IPromise<Array<any>>{
+          return this.getItemsByTag(TagArray, "Documents");
+        }
+
 
     }
 

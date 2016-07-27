@@ -21,7 +21,6 @@ var App;
                 this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
                 this.currentItemIdNav = this.navArray[1];
                 this.loadl2Item(this.currentItemIdNav.ContentId);
-                this.loadDocumentFilters();
             }
             LevelTwoController.prototype.loadl2Item = function (Id) {
                 var _this = this;
@@ -29,6 +28,7 @@ var App;
                     .then(function (data) {
                     _this.$scope.currentItem = data[0];
                     _this.loadSectionItems(_this.$scope.currentItem.Id);
+                    _this.loadDocumentFilters();
                 });
             };
             LevelTwoController.prototype.loadSectionItems = function (Id) {
@@ -47,6 +47,16 @@ var App;
                 this.dataService.getDocumentTypeFilters()
                     .then(function (data) {
                     App.Common.replaceArrayContents(_this.$scope.documentTypes, data);
+                    for (var i = 0; i < _this.$scope.documentTypes.length; i++) {
+                        _this.$scope.documentTypes[i].Documents = [];
+                        _this.loadDocumentForTag([_this.$scope.currentItem.Id, data[i].Tag], _this.$scope.documentTypes[i].Documents);
+                    }
+                });
+            };
+            LevelTwoController.prototype.loadDocumentForTag = function (Tags, refrenceArray) {
+                this.dataService.getTaggedDocuments(Tags)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(refrenceArray, data);
                 });
             };
             LevelTwoController.$inject = ['$scope', '$timeout', 'dataService'];

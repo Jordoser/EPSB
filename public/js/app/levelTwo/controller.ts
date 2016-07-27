@@ -14,7 +14,7 @@ export class LevelTwoController extends BaseController{
         this.navArray = JSON.parse(sessionStorage.getItem("NavArray"))
         this.currentItemIdNav = this.navArray[1];
         this.loadl2Item(this.currentItemIdNav.ContentId);
-        this.loadDocumentFilters();
+
     }
 
     public loadl2Item(Id: string){
@@ -22,6 +22,7 @@ export class LevelTwoController extends BaseController{
       .then(data => {
         this.$scope.currentItem = data[0]
         this.loadSectionItems(this.$scope.currentItem.Id)
+        this.loadDocumentFilters();
       });
     }
 
@@ -41,6 +42,17 @@ export class LevelTwoController extends BaseController{
       this.dataService.getDocumentTypeFilters()
       .then(data => {
         App.Common.replaceArrayContents(this.$scope.documentTypes, data)
+        for(var i = 0; i < this.$scope.documentTypes.length; i++){
+          this.$scope.documentTypes[i].Documents = []
+          this.loadDocumentForTag([this.$scope.currentItem.Id, data[i].Tag],  this.$scope.documentTypes[i].Documents)
+        }
+      })
+    }
+
+    public loadDocumentForTag(Tags: Array<any>, refrenceArray: Array<any>){
+      this.dataService.getTaggedDocuments(Tags)
+      .then(data => {
+        App.Common.replaceArrayContents(refrenceArray, data)
       })
     }
   }

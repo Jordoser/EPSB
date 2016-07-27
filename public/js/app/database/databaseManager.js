@@ -32,6 +32,8 @@ var App;
             this.Applications = applications.Applications;
             var metadata = new App.MetadataDatabase();
             this.Metadata = metadata.Metadata;
+            var doucments = new App.DocumentsDatabase();
+            this.Documents = doucments.Documents;
         }
         return JSONDatabase;
     }());

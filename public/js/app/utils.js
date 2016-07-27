@@ -124,6 +124,9 @@ var App;
         BaseJsonDataService.prototype.getDocumentTypeFilters = function () {
             return this.getItems("DocumentTypeFilters");
         };
+        BaseJsonDataService.prototype.getTaggedDocuments = function (TagArray) {
+            return this.getItemsByTag(TagArray, "Documents");
+        };
         BaseJsonDataService.$inject = [
             '$http',
             '$q'

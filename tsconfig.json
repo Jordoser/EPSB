@@ -31,6 +31,7 @@
           "./public/js/typings/q/Q.d.ts",
           "./public/js/app/database/applications.ts",
           "./public/js/app/database/databaseManager.ts",
+          "./public/js/app/database/documents.ts",
           "./public/js/app/database/levelFourContent.ts",
           "./public/js/app/database/levelOneContent.ts",
           "./public/js/app/database/levelThreeContent.ts",

@@ -8,10 +8,11 @@ export class LevelThreeController extends BaseController{
     private navArray;
     constructor(public $scope: ILevelThreeScope,  public $timeout: ng.ITimeoutService, public dataService: LevelThreeDataService){
       super($scope,$timeout,$timeout);
+        $('.collapse').collapse()
       this.$scope.sectionItems = [];
       this.$scope.documentTypes =  [];
       this.navArray = JSON.parse(sessionStorage.getItem("NavArray"))
-      this.loadDocumentFilters();
+
       this.currentItemIdNav = this.navArray[2];
         this.loadl3Item(this.currentItemIdNav.ContentId);
     }
@@ -21,6 +22,7 @@ export class LevelThreeController extends BaseController{
       .then(data => {
         this.$scope.currentItem = data[0]
         this.loadSectionItems(this.$scope.currentItem.Id)
+        this.loadDocumentFilters();
       });
     }
 
@@ -40,6 +42,17 @@ export class LevelThreeController extends BaseController{
       this.dataService.getDocumentTypeFilters()
       .then(data => {
         App.Common.replaceArrayContents(this.$scope.documentTypes, data)
+        for(var i = 0; i < this.$scope.documentTypes.length; i++){
+          this.$scope.documentTypes[i].Documents = []
+          this.loadDocumentForTag([this.$scope.currentItem.Id, data[i].Tag],  this.$scope.documentTypes[i].Documents)
+        }
+      })
+    }
+
+    public loadDocumentForTag(Tags: Array<any>, refrenceArray: Array<any>){
+      this.dataService.getTaggedDocuments(Tags)
+      .then(data => {
+        App.Common.replaceArrayContents(refrenceArray, data)
       })
     }
   }
