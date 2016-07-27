@@ -12,7 +12,7 @@ module App {
         },
         "NavItem2" : {
             "Id": "News & Events",
-            "Name" : "News & Events"
+            "Name" : "News"
         },
         "NavItem3" : {
             "Id": "Learning Initiatives",
