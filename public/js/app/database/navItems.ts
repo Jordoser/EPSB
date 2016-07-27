@@ -158,37 +158,51 @@ module App {
         "l3NavItem13" :{
           "Id" : "Buildings & Grounds",
           "Name"  : "Buildings & Grounds",
+          "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "l2NavId": "Facilities & Equipment"
         },
         "l3NavItem14" :{
             "Id" : "Custodial",
             "Name"  : "Custodial",
+            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "l2NavId": "Facilities & Equipment"
           },
           "l3NavItem15" :{
             "Id" : "Facility Use",
             "Name"  : "Facility Use",
+            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "l2NavId": "Facilities & Equipment"
           },
           "l3NavItem16" :{
             "Id" : "Hazardous Material",
             "Name"  : "Hazardous Material",
+            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "l2NavId": "Facilities & Equipment"
           },
           "l3NavItem17" :{
             "Id" : "Parking",
             "Name"  : "Parking",
+            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "l2NavId": "Facilities & Equipment"
           },
           "l3NavItem18" :{
             "Id" : "Equipment",
             "Name"  : "Equipment",
+            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "l2NavId": "Facilities & Equipment",
             "ContentId" : "Equipment"
           },
           "l3NavItem19" :{
             "Id" : "Utilities",
             "Name"  : "Utilities",
+            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "l2NavId": "Facilities & Equipment"
           }
       }

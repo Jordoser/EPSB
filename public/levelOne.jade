@@ -7,12 +7,7 @@ div(Id="levelOneDiv" ng-controller='levelOneController')
         .descripton-wrapper
           div.primary-image
           p {{currentItem.Description}}
-        .section-nav
-          h3 In this section
-          .section-flex-container
-            .section-flex-item(ng-repeat="item in sectionItems")
-              .section-item-header(ng-click="ctrl.redirectToL2Nav(item)") {{item.Name}}
-              .section-item-description {{item.Description}}
+        != partial("_partials/sectionItems")
       .secondary-info
         div.news-item-wrapper
           span.sub-heading NEWS

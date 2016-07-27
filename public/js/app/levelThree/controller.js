@@ -15,7 +15,9 @@ var App;
                 this.$scope = $scope;
                 this.$timeout = $timeout;
                 this.dataService = dataService;
-                this.currentItemIdNav = JSON.parse(sessionStorage.getItem("NavArray"))[2];
+                this.$scope.sectionItems = [];
+                this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
+                this.currentItemIdNav = this.navArray[2];
                 this.loadl3Item(this.currentItemIdNav.ContentId);
             }
             LevelThreeController.prototype.loadl3Item = function (Id) {
@@ -23,6 +25,14 @@ var App;
                 this.dataService.loadItemById(Id)
                     .then(function (data) {
                     _this.$scope.currentItem = data[0];
+                    _this.loadSectionItems(_this.$scope.currentItem.Id);
+                });
+            };
+            LevelThreeController.prototype.loadSectionItems = function (Id) {
+                var _this = this;
+                this.dataService.getSectionItemsById(Id)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.sectionItems, data);
                 });
             };
             LevelThreeController.$inject = ['$scope', '$timeout', 'dataService'];

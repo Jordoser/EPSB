@@ -34,7 +34,7 @@ export class LevelOneController extends BaseController{
       })
     }
 
-    public redirectToL2Nav(item){
+    public redirectToSectionItem(item){
       this.navArray[1] = item;
       App.Common.navigateL2(this.navArray)
     }

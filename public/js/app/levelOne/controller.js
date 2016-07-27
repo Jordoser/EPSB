@@ -39,7 +39,7 @@ var App;
                     App.Common.replaceArrayContents(_this.$scope.sectionItems, data);
                 });
             };
-            LevelOneController.prototype.redirectToL2Nav = function (item) {
+            LevelOneController.prototype.redirectToSectionItem = function (item) {
                 this.navArray[1] = item;
                 App.Common.navigateL2(this.navArray);
             };

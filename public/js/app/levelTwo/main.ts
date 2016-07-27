@@ -7,5 +7,6 @@ module App.levelTwo{
 
   export interface ILevelTwoScope extends IBaseScope{
     currentItem: any;
+    sectionItems: Array<any>;
   }
 }

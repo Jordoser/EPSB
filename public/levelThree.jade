@@ -1,8 +1,14 @@
 div(Id="levelThreeDiv" ng-controller='levelThreeController')
         
   .content-area
-    h2 {{currentItem.Id}}
-    p {{currentItem.Description}}
+    .info-wrapper
+      .primary-info
+        h2 {{currentItem.Id}} Overview
+        .descripton-wrapper
+          p {{currentItem.Description}}
+        .section-items-mini
+          != partial("_partials/sectionItems")
+      .secondary-info
         
 script(src='js/app/levelThree/dataService.js')
 script(src='js/app/levelThree/controller.js')

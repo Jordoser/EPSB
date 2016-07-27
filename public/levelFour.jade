@@ -1,8 +1,12 @@
 div(Id="levelFourDiv" ng-controller='levelFourController')
         
   .content-area
-    h2 {{currentItem.Id}}
-    p {{currentItem.Description}}
+    .info-wrapper
+      .primary-info
+        h2 {{currentItem.Id}} Overview
+        .descripton-wrapper
+          p {{currentItem.Description}}
+      .secondary-info
         
 script(src='js/app/levelFour/dataService.js')
 script(src='js/app/levelFour/controller.js')

@@ -1,8 +1,14 @@
 div(Id="levelTwoDiv" ng-controller='levelTwoController')
         
   .content-area
-    h2 {{currentItem.Id}}
-    p {{currentItem.Description}}
+    .info-wrapper
+      .primary-info
+        h2 {{currentItem.Id}} Overview
+        .descripton-wrapper
+          p {{currentItem.Description}}
+        != partial("_partials/sectionItems")
+      .secondary-info
+      
         
 script(src='js/app/levelTwo/dataService.js')
 script(src='js/app/levelTwo/controller.js')

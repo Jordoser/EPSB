@@ -13,5 +13,9 @@ module App.levelTwo{
     public loadItemById(Id: string): ng.IPromise<any>{
       return this.getItemByKeyValue("LevelTwoContent","Id",Id)
     }
+
+    public getSectionItemsById(Id: string): ng.IPromise<Array<any>>{
+      return this.getItemByKeyValue("LevelThreeNavItems", "l2NavId", Id)
+    }
   }
 }
