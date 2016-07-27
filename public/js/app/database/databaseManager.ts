@@ -25,6 +25,7 @@ module App {
     public GradeFilters;
     public SubjectFilters;
     public ResourceTypeFilters;
+    public DocumentTypeFilters
 
     constructor(){
       var navItems = new NavItemsDatabase();
@@ -60,6 +61,7 @@ module App {
       this.ResourceTypeFilters = tagFilters.ResourceTypeFilters;
       this.GradeFilters = tagFilters.GradeFilters;
       this.SubjectFilters = tagFilters.SubjectFilters;
+      this.DocumentTypeFilters = tagFilters.DocumentTypeFilters;
 
 
       var resources = new ResourcesDatabase();

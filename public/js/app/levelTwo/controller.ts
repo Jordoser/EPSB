@@ -8,11 +8,13 @@ export class LevelTwoController extends BaseController{
     private navArray;
     constructor(public $scope: ILevelTwoScope,  public $timeout: ng.ITimeoutService, public dataService: LevelTwoDataService){
       super($scope,$timeout,$timeout);
-
+        $('.collapse').collapse()
         this.$scope.sectionItems =  [];
+        this.$scope.documentTypes =  [];
         this.navArray = JSON.parse(sessionStorage.getItem("NavArray"))
         this.currentItemIdNav = this.navArray[1];
         this.loadl2Item(this.currentItemIdNav.ContentId);
+        this.loadDocumentFilters();
     }
 
     public loadl2Item(Id: string){
@@ -27,6 +29,18 @@ export class LevelTwoController extends BaseController{
       this.dataService.getSectionItemsById(Id)
       .then(data =>{
         App.Common.replaceArrayContents(this.$scope.sectionItems, data)
+      })
+    }
+
+    public redirectToSectionItem(item){
+      this.navArray[2] = item;
+      App.Common.navigateL3(this.navArray)
+    }
+
+    public loadDocumentFilters(){
+      this.dataService.getDocumentTypeFilters()
+      .then(data => {
+        App.Common.replaceArrayContents(this.$scope.documentTypes, data)
       })
     }
   }

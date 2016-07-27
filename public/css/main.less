@@ -60,6 +60,28 @@
 @l3NavColor: #341989;
 @l4NavColor: #4A457A;
 
+
+.panel-group .panel+.panel {
+  margin-top: 0 !important;
+}
+.panel-group .panel {
+  border-radius: 0 !important;
+}
+
+.panel-title{
+  display: table;
+}
+.fa-centering{
+  padding-left: 5px;
+  vertical-align: middle;
+}
+.fa-centering.fa-sort-desc::before {
+    padding-right: 10px;
+  vertical-align: middle !important;
+  display: inline-block  !important;
+  margin-top: -14px;
+}
+
 .l1-nav{
   margin-top: 0 !important;
 }
@@ -360,7 +382,7 @@ padding-bottom: 30px;
 
 .section-items-mini{
   .section-flex-item{
-    
+
     flex-grow: 2;
     width: 33% !important;
     padding-right: 25px;

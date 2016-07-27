@@ -16,13 +16,22 @@ var App;
                 this.$timeout = $timeout;
                 this.dataService = dataService;
                 this.currentItemIdNav = JSON.parse(sessionStorage.getItem("NavArray"))[3];
+                this.$scope.documentTypes = [];
                 this.loadl4Item(this.currentItemIdNav.ContentId);
+                this.loadDocumentFilters();
             }
             LevelFourController.prototype.loadl4Item = function (Id) {
                 var _this = this;
                 this.dataService.loadItemById(Id)
                     .then(function (data) {
                     _this.$scope.currentItem = data[0];
+                });
+            };
+            LevelFourController.prototype.loadDocumentFilters = function () {
+                var _this = this;
+                this.dataService.getDocumentTypeFilters()
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.documentTypes, data);
                 });
             };
             LevelFourController.$inject = ['$scope', '$timeout', 'dataService'];

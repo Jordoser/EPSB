@@ -25,6 +25,7 @@ var App;
             this.ResourceTypeFilters = tagFilters.ResourceTypeFilters;
             this.GradeFilters = tagFilters.GradeFilters;
             this.SubjectFilters = tagFilters.SubjectFilters;
+            this.DocumentTypeFilters = tagFilters.DocumentTypeFilters;
             var resources = new App.ResourcesDatabase();
             this.Resources = resources.Resources;
             var applications = new App.ApplicationsDatabase();

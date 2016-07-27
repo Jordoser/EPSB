@@ -107,6 +107,17 @@ var App;
                     "Tag": "Research & Support",
                 }
             };
+            this.DocumentTypeFilters = {
+                "Filter1": {
+                    "Tag": "Forms",
+                },
+                "Filter2": {
+                    "Tag": "Manuals",
+                },
+                "Filter3": {
+                    "Tag": "Policies",
+                },
+            };
         }
         return TagFilterDatabase;
     }());

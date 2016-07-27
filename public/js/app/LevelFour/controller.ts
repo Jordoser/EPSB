@@ -8,7 +8,9 @@ export class LevelFourController extends BaseController{
     constructor(public $scope: ILevelFourScope,  public $timeout: ng.ITimeoutService, public dataService: LevelFourDataService){
       super($scope,$timeout,$timeout);
         this.currentItemIdNav = JSON.parse(sessionStorage.getItem("NavArray"))[3];
+        this.$scope.documentTypes = [];
         this.loadl4Item(this.currentItemIdNav.ContentId);
+        this.loadDocumentFilters();
     }
 
     public loadl4Item(Id: string){
@@ -16,6 +18,13 @@ export class LevelFourController extends BaseController{
       .then(data => {
         this.$scope.currentItem = data[0]
       });
+    }
+
+    public loadDocumentFilters(){
+      this.dataService.getDocumentTypeFilters()
+      .then(data => {
+        App.Common.replaceArrayContents(this.$scope.documentTypes, data)
+      })
     }
   }
 }

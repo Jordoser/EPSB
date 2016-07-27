@@ -1,0 +1,13 @@
+#accordion.panel-group
+  .panel.panel-default(ng-repeat="type in documentTypes")
+    .panel-heading( data-toggle='collapse', data-parent='#accordion', ng-href='{{"#"+type.Tag}}')
+      h4.panel-title
+        i.fa.fa-sort-desc.fa-centering
+        a {{type.Tag}}
+          
+    .panel-collapse.collapse(id="{{type.Tag}}")
+        .panel-body
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          | minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          | commodo consequat.

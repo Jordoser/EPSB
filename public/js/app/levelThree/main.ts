@@ -8,5 +8,6 @@ module App.levelThree{
   export interface ILevelThreeScope extends IBaseScope{
     currentItem: any;
     sectionItems: Array<any>;
+    documentTypes: Array<any>;
   }
 }

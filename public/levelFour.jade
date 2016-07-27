@@ -6,6 +6,7 @@ div(Id="levelFourDiv" ng-controller='levelFourController')
         h2 {{currentItem.Id}} Overview
         .descripton-wrapper
           p {{currentItem.Description}}
+        != partial("_partials/documentsAccordian")
       .secondary-info
         
 script(src='js/app/levelFour/dataService.js')

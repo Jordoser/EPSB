@@ -16,7 +16,9 @@ var App;
                 this.$timeout = $timeout;
                 this.dataService = dataService;
                 this.$scope.sectionItems = [];
+                this.$scope.documentTypes = [];
                 this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
+                this.loadDocumentFilters();
                 this.currentItemIdNav = this.navArray[2];
                 this.loadl3Item(this.currentItemIdNav.ContentId);
             }
@@ -33,6 +35,17 @@ var App;
                 this.dataService.getSectionItemsById(Id)
                     .then(function (data) {
                     App.Common.replaceArrayContents(_this.$scope.sectionItems, data);
+                });
+            };
+            LevelThreeController.prototype.redirectToSectionItem = function (item) {
+                this.navArray[3] = item;
+                App.Common.navigateL4(this.navArray);
+            };
+            LevelThreeController.prototype.loadDocumentFilters = function () {
+                var _this = this;
+                this.dataService.getDocumentTypeFilters()
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.documentTypes, data);
                 });
             };
             LevelThreeController.$inject = ['$scope', '$timeout', 'dataService'];

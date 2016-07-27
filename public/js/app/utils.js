@@ -121,6 +121,9 @@ var App;
             });
             return deferred.promise;
         };
+        BaseJsonDataService.prototype.getDocumentTypeFilters = function () {
+            return this.getItems("DocumentTypeFilters");
+        };
         BaseJsonDataService.$inject = [
             '$http',
             '$q'

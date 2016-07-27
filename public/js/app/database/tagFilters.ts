@@ -3,6 +3,7 @@ module App {
     public GradeFilters;
     public SubjectFilters;
     public ResourceTypeFilters;
+    public DocumentTypeFilters;
     constructor(){
       this.GradeFilters = {
         "Filter1" :{
@@ -111,6 +112,18 @@ module App {
           "Tag" : "Research & Support",
         }
       }
+
+    this.DocumentTypeFilters ={
+      "Filter1" : {
+        "Tag" : "Forms",
+      },
+      "Filter2" : {
+        "Tag" : "Manuals",
+      },
+      "Filter3" : {
+        "Tag" : "Policies",
+      },
+    }
 
     }
   }

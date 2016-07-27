@@ -15,10 +15,13 @@ var App;
                 this.$scope = $scope;
                 this.$timeout = $timeout;
                 this.dataService = dataService;
+                $('.collapse').collapse();
                 this.$scope.sectionItems = [];
+                this.$scope.documentTypes = [];
                 this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
                 this.currentItemIdNav = this.navArray[1];
                 this.loadl2Item(this.currentItemIdNav.ContentId);
+                this.loadDocumentFilters();
             }
             LevelTwoController.prototype.loadl2Item = function (Id) {
                 var _this = this;
@@ -33,6 +36,17 @@ var App;
                 this.dataService.getSectionItemsById(Id)
                     .then(function (data) {
                     App.Common.replaceArrayContents(_this.$scope.sectionItems, data);
+                });
+            };
+            LevelTwoController.prototype.redirectToSectionItem = function (item) {
+                this.navArray[2] = item;
+                App.Common.navigateL3(this.navArray);
+            };
+            LevelTwoController.prototype.loadDocumentFilters = function () {
+                var _this = this;
+                this.dataService.getDocumentTypeFilters()
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.documentTypes, data);
                 });
             };
             LevelTwoController.$inject = ['$scope', '$timeout', 'dataService'];
