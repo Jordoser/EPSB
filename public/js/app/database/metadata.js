@@ -37,6 +37,31 @@ var App;
                     "Id": "NewsItem1",
                     "CreatedBy": "Mitchell Szpytma",
                     "CreatedOn": "April 8th, 2013 "
+                },
+                "Metadata8": {
+                    "Id": "FacilityForm.pdf Metadata",
+                    "CreatedBy": "Jordan Service",
+                    "CreatedOn": "July 4th, 2016 "
+                },
+                "Metadata9": {
+                    "Id": "FacilityManual.doc Metadata",
+                    "CreatedBy": "Jordan Service",
+                    "CreatedOn": "May 2nd, 2016 "
+                },
+                "Metadata10": {
+                    "Id": "FacilityHazardousForm.pdf Metadata",
+                    "CreatedBy": "Jordan Service",
+                    "CreatedOn": "June 9th, 2016 "
+                },
+                "Metadata11": {
+                    "Id": "EquippmentAndElectronicManual.docx Metadata",
+                    "CreatedBy": "Jordan Service",
+                    "CreatedOn": "Sept 10th, 2016 "
+                },
+                "Metadata12": {
+                    "Id": "FacilityPolicies.doc Metadata",
+                    "CreatedBy": "Mitchell Szpytma",
+                    "CreatedOn": "April 8th, 2013 "
                 }
             };
         }

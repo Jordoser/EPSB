@@ -59,7 +59,77 @@
 @l2NavColor: #0E0081;
 @l3NavColor: #341989;
 @l4NavColor: #4A457A;
+@DefaultPadding : 15px;
+@NeedToKnowHeight: 500px;
 
+.full-width{
+  width: 100%;
+}
+.need-to-know-wrapper{
+  width: 100%;
+  height: @NeedToKnowHeight;
+  background-color: @gray-light;
+  padding: calc(@DefaultPadding * 2);
+}
+.story-info{
+  padding:@DefaultPadding;
+  width: 100%;
+overflow: hidden;
+text-overflow: ellipsis; // This is where the magic happens
+
+}
+
+.featured-story{
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  overflow: hidden;
+
+  border-right: 1px solid @gray-light;
+}
+.story-scroll-wrapper{
+  width: 50%;
+  background-color: white;
+  height: 100%;
+  overflow-y: auto;
+  padding-top: @DefaultPadding;
+  padding-left: @DefaultPadding;
+  padding-right: calc(@DefaultPadding * 4);
+
+}
+.story-img{
+  height: 50%;
+  background-color: blue;
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.secondary-info.extra-wide{
+  width: 300px !important;
+}
+.need-to-know-flex{
+  width: 100%;
+  height: 85%;
+  display: flex;
+}
+
+.small-text{
+  font-size: 0.8em !important;
+}
+
+.doc-info-wrapper{
+  margin-top: -5px;
+}
+
+.panel-body{
+  display: flex;
+}
+.panel-document{
+  padding-right:  calc(@DefaultPadding * 4);
+}
 
 .panel-group .panel+.panel {
   margin-top: 0 !important;
@@ -371,8 +441,11 @@ padding-bottom: 30px;
   flex: 1;
   padding-right: 15px;
   flex-grow: 2;
-  margin-top: 15px;
+
     max-width: 1260px;
+    h2{
+          margin-top:0 !important;
+    }
   .info-top{
     margin-bottom: 30px;
     margin-left: auto;
@@ -682,7 +755,7 @@ justify-content: flex-start;
   position: absolute;
   height: 200px;
   width: 100%;
-  background-color: white;
+
   z-index: 1;
 }
 
@@ -708,14 +781,14 @@ justify-content: flex-start;
 
 .search-input{
     height: @NavItemHeight;
-    border: 1px solid @gray;
-    background-color: @gray-dark;
+    border: none !important;
+    background-color: @gray-lighter;
     overflow: auto;
     font-size: 1.4em;
     display:table-cell;
     width: 100%;
 
-    color: white;
+    color: @gray;
     padding-left: 50px;
 
 }
@@ -724,14 +797,14 @@ justify-content: flex-start;
 
   position: relative;
   width: 100%;
-display: table-cell;
+  display: table-cell;
 }
 
 #searchLabel .fa{
   top: 18px;
   left: 10px;
   position: absolute;
-  color: white;
+  color: @gray;
   font-size: 2em;
 }
 }
@@ -741,14 +814,16 @@ display: table-cell;
   position: relative;
   height: 45px;
   background-color: white;
+  border-bottom: 1px solid @gray-light
 
 
 }
 
 .bread-crumb-l2{
-  color:blue;
+  color:@gray-light;
   cursor: pointer;
   &:hover{
+    color: blue;
     text-decoration: underline;
   }
 }
@@ -998,5 +1073,9 @@ margin-right: auto;
 
 //Helper classes
 .no-padding{
-padding:0 !important;
+  padding:0 !important;
+}
+
+.no-margin{
+  margin:0 !important;
 }

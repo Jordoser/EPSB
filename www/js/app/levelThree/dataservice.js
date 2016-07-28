@@ -17,6 +17,9 @@ var App;
             LevelThreeDataService.prototype.loadItemById = function (Id) {
                 return this.getItemByKeyValue("LevelThreeContent", "Id", Id);
             };
+            LevelThreeDataService.prototype.getSectionItemsById = function (Id) {
+                return this.getItemByKeyValue("LevelFourNavItems", "l3NavId", Id);
+            };
             return LevelThreeDataService;
         }(App.BaseJsonDataService));
         levelThree.LevelThreeDataService = LevelThreeDataService;

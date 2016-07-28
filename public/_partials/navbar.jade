@@ -47,7 +47,7 @@ div(ng-controller='navController' Id="navDiv")
   .top-nav
     .top-wrapper
       .top-row
-        img.logo(src="images/epsblogo.png")
+        img.logo(src="images/epsblogo.png" ng-click="ctrl.redirectHome()")
         .my-apps.pull-right(ng-click="ctrl.displayApps()")
         .my-notifications.pull-right
         .date-time.pull-right
@@ -59,7 +59,7 @@ div(ng-controller='navController' Id="navDiv")
         label(for="searchText" id="searchLabel")
           i.fa.fa-search.fa-3
           input.search-input(type="text" id="searchText")
-      .bread-crumb.col-sm-12
+      .bread-crumb.col-sm-12.small-text(ng-if="navArray.length > 0")
         span.bread-crumb-l2(ng-click="ctrl.redirectFromBreadCrumb($index, navItem)" ng-repeat="navItem in navigatedItems") {{navItem.Name}}
           span.bread-crumb-separator(ng-if="$index != navigatedItems.length -1") &nbsp>&nbsp;
       != partial('megamenu')

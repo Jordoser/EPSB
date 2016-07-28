@@ -15,7 +15,11 @@ var App;
                 this.$scope = $scope;
                 this.$timeout = $timeout;
                 this.dataService = dataService;
-                this.currentItemIdNav = JSON.parse(sessionStorage.getItem("NavArray"))[2];
+                $('.collapse').collapse();
+                this.$scope.sectionItems = [];
+                this.$scope.documentTypes = [];
+                this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
+                this.currentItemIdNav = this.navArray[2];
                 this.loadl3Item(this.currentItemIdNav.ContentId);
             }
             LevelThreeController.prototype.loadl3Item = function (Id) {
@@ -23,6 +27,36 @@ var App;
                 this.dataService.loadItemById(Id)
                     .then(function (data) {
                     _this.$scope.currentItem = data[0];
+                    _this.loadSectionItems(_this.$scope.currentItem.Id);
+                    _this.loadDocumentFilters();
+                });
+            };
+            LevelThreeController.prototype.loadSectionItems = function (Id) {
+                var _this = this;
+                this.dataService.getSectionItemsById(Id)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.sectionItems, data);
+                });
+            };
+            LevelThreeController.prototype.redirectToSectionItem = function (item) {
+                this.navArray[3] = item;
+                App.Common.navigateL4(this.navArray);
+            };
+            LevelThreeController.prototype.loadDocumentFilters = function () {
+                var _this = this;
+                this.dataService.getDocumentTypeFilters()
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.documentTypes, data);
+                    for (var i = 0; i < _this.$scope.documentTypes.length; i++) {
+                        _this.$scope.documentTypes[i].Documents = [];
+                        _this.loadDocumentForTag([_this.$scope.currentItem.Id, data[i].Tag], _this.$scope.documentTypes[i].Documents);
+                    }
+                });
+            };
+            LevelThreeController.prototype.loadDocumentForTag = function (Tags, refrenceArray) {
+                this.dataService.getTaggedDocuments(Tags)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(refrenceArray, data);
                 });
             };
             LevelThreeController.$inject = ['$scope', '$timeout', 'dataService'];

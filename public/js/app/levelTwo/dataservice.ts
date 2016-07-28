@@ -18,5 +18,9 @@ module App.levelTwo{
       return this.getItemByKeyValue("LevelThreeNavItems", "l2NavId", Id)
     }
 
+    public getMetadataById(Id: string): ng.IPromise<Array<any>>{
+      return this.expandPropery([Id], "Metadata", "Id");
+    }
+
   }
 }

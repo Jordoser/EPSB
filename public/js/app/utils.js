@@ -181,6 +181,9 @@ var App;
             }
             return integer;
         };
+        Common.redirectHome = function () {
+            this.navigate("index.html", []);
+        };
         return Common;
     }());
     App.Common = Common;

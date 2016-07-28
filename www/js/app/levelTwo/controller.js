@@ -15,7 +15,11 @@ var App;
                 this.$scope = $scope;
                 this.$timeout = $timeout;
                 this.dataService = dataService;
-                this.currentItemIdNav = JSON.parse(sessionStorage.getItem("NavArray"))[1];
+                $('.collapse').collapse();
+                this.$scope.sectionItems = [];
+                this.$scope.documentTypes = [];
+                this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
+                this.currentItemIdNav = this.navArray[1];
                 this.loadl2Item(this.currentItemIdNav.ContentId);
             }
             LevelTwoController.prototype.loadl2Item = function (Id) {
@@ -23,6 +27,36 @@ var App;
                 this.dataService.loadItemById(Id)
                     .then(function (data) {
                     _this.$scope.currentItem = data[0];
+                    _this.loadSectionItems(_this.$scope.currentItem.Id);
+                    _this.loadDocumentFilters();
+                });
+            };
+            LevelTwoController.prototype.loadSectionItems = function (Id) {
+                var _this = this;
+                this.dataService.getSectionItemsById(Id)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.sectionItems, data);
+                });
+            };
+            LevelTwoController.prototype.redirectToSectionItem = function (item) {
+                this.navArray[2] = item;
+                App.Common.navigateL3(this.navArray);
+            };
+            LevelTwoController.prototype.loadDocumentFilters = function () {
+                var _this = this;
+                this.dataService.getDocumentTypeFilters()
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.documentTypes, data);
+                    for (var i = 0; i < _this.$scope.documentTypes.length; i++) {
+                        _this.$scope.documentTypes[i].Documents = [];
+                        _this.loadDocumentForTag([_this.$scope.currentItem.Id, data[i].Tag], _this.$scope.documentTypes[i].Documents);
+                    }
+                });
+            };
+            LevelTwoController.prototype.loadDocumentForTag = function (Tags, refrenceArray) {
+                this.dataService.getTaggedDocuments(Tags)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(refrenceArray, data);
                 });
             };
             LevelTwoController.$inject = ['$scope', '$timeout', 'dataService'];

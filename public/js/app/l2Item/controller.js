@@ -137,12 +137,6 @@ var App;
                     item.animate({ height: "0" }, 200);
                 }
             };
-            L2Controller.prototype.redirectToL4Nav = function (item, parent, grandParent) {
-                App.Common.navigateL4(item, parent, grandParent);
-            };
-            L2Controller.prototype.redirectToL3Nav = function (item, parent) {
-                App.Common.navigateL3(item, parent);
-            };
             L2Controller.$inject = ['$scope', '$timeout', 'dataService'];
             return L2Controller;
         }(App.BaseController));

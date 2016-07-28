@@ -26,6 +26,12 @@ var App;
             HomeDataService.prototype.saveTestObject = function (object) {
                 return this.setItem("Test", "Id", object);
             };
+            HomeDataService.prototype.getNewsItems = function () {
+                return this.getItems("NewsItems");
+            };
+            HomeDataService.prototype.getMetadata = function (item) {
+                return this.expandPropery([item.MetadataId], "Metadata", "Id");
+            };
             return HomeDataService;
         }(App.BaseJsonDataService));
         Home.HomeDataService = HomeDataService;

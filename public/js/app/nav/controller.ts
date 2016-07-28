@@ -59,7 +59,7 @@ export class NavController extends BaseController{
       if(this.IsNavigated(item.Id) && (this.$scope.navigatedItems[1] && this.$scope.navigatedItems[1] != "")){
         this.openL3NavForItem(this.$scope.navigatedItems[1], true, l1Width);
       }
-  
+
     }
 
     public closeL2Nav(){
@@ -216,6 +216,10 @@ export class NavController extends BaseController{
       var navArray = (IsBreadCrumb)? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
       navArray[3] = item
       App.Common.navigateL4(navArray)
+    }
+
+    public redirectHome(){
+      App.Common.redirectHome();
     }
 
     public redirectFromBreadCrumb(itemIndex, navItem){

@@ -53,7 +53,18 @@ export class LevelTwoController extends BaseController{
       this.dataService.getTaggedDocuments(Tags)
       .then(data => {
         App.Common.replaceArrayContents(refrenceArray, data)
+        for(var i =0; i < refrenceArray.length; i++){
+          this.loadMetadata(refrenceArray[i])
+        }
       })
     }
+
+    public loadMetadata(Item){
+      this.dataService.getMetadataById(Item.MetadataId)
+      .then(data => {
+        Item.Metadata = data[0];
+      })
+    }
+
   }
 }

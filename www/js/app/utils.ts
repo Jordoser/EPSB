@@ -162,6 +162,14 @@ module App {
         return deferred.promise
         }
 
+        public getDocumentTypeFilters(): ng.IPromise<Array<any>>{
+          return this.getItems("DocumentTypeFilters");
+        }
+
+        public getTaggedDocuments(TagArray: Array<any>): ng.IPromise<Array<any>>{
+          return this.getItemsByTag(TagArray, "Documents");
+        }
+
 
     }
 

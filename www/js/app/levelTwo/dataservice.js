@@ -17,6 +17,9 @@ var App;
             LevelTwoDataService.prototype.loadItemById = function (Id) {
                 return this.getItemByKeyValue("LevelTwoContent", "Id", Id);
             };
+            LevelTwoDataService.prototype.getSectionItemsById = function (Id) {
+                return this.getItemByKeyValue("LevelThreeNavItems", "l2NavId", Id);
+            };
             return LevelTwoDataService;
         }(App.BaseJsonDataService));
         levelTwo.LevelTwoDataService = LevelTwoDataService;

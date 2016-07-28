@@ -15,7 +15,9 @@ var App;
                 this.$scope = $scope;
                 this.$timeout = $timeout;
                 this.dataService = dataService;
+                $('.collapse').collapse();
                 this.currentItemIdNav = JSON.parse(sessionStorage.getItem("NavArray"))[3];
+                this.$scope.documentTypes = [];
                 this.loadl4Item(this.currentItemIdNav.ContentId);
             }
             LevelFourController.prototype.loadl4Item = function (Id) {
@@ -23,6 +25,24 @@ var App;
                 this.dataService.loadItemById(Id)
                     .then(function (data) {
                     _this.$scope.currentItem = data[0];
+                    _this.loadDocumentFilters();
+                });
+            };
+            LevelFourController.prototype.loadDocumentFilters = function () {
+                var _this = this;
+                this.dataService.getDocumentTypeFilters()
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.documentTypes, data);
+                    for (var i = 0; i < _this.$scope.documentTypes.length; i++) {
+                        _this.$scope.documentTypes[i].Documents = [];
+                        _this.loadDocumentForTag([_this.$scope.currentItem.Id, data[i].Tag], _this.$scope.documentTypes[i].Documents);
+                    }
+                });
+            };
+            LevelFourController.prototype.loadDocumentForTag = function (Tags, refrenceArray) {
+                this.dataService.getTaggedDocuments(Tags)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(refrenceArray, data);
                 });
             };
             LevelFourController.$inject = ['$scope', '$timeout', 'dataService'];

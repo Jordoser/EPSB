@@ -229,6 +229,10 @@ module App {
         }
         return integer;
       }
+
+      private static redirectHome(){
+        this.navigate("index.html",[]);
+      }
     }
 
 }

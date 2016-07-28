@@ -25,5 +25,14 @@ module App.Home{
     public saveTestObject(object) : ng.IPromise<Array<any>>{
       return this.setItem("Test","Id", object)
     }
+
+    public getNewsItems() : ng.IPromise<Array<any>>{
+      return this.getItems("NewsItems");
+    }
+
+    public getMetadata(item) : ng.IPromise<any>{
+        return this.expandPropery([item.MetadataId], "Metadata", "Id")
+    }
+
   }
 }
