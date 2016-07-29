@@ -113,6 +113,7 @@ module App {
         }
       }
 
+//Todo change to content types
     this.DocumentTypeFilters ={
       "Filter1" : {
         "Tag" : "Forms",

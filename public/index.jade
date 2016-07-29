@@ -2,28 +2,33 @@ div(Id="homeIndexDiv" ng-controller='homeIndexController')
   .content-area.no-padding
     .info-wrapper.full-width.no-padding
       .primary-info.no-padding
-        .need-to-know-wrapper
-          .header.full-width(style="margin-top: -15px;")
-            h3.no-padding Need to Know News
-          .need-to-know-flex
-            .featured-story
-              .story-img
-                img(src="{{featuredStory.Image}}")
-              .story-info
-                span.text-muted.small-text {{featuredStory.Metadata.CreatedOn}}
-                  span(ng-repeat="tag in featuredStory.Tags") |&nbsp{{tag}}&nbsp
-                p.bold.no-margin {{featuredStory.Name}}
-                p {{featuredStory.Description}}
-            .story-scroll-wrapper
-              .story.news-item(ng-repeat="story in newsItems")
-                p.news-text.no-margin {{story.Name}}
-                span.text-muted.small-text {{story.Metadata.CreatedOn}}
-                  span(ng-repeat="tag in story.Tags") |&nbsp{{tag}}&nbsp
-              .scroll-footer
-        .dynamic-info-wrapper
-          .dates-wrapper
-          .quicklins-wrapper
-      .secondary-info.extra-wide
+        .info-wrapper-center
+          .need-to-know-wrapper
+            .header.full-width(style="margin-top: -15px;")
+              h3.no-padding Need to Know News
+            .need-to-know-flex
+              .featured-story
+                .story-img
+                  img(src="{{featuredStory.Image}}" style="max-width:100%;max-height:100%;")
+                .story-info
+                  span.text-muted.small-text {{featuredStory.Metadata.CreatedOn}}
+                    span(ng-repeat="tag in featuredStory.Tags") |&nbsp{{tag}}&nbsp
+                  p.bold.no-margin {{featuredStory.Name}}
+                  p {{featuredStory.Description}}
+              .story-scroll-wrapper
+                .story.news-item(ng-repeat="story in newsItems")
+                  p.news-text.no-margin {{story.Name}}
+                  span.text-muted.small-text {{story.Metadata.CreatedOn}}
+                    span(ng-repeat="tag in story.Tags") |&nbsp{{tag}}&nbsp
+                .scroll-footer
+          .dynamic-info-wrapper(style="margin-left:auto; margin-right:auto;")
+            img(src="images/quicklinks.png" ng-if="currentUser == 'Steve Jacob'")
+            img(src="images/samlinks.png" ng-if="currentUser == 'Samantha Nugent'")
+            .dates-wrapper
+            .quicklins-wrapper
+      .secondary-info.extra-wide.no-padding.pull-right(style="margin-left:auto")
+        img(src="images/cfesidebar.png" ng-if="currentUser == 'Steve Jacob'")
+        img(src="images/meadowlark.png" ng-if="currentUser == 'Samantha Nugent'")
 script(src='js/app/home/dataService.js')
 script(src='js/app/home/index/controller.js')
 script(src='js/app/home/index/main.js')

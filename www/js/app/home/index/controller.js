@@ -20,6 +20,9 @@ var App;
                     this.$scope.name = "Search Database";
                     this.$scope.searchString = "";
                     this.$scope.searchResults = [];
+                    $(".custom-container").css("margin-top", "160px");
+                    this.$scope.newsItems = [];
+                    this.loadNewsitems();
                 }
                 HomeIndexController.prototype.alert = function () {
                     var _this = this;
@@ -39,6 +42,37 @@ var App;
                         sessionStorage.setItem("Id", id);
                     }
                     window.location.href = "editTestItem.html";
+                };
+                HomeIndexController.prototype.loadNewsitems = function () {
+                    var _this = this;
+                    this.dataService.getNewsItems()
+                        .then(function (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].Tags.indexOf("Featured") > -1 && !_this.$scope.featuredStory) {
+                                _this.$scope.featuredStory = data[i];
+                                var truncate = data[i].Description.length > 125;
+                                if (truncate) {
+                                    _this.$scope.featuredStory.Description = _this.$scope.featuredStory.Description.substring(0, 125) + " ...";
+                                }
+                                _this.loadMetadata(_this.$scope.featuredStory);
+                            }
+                            else {
+                                _this.$scope.newsItems.push(data[i]);
+                                var indexOf = _this.$scope.newsItems.indexOf(data[i]);
+                                _this.loadMetadataForArray(data[i], indexOf, _this.$scope.newsItems);
+                            }
+                        }
+                    });
+                };
+                HomeIndexController.prototype.loadMetadataForArray = function (resource, index, returnArray) {
+                    this.dataService.getMetadata(resource).then(function (data) {
+                        returnArray[index].Metadata = data[0];
+                    });
+                };
+                HomeIndexController.prototype.loadMetadata = function (item) {
+                    this.dataService.getMetadata(item).then(function (data) {
+                        item.Metadata = data[0];
+                    });
                 };
                 HomeIndexController.$inject = ['$scope', '$timeout', 'dataService'];
                 return HomeIndexController;

@@ -43,6 +43,7 @@
           "./public/js/app/database/resources.ts",
           "./public/js/app/database/tagFilters.ts",
           "./public/js/app/database/userContacts.ts",
+          "./public/js/app/database/users.ts",
           "./public/js/app/gradeAndSubject/controller.ts",
           "./public/js/app/gradeAndSubject/dataservice.ts",
           "./public/js/app/gradeAndSubject/main.ts",

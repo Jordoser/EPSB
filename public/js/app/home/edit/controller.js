@@ -19,6 +19,10 @@ var App;
                     this.dataService = dataService;
                     this.objectId = sessionStorage.getItem("Id");
                     sessionStorage.removeItem("Id");
+                    this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
+                    if (!this.$scope.currentUser) {
+                        this.$scope.currentUser = "Samantha Nugent";
+                    }
                     if (this.objectId) {
                         this.loadObject();
                         this.loadRelatedObjects();

@@ -1,11 +1,11 @@
 div(ng-controller='navController' Id="navDiv")
   .left-nav.top.l1-nav
-    a.popover-dismiss(tabindex="0" style="display: block;" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?")
+    a.popover-dismiss(ng-click="ctrl.swapUsers()" tabindex="0" style="display: block;" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?")
       .user-pane
         .user-wrapper
           img.user-icon(src="images/usericon.png")
           .user-dropdown
-            span.muted-text Test User
+            span.muted-text {{currentUser}}
             i(class="fa fa-sort-desc fa-1")
     .nav-items
       ul.main-nav
@@ -48,13 +48,7 @@ div(ng-controller='navController' Id="navDiv")
     .top-wrapper
       .top-row
         img.logo(src="images/epsblogo.png" ng-click="ctrl.redirectHome()")
-        .my-apps.pull-right(ng-click="ctrl.displayApps()")
-        .my-notifications.pull-right
-        .date-time.pull-right
-          span.time
-          span.period
-          br
-          span.date
+        img(src="images/menuitems.png").pull-right(style="padding-right: 15px;padding-top: 20px;")
       .search-bar.col-md-12.no-padding
         label(for="searchText" id="searchLabel")
           i.fa.fa-search.fa-3

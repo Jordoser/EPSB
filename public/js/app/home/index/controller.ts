@@ -12,6 +12,10 @@ export class HomeIndexController extends BaseController{
       $(".custom-container").css("margin-top", "160px")
       this.$scope.newsItems = [];
       this.loadNewsitems();
+      this.$scope.currentUser =  sessionStorage.getItem("CurrentUser");
+      if(!this.$scope.currentUser){
+        this.$scope.currentUser = "Samantha Nugent"
+      }
     }
 
     public alert(){

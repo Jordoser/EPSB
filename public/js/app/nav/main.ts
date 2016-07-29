@@ -11,7 +11,7 @@ module App.Nav{
       l2NavItems: Array<any>;
       l3NavItems: Array<any>;
       l4NavItems: Array<any>;
-
+      currentUser: any;
       navigatedItems: Array<any>
       selectedItemIds : Array<any>
       searchArea: string;

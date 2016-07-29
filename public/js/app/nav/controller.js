@@ -27,9 +27,10 @@ var App;
                 this.loadNav();
                 this.initiateClock();
                 this.initiateDay();
-                $('.popover-dismiss').popover({
-                    trigger: 'focus'
-                });
+                this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
+                if (!this.$scope.currentUser) {
+                    this.$scope.currentUser = "Samantha Nugent";
+                }
                 this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
             }
             NavController.prototype.loadNav = function () {
@@ -43,6 +44,15 @@ var App;
                     .catch(function (ex) {
                     alert(ex);
                 });
+            };
+            NavController.prototype.swapUsers = function () {
+                if (this.$scope.currentUser == "Samantha Nugent") {
+                    sessionStorage.setItem("CurrentUser", "Steve Jacob");
+                }
+                else {
+                    sessionStorage.setItem("CurrentUser", "Samantha Nugent");
+                }
+                window.location.reload();
             };
             NavController.prototype.openL2NavForItem = function (item, forceClose) {
                 if (forceClose === void 0) { forceClose = false; }

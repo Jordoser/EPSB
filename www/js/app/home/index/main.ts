@@ -9,5 +9,7 @@ module App.Home.Index{
       name: string;
       searchString: string;
       searchResults: Array<any>;
+      newsItems: Array<any>;
+      featuredStory: any;
   }
 }

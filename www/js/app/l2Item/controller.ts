@@ -146,13 +146,7 @@ export class L2Controller extends BaseController{
 
     }
 
-    public redirectToL4Nav(item, parent, grandParent){
-      App.Common.navigateL4(item, parent, grandParent)
-    }
-
-    public redirectToL3Nav(item, parent){
-      App.Common.navigateL3(item,parent);
-    }
+  
 
   }
 }

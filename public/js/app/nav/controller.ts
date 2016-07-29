@@ -23,10 +23,16 @@ export class NavController extends BaseController{
       this.initiateClock();
       this.initiateDay();
 
-
+/*
       $('.popover-dismiss').popover({
         trigger: 'focus'
       })
+      */
+
+      this.$scope.currentUser =  sessionStorage.getItem("CurrentUser");
+      if(!this.$scope.currentUser){
+        this.$scope.currentUser = "Samantha Nugent"
+      }
 
       this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
     }
@@ -41,6 +47,14 @@ export class NavController extends BaseController{
       .catch(ex => {
         alert(ex);
       })
+    }
+    public swapUsers(){
+      if(this.$scope.currentUser == "Samantha Nugent"){
+        sessionStorage.setItem("CurrentUser", "Steve Jacob");
+      }else{
+          sessionStorage.setItem("CurrentUser",  "Samantha Nugent");
+      }
+      window.location.reload()
     }
 
     public openL2NavForItem(item, forceClose = false){

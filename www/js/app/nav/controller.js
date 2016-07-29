@@ -205,6 +205,9 @@ var App;
                 navArray[3] = item;
                 App.Common.navigateL4(navArray);
             };
+            NavController.prototype.redirectHome = function () {
+                App.Common.redirectHome();
+            };
             NavController.prototype.redirectFromBreadCrumb = function (itemIndex, navItem) {
                 switch (itemIndex) {
                     case 0:
