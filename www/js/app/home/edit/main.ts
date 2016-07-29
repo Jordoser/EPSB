@@ -10,5 +10,6 @@ module App.Home.Edit{
       object: any;
       searchResults: Array<any>;
       editObject: boolean;
+
   }
 }

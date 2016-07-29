@@ -230,7 +230,7 @@ module App {
         return integer;
       }
 
-      private static redirectHome(){
+      public static redirectHome(){
         this.navigate("index.html",[]);
       }
     }

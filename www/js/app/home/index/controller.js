@@ -23,6 +23,10 @@ var App;
                     $(".custom-container").css("margin-top", "160px");
                     this.$scope.newsItems = [];
                     this.loadNewsitems();
+                    this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
+                    if (!this.$scope.currentUser) {
+                        this.$scope.currentUser = "Samantha Nugent";
+                    }
                 }
                 HomeIndexController.prototype.alert = function () {
                     var _this = this;
