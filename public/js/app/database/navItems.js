@@ -4,36 +4,33 @@ var App;
         function NavItemsDatabase() {
             this.LevelOneNavItems = {
                 "NavItem1": {
-                    "Id": "Employee Essentials",
-                    "Name": "Employee Essentials"
+                    "Id": "School Administration",
+                    "Name": "School Operations",
+                    "ContentId": "School Administration"
                 },
                 "NavItem2": {
-                    "Id": "News & Events",
-                    "Name": "News"
-                },
-                "NavItem3": {
-                    "Id": "Learning Initiatives",
-                    "Name": "Learning Initiatives"
-                },
-                "NavItem4": {
                     "Id": "Curriculum & Assessment",
                     "Name": "Curriculum & Assessment"
                 },
+                "NavItem3": {
+                    "Id": "District Staff Resources",
+                    "Name": "District Staff Resources"
+                },
+                "NavItem4": {
+                    "Id": "Employee Essentials",
+                    "Name": "Employee Essentials"
+                },
                 "NavItem5": {
-                    "Id": "School Administration",
-                    "Name": "School Administration",
-                    "ContentId": "School Administration"
+                    "Id": "News & Events",
+                    "Name": "News"
                 },
                 "NavItem6": {
-                    "Id": "Facilities & Custodial",
-                    "Name": "Facilities & Custodial"
-                },
-                "NavItem7": {
-                    "Id": "About",
-                    "Name": "About"
-                },
+                    "Id": "About EPS",
+                    "Name": "About EPS"
+                }
             };
             this.LevelTwoNavItems = {
+                //BEGIN L2 ITEMS FOR SCHOOL ADMIN
                 "l2NavItem1": {
                     "Id": "Budget & Finance",
                     "Name": "Budget & Finance",
@@ -86,6 +83,7 @@ var App;
                 }
             };
             this.LevelThreeNavItems = {
+                //BEGIN L3 ITEMS FOR BUDGET & FINANCE
                 "l3NavItem1": {
                     "Id": "Accounting",
                     "Name": "Accounting",
@@ -131,6 +129,8 @@ var App;
                     "Name": "Taxation",
                     "l2NavId": "Budget & Finance"
                 },
+                //END L3 ITEMS FOR BUDGET & FINANCE
+                //BEGIN L3 ITEMS FOR ENROLMENT
                 "l3NavItem11": {
                     "Id": "Pre-enrolment",
                     "Name": "Pre-enrolment",
@@ -141,6 +141,8 @@ var App;
                     "Name": "Registration",
                     "l2NavId": "Enrollment"
                 },
+                //END L3 ITEMS FOR ENROLMENT
+                //BEGIN L3 ITEMS FOR Facilities and Equipment
                 "l3NavItem13": {
                     "Id": "Buildings & Grounds",
                     "Name": "Buildings & Grounds",
@@ -193,6 +195,7 @@ var App;
                 }
             };
             this.LevelFourNavItems = {
+                //Begin L4 items for Equipment
                 "l4NavItem1": {
                     "Id": "Appliances",
                     "Name": "Appliances",

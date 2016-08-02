@@ -7,33 +7,31 @@ module App {
     constructor(){
       this.LevelOneNavItems = {
         "NavItem1" : {
-            "Id": "Employee Essentials",
-            "Name" : "Employee Essentials"
+            "Id": "School Administration",
+            "Name" : "School Operations",
+            "ContentId" : "School Administration"
         },
         "NavItem2" : {
-            "Id": "News & Events",
-            "Name" : "News"
-        },
-        "NavItem3" : {
-            "Id": "Learning Initiatives",
-            "Name" : "Learning Initiatives"
-        },
-        "NavItem4" : {
             "Id": "Curriculum & Assessment",
             "Name" : "Curriculum & Assessment"
         },
+        "NavItem3" : {
+            "Id": "District Staff Resources",
+            "Name" : "District Staff Resources"
+        },
+        "NavItem4" : {
+            
+            "Id": "Employee Essentials",
+            "Name" : "Employee Essentials"
+        },
         "NavItem5" : {
-            "Id": "School Administration",
-            "Name" : "School Administration",
-            "ContentId" : "School Administration"
+            "Id": "News & Events",
+            "Name" : "News"
         },
         "NavItem6" : {
-            "Id": "Facilities & Custodial",
-            "Name" : "Facilities & Custodial"
-        },
-        "NavItem7" : {
-            "Id": "About",
-            "Name" : "About"
+
+            "Id": "About EPS",
+            "Name" : "About EPS"
         },
       }
       this.LevelTwoNavItems = {

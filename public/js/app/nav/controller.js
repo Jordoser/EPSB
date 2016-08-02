@@ -27,6 +27,11 @@ var App;
                 this.loadNav();
                 this.initiateClock();
                 this.initiateDay();
+                /*
+                      $('.popover-dismiss').popover({
+                        trigger: 'focus'
+                      })
+                      */
                 this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
                 if (!this.$scope.currentUser) {
                     this.$scope.currentUser = "Samantha Nugent";
@@ -183,6 +188,7 @@ var App;
                 var megaMenu = $(".mega-menu");
                 var currentPadding = parseInt(megaMenu.css("marginTop"));
                 if (currentHeight == 0) {
+                    //var height= item.css('height', 'auto').height();
                     var height = 150;
                     item.css('height', '0');
                     item.animate({ height: height + "px" }, { duration: 200, queue: false });
