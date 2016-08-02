@@ -135,6 +135,185 @@ var App;
                     "Description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     "l1NavId": "School Administration",
                     "ContentID": "Technology"
+                },
+                //END L2 ITEMS FOR SCHOOL ADMIN
+                //BEGIN L2 ITEMS FOR EMPLOYEE ESSENTIALS
+                "l2NavItem16": {
+                    "Id": "Awards",
+                    "Name": "Awards",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "Employee Essentials"
+                },
+                "l2NavItem17": {
+                    "Id": "Benefits for Teachers",
+                    "Name": "Benefits for Teachers",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "Employee Essentials"
+                },
+                "l2NavItem18": {
+                    "Id": "Career Stages",
+                    "Name": "Career Stages",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "Employee Essentials"
+                },
+                "l2NavItem19": {
+                    "Id": "Career Opportunities",
+                    "Name": "Career Opportunities",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "Employee Essentials"
+                },
+                "l2NavItem20": {
+                    "Id": "Employement Contracts & Agreements",
+                    "Name": "Employement Contracts & Agreements",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "Employee Essentials"
+                },
+                "l2NavItem21": {
+                    "Id": "Health & Safety",
+                    "Name": "Health & Safety",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "Employee Essentials"
+                },
+                "l2NavItem22": {
+                    "Id": "Leaves of Absence for Teachers",
+                    "Name": "Leaves of Absence for Teachers",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "Employee Essentials"
+                },
+                "l2NavItem23": {
+                    "Id": "Modified Work Arrangements",
+                    "Name": "Modified Work Arrangements",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "Employee Essentials"
+                },
+                "l2NavItem24": {
+                    "Id": "Pay & Expenses for Teachers",
+                    "Name": "Pay & Expenses for Teachers",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "Employee Essentials"
+                },
+                "l2NavItem25": {
+                    "Id": "Professional Development",
+                    "Name": "Professional Development",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "Employee Essentials"
+                },
+                "l2NavItem26": {
+                    "Id": "Staff Conduct & Responsibility",
+                    "Name": "Staff Conduct & Responsibility",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "Employee Essentials"
+                },
+                "l2NavItem27": {
+                    "Id": "Vacation & Public Holidays for Teachers",
+                    "Name": "Vacation & Public Holidays for Teachers",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "Employee Essentials"
+                },
+                //BEGIN L2 ITEMS FOR DISTRICT STAFF RESOURCES
+                "l2NavItem28": {
+                    "Id": "Archives & Museum",
+                    "Name": "Archives & Museum",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "District Staff Resources"
+                },
+                "l2NavItem29": {
+                    "Id": "Communications Resources for District Staff",
+                    "Name": "Communications Resources for District Staff",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "District Staff Resources"
+                },
+                "l2NavItem30": {
+                    "Id": "Distribution Centre",
+                    "Name": "Distribution Centre",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "District Staff Resources"
+                },
+                "l2NavItem31": {
+                    "Id": "District Records",
+                    "Name": "District Records",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "District Staff Resources"
+                },
+                "l2NavItem32": {
+                    "Id": "Emergency & Security",
+                    "Name": "Emergency & Security",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "District Staff Resources"
+                },
+                "l2NavItem33": {
+                    "Id": "Facilities",
+                    "Name": "Facilities",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "District Staff Resources"
+                },
+                "l2NavItem34": {
+                    "Id": "Budget & Finance",
+                    "Name": "Budget & Finance",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "District Staff Resources"
+                },
+                "l2NavItem35": {
+                    "Id": "Home Education",
+                    "Name": "Home Education",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "District Staff Resources"
+                },
+                "l2NavItem36": {
+                    "Id": "Legal Counsel",
+                    "Name": "Legal Counsel",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "District Staff Resources"
+                },
+                "l2NavItem37": {
+                    "Id": "Purchasing & Contracting",
+                    "Name": "Purchasing & Contracting",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "District Staff Resources"
+                },
+                "l2NavItem38": {
+                    "Id": "Staff Management & Hiring",
+                    "Name": "Staff Management & Hiring",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "District Staff Resources"
+                },
+                "l2NavItem39": {
+                    "Id": "Technology",
+                    "Name": "Technology",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "District Staff Resources"
+                },
+                //END L2 ITEMS FOR DISTRICT STAFF RESOURCES
+                //BEGIN L2 ITEMS FOR ABOUT EPS
+                "l2NavItem40": {
+                    "Id": "Board",
+                    "Name": "Board",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "About EPS"
+                },
+                "l2NavItem41": {
+                    "Id": "Departments",
+                    "Name": "Departments",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "About EPS"
+                },
+                "l2NavItem42": {
+                    "Id": "Policies",
+                    "Name": "Policies",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "About EPS"
+                },
+                "l2NavItem43": {
+                    "Id": "Strategic Plan",
+                    "Name": "Strategic Plan",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "About EPS"
+                },
+                "l2NavItem44": {
+                    "Id": "Superintendent",
+                    "Name": "Superintendent",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "About EPS"
                 }
             };
             this.LevelThreeNavItems = {
@@ -142,31 +321,37 @@ var App;
                 "l3NavItem1": {
                     "Id": "Accounting & Auditing",
                     "Name": "Accounting & Auditing",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                     "l2NavId": "Budget & Finance"
                 },
                 "l3NavItem2": {
                     "Id": "Accounts Payable",
                     "Name": "Accounts Payable",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                     "l2NavId": "Budget & Finance"
                 },
                 "l3NavItem3": {
                     "Id": "Budgeting",
                     "Name": "Budgeting",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                     "l2NavId": "Budget & Finance"
                 },
                 "l3NavItem4": {
                     "Id": "Insurance",
                     "Name": "Insurance",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                     "l2NavId": "Budget & Finance"
                 },
                 "l3NavItem5": {
                     "Id": "Purchasing & Contracting",
                     "Name": "Purchasing & Contracting",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                     "l2NavId": "Budget & Finance"
                 },
                 "l3NavItem6": {
                     "Id": "Revenue",
                     "Name": "Revenue",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                     "l2NavId": "Budget & Finance"
                 },
                 //END L3 ITEMS FOR BUDGET & FINANCE
@@ -174,26 +359,31 @@ var App;
                 "l3NavItem7": {
                     "Id": "Class Size",
                     "Name": "Class Size",
+                    "Description": "Topic description",
                     "l2NavId": "Classroom & Program"
                 },
                 "l3NavItem8": {
                     "Id": "Instructional Time",
                     "Name": "Instructional Time",
+                    "Description": "Topic description",
                     "l2NavId": "Classroom & Program"
                 },
                 "l3NavItem9": {
                     "Id": "Pilot Programs",
                     "Name": "Pilot Programs",
+                    "Description": "Topic description",
                     "l2NavId": "Classroom & Program"
                 },
                 "l3NavItem10": {
                     "Id": "Pre-Enrolment",
                     "Name": "Pre-Enrolment",
+                    "Description": "Topic description",
                     "l2NavId": "Classroom & Program"
                 },
                 "l3NavItem11": {
                     "Id": "Special Programs",
                     "Name": "Special Programs",
+                    "Description": "Topic description",
                     "l2NavId": "Classroom & Program"
                 },
                 //END L3 ITEMS FOR CLASSROOM & PROGRAM
@@ -739,6 +929,358 @@ var App;
                     "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     "l2NavId": "Technology"
+                },
+                //END L3 ITEMS FOR TECHNOLOGY
+                //BEGIN L3 ITEMS FOR BENEFITS
+                "l3NavItem87": {
+                    "Id": "ASEBP",
+                    "Name": "ASEBP",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Benefits for Teachers"
+                },
+                "l3NavItem88": {
+                    "Id": "Employee & Family Assistance",
+                    "Name": "Employee & Family Assistance",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Benefits for Teachers"
+                },
+                "l3NavItem89": {
+                    "Id": "Emplyee Health Services",
+                    "Name": "Emplyee Health Services",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Benefits for Teachers"
+                },
+                "l3NavItem90": {
+                    "Id": "Fitness",
+                    "Name": "Fitness",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Benefits for Teachers"
+                },
+                "l3NavItem91": {
+                    "Id": "Retirement & Pension",
+                    "Name": "Retirement & Pension",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Benefits for Teachers"
+                },
+                //END L3 ITEMS FOR BENEFITS
+                //BEGIN L3 ITEMS FOR CAREER STAGES
+                "l3NavItem92": {
+                    "Id": "Changing Positions",
+                    "Name": "Changing Positions",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Career Stages"
+                },
+                "l3NavItem93": {
+                    "Id": "Leaves of Absence",
+                    "Name": "Leaves of Absence",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Career Stages"
+                },
+                "l3NavItem94": {
+                    "Id": "New Employees",
+                    "Name": "New Employees",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Career Stages"
+                },
+                "l3NavItem95": {
+                    "Id": "Taking on Leadership",
+                    "Name": "Taking on Leadership",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Career Stages"
+                },
+                "l3NavItem96": {
+                    "Id": "Teacher Induction",
+                    "Name": "Teacher Induction",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Career Stages"
+                },
+                "l3NavItem97": {
+                    "Id": "Thinking About Retirement",
+                    "Name": "Thinking About Retirement",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Career Stages"
+                },
+                //END L3 ITEMS FOR CAREER STAGES
+                //BEGIN L3 ITEMS FOR HEALTH & SAFETY
+                "l3NavItem98": {
+                    "Id": "Ergonomics",
+                    "Name": "Ergonomics",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Health & Safety"
+                },
+                "l3NavItem99": {
+                    "Id": "Hazards & Assessments",
+                    "Name": "Hazards & Assessments",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Health & Safety"
+                },
+                "l3NavItem100": {
+                    "Id": "Health Recovery",
+                    "Name": "Health Recovery",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Health & Safety"
+                },
+                "l3NavItem101": {
+                    "Id": "Incidents & Injuries",
+                    "Name": "Incidents & Injuries",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Health & Safety"
+                },
+                "l3NavItem102": {
+                    "Id": "Safe Working Conditions",
+                    "Name": "Safe Working Conditions",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Health & Safety"
+                },
+                "l3NavItem103": {
+                    "Id": "Workers' Compensation Board",
+                    "Name": "Workers' Compensation Board",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Health & Safety"
+                },
+                //END L3 ITEMS FOR HEALTH & SAFETY
+                //BEGIN L3 ITEMS FOR LEAVES OF ABSENCE
+                "l3NavItem104": {
+                    "Id": "Community Service",
+                    "Name": "Community Service",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Leaves of Absence for Teachers"
+                },
+                "l3NavItem105": {
+                    "Id": "Jury Duty",
+                    "Name": "Jury Duty",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Leaves of Absence for Teachers"
+                },
+                "l3NavItem106": {
+                    "Id": "Military Service",
+                    "Name": "Military Service",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Leaves of Absence for Teachers"
+                },
+                "l3NavItem107": {
+                    "Id": "Maternity & Paternity",
+                    "Name": "Maternity & Paternity",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Leaves of Absence for Teachers"
+                },
+                "l3NavItem108": {
+                    "Id": "Personal Leave",
+                    "Name": "Personal Leave",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Leaves of Absence for Teachers"
+                },
+                "l3NavItem109": {
+                    "Id": "Professional Leave",
+                    "Name": "Professional Leave",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Leaves of Absence for Teachers"
+                },
+                "l3NavItem110": {
+                    "Id": "Sickness",
+                    "Name": "Sickness",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Leaves of Absence for Teachers"
+                },
+                //END L3 ITEMS FOR LEAVES OF ABSENCE
+                //BEGIN L3 ITEMS FOR MODIFIED WORK ARRANGEMENTS
+                "l3NavItem111": {
+                    "Id": "Deferred Salary",
+                    "Name": "Deferred Salary",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Modified Work Arrangements"
+                },
+                "l3NavItem112": {
+                    "Id": "Exchanges & Secondments",
+                    "Name": "Exchanges & Secondments",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Modified Work Arrangements"
+                },
+                "l3NavItem113": {
+                    "Id": "Job Sharing",
+                    "Name": "Job Sharing",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Modified Work Arrangements"
+                },
+                //END L3 ITEMS FOR MODIFIED WORK ARRANGEMENTS
+                //BEGIN L3 ITEMS FOR PAY & EXPENSES
+                "l3NavItem114": {
+                    "Id": "Casual Pay",
+                    "Name": "Casual Pay",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Pay & Expenses for Teachers"
+                },
+                "l3NavItem115": {
+                    "Id": "Direct Deposit",
+                    "Name": "Direct Deposit",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Pay & Expenses for Teachers"
+                },
+                "l3NavItem116": {
+                    "Id": "Expenses",
+                    "Name": "Expenses",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Pay & Expenses for Teachers"
+                },
+                "l3NavItem117": {
+                    "Id": "Overtime",
+                    "Name": "Overtime",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Pay & Expenses for Teachers"
+                },
+                "l3NavItem118": {
+                    "Id": "RRSP",
+                    "Name": "RRSP",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Pay & Expenses for Teachers"
+                },
+                "l3NavItem119": {
+                    "Id": "Taxes",
+                    "Name": "Taxes",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Pay & Expenses for Teachers"
+                },
+                "l3NavItem120": {
+                    "Id": "Time Reporting",
+                    "Name": "Time Reporting",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Pay & Expenses for Teachers"
+                },
+                //END L3 ITEMS FOR PAY & EXPENSES
+                //BEGIN L3 ITEMS FOR PROFESSIONAL DEVELOPMENT
+                "l3NavItem121": {
+                    "Id": "Comprehensive School Health",
+                    "Name": "Comprehensive School Health",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem122": {
+                    "Id": "Curriculum & Resource Support",
+                    "Name": "Curriculum & Resource Support",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem123": {
+                    "Id": "Custodians",
+                    "Name": "Custodians",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem124": {
+                    "Id": "Educational Assistants",
+                    "Name": "Educational Assistants",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem125": {
+                    "Id": "First Nations, Metis, & Inuit Education",
+                    "Name": "First Nations, Metis, & Inuit Education",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem126": {
+                    "Id": "Leadership",
+                    "Name": "Leadership",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem127": {
+                    "Id": "Inclusive Learning",
+                    "Name": "Inclusive Learning",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem128": {
+                    "Id": "Languages",
+                    "Name": "Languages",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem129": {
+                    "Id": "Literacy",
+                    "Name": "Literacy",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem130": {
+                    "Id": "Literacy Interventions",
+                    "Name": "Literacy Interventions",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem131": {
+                    "Id": "Mentorship",
+                    "Name": "Mentorship",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem132": {
+                    "Id": "Nonviolent Crisis Intervention (NVCI)",
+                    "Name": "Nonviolent Crisis Intervention (NVCI)",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem133": {
+                    "Id": "Student Assessment",
+                    "Name": "Student Assessment",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem134": {
+                    "Id": "Supply Staff",
+                    "Name": "Supply Staff",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem135": {
+                    "Id": "Teacher Induction",
+                    "Name": "Teacher Induction",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                "l3NavItem136": {
+                    "Id": "Technology",
+                    "Name": "Technology",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Professional Development"
+                },
+                //END L3 ITEMS FOR PROFESSIONAL DEVELOPMENT
+                //BEGIN L3 ITEMS FOR STAFF CONDUCT & RESPONSIBILITY
+                "l3NavItem137": {
+                    "Id": "Code of Conduct",
+                    "Name": "Code of Conduct",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Staff Conduct & Responsibility"
+                },
+                "l3NavItem138": {
+                    "Id": "Grievances",
+                    "Name": "Grievances",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Staff Conduct & Responsibility"
+                },
+                "l3NavItem139": {
+                    "Id": "Public Interest",
+                    "Name": "Public Interest",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Staff Conduct & Responsibility"
+                },
+                "l3NavItem140": {
+                    "Id": "Record Checks",
+                    "Name": "Record Checks",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Staff Conduct & Responsibility"
+                },
+                "l3NavItem141": {
+                    "Id": "Respectful Working Environment",
+                    "Name": "Respectful Working Environment",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Staff Conduct & Responsibility"
+                },
+                "l3NavItem142": {
+                    "Id": "Workplace Violence",
+                    "Name": "Workplace Violence",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Staff Conduct & Responsibility"
                 }
             };
             this.LevelFourNavItems = {
