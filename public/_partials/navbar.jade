@@ -44,7 +44,16 @@ div(ng-controller='navController' Id="navDiv")
           div {{selectedItemIds[2].Name}} Overview
         li(ng-repeat="item in l4NavItems" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}" ng-click="ctrl.redirectToL4Nav(item)")
           div {{item.Name}}
-  .right-nav.application-drawer(style='z-index: 1000')
+  .right-nav.application-drawer(style='z-index: 1000; color: white !important')
+    .application-header Applications
+    a.all-apps-link.pull-right All apps >>
+    .application-item(ng-repeat="app in applications")
+      .application-icon.pull-left
+        i.fa.fa-star(ng-show="app.Favorite == 'true'")
+        i.fa.fa-star-o(ng-show="app.Favorite != 'true'")
+      .application-info.pull-right
+        span.application-name {{app.Name}}
+        .application-desc {{app.Description}}
   .top-nav
     .top-wrapper
       .top-row
