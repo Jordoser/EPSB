@@ -321,8 +321,21 @@ module App {
             "Name" : "Superintendent",
             "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
             "l1NavId": "About EPS",
+        },
+        //END L2 ITEMS FOR ABOUT EPS
+        
+        //BEGIN L2 ITEMS FOR CURRICULUM & ASSESSNENT
+        "l2NavItem45" : {
+            "Id" : "Grade & Subject Resources",
+            "Name" : "Grade & Subject Resources",
+            "l1NavId": "Curriculum & Assessment",
+        },
+        "l2NavItem46" : {
+            "Id" : "Curriculum & Teaching Topics",
+            "Name" : "Curriculum & Teaching Topics",
+            "l1NavId": "Curriculum & Assessment",
         }
-        //BEGIN L2 ITEMS FOR ABOUT EPS
+        //END L2 ITEMS FOR CURRICULUM & ASSESSNENT
       }
 
       this.LevelThreeNavItems= {
