@@ -10,10 +10,11 @@ var App;
         "use strict";
         var NavController = (function (_super) {
             __extends(NavController, _super);
-            function NavController($scope, $timeout, dataService) {
+            function NavController($scope, $timeout, $q, dataService) {
                 _super.call(this, $scope, $timeout, $timeout);
                 this.$scope = $scope;
                 this.$timeout = $timeout;
+                this.$q = $q;
                 this.dataService = dataService;
                 this.$scope.menuClosed = true;
                 this.$scope.searchArea = "";
@@ -27,17 +28,21 @@ var App;
                 this.loadNav();
                 this.initiateClock();
                 this.initiateDay();
-                /*
-                      $('.popover-dismiss').popover({
-                        trigger: 'focus'
-                      })
-                      */
                 this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
                 if (!this.$scope.currentUser) {
                     this.$scope.currentUser = "Samantha Nugent";
                 }
                 this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
             }
+            NavController.prototype.swapUsers = function () {
+                if (this.$scope.currentUser == "Samantha Nugent") {
+                    sessionStorage.setItem("CurrentUser", "Steve Jacob");
+                }
+                else {
+                    sessionStorage.setItem("CurrentUser", "Samantha Nugent");
+                }
+                window.location.reload();
+            };
             NavController.prototype.loadNav = function () {
                 var _this = this;
                 this.dataService.getNavItems()
@@ -50,14 +55,35 @@ var App;
                     alert(ex);
                 });
             };
-            NavController.prototype.swapUsers = function () {
-                if (this.$scope.currentUser == "Samantha Nugent") {
-                    sessionStorage.setItem("CurrentUser", "Steve Jacob");
-                }
-                else {
-                    sessionStorage.setItem("CurrentUser", "Samantha Nugent");
-                }
-                window.location.reload();
+            NavController.prototype.loadL3NavItems = function (item) {
+                var _this = this;
+                var deferred = this.$q.defer();
+                this.dataService.getL3NavItems(item.Id)
+                    .then(function (data) {
+                    if (data.length == 0) {
+                        deferred.resolve(false);
+                    }
+                    else {
+                        deferred.resolve(true);
+                    }
+                    App.Common.replaceArrayContents(_this.$scope.l3NavItems, data);
+                });
+                return deferred.promise;
+            };
+            NavController.prototype.loadL4NavItems = function (item) {
+                var _this = this;
+                var deferred = this.$q.defer();
+                this.dataService.getL4NavItems(item.Id)
+                    .then(function (data) {
+                    if (data.length == 0) {
+                        deferred.resolve(false);
+                    }
+                    else {
+                        deferred.resolve(true);
+                    }
+                    App.Common.replaceArrayContents(_this.$scope.l4NavItems, data);
+                });
+                return deferred.promise;
             };
             NavController.prototype.openL2NavForItem = function (item, forceClose) {
                 if (forceClose === void 0) { forceClose = false; }
@@ -76,6 +102,62 @@ var App;
                 if (this.IsNavigated(item.Id) && (this.$scope.navigatedItems[1] && this.$scope.navigatedItems[1] != "")) {
                     this.openL3NavForItem(this.$scope.navigatedItems[1], true, l1Width);
                 }
+            };
+            NavController.prototype.openL3NavForItem = function (item, isChain, extraOffset, isClick) {
+                var _this = this;
+                if (isChain === void 0) { isChain = false; }
+                if (extraOffset === void 0) { extraOffset = 0; }
+                if (isClick === void 0) { isClick = false; }
+                if (this.IsOpenItem(item.Id) && !isChain) {
+                    this.closeL3Nav();
+                    return;
+                }
+                if (this.$scope.selectedItemIds[1] && this.$scope.selectedItemIds[1] != "") {
+                    this.closeL4Nav();
+                }
+                this.loadL3NavItems(item).then(function (hasChildren) {
+                    if (hasChildren) {
+                        _this.$scope.selectedItemIds[1] = item;
+                        var l2nav = $('.l2-nav');
+                        var l2Width = l2nav.width();
+                        var l2Offset = l2nav.offset().left;
+                        var overallOffest = (!l2Offset) ? extraOffset : l2Offset;
+                        var offset = l2Width + overallOffest;
+                        $('.l3-nav').css("left", l2Offset + "px");
+                        $('.l3-nav').animate({ "left": (offset) + "px" }, 10);
+                        if (_this.IsNavigated(item.Id) && (_this.$scope.navigatedItems[2] && _this.$scope.navigatedItems[2] != "")) {
+                            _this.openL4NavForItem(_this.$scope.navigatedItems[2], true, offset);
+                        }
+                    }
+                    else if (isClick) {
+                        _this.redirectToL2Nav(item);
+                    }
+                });
+            };
+            NavController.prototype.openL4NavForItem = function (item, isChain, extraOffset, isClick) {
+                var _this = this;
+                if (isChain === void 0) { isChain = false; }
+                if (extraOffset === void 0) { extraOffset = 0; }
+                if (isClick === void 0) { isClick = false; }
+                if (this.IsOpenItem(item.Id) && !isChain) {
+                    this.closeL4Nav();
+                    return;
+                }
+                this.loadL4NavItems(item).then(function (hasChildren) {
+                    if (hasChildren) {
+                        _this.$scope.selectedItemIds[2] = item;
+                        var l3nav = $('.l3-nav');
+                        var l3Width = l3nav.width();
+                        var l3Offset = l3nav.offset().left;
+                        var offsetOverall = (!l3Offset) ? extraOffset : l3Offset;
+                        var offset = l3Width + offsetOverall;
+                        $('.l4-nav').css("left", l3Offset + "px");
+                        $('.l4-nav').animate({ "left": (offset) + "px" }, 10);
+                    }
+                    else if (isClick) {
+                        _this.redirectToL3Nav(item);
+                    }
+                });
             };
             NavController.prototype.closeL2Nav = function () {
                 var _this = this;
@@ -128,67 +210,12 @@ var App;
                     _this.$scope.selectedItemIds[2] = '';
                 }, 500);
             };
-            NavController.prototype.openL3NavForItem = function (item, isChain, extraOffset) {
-                if (isChain === void 0) { isChain = false; }
-                if (extraOffset === void 0) { extraOffset = 0; }
-                if (this.IsOpenItem(item.Id) && !isChain) {
-                    this.closeL3Nav();
-                    return;
-                }
-                if (this.$scope.selectedItemIds[1] && this.$scope.selectedItemIds[1] != "") {
-                    this.closeL4Nav();
-                }
-                this.$scope.selectedItemIds[1] = item;
-                var l2nav = $('.l2-nav');
-                var l2Width = l2nav.width();
-                var l2Offset = l2nav.offset().left;
-                var overallOffest = (!l2Offset) ? extraOffset : l2Offset;
-                var offset = l2Width + overallOffest;
-                $('.l3-nav').css("left", l2Offset + "px");
-                $('.l3-nav').animate({ "left": (offset) + "px" }, 10);
-                this.loadL3NavItems(item);
-                if (this.IsNavigated(item.Id) && (this.$scope.navigatedItems[2] && this.$scope.navigatedItems[2] != "")) {
-                    this.openL4NavForItem(this.$scope.navigatedItems[2], true, offset);
-                }
-            };
-            NavController.prototype.loadL3NavItems = function (item) {
-                var _this = this;
-                this.dataService.getL3NavItems(item.Id)
-                    .then(function (data) {
-                    App.Common.replaceArrayContents(_this.$scope.l3NavItems, data);
-                });
-            };
-            NavController.prototype.openL4NavForItem = function (item, isChain, extraOffset) {
-                if (isChain === void 0) { isChain = false; }
-                if (extraOffset === void 0) { extraOffset = 0; }
-                if (this.IsOpenItem(item.Id) && !isChain) {
-                    this.closeL4Nav();
-                    return;
-                }
-                this.$scope.selectedItemIds[2] = item;
-                var l3nav = $('.l3-nav');
-                var l3Width = l3nav.width();
-                var l3Offset = l3nav.offset().left;
-                var offsetOverall = (!l3Offset) ? extraOffset : l3Offset;
-                var offset = l3Width + offsetOverall;
-                $('.l4-nav').css("left", l3Offset + "px");
-                $('.l4-nav').animate({ "left": (offset) + "px" }, 10);
-                this.loadL4NavItems(item);
-            };
-            NavController.prototype.loadL4NavItems = function (item) {
-                var _this = this;
-                this.dataService.getL4NavItems(item.Id)
-                    .then(function (data) {
-                    App.Common.replaceArrayContents(_this.$scope.l4NavItems, data);
-                });
-            };
             NavController.prototype.displayApps = function () {
                 var item = $(".app-row");
                 var currentHeight = item.height();
                 var megaMenu = $(".mega-menu");
                 var currentPadding = parseInt(megaMenu.css("marginTop"));
                 if (currentHeight == 0) {
-                    //var height= item.css('height', 'auto').height();
                     var height = 150;
                     item.css('height', '0');
                     item.animate({ height: height + "px" }, { duration: 200, queue: false });
@@ -299,7 +326,7 @@ var App;
                 var month = monthNames[date.getMonth()];
                 $(".date-time > span.date").text(day + ", " + month + " " + numberedDate);
             };
-            NavController.$inject = ['$scope', '$timeout', 'dataService'];
+            NavController.$inject = ['$scope', '$timeout', '$q', 'dataService'];
             return NavController;
         }(App.BaseController));
         Nav.NavController = NavController;

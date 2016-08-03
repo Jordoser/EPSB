@@ -26,7 +26,7 @@ div(ng-controller='navController' Id="navDiv")
       ul.hidden-nav.sub-nav
         li(ng-click="ctrl.redirectToL1Nav(selectedItemIds[0])" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}")
           div {{selectedItemIds[0].Name}} Overview
-        li(ng-repeat="item in l2NavItems" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}" ng-click="ctrl.openL3NavForItem(item)")
+        li(ng-repeat="item in l2NavItems" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}" ng-click="ctrl.openL3NavForItem(item,false,0,true)")
           div {{item.Name}}
   .left-nav.l3-nav(style='z-index: 800')
     .nav-items
@@ -34,7 +34,7 @@ div(ng-controller='navController' Id="navDiv")
       ul.hidden-nav.sub-nav
         li(ng-click="ctrl.redirectToL2Nav(selectedItemIds[1])" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}")
           div {{selectedItemIds[1].Name}} Overview
-        li(ng-repeat="item in l3NavItems" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}" ng-click="ctrl.openL4NavForItem(item)")
+        li(ng-repeat="item in l3NavItems" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}" ng-click="ctrl.openL4NavForItem(item,false,0,true)")
           div {{item.Name}}
   .left-nav.l4-nav(style='z-index: 700')
     .nav-header {{selectedItemIds[2].Name}}

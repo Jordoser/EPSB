@@ -2,13 +2,13 @@ module App.Nav{
 "use strict";
 
 export class NavController extends BaseController{
-    public static $inject = ['$scope','$timeout','dataService'];
+    public static $inject = ['$scope','$timeout','$q','dataService'];
     public navigatedL1;
     public navigatedL2;
     public navigatedL3;
     public navigatedL4;
     public clickToClose;
-    constructor(public $scope: INavScope,  public $timeout: ng.ITimeoutService, public dataService: NavDataService){
+    constructor(public $scope: INavScope,  public $timeout: ng.ITimeoutService,public $q: ng.IQService, public dataService: NavDataService){
       super($scope,$timeout,$timeout);
       this.$scope.menuClosed = true;
       this.$scope.searchArea= "";
@@ -23,7 +23,7 @@ export class NavController extends BaseController{
       this.initiateClock();
       this.initiateDay();
 
-/*
+      /*
       $('.popover-dismiss').popover({
         trigger: 'focus'
       })
@@ -37,6 +37,19 @@ export class NavController extends BaseController{
       this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
     }
 
+    public swapUsers(){
+      if(this.$scope.currentUser == "Samantha Nugent"){
+        sessionStorage.setItem("CurrentUser", "Steve Jacob");
+      }else{
+          sessionStorage.setItem("CurrentUser",  "Samantha Nugent");
+      }
+      window.location.reload()
+    }
+
+
+    /*BEGIN SECTION: NAV FUNCTIONS*/
+
+      /*Nav Loading*/
     public loadNav(){
       this.dataService.getNavItems()
       .then(data =>{
@@ -48,15 +61,40 @@ export class NavController extends BaseController{
         alert(ex);
       })
     }
-    public swapUsers(){
-      if(this.$scope.currentUser == "Samantha Nugent"){
-        sessionStorage.setItem("CurrentUser", "Steve Jacob");
-      }else{
-          sessionStorage.setItem("CurrentUser",  "Samantha Nugent");
-      }
-      window.location.reload()
+
+    public loadL3NavItems(item): ng.IPromise<any>{
+      var deferred = this.$q.defer();
+      this.dataService.getL3NavItems(item.Id)
+            .then(data => {
+               if(data.length == 0){
+                 deferred.resolve(false);
+               }
+               else{
+                 deferred.resolve(true)
+               }
+                App.Common.replaceArrayContents(this.$scope.l3NavItems,data)
+
+            })
+            return deferred.promise;
     }
 
+    public loadL4NavItems(item): ng.IPromise<any>{
+      var deferred = this.$q.defer();
+      this.dataService.getL4NavItems(item.Id)
+      .then(data => {
+          if(data.length == 0){
+            deferred.resolve(false);
+          }
+          else{
+            deferred.resolve(true)
+          }
+          App.Common.replaceArrayContents(this.$scope.l4NavItems,data)
+        })
+      return deferred.promise;
+    }
+
+
+    /*Nav Opening*/
     public openL2NavForItem(item, forceClose = false){
       if(this.IsOpenItem(item.Id)){
         this.closeL2Nav();
@@ -76,6 +114,62 @@ export class NavController extends BaseController{
 
     }
 
+    public openL3NavForItem(item, isChain = false, extraOffset = 0,isClick = false){
+      if(this.IsOpenItem(item.Id) && !isChain){
+        this.closeL3Nav();
+        return;
+      }
+      if(this.$scope.selectedItemIds[1] && this.$scope.selectedItemIds[1] != ""){
+        this.closeL4Nav();
+      }
+
+      this.loadL3NavItems(item).then((hasChildren) =>{
+
+        if(hasChildren){
+          this.$scope.selectedItemIds[1] = item
+          var l2nav = $('.l2-nav');
+          var l2Width = l2nav.width();
+          var l2Offset = l2nav.offset().left
+          var overallOffest = (!l2Offset)? extraOffset : l2Offset
+          var offset = l2Width + overallOffest
+          $('.l3-nav').css("left", l2Offset + "px")
+          $('.l3-nav').animate({"left": (offset) +"px"},10);
+          if(this.IsNavigated(item.Id) && (this.$scope.navigatedItems[2] && this.$scope.navigatedItems[2] != "")){
+            this.openL4NavForItem(this.$scope.navigatedItems[2], true, offset);
+          }
+        }
+        else if (isClick){
+          this.redirectToL2Nav(item);
+        }
+      })
+
+    }
+
+    public openL4NavForItem(item, isChain = false, extraOffset = 0,isClick = false){
+      if(this.IsOpenItem(item.Id) && !isChain){
+        this.closeL4Nav();
+        return;
+      }
+
+      this.loadL4NavItems(item).then((hasChildren) =>{
+        if(hasChildren){
+          this.$scope.selectedItemIds[2] = item
+          var l3nav = $('.l3-nav');
+          var l3Width = l3nav.width();
+          var l3Offset = l3nav.offset().left
+          var offsetOverall = (!l3Offset)? extraOffset : l3Offset;
+          var offset = l3Width + offsetOverall;
+          $('.l4-nav').css("left", l3Offset + "px")
+          $('.l4-nav').animate({"left": (offset) +"px"},10);
+        }
+        else if(isClick){
+          this.redirectToL3Nav(item);
+        }
+      })
+    }
+
+
+    /* Nav Closing */
     public closeL2Nav(){
       this.closeL3Nav(true);
 
@@ -107,7 +201,7 @@ export class NavController extends BaseController{
           this.$scope.selectedItemIds[1] = '';
         },500)
 
-    }
+      }
 
     public closeL4Nav(isChain = false){
       if(this.$scope.selectedItemIds[2] == "" || !this.$scope.selectedItemIds[2]){
@@ -131,61 +225,8 @@ export class NavController extends BaseController{
 
     }
 
+    /*EMD SECTION: NAV FUNCTIONS*/
 
-
-    public openL3NavForItem(item, isChain = false, extraOffset = 0){
-      if(this.IsOpenItem(item.Id) && !isChain){
-        this.closeL3Nav();
-        return;
-      }
-      if(this.$scope.selectedItemIds[1] && this.$scope.selectedItemIds[1] != ""){
-        this.closeL4Nav();
-      }
-      this.$scope.selectedItemIds[1] = item
-      var l2nav = $('.l2-nav');
-      var l2Width = l2nav.width();
-      var l2Offset = l2nav.offset().left
-      var overallOffest = (!l2Offset)? extraOffset : l2Offset
-      var offset = l2Width + overallOffest
-      $('.l3-nav').css("left", l2Offset + "px")
-      $('.l3-nav').animate({"left": (offset) +"px"},10);
-      this.loadL3NavItems(item)
-      if(this.IsNavigated(item.Id) && (this.$scope.navigatedItems[2] && this.$scope.navigatedItems[2] != "")){
-        this.openL4NavForItem(this.$scope.navigatedItems[2], true, offset);
-      }
-    }
-    public loadL3NavItems(item){
-      this.dataService.getL3NavItems(item.Id)
-      .then(data => {
-
-          App.Common.replaceArrayContents(this.$scope.l3NavItems,data)
-
-      })
-    }
-
-    public openL4NavForItem(item, isChain = false, extraOffset = 0){
-      if(this.IsOpenItem(item.Id) && !isChain){
-        this.closeL4Nav();
-        return;
-      }
-      this.$scope.selectedItemIds[2] = item
-      var l3nav = $('.l3-nav');
-      var l3Width = l3nav.width();
-      var l3Offset = l3nav.offset().left
-      var offsetOverall = (!l3Offset)? extraOffset : l3Offset;
-      var offset = l3Width + offsetOverall;
-      $('.l4-nav').css("left", l3Offset + "px")
-      $('.l4-nav').animate({"left": (offset) +"px"},10);
-      this.loadL4NavItems(item)
-    }
-    public loadL4NavItems(item){
-      this.dataService.getL4NavItems(item.Id)
-      .then(data => {
-
-          App.Common.replaceArrayContents(this.$scope.l4NavItems,data)
-
-      })
-    }
 
     public displayApps(){
       var item = $(".app-row");
