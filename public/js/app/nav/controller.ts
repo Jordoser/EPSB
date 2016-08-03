@@ -336,8 +336,8 @@ export class NavController extends BaseController{
     }
 
     public openApplicationDrawer(){
-      var appDrawer = $(".application-drawer");
-      appDrawer.toggleClass("right-nav-open");
+      var appDrawer2 = $(".application-drawer");
+      appDrawer2.toggleClass("right-nav-open");
     }
 
 

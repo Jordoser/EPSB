@@ -13,10 +13,7 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-/public/js/app/**.js
-/public/js/app/**.min.js
-/public/js/app/**/**.map.js
-/public/js/app/**/**.js
+**/app/**/*.js
 
 # Windows shortcuts
 *.lnk
