@@ -303,6 +303,10 @@ var App;
                         break;
                 }
             };
+            NavController.prototype.openApplicationDrawer = function () {
+                var appDrawer = $(".application-drawer");
+                appDrawer.toggleClass("right-nav-open");
+            };
             NavController.prototype.IsOpenItem = function (itemId) {
                 var matchingItems = $.grep(this.$scope.selectedItemIds, function (item) {
                     return item.Id == itemId;

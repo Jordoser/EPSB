@@ -896,6 +896,21 @@ position: absolute;
 .top{
   z-index: 9999 !important;
 }
+
+.right-nav{
+  width: @NavWidth;
+  margin-top: @topNavBarHeight;
+  height: 100%;
+  position: fixed;
+  right: -@NavWidth;
+  transition: all 0.5s;
+  background-color: @gray-dark;
+}
+
+.right-nav-open{
+  right:0 !important;
+}
+
 .left-nav{
   width: @NavWidth;
   margin-top: @topNavBarHeight;

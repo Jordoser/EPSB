@@ -44,11 +44,12 @@ div(ng-controller='navController' Id="navDiv")
           div {{selectedItemIds[2].Name}} Overview
         li(ng-repeat="item in l4NavItems" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}" ng-click="ctrl.redirectToL4Nav(item)")
           div {{item.Name}}
+  .right-nav.application-drawer(style='z-index: 1000')
   .top-nav
     .top-wrapper
       .top-row
         img.logo(src="images/epsblogo.png" ng-click="ctrl.redirectHome()")
-        img(src="images/menuitems.png" style="padding-right: 15px;padding-top: 20px;").pull-right
+        img(src="images/menuitems.png" style="padding-right: 15px;padding-top: 20px;" ng-click="ctrl.openApplicationDrawer()").pull-right
       .search-bar.col-md-12.no-padding
         label(for="searchText" id="searchLabel")
           i.fa.fa-search.fa-3
