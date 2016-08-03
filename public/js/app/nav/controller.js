@@ -28,6 +28,11 @@ var App;
                 this.loadNav();
                 this.initiateClock();
                 this.initiateDay();
+                /*
+                $('.popover-dismiss').popover({
+                  trigger: 'focus'
+                })
+                */
                 this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
                 if (!this.$scope.currentUser) {
                     this.$scope.currentUser = "Samantha Nugent";
@@ -43,6 +48,8 @@ var App;
                 }
                 window.location.reload();
             };
+            /*BEGIN SECTION: NAV FUNCTIONS*/
+            /*Nav Loading*/
             NavController.prototype.loadNav = function () {
                 var _this = this;
                 var deferred = this.$q.defer();
@@ -112,6 +119,9 @@ var App;
                 });
                 return deferred.promise;
             };
+
+           
+
             NavController.prototype.openL2NavForItem = function (item, isClick) {
                 var _this = this;
                 if (isClick === void 0) { isClick = false; }
@@ -193,6 +203,7 @@ var App;
                     }
                 });
             };
+            /* Nav Closing */
             NavController.prototype.closeL2Nav = function () {
                 var _this = this;
                 this.closeL3Nav(true);
@@ -244,12 +255,14 @@ var App;
                     _this.$scope.selectedItemIds[2] = '';
                 }, 500);
             };
+            /*EMD SECTION: NAV FUNCTIONS*/
             NavController.prototype.displayApps = function () {
                 var item = $(".app-row");
                 var currentHeight = item.height();
                 var megaMenu = $(".mega-menu");
                 var currentPadding = parseInt(megaMenu.css("marginTop"));
                 if (currentHeight == 0) {
+                    //var height= item.css('height', 'auto').height();
                     var height = 150;
                     item.css('height', '0');
                     item.animate({ height: height + "px" }, { duration: 200, queue: false });
