@@ -7,9 +7,9 @@ module App {
     constructor(){
       this.LevelOneNavItems = {
         "NavItem1" : {
-            "Id": "School Administration",
+            "Id": "School Operations",
             "Name" : "School Operations",
-            "ContentId" : "School Administration"
+            "ContentId" : "School Operations"
         },
         "NavItem2" : {
             "Id": "Curriculum & Assessment",
@@ -35,113 +35,113 @@ module App {
         },
       }
       this.LevelTwoNavItems = {
-        //BEGIN L2 ITEMS FOR SCHOOL ADMIN
+        //BEGIN L2 ITEMS FOR SCHOOL OPERATIONS
         "l2NavItem1" : {
             "Id" : "Budget & Finance",
             "Name" : "Budget & Finance",
             "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "ContentId" : "Budget & Finance"
         },
         "l2NavItem2" : {
             "Id" : "Classroom & Program",
             "Name" : "Classroom & Program",
             "Description" : "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "ContentId" : "Classroom & Program"
         },
         "l2NavItem3" : {
             "Id" : "Communications for Schools",
             "Name" : "Communications for Schools",
             "Description" : "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "ContentId" : "Communications for Schools"
         },
         "l2NavItem4" : {
             "Id" : "Custodial & Maintenance",
             "Name" : "Custodial & Maintenance",
             "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "ContentId" : "Custodial & Maintenance"
         },
         "l2NavItem5" : {
             "Id" : "Emergency & Security",
             "Name" : "Emergency & Security",
             "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "ContentId" : "Emergency & Security"
         },
         "l2NavItem6" : {
             "Id" : "Enrolment & Registration",
             "Name" : "Enrolment & Registration",
             "Description" : "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "ContentId" : "Enrolment & Registration"
         },
         "l2NavItem7" : {
             "Id" : "Facility Use",
             "Name" : "Facility Use",
             "Description" : "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "ContentId" : "Facility Use"
         },
         "l2NavItem8" : {
             "Id" : "Family & Community",
             "Name" : "Family & Community",
             "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "ContentId" : "Family & Community"
         },
         "l2NavItem9" : {
             "Id" : "Inclusive Learning",
             "Name" : "Inclusive Learning",
             "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "ContentId" : "Inclusive Learning"
         },
         "l2NavItem10" : {
             "Id" : "Privacy & Safe Learning Environments",
             "Name" : "Privacy & Safe Learning Environments",
             "Description" : "Ut enim ad minim veniaiam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "contentId" : "Privacy & Safe Learning Environments"
         },
         "l2NavItem11" : {
             "Id" : "School Events & Activities",
             "Name" : "School Events & Activities",
             "Description" : "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "ContentId": "School Events & Activities"
         },
         "l2NavItem12" : {
             "Id" : "Staff Management & Hiring",
             "Name" : "Staff Management & Hiring",
             "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "ContentId": "Staff Management & Hiring"
         },
         "l2NavItem13" : {
             "Id" : "Student Management",
             "Name" : "Student Management",
             "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "ContentId" : "Student Management"
         },
         "l2NavItem14" : {
             "Id" : "Supplies & Equipment",
             "Name" : "Supplies & Equipment",
             "Description" : "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "ContentId" : "Supplies & Equipment"
         },
         "l2NavItem15" : {
             "Id" : "Technology",
             "Name" : "Technology",
             "Description" : "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "l1NavId": "School Administration",
+            "l1NavId": "School Operations",
             "ContentID" : "Technology"
         },
-        //END L2 ITEMS FOR SCHOOL ADMIN
+        //END L2 ITEMS FOR SCHOOL OPERATIONS
 
         //BEGIN L2 ITEMS FOR EMPLOYEE ESSENTIALS
         "l2NavItem16" : {
@@ -323,7 +323,7 @@ module App {
             "l1NavId": "About EPS",
         },
         //END L2 ITEMS FOR ABOUT EPS
-        
+
         //BEGIN L2 ITEMS FOR CURRICULUM & ASSESSNENT
         "l2NavItem45" : {
             "Id" : "Grade & Subject Resources",
