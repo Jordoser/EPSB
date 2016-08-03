@@ -9,7 +9,7 @@ div(ng-controller='navController' Id="navDiv")
             i(class="fa fa-sort-desc fa-1")
     .nav-items
       ul.main-nav
-        li(ng-click="ctrl.openL2NavForItem(item)" ng-repeat="item in navItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}")
+        li(ng-click="ctrl.openL2NavForItem(item,true)" ng-repeat="item in navItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}")
           div {{item.Name}}
       ul.secondary-nav
         li

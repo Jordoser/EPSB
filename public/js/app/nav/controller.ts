@@ -50,16 +50,45 @@ export class NavController extends BaseController{
     /*BEGIN SECTION: NAV FUNCTIONS*/
 
       /*Nav Loading*/
-    public loadNav(){
+    public loadNav(): ng.IPromise<any>{
+      var deferred = this.$q.defer();
       this.dataService.getNavItems()
       .then(data =>{
-        for(var i = 0; i < data.length; i++){
-          this.$scope.navItems.push(data[i])
+        if(data.length == 0){
+          deferred.resolve(false);
         }
+        else{
+          for(var i = 0; i < data.length; i++){
+            this.$scope.navItems.push(data[i])
+          }
+          deferred.resolve(true)
+        }
+
         })
       .catch(ex => {
         alert(ex);
       })
+      return deferred.promise;
+    }
+
+    public loadNavItems(item): ng.IPromise<any>{
+      var contentArea = $(".content-area")
+      contentArea.bind("click", this.clickToClose);
+      this.$scope.l2NavItems.length = 0;
+      this.$scope.openItemId = item.Id
+      var deferred = this.$q.defer();
+      this.dataService.getL2NavItems(item.Id)
+      .then(data =>{
+        if(data.length == 0){
+          deferred.resolve(false);
+        }
+        else{
+          deferred.resolve(true)
+          App.Common.replaceArrayContents(this.$scope.l2NavItems,data)
+        }
+
+      })
+      return deferred.promise;
     }
 
     public loadL3NavItems(item): ng.IPromise<any>{
@@ -71,8 +100,9 @@ export class NavController extends BaseController{
                }
                else{
                  deferred.resolve(true)
+                 App.Common.replaceArrayContents(this.$scope.l3NavItems,data)
                }
-                App.Common.replaceArrayContents(this.$scope.l3NavItems,data)
+
 
             })
             return deferred.promise;
@@ -87,15 +117,16 @@ export class NavController extends BaseController{
           }
           else{
             deferred.resolve(true)
+            App.Common.replaceArrayContents(this.$scope.l4NavItems,data)
           }
-          App.Common.replaceArrayContents(this.$scope.l4NavItems,data)
+
         })
       return deferred.promise;
     }
 
 
     /*Nav Opening*/
-    public openL2NavForItem(item, forceClose = false){
+    public openL2NavForItem(item, isClick = false){
       if(this.IsOpenItem(item.Id)){
         this.closeL2Nav();
         return;
@@ -103,14 +134,22 @@ export class NavController extends BaseController{
       if(this.$scope.selectedItemIds[0] && this.$scope.selectedItemIds[0] != ""){
         this.closeL3Nav();
       }
-      this.$scope.selectedItemIds[0] = item
-      var l1nav = $('.l1-nav');
-      var l1Width = l1nav.width();
-      $('.l2-nav').animate({"left": l1Width+"px"},10);
-      this.loadNavItems(item)
-      if(this.IsNavigated(item.Id) && (this.$scope.navigatedItems[1] && this.$scope.navigatedItems[1] != "")){
-        this.openL3NavForItem(this.$scope.navigatedItems[1], true, l1Width);
-      }
+
+      this.loadNavItems(item).then((hasChildren)=>{
+        if(hasChildren){
+          this.$scope.selectedItemIds[0] = item
+          var l1nav = $('.l1-nav');
+          var l1Width = l1nav.width();
+          $('.l2-nav').animate({"left": l1Width+"px"},10);
+          if(this.IsNavigated(item.Id) && (this.$scope.navigatedItems[1] && this.$scope.navigatedItems[1] != "")){
+            this.openL3NavForItem(this.$scope.navigatedItems[1], true, l1Width);
+          }
+        }
+        else if(isClick){
+          this.redirectToL1Nav(item)
+        }
+      })
+
 
     }
 
@@ -298,16 +337,7 @@ export class NavController extends BaseController{
 
 
 
-    public loadNavItems(item){
-      var contentArea = $(".content-area")
-      contentArea.bind("click", this.clickToClose);
-      this.$scope.l2NavItems.length = 0;
-            this.$scope.openItemId = item.Id
-      this.dataService.getL2NavItems(item.Id)
-      .then(data =>{
-          App.Common.replaceArrayContents(this.$scope.l2NavItems,data)
-        })
-    }
+
 
     public IsOpenItem(itemId):boolean{
       var matchingItems = $.grep(this.$scope.selectedItemIds, (item) =>{
