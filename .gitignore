@@ -13,6 +13,7 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+**/app/**/*.js.map
 **/app/**/*.js
 
 # Windows shortcuts

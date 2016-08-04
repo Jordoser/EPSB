@@ -26,5 +26,9 @@ module App.Nav{
       return this.getItemByKeyValue("LevelFourNavItems","l3NavId",levelThreeId)
     }
 
+    public getApps(): ng.IPromise<Array<any>>{
+      return this.getItems("Applications")
+    }
+
   }
 }

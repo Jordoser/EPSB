@@ -19,5 +19,6 @@ module App.Nav{
       openItemId: string;
       selectedItemId: string;
       navLevel: string;
+      applications: Array<any>;
   }
 }

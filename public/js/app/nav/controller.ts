@@ -17,9 +17,11 @@ export class NavController extends BaseController{
       this.$scope.l2NavItems = [];
       this.$scope.l3NavItems = [];
       this.$scope.l4NavItems = [];
+      this.$scope.applications = [];
       this.$scope.navigatedItems = []
       this.$scope.selectedItemIds = []
       this.loadNav();
+      this.loadApps();
       this.initiateClock();
       this.initiateDay();
 
@@ -35,6 +37,10 @@ export class NavController extends BaseController{
       }
 
       this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
+
+      if(!this.$scope.navigatedItems){
+        this.$scope.navigatedItems = [];
+      }
     }
 
     public swapUsers(){
@@ -46,6 +52,13 @@ export class NavController extends BaseController{
       window.location.reload()
     }
 
+
+    public loadApps(){
+      this.dataService.getApps()
+      .then(data =>{
+        App.Common.replaceArrayContents(this.$scope.applications, data)
+      })
+    }
 
     /*BEGIN SECTION: NAV FUNCTIONS*/
 
@@ -346,14 +359,21 @@ export class NavController extends BaseController{
       var matchingItems = $.grep(this.$scope.selectedItemIds, (item) =>{
         return item.Id == itemId
       });
-      return matchingItems.length > 0;
+
+      if(!matchingItems){
+        return false;
+      }
+      return (matchingItems.length > 0);
     }
 
     public IsNavigated(itemId):boolean{
       var matchingItems = $.grep(this.$scope.navigatedItems, (item) =>{
         return item.Id == itemId
       });
-      return matchingItems.length > 0;
+      if(!matchingItems){
+        return false;
+      }
+      return (matchingItems.length > 0);
     }
 
 
