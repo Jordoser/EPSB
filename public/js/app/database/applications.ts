@@ -24,7 +24,7 @@ module App {
           "Favorite" : "true",
           "Tags" : ["Teacher"]
         },
-        "Application3" : {
+        "Application4" : {
           "Id": "PeopleSoft Self Service",
           "Name" : "Google",
           "Description": "Your personal pay & benefits information.",

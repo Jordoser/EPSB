@@ -12,6 +12,14 @@ module App.search{
      return $sce.trustAsHtml(text)
    }
   })
+  .filter('fullhighlight', ($sce)=>{
+    return function(text, phrase) {
+     if (phrase) text = text.replace(new RegExp('('+phrase+'$)', 'gi'),
+       '<span class="highlighted">$1</span>')
+
+     return $sce.trustAsHtml(text)
+   }
+  })
 
 
   export interface ISearchScope extends IBaseScope{
