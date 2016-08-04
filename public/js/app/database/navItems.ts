@@ -13,25 +13,30 @@ module App {
         },
         "NavItem2" : {
             "Id": "Curriculum & Assessment",
-            "Name" : "Curriculum & Assessment"
+            "Name" : "Curriculum & Assessment",
+            "ContentId" : "Curriculum & Assessment"
         },
         "NavItem3" : {
             "Id": "District Staff Resources",
-            "Name" : "District Staff Resources"
+            "Name" : "District Staff Resources",
+            "ContentId" : "District Staff Resources"
         },
         "NavItem4" : {
             
             "Id": "Employee Essentials",
-            "Name" : "Employee Essentials"
+            "Name" : "Employee Essentials",
+            "ContentId" : "Employee Essentials"
         },
         "NavItem5" : {
-            "Id": "News & Events",
-            "Name" : "News"
+            "Id": "News",
+            "Name" : "News",
+            "ContentId" : "News"
         },
         "NavItem6" : {
 
             "Id": "About EPS",
-            "Name" : "About EPS"
+            "Name" : "About EPS",
+            "ContentId" : "About EPS"
         },
       }
       this.LevelTwoNavItems = {
@@ -229,13 +234,6 @@ module App {
             "ContentId" : "Vacation & Public Holidays for Teachers"
         },
         //BEGIN L2 ITEMS FOR DISTRICT STAFF RESOURCES
-        "l2NavItem28" : {
-            "Id" : "Archives & Museum",
-            "Name" : "Archives & Museum",
-            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-            "l1NavId": "District Staff Resources",
-            "ContentId" : "Archives & Museum"
-        },
         "l2NavItem29" : {
             "Id" : "Communications Resources for District Staff",
             "Name" : "Communications Resources for District Staff",
