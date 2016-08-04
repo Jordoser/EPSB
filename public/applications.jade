@@ -1,0 +1,29 @@
+div(Id="applicationsDiv" ng-controller='applicationsController')
+  .content-area
+    .info-wrapper
+      .primary-info
+        h2 Applications
+        .descripton-wrapper
+          div.primary-image
+          p {{currentItem.Description}}
+        .section-nav
+          .section-flex-container
+            .section-flex-item(ng-repeat="item in applications" style="display: flex;")
+              i.fa.fa-star.pull-left(ng-show="item.Favorite == 'true'" style="margin-right: 15px;margin-top: 3px;")
+              i.fa.fa-star-o.pull-left(ng-show="item.Favorite != 'true'" style="margin-right: 15px;margin-top: 3px;")
+              .pull-right
+                .section-item-header(ng-click="ctrl.redirectToSectionItem(item)") {{item.Name}}
+                .section-item-description {{item.Description}}
+      .secondary-info
+        div.news-item-wrapper
+          span.sub-heading NEWS
+          div.news-item(ng-repeat="news in relatedNews")
+            span.news-text {{news.Name}}
+            p.text-muted {{news.Metadata.CreatedOn}}
+      
+        
+script(src='js/app/applications/dataService.js')
+script(src='js/app/applications/controller.js')
+script(src='js/app/applications/main.js')
+script.
+  angular.bootstrap(document.getElementById('applicationsDiv'),["applicationsApp"])

@@ -14,14 +14,14 @@ var App;
                     "Id": "Pinpoint Student",
                     "Name": "Pinpoint Student",
                     "Description": "A short description about the application and its purpose",
-                    "Favorite": "true",
+                    "Favorite": "false",
                     "Tags": ["School Administration"]
                 },
                 "Application3": {
                     "Id": "SchoolZone",
                     "Name": "School Zone",
                     "Description": "A short description about the application and its purpose",
-                    "Favorite": "false",
+                    "Favorite": "true",
                     "Tags": ["School Administration", "Teacher"]
                 }
             };

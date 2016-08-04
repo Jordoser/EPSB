@@ -10,6 +10,7 @@ module App {
     public LevelTwoContent;
     public LevelThreeContent;
     public LevelFourContent;
+    public OtherContent;
 
     public PageAudits;
     public NewsItems;
@@ -48,6 +49,9 @@ module App {
 
       var levelFourContent = new LevelFourContentDatabase();
       this.LevelFourContent = levelFourContent.LevelFourContent;
+
+      var otherContent = new OtherContentDatabase();
+      this.OtherContent = otherContent.OtherContent;
 
       var pageAudits = new PageAuditDatabase();
       this.PageAudits = pageAudits.PageAudits;

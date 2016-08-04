@@ -171,9 +171,10 @@ var App;
             navArray = navArray.splice(0, 2);
             this.navigate("levelTwo.html", navArray);
         };
-        Common.navigateL1 = function (navArray) {
+        Common.navigateL1 = function (navArray, pageUrl) {
+            if (pageUrl === void 0) { pageUrl = "levelOne.html"; }
             navArray = navArray.splice(0, 1);
-            this.navigate("levelOne.html", navArray);
+            this.navigate(pageUrl, navArray);
         };
         Common.addZero = function (integer) {
             if (integer < 10) {

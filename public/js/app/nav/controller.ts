@@ -30,6 +30,10 @@ export class NavController extends BaseController{
         trigger: 'focus'
       })
       */
+      this.$scope.applicationsItem = {
+        Name: "Applications",
+        PageUrl: "applications.html"
+      }
 
       this.$scope.currentUser =  sessionStorage.getItem("CurrentUser");
       if(!this.$scope.currentUser){
@@ -303,6 +307,10 @@ export class NavController extends BaseController{
     public redirectToL1Nav(item, IsBreadCrumb = false){
         var navArray = (IsBreadCrumb)? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
         navArray[0] = item
+        if(item.PageUrl){
+          App.Common.navigateL1(navArray, item.PageUrl)
+          return;
+        }
         App.Common.navigateL1(navArray)
     }
 

@@ -46,7 +46,7 @@ div(ng-controller='navController' Id="navDiv")
           div {{item.Name}}
   .right-nav.application-drawer(style='z-index: 1000; color: white !important')
     .application-header Applications
-    a.all-apps-link.pull-right All apps >>
+    a.all-apps-link.pull-right(ng-click="ctrl.redirectToL1Nav(applicationsItem)") All apps >>
     .application-item(ng-repeat="app in applications")
       .application-icon.pull-left
         i.fa.fa-star(ng-show="app.Favorite == 'true'")
