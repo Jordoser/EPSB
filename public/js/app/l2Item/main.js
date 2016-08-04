@@ -1,3 +1,4 @@
+// Created data binding controller for index page
 var App;
 (function (App) {
     var l2item;

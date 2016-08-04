@@ -89,34 +89,35 @@ var App;
             };
             this.ResourceTypeFilters = {
                 "Filter1": {
-                    "Tag": "Program of Studies",
+                    "Tag": "Program of Studies"
                 },
                 "Filter2": {
-                    "Tag": "Assessments",
+                    "Tag": "Assessments"
                 },
                 "Filter3": {
-                    "Tag": "Classroom Resources",
+                    "Tag": "Classroom Resources"
                 },
                 "Filter4": {
-                    "Tag": "Competencies",
+                    "Tag": "Competencies"
                 },
                 "Filter5": {
-                    "Tag": "Focus on Reading",
+                    "Tag": "Focus on Reading"
                 },
                 "Filter6": {
-                    "Tag": "Research & Support",
+                    "Tag": "Research & Support"
                 }
             };
+            //Todo change to content types
             this.DocumentTypeFilters = {
                 "Filter1": {
-                    "Tag": "Forms",
+                    "Tag": "Forms"
                 },
                 "Filter2": {
-                    "Tag": "Manuals",
+                    "Tag": "Manuals"
                 },
                 "Filter3": {
-                    "Tag": "Policies",
-                },
+                    "Tag": "Policies"
+                }
             };
         }
         return TagFilterDatabase;
