@@ -341,12 +341,14 @@ var App;
                 "l2NavItem45": {
                     "Id": "Grade & Subject Resources",
                     "Name": "Grade & Subject Resources",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                     "l1NavId": "Curriculum & Assessment",
                     "ContentId": "Grade & Subject Resources"
                 },
                 "l2NavItem46": {
                     "Id": "Curriculum & Teaching Topics",
                     "Name": "Curriculum & Teaching Topics",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                     "l1NavId": "Curriculum & Assessment",
                     "ContentId": "Curriculum & Teaching Topics"
                 }

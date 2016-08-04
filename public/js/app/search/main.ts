@@ -26,5 +26,8 @@ module App.search{
       currentItem: any;
       searchString: string;
       searchResults: Array<any>;
+      totalResults: number;
+      tags: Array<any>;
+      typeArray: Array<any>;
   }
 }

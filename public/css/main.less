@@ -66,7 +66,24 @@
   font-weight: bolder !important;
 }
 
+.related-tags{
+  border-right: 1px solid @gray-light;
+  padding: 15px;
+}
 
+
+
+.layout-footer{
+  width:100%;
+background-color:  @gray-lighter;
+height: 200px;
+bottom: 0;
+flex: 0 0 100%;
+margin-top: 100px;
+bottom: 0;
+overflow: hidden;
+
+}
 .application-header{
   font-size: 1.2em;
   font-weight: bold;
@@ -75,10 +92,11 @@
 }
 .application-info{
     padding: @DefaultPadding;
+        width: 90%;
 }
 
 .application-icon{
-    margin-top: -40px;
+        width: 10% !important;
 }
 
 .application-name{
@@ -168,8 +186,17 @@ text-overflow: ellipsis; // This is where the magic happens
   display: flex;
 }
 
+
+.large-text{
+  font-size: 1.3em !important;
+}
 .small-text{
   font-size: 0.8em !important;
+}
+
+.tag-text{
+  font-size: 0.8em !important;
+  color: @gray;
 }
 
 .doc-info-wrapper{
@@ -582,11 +609,12 @@ padding-bottom: 30px;
 }
 .custom-container{
   width: 100%;
-display: block;
+    flex-direction: column;
     position: absolute;
 overflow-y: auto;
     margin-top: 215px;
 padding-left: @NavWidth;
+
 
   .content-area{
 
