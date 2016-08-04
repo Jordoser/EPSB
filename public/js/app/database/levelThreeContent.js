@@ -10,7 +10,6 @@ var App;
            nulla pariatur.",
                     "RelatedTopics": "",
 <<<<<<< HEAD
-<<<<<<< HEAD
                     "PageAuditId": "Budgeting"
                 },
                 "LevelThreeContent2": {
@@ -36,6 +35,9 @@ var App;
            nulla pariatur.",
                     "RelatedTopics": "",
                     "PageAuditId": "Bomb Threats"
+=======
+                    "PageAuditId": "Equipment",
+>>>>>>> origin/master
                 }
             };
         }
