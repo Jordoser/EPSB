@@ -39,7 +39,7 @@ module App {
           "Tags": ["10-12", "Science","Mathematics","Focus on Reading"]
         },
         "Resource6" :{
-          "Id" : " 4th Grade Math and Science Research & Support",
+          "Id" : "4th Grade Math and Science Research & Support",
           "Name" : "4th Grade Math and Science Research & Support",
           "Description": "Research topic about math and science for fourth grade",
           "MetadataId" : "4th Grade Math and Science Research & Support Metadata",

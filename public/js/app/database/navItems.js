@@ -97,7 +97,7 @@ var App;
                 "l2NavItem10": {
                     "Id": "Privacy & Safe Learning Environments",
                     "Name": "Privacy & Safe Learning Environments",
-                    "Description": "Ut enim ad minim veniaiam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    "Description": "Edmonton Public Schools believes in safe, caring and respectful environments for all students and staff.",
                     "l1NavId": "School Operations",
                     "ContentId": "Privacy & Safe Learning Environments"
                 },
@@ -763,24 +763,22 @@ var App;
                 "l3NavItem51": {
                     "Id": "Bullying Prevention",
                     "Name": "Bullying Prevention",
-                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    "Description": "The District has identified a variety of support material to help staff, parents and students prevent and address bullying behaviour.",
                     "l2NavId": "Privacy & Safe Learning Environments",
                     "ContentId": "Bullying Prevention"
                 },
                 "l3NavItem52": {
                     "Id": "FOIP",
                     "Name": "FOIP",
-                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    "Description": "Edmonton Public Schools is committed to privacy protection for staff, students, and families.",
                     "l2NavId": "Privacy & Safe Learning Environments",
                     "ContentId": "FOIP"
                 },
                 "l3NavItem53": {
                     "Id": "Sexual Orientation & Gender Identity",
                     "Name": "Sexual Orientation & Gender Identity",
-                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    "Description": "Edmonton Public Schools is proud of its commitment to support our sexual and gender minority (LGBTQ) students, staff, and families through our policies, \
+            regulations, and ongoing opportunities for meaningful engagement.",
                     "l2NavId": "Privacy & Safe Learning Environments",
                     "ContentId": "Sexual Orientation & Gender Identity"
                 },
