@@ -15,11 +15,13 @@ module App.Nav{
       navigatedItems: Array<any>
       selectedItemIds : Array<any>
       searchArea: string;
+      searchString: string;
       menuClosed: boolean;
       openItemId: string;
       selectedItemId: string;
       navLevel: string;
       applications: Array<any>;
       applicationsItem: any;
+      searchItem: any;
   }
 }

@@ -62,6 +62,10 @@
 @DefaultPadding : 15px;
 @NeedToKnowHeight: 500px;
 
+.highlighted{
+  font-weight: bolder !important;
+}
+
 
 .application-header{
   font-size: 1.2em;
@@ -240,13 +244,16 @@ text-overflow: ellipsis; // This is where the magic happens
 
     list-style-type: none;
     height: @SubNavItemHeight;
-
+    display: table-row;
     cursor: pointer;
     div{
       padding-left: 25px;
       height: @SubNavItemHeight;
       display:table-cell;
       vertical-align : middle;
+      &:hover{
+        text-decoration: underline;
+      }
 
     }
 

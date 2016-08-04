@@ -61,9 +61,12 @@ div(ng-controller='navController' Id="navDiv")
         img(src="images/menuitems.png" style="padding-right: 15px;padding-top: 20px;" ng-click="ctrl.openApplicationDrawer()").pull-right
       .search-bar.col-md-12.no-padding
         label(for="searchText" id="searchLabel")
-          i.fa.fa-search.fa-3
-          input.search-input(type="text" id="searchText")
+          i.fa.fa-search.fa-3(ng-click="ctrl.search()")
+          form(ng-submit="ctrl.search()")
+            input.search-input(type="text" id="searchText" ng-model="searchString")
       .bread-crumb.col-sm-12.small-text(ng-if="navigatedItems.length > 0")
+        span.bread-crumb-l2(ng-click="ctrl.redirectHome()") Home
+          span.bread-crumb-separator(ng-if="navigatedItems.length > 0") &nbsp>&nbsp;
         span.bread-crumb-l2(ng-click="ctrl.redirectFromBreadCrumb($index, navItem)" ng-repeat="navItem in navigatedItems") {{navItem.Name}}
           span.bread-crumb-separator(ng-if="$index != navigatedItems.length -1") &nbsp>&nbsp;
       != partial('megamenu')

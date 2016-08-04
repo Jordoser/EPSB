@@ -13,6 +13,7 @@ export class NavController extends BaseController{
       this.$scope.menuClosed = true;
       this.$scope.searchArea= "";
       this.$scope.openItemId = "";
+      this.$scope.searchString = "";
       this.$scope.navItems = [];
       this.$scope.l2NavItems = [];
       this.$scope.l3NavItems = [];
@@ -30,9 +31,16 @@ export class NavController extends BaseController{
         trigger: 'focus'
       })
       */
+
+
       this.$scope.applicationsItem = {
         Name: "Applications",
         PageUrl: "applications.html"
+      }
+
+      this.$scope.searchItem = {
+        Name: "Search",
+        PageUrl: "searchResults.html"
       }
 
       this.$scope.currentUser =  sessionStorage.getItem("CurrentUser");
@@ -45,7 +53,10 @@ export class NavController extends BaseController{
       if(!this.$scope.navigatedItems){
         this.$scope.navigatedItems = [];
       }
+
     }
+
+
 
     public swapUsers(){
       if(this.$scope.currentUser == "Samantha Nugent"){
@@ -57,9 +68,15 @@ export class NavController extends BaseController{
     }
 
 
+    public search(){
+        sessionStorage.setItem("SearchString", this.$scope.searchString);
+        this.redirectToL1Nav(this.$scope.searchItem)
+    }
+
     public loadApps(){
       this.dataService.getApps()
       .then(data =>{
+        data = _.sortBy(data, (o)=>{return (o.Favorite == 'false')})
         App.Common.replaceArrayContents(this.$scope.applications, data)
       })
     }
