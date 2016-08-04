@@ -1,11 +1,11 @@
 #accordion.panel-group
   .panel.panel-default(ng-repeat="type in documentTypes")
-    .panel-heading( data-toggle='collapse', data-parent='#accordion', ng-href='{{"#"+type.Tag}}')
+    .panel-heading( data-toggle='collapse', data-parent='#accordion', ng-href='{{"#"+$index}}')
       h4.panel-title
         i.fa.fa-sort-desc.fa-centering
         a {{type.Tag}}
           
-    .panel-collapse.collapse(id="{{type.Tag}}")
+    .panel-collapse.collapse(id="{{$index}}")
         .panel-body
           div.panel-document(ng-repeat="document in type.Documents")
             i.fa.pull-left.fa-file-text-o

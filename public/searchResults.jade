@@ -1,12 +1,13 @@
 div(ng-controller='searchController' Id="searchDiv")
   h3 Search Results for '{{searchString}}'
   div(ng-repeat="item in searchResults")
+    hr
     div(ng-bind-html="item.Name | highlight:searchString")
     div(ng-bind-html="item.Description | highlight:searchString")
     span(ng-repeat="tag in item.Tags")
-      span(ng-bind-html="tag | highlight:searchString")
+      span(ng-bind-html="tag | fullhighlight:searchString")
       span ||
-    hr
+
 script(src='js/app/search/dataService.js')
 script(src='js/app/search/controller.js')
 script(src='js/app/search/main.js')
