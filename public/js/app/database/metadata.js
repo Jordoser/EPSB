@@ -63,17 +63,17 @@ var App;
                     "CreatedBy": "Mitchell Szpytma",
                     "CreatedOn": "April 8, 2013 "
                 },
-                "Metadata13": {
+                "Metadat13": {
                     "Id": "NewsItem2",
                     "CreatedBy": "Mitchell Szpytma",
                     "CreatedOn": "August 3, 2016 "
                 },
-                "Metadata14": {
+                "Metadat14": {
                     "Id": "NewsItem3",
                     "CreatedBy": "Mitchell Szpytma",
                     "CreatedOn": "July 22, 2016 "
                 },
-                "Metadata15": {
+                "Metadat15": {
                     "Id": "NewsItem4",
                     "CreatedBy": "Mitchell Szpytma",
                     "CreatedOn": "June 22, 2016 "

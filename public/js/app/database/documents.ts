@@ -9,7 +9,7 @@ module App {
           "Description" : "Stuff and things",
           "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTRTNlVjhHS3RVcWc",
           "MetadataId" : "FacilityForm.pdf Metadata",
-          "Tags" : ["Bullying Prevention","Forms & Templates"]
+          "Tags" : ["Facilities & Equipment","Forms"]
         },
         "Document2" : {
           "Id": "FacilityHazardousForm.pdf ",

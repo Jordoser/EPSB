@@ -7,7 +7,7 @@ module App {
 
           "Id" : "School Operations",
 
-          "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
+          "Description": "Yowza! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat\
            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
@@ -19,18 +19,6 @@ module App {
           "PageAuditId": "School Operations",
 
           "Tags" : ["School Operations"]
-        },
-        "LevelOneContent2":{
-
-          "Id" : "Employee Essentials",
-
-          "Description": "Employees are essential. You need things. We have things. You can get things here. Seriously.",
-
-          "RelatedTopics" : "",
-
-          "PageAuditId": "Employee Essentials",
-
-          "Tags" : ["Employee Essentials"]
         }
       }
     }
