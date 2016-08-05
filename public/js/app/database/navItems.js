@@ -343,6 +343,13 @@ var App;
                     "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                     "l1NavId": "Curriculum & Assessment",
                     "ContentId": "Curriculum & Teaching Topics"
+                },
+                "l2NavItem47": {
+                    "Id": "Teacher-Made Curriculum Resources",
+                    "Name": "Teacher-Made Curriculum Resources",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                    "l1NavId": "Curriculum & Assessment",
+                    "ContentId": "Teacher-Made Curriculum Resources"
                 }
             };
             this.LevelThreeNavItems = {
