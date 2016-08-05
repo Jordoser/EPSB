@@ -676,24 +676,21 @@ module App {
           "l3NavItem40" :{
             "Id" : "Communication",
             "Name"  : "Communication",
-            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "Description" : "District templates and resources for effective communication with parents and community stakeholders.",
             "l2NavId": "Family & Community",
             "ContentId" : "Communication"
           },
           "l3NavItem41" :{
             "Id" : "Tutoring",
             "Name"  : "Tutoring",
-            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "Description" : "Information on providing tutoring for students.",
             "l2NavId": "Family & Community",
             "ContentId" : "Tutoring"
           },
           "l3NavItem42" :{
             "Id" : "Volunteers",
             "Name"  : "Volunteers",
-            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "Description" : "District policies and resources for managing volunteers.",
             "l2NavId": "Family & Community",
             "ContentId" : "Volunteers"
           },

@@ -58,8 +58,8 @@ var App;
                 },
                 "LevelTwoContent8": {
                     "Id": "Family & Community",
-                    "Description": "Booga booga! Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "Description": "We value our many partners in education: families, school councils, community groups, businesses,\
+           post-secondary institutions and donors. There are lots of ways to support teaching and learning in our schools.",
                     "RelatedTopics": "",
                     "PageAuditId": "Familty & Community"
                 },

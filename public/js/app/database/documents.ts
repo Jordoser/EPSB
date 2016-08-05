@@ -64,8 +64,24 @@ module App {
           "Name" : "Student Bullying-Prevention Artwork",
           "Description" : "Grade 2 and 4 artwork from Virgina Park School.",
           "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
-          "MetadataId" : "Student Bullying-Prevention Artwork",
+          "MetadataId" : "Student Bullying-Prevention Artwork Metadata",
           "Tags" : ["Bullying Prevention","Images & Graphics"]
+        },
+        "Document9" : {
+          "Id": "Volunteers - Registration and Records Checks Policy",
+          "Name" : "Volunteers - Registration and Records Checks Policy",
+          "Description" : "",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Volunteers - Registration and Records Checks Policy Metadata",
+          "Tags" : ["Volunteers","Policies"]
+        },
+        "Document10" : {
+          "Id": "Liability Insurance of Volunteer Drivers Policy",
+          "Name" : "Liability Insurance of Volunteer Drivers Policy",
+          "Description" : "",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Volunteers - Registration and Records Checks Policy Metadata",
+          "Tags" : ["Volunteers","Policies"]
         }
       }
     }
