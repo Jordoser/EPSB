@@ -116,34 +116,46 @@ var App;
                     "Tag": "Calendars"
                 },
                 "Filter3": {
-                    "Tag": "Contacts"
+                    "Tag": "Checklists"
                 },
                 "Filter4": {
-                    "Tag": "Contracts & Agreements"
+                    "Tag": "Contacts"
                 },
                 "Filter5": {
-                    "Tag": "External Sites"
+                    "Tag": "Contracts & Agreements"
                 },
                 "Filter6": {
-                    "Tag": "Forms & Templates"
+                    "Tag": "External Sites"
                 },
                 "Filter7": {
-                    "Tag": "Manuals & Plans"
+                    "Tag": "Forms & Templates"
                 },
                 "Filter8": {
-                    "Tag": "News Articles"
+                    "Tag": "Images & Graphics"
                 },
                 "Filter9": {
-                    "Tag": "Policies"
+                    "Tag": "Manuals & Plans"
                 },
                 "Filter10": {
-                    "Tag": "Procedures"
+                    "Tag": "News Articles"
                 },
                 "Filter11": {
-                    "Tag": "Reports"
+                    "Tag": "Policies"
                 },
                 "Filter12": {
+                    "Tag": "Presentations"
+                },
+                "Filter13": {
+                    "Tag": "Procedures"
+                },
+                "Filter14": {
+                    "Tag": "Reports"
+                },
+                "Filter15": {
                     "Tag": "Standards & Guidelines"
+                },
+                "Filter16": {
+                    "Tag": "Videos"
                 }
             };
         }
