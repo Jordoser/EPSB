@@ -89,60 +89,61 @@ var App;
             };
             this.ResourceTypeFilters = {
                 "Filter1": {
-                    "Tag": "Program of Studies",
+                    "Tag": "Program of Studies"
                 },
                 "Filter2": {
-                    "Tag": "Assessments",
+                    "Tag": "Assessments"
                 },
                 "Filter3": {
-                    "Tag": "Classroom Resources",
+                    "Tag": "Classroom Resources"
                 },
                 "Filter4": {
-                    "Tag": "Competencies",
+                    "Tag": "Competencies"
                 },
                 "Filter5": {
-                    "Tag": "Focus on Reading",
+                    "Tag": "Focus on Reading"
                 },
                 "Filter6": {
-                    "Tag": "Research & Support",
+                    "Tag": "Research & Support"
                 }
             };
+            //Todo change to content types
             this.DocumentTypeFilters = {
                 "Filter1": {
-                    "Tag": "Applications",
+                    "Tag": "Applications"
                 },
                 "Filter2": {
-                    "Tag": "Calendars",
+                    "Tag": "Calendars"
                 },
                 "Filter3": {
-                    "Tag": "Contacts",
+                    "Tag": "Contacts"
                 },
                 "Filter4": {
-                    "Tag": "Contracts & Agreements",
+                    "Tag": "Contracts & Agreements"
                 },
                 "Filter5": {
-                    "Tag": "External Sites",
+                    "Tag": "External Sites"
                 },
                 "Filter6": {
-                    "Tag": "Forms & Templates",
+                    "Tag": "Forms & Templates"
                 },
                 "Filter7": {
-                    "Tag": "Manuals & Plans",
+                    "Tag": "Manuals & Plans"
                 },
                 "Filter8": {
-                    "Tag": "News Articles",
+                    "Tag": "News Articles"
                 },
                 "Filter9": {
-                    "Tag": "Policies",
+                    "Tag": "Policies"
                 },
                 "Filter10": {
-                    "Tag": "Procedures",
+                    "Tag": "Procedures"
                 },
                 "Filter11": {
-                    "Tag": "Reports",
+                    "Tag": "Reports"
                 },
                 "Filter12": {
-                    "Tag": "Standards & Guidelines",
+                    "Tag": "Standards & Guidelines"
                 }
             };
         }
