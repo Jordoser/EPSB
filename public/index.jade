@@ -30,7 +30,9 @@ div(Id="homeIndexDiv" ng-controller='homeIndexController')
               .top-content(style="margin-top: 30px;")
                 .bold.small-text TOP CONTENT
                 div(ng-repeat="item in topContent" ng-show="item.Role == 'Custodian'")
-                  a(ng-click="ctrl.redirectToTop(item)") {{item.Name}}
+                  a(ng-click="ctrl.redirectToTop(item)") 
+                    i.fa.fa-file-o(style="margin-right:10px;")
+                    span(stlye="padding-left:10px;"){{item.Name}}
 
             div(ng-if="currentUser == 'Samantha Nugent'")
               .large-text
@@ -43,7 +45,10 @@ div(Id="homeIndexDiv" ng-controller='homeIndexController')
               .top-content(style="margin-top: 30px;")
                 .bold.small-text TOP CONTENT
                 div(ng-repeat="item in topContent" ng-show="item.Role == 'Teacher'")
-                  a(ng-click="ctrl.redirectToTop(item)") {{item.Name}}
+                  a(ng-click="ctrl.redirectToTop(item)")
+                    i.fa.fa-file-o(style="margin-right:10px;")
+                    span(stlye="padding-left:10px;"){{item.Name}}
+
             .dates-wrapper
             .quicklins-wrapper
       .secondary-info.extra-wide.no-padding.pull-right(style="margin-left:auto")
