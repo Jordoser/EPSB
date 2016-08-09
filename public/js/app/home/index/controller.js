@@ -46,7 +46,7 @@ var App;
                     });
                 };
                 HomeIndexController.prototype.openSite = function () {
-                    window.open(this.$scope.selectedShareSite, '_blank');
+                    window.open('https://projects.invisionapp.com/d/main#/console/8220681/180087853/preview', '_blank');
                 };
                 HomeIndexController.prototype.redirectToTop = function (item) {
                     var nav1 = [];

@@ -23,31 +23,37 @@ div(Id="homeIndexDiv" ng-controller='homeIndexController')
                   hr.thin-padding-hr
                 .scroll-footer
           .dynamic-info-wrapper(style="margin-left:auto; margin-right:auto; padding-left: 30px; padding-top: 15px;")
-            div(ng-if="currentUser == 'Steve Jacob'")
-              .large-text
-                span.bold Quick Links
-                span(style="font-style: italic;")  for Custodians
-              .top-content(style="margin-top: 30px;")
-                .bold.small-text TOP CONTENT
-                div(ng-repeat="item in topContent" ng-show="item.Role == 'Custodian'")
-                  a(ng-click="ctrl.redirectToTop(item)") 
-                    i.fa.fa-file-o(style="margin-right:10px;")
-                    span(stlye="padding-left:10px;"){{item.Name}}
+            div(ng-if="currentUser == 'Steve Jacob'" style="display:flex")
+              .left-content
+                .large-text
+                  span.bold Quick Links
+                  span(style="font-style: italic;")  for Custodians
+                .top-content(style="margin-top: 30px;")
+                  .bold.small-text(style="margin-bottom: 5px") TOP CONTENT
+                  div(ng-repeat="item in topContent" ng-show="item.Role == 'Custodian'" style="margin-left: 15px;")
+                    a(ng-click="ctrl.redirectToTop(item)") 
+                      i.fa.fa-file-o(style="margin-right:10px;")
+                      span(stlye="padding-left:10px;"){{item.Name}}
+              .right-content(style="margin-left:auto;")
+                img(src="images/bulletinboard.png")
 
             div(ng-if="currentUser == 'Samantha Nugent'")
-              .large-text
-                  span.bold Quick Links
-                  span(style="font-style: italic;")  for Teachers
-              .bold TEACHER MADE CURRICULUM RESOURCES
-              .text-muted A place for teachers to share resources with each other
-              select(selectpicker='' style="width: 500px;" ng-model="selectedShareSite" ng-options="site.Url as site.Name for site in shareSites track by site.Url")
-              button(ng-click="ctrl.openSite()" ng-disabled="selectedShareSite == ''") GO
-              .top-content(style="margin-top: 30px;")
-                .bold.small-text TOP CONTENT
-                div(ng-repeat="item in topContent" ng-show="item.Role == 'Teacher'")
-                  a(ng-click="ctrl.redirectToTop(item)")
-                    i.fa.fa-file-o(style="margin-right:10px;")
-                    span(stlye="padding-left:10px;"){{item.Name}}
+              .left-content.pull-left
+                .large-text
+                    span.bold Quick Links
+                    span(style="font-style: italic;")  for Teachers
+                .bold TEACHER MADE CURRICULUM RESOURCES
+                .text-muted A place for teachers to share resources with each other
+                select(selectpicker='' style="min-width: 500px; width: 75%" ng-model="selectedShareSite" ng-options="site.Url as site.Name for site in shareSites track by site.Url")
+                  option(disabled="" selected="" value="") Subject...
+                button(ng-click="ctrl.openSite()" ng-disabled="selectedShareSite == ''") GO
+                .top-content(style="margin-top: 30px;")
+                  .bold.small-text(style="margin-bottom: 5px") TOP CONTENT
+                  div(ng-repeat="item in topContent" ng-show="item.Role == 'Teacher'" style="margin-left: 15px;")
+                    a(ng-click="ctrl.redirectToTop(item)")
+                      i.fa.fa-file-o(style="margin-right:10px;")
+                      span(stlye="padding-left:10px;"){{item.Name}}
+              .right-content
 
             .dates-wrapper
             .quicklins-wrapper
