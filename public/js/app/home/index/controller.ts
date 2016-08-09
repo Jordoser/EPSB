@@ -43,9 +43,9 @@ export class HomeIndexController extends BaseController{
     }
 
     public redirectToTop(item){
-        var nav = []
-        nav[0] = item
-      App.Common.navigateL1(nav)
+        var nav1 = []
+        nav1[0] = item
+      App.Common.navigateL1(nav1)
     }
     public loadShareSites(){
       this.dataService.getShareSites()

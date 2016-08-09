@@ -49,9 +49,9 @@ var App;
                     window.open(this.$scope.selectedShareSite, '_blank');
                 };
                 HomeIndexController.prototype.redirectToTop = function (item) {
-                    var nav = [];
-                    nav[0] = item;
-                    App.Common.navigateL1(nav);
+                    var nav1 = [];
+                    nav1[0] = item;
+                    App.Common.navigateL1(nav1);
                 };
                 HomeIndexController.prototype.loadShareSites = function () {
                     var _this = this;
