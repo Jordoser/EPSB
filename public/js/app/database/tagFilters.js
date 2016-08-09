@@ -89,60 +89,73 @@ var App;
             };
             this.ResourceTypeFilters = {
                 "Filter1": {
-                    "Tag": "Program of Studies",
+                    "Tag": "Program of Studies"
                 },
                 "Filter2": {
-                    "Tag": "Assessments",
+                    "Tag": "Assessments"
                 },
                 "Filter3": {
-                    "Tag": "Classroom Resources",
+                    "Tag": "Classroom Resources"
                 },
                 "Filter4": {
-                    "Tag": "Competencies",
+                    "Tag": "Competencies"
                 },
                 "Filter5": {
-                    "Tag": "Focus on Reading",
+                    "Tag": "Focus on Reading"
                 },
                 "Filter6": {
-                    "Tag": "Research & Support",
+                    "Tag": "Research & Support"
                 }
             };
+            //Todo change to content types
             this.DocumentTypeFilters = {
                 "Filter1": {
-                    "Tag": "Applications",
+                    "Tag": "Applications"
                 },
                 "Filter2": {
-                    "Tag": "Calendars",
+                    "Tag": "Calendars"
                 },
                 "Filter3": {
-                    "Tag": "Contacts",
+                    "Tag": "Checklists"
                 },
                 "Filter4": {
-                    "Tag": "Contracts & Agreements",
+                    "Tag": "Contacts"
                 },
                 "Filter5": {
-                    "Tag": "External Sites",
+                    "Tag": "Contracts & Agreements"
                 },
                 "Filter6": {
-                    "Tag": "Forms & Templates",
+                    "Tag": "External Sites"
                 },
                 "Filter7": {
-                    "Tag": "Manuals & Plans",
+                    "Tag": "Forms & Templates"
                 },
                 "Filter8": {
-                    "Tag": "News Articles",
+                    "Tag": "Images & Graphics"
                 },
                 "Filter9": {
-                    "Tag": "Policies",
+                    "Tag": "Manuals & Plans"
                 },
                 "Filter10": {
-                    "Tag": "Procedures",
+                    "Tag": "News Articles"
                 },
                 "Filter11": {
-                    "Tag": "Reports",
+                    "Tag": "Policies"
                 },
                 "Filter12": {
-                    "Tag": "Standards & Guidelines",
+                    "Tag": "Presentations"
+                },
+                "Filter13": {
+                    "Tag": "Procedures"
+                },
+                "Filter14": {
+                    "Tag": "Reports"
+                },
+                "Filter15": {
+                    "Tag": "Standards & Guidelines"
+                },
+                "Filter16": {
+                    "Tag": "Videos"
                 }
             };
             this.NewsFilters = {
