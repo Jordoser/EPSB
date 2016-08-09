@@ -170,8 +170,9 @@ overflow: hidden;
 .need-to-know-wrapper{
   width: 100%;
   height: @NeedToKnowHeight;
-  background-color: @gray-light;
+  background-color:white;
   padding: calc(@DefaultPadding * 2);
+  overflow-y: auto;
 }
 .story-info{
   padding:@DefaultPadding;
@@ -182,18 +183,19 @@ text-overflow: ellipsis; // This is where the magic happens
 }
 
 .featured-story{
-  width: 50%;
+  width: 100%;
+  min-height: 200px;
   height: 100%;
   background-color: white;
-  overflow: hidden;
 
-  border-right: 1px solid @gray-light;
+
+
 }
 .story-scroll-wrapper{
-  width: 50%;
+  width: 100%;
   background-color: white;
   height: 100%;
-  overflow-y: auto;
+
   padding-top: @DefaultPadding;
   padding-left: @DefaultPadding;
   padding-right: calc(@DefaultPadding * 4);
