@@ -11,11 +11,13 @@ export class HomeIndexController extends BaseController{
 
       this.$scope.searchResults = [];
       this.$scope.shareSites = [];
+      this.$scope.topContent = []
 
       $(".custom-container").css("margin-top", "160px")
       this.$scope.newsItems = [];
       this.loadNewsitems();
       this.loadShareSites();
+      this.loadTopContent();
       this.$scope.currentUser =  sessionStorage.getItem("CurrentUser");
       if(!this.$scope.currentUser){
         this.$scope.currentUser = "Samantha Nugent"
@@ -40,12 +42,24 @@ export class HomeIndexController extends BaseController{
       window.open(this.$scope.selectedShareSite, '_blank');
     }
 
-
+    public redirectToTop(item){
+        var nav = []
+        nav[0] = item
+      App.Common.navigateL1(nav)
+    }
     public loadShareSites(){
       this.dataService.getShareSites()
       .then(data =>{
         App.Common.replaceArrayContents(this.$scope.shareSites, data);
         this.$scope.selectedShareSite= "";
+
+      })
+    }
+
+    public loadTopContent(){
+      this.dataService.getTopContent()
+      .then(data =>{
+        App.Common.replaceArrayContents(this.$scope.topContent, data);
 
       })
     }

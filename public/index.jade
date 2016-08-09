@@ -22,12 +22,16 @@ div(Id="homeIndexDiv" ng-controller='homeIndexController')
                     span(ng-repeat="tag in story.Tags") |&nbsp{{tag}}&nbsp
                   hr.thin-padding-hr
                 .scroll-footer
-          .dynamic-info-wrapper(style="margin-left:auto; margin-right:auto; padding-left: 15px; padding-top: 15px;")
+          .dynamic-info-wrapper(style="margin-left:auto; margin-right:auto; padding-left: 30px; padding-top: 15px;")
             div(ng-if="currentUser == 'Steve Jacob'")
               .large-text
                 span.bold Quick Links
                 span(style="font-style: italic;")  for Custodians
-              
+              .top-content(style="margin-top: 30px;")
+                .bold.small-text TOP CONTENT
+                div(ng-repeat="item in topContent" ng-show="item.Role == 'Custodian'")
+                  a(ng-click="ctrl.redirectToTop(item)") {{item.Name}}
+
             div(ng-if="currentUser == 'Samantha Nugent'")
               .large-text
                   span.bold Quick Links
@@ -36,6 +40,10 @@ div(Id="homeIndexDiv" ng-controller='homeIndexController')
               .text-muted A place for teachers to share resources with each other
               select(selectpicker='' style="width: 500px;" ng-model="selectedShareSite" ng-options="site.Url as site.Name for site in shareSites track by site.Url")
               button(ng-click="ctrl.openSite()" ng-disabled="selectedShareSite == ''") GO
+              .top-content(style="margin-top: 30px;")
+                .bold.small-text TOP CONTENT
+                div(ng-repeat="item in topContent" ng-show="item.Role == 'Teacher'")
+                  a(ng-click="ctrl.redirectToTop(item)") {{item.Name}}
             .dates-wrapper
             .quicklins-wrapper
       .secondary-info.extra-wide.no-padding.pull-right(style="margin-left:auto")

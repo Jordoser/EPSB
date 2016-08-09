@@ -37,6 +37,11 @@ module App.Home{
     public getShareSites() : ng.IPromise<Array<any>>{
       return this.getItems("ShareSites");
     }
+    public getTopContent() : ng.IPromise<Array<any>>{
+      return this.getItems("TopContent");
+    }
+
+
 
   }
 }

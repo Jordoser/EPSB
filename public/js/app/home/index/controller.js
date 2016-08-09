@@ -21,10 +21,12 @@ var App;
                     this.$scope.searchString = "";
                     this.$scope.searchResults = [];
                     this.$scope.shareSites = [];
+                    this.$scope.topContent = [];
                     $(".custom-container").css("margin-top", "160px");
                     this.$scope.newsItems = [];
                     this.loadNewsitems();
                     this.loadShareSites();
+                    this.loadTopContent();
                     this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
                     if (!this.$scope.currentUser) {
                         this.$scope.currentUser = "Samantha Nugent";
@@ -46,12 +48,24 @@ var App;
                 HomeIndexController.prototype.openSite = function () {
                     window.open(this.$scope.selectedShareSite, '_blank');
                 };
+                HomeIndexController.prototype.redirectToTop = function (item) {
+                    var nav = [];
+                    nav[0] = item;
+                    App.Common.navigateL1(nav);
+                };
                 HomeIndexController.prototype.loadShareSites = function () {
                     var _this = this;
                     this.dataService.getShareSites()
                         .then(function (data) {
                         App.Common.replaceArrayContents(_this.$scope.shareSites, data);
                         _this.$scope.selectedShareSite = "";
+                    });
+                };
+                HomeIndexController.prototype.loadTopContent = function () {
+                    var _this = this;
+                    this.dataService.getTopContent()
+                        .then(function (data) {
+                        App.Common.replaceArrayContents(_this.$scope.topContent, data);
                     });
                 };
                 HomeIndexController.prototype.redirectToObject = function (id) {

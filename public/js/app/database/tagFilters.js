@@ -160,22 +160,37 @@ var App;
             };
             this.NewsFilters = {
                 "Filter1": {
-                    "Tag": "Around the District",
+                    "Tag": "Around the District"
                 },
                 "Filter2": {
-                    "Tag": "School Operations",
+                    "Tag": "Budget & Finance"
                 },
                 "Filter3": {
-                    "Tag": "Employee Essentials",
+                    "Tag": "Centre for Education"
                 },
                 "Filter4": {
-                    "Tag": "Superintendent",
+                    "Tag": "Curriculum & Assessment"
                 },
                 "Filter5": {
-                    "Tag": "Student Management",
+                    "Tag": "Employee Essentials"
                 },
                 "Filter6": {
-                    "Tag": "Curriculum & Assessment",
+                    "Tag": "Health & Safety"
+                },
+                "Filter7": {
+                    "Tag": "Leadership"
+                },
+                "Filter8": {
+                    "Tag": "Professional Development"
+                },
+                "Filter9": {
+                    "Tag": "School Operations"
+                },
+                "Filter10": {
+                    "Tag": "Student Management"
+                },
+                "Filter11": {
+                    "Tag": "Technology"
                 }
             };
         }

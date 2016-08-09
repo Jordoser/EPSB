@@ -35,6 +35,9 @@ var App;
             HomeDataService.prototype.getShareSites = function () {
                 return this.getItems("ShareSites");
             };
+            HomeDataService.prototype.getTopContent = function () {
+                return this.getItems("TopContent");
+            };
             return HomeDataService;
         }(App.BaseJsonDataService));
         Home.HomeDataService = HomeDataService;

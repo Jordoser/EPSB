@@ -14,5 +14,6 @@ module App.Home.Index{
       currentUser: any;
       shareSites: Array<any>;
       selectedShareSite: any;
+      topContent: Array<any>
   }
 }

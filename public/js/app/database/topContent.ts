@@ -15,7 +15,7 @@ module App {
             "Id" : "District Staff Resources",
             "Level" :  "1",
             "ContentId" : "District Staff Resources",
-            "Role" : "Teacher"
+            "Role" : "Custodian"
           }
       }
     }
