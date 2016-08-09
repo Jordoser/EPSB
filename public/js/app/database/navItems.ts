@@ -26,7 +26,8 @@ module App {
         },
         "NavItem5" : {
             "Id": "News & Events",
-            "Name" : "News"
+            "Name" : "News",
+            "PageUrl": "news.html"
         },
         "NavItem6" : {
 

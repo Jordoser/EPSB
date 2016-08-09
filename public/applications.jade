@@ -8,9 +8,9 @@ div(Id="applicationsDiv" ng-controller='applicationsController')
           p {{currentItem.Description}}
         .section-nav
           .section-flex-container
-            .section-flex-item(ng-repeat="item in applications" style="display: flex;")
-              i.fa.fa-star.pull-left(ng-show="item.Favorite == 'true'" style="margin-right: 15px;margin-top: 3px;")
-              i.fa.fa-star-o.pull-left(ng-show="item.Favorite != 'true'" style="margin-right: 15px;margin-top: 3px;")
+            .section-flex-item.app(ng-repeat="item in applications" style="display: flex;")
+              i.fa.fa-star.pull-left(ng-if="item.Favorite == 'true'" style="margin-right: 15px;margin-top: 3px;" ng-click="item.Favorite = false;")
+              i.fa.fa-star-o.pull-left(ng-if="item.Favorite != 'true'" style="margin-right: 15px;margin-top: 3px;" ng-click="item.Favorite = 'true';")
               .pull-right
                 .section-item-header(ng-click="ctrl.redirectToSectionItem(item)") {{item.Name}}
                 .section-item-description {{item.Description}}

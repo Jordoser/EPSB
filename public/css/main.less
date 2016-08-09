@@ -62,6 +62,29 @@
 @DefaultPadding : 15px;
 @NeedToKnowHeight: 500px;
 
+
+
+
+
+.large-text{
+  span{
+    font-size: 1.2em !important;
+  }
+}
+
+.news-filters{
+  padding: 5px;
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.news-block-header{
+  background-color: @gray-light;
+  padding: calc(@DefaultPadding * 4);
+  margin-bottom: @DefaultPadding;
+}
 .highlighted{
   font-weight: bolder !important;
 }
@@ -74,6 +97,9 @@
 
 
 .layout-footer{
+  background-image: url("../images/footer.png");
+  background-size: contain;
+background-repeat: no-repeat;
   width:100%;
 background-color:  @gray-lighter;
 height: 200px;
@@ -83,6 +109,11 @@ margin-top: 100px;
 bottom: 0;
 overflow: hidden;
 
+}
+
+.section-flex-item.app{
+  max-width: 200px !important;
+  min-width: 200px !important;
 }
 .application-header{
   font-size: 1.2em;
@@ -108,7 +139,8 @@ overflow: hidden;
 }
 
 .application-item{
-  margin: @DefaultPadding;
+  margin-left: @DefaultPadding;
+  margin-right: @DefaultPadding;
   display: flex;
   width: 100%;
   align-items: center;
@@ -475,6 +507,13 @@ padding-bottom: 30px;
   cursor: pointer;
   color: blue;
   text-decoration: underline;
+}
+
+.clickable{
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline;
+  }
 }
 
 .tag-items{
@@ -986,11 +1025,13 @@ position: absolute;
 .right-nav{
   width: @NavWidth;
   margin-top: @topNavBarHeight;
-  height: 100%;
+  height: 95%;
   position: fixed;
   right: -@NavWidth;
   transition: all 0.5s;
   background-color: @gray-dark;
+  padding-bottom: 50px;
+    overflow: scroll;
 }
 
 .right-nav-open{

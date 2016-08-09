@@ -7,28 +7,25 @@ var App;
                     "Id": "FacilityForm.pdf",
                     "Name": "FacilityForm.pdf",
                     "Description": "Stuff and things",
-                    "MetadataId": "FacilityForm.pdf Metadata",
-                    "Tags": ["Facilities & Equipment", "Forms"],
-                    "Name": "NoBullyingYouLoser.pdf",
                     "Link": "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTRTNlVjhHS3RVcWc",
-                    "MetadataId": "NoBullyingYouLoser.pdf Metadata",
-                    "Tags": ["Bullying Prevention", "Forms & Templates"]
+                    "MetadataId": "FacilityForm.pdf Metadata",
+                    "Tags": ["Facilities & Equipment", "Forms"]
                 },
                 "Document2": {
-                    "Tags": ["Facilities & Equipment", "Hazardous Material", "Forms"],
+                    "Id": "FacilityHazardousForm.pdf ",
                     "Name": "FacilityHazardousForm.pdf",
                     "Description": "Stuff and things",
                     "Link": "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTMkRQRnBhV1F6NHc",
                     "MetadataId": "FacilityHazardousForm.pdf Metadata",
-                    "Tags": ["Building & Systems", "Hazardous Material", "Forms & Templates"]
+                    "Tags": ["Facilities & Equipment", "Hazardous Material", "Forms"]
                 },
                 "Document3": {
-                    "Tags": ["Facilities & Equipment", "Manuals"],
+                    "Id": "FacilityManual.doc",
                     "Name": "FacilityManual.doc",
                     "Description": "Stuff and things",
                     "Link": "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTYUxLbUhwTEFOU00",
                     "MetadataId": "FacilityManual.doc Metadata",
-                    "Tags": ["Facilities & Equipment", "Manuals & Plans"]
+                    "Tags": ["Facilities & Equipment", "Manuals"]
                 },
                 "Document4": {
                     "Id": "EquippmentAndElectronicManual.docx",

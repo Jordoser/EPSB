@@ -145,6 +145,26 @@ var App;
                     "Tag": "Standards & Guidelines",
                 }
             };
+            this.NewsFilters = {
+                "Filter1": {
+                    "Tag": "Around the District",
+                },
+                "Filter2": {
+                    "Tag": "School Operations",
+                },
+                "Filter3": {
+                    "Tag": "Employee Essentials",
+                },
+                "Filter4": {
+                    "Tag": "Superintendent",
+                },
+                "Filter5": {
+                    "Tag": "Student Management",
+                },
+                "Filter6": {
+                    "Tag": "Curriculum & Assessment",
+                }
+            };
         }
         return TagFilterDatabase;
     }());

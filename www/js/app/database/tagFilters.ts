@@ -4,6 +4,7 @@ module App {
     public SubjectFilters;
     public ResourceTypeFilters;
     public DocumentTypeFilters;
+    public NewsFilters;
     constructor(){
       this.GradeFilters = {
         "Filter1" :{
@@ -116,14 +117,62 @@ module App {
 //Todo change to content types
     this.DocumentTypeFilters ={
       "Filter1" : {
-        "Tag" : "Forms",
+        "Tag" : "Applications",
       },
       "Filter2" : {
-        "Tag" : "Manuals",
+        "Tag" : "Calendars",
       },
       "Filter3" : {
+        "Tag" : "Contacts",
+      },
+      "Filter4" : {
+        "Tag" : "Contracts & Agreements",
+      },
+      "Filter5" : {
+        "Tag" : "External Sites",
+      },
+      "Filter6" : {
+        "Tag" : "Forms & Templates",
+      },
+      "Filter7" : {
+        "Tag" : "Manuals & Plans",
+      },
+      "Filter8" : {
+        "Tag" : "News Articles",
+      },
+      "Filter9" : {
         "Tag" : "Policies",
       },
+      "Filter10" : {
+        "Tag" : "Procedures",
+      },
+      "Filter11" : {
+        "Tag" : "Reports",
+      },
+      "Filter12" : {
+        "Tag" : "Standards & Guidelines",
+      }
+    }
+
+    this.NewsFilters = {
+      "Filter1" : {
+        "Tag" : "Around the District",
+      },
+      "Filter2" : {
+        "Tag" : "School Operations",
+      },
+      "Filter3" : {
+        "Tag" : "Employee Essentials",
+      },
+      "Filter4" : {
+        "Tag" : "Superintendent",
+      },
+      "Filter5" : {
+        "Tag" : "Student Management",
+      },
+      "Filter6" : {
+        "Tag" : "Curriculum & Assessment",
+      }
     }
 
     }

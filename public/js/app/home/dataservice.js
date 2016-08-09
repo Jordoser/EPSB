@@ -32,6 +32,9 @@ var App;
             HomeDataService.prototype.getMetadata = function (item) {
                 return this.expandPropery([item.MetadataId], "Metadata", "Id");
             };
+            HomeDataService.prototype.getShareSites = function () {
+                return this.getItems("ShareSites");
+            };
             return HomeDataService;
         }(App.BaseJsonDataService));
         Home.HomeDataService = HomeDataService;

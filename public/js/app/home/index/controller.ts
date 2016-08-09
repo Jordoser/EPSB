@@ -8,15 +8,20 @@ export class HomeIndexController extends BaseController{
       super($scope,$timeout,dataService);
       this.$scope.name = "Search Database";
       this.$scope.searchString = ""
+
       this.$scope.searchResults = [];
+      this.$scope.shareSites = [];
+
       $(".custom-container").css("margin-top", "160px")
       this.$scope.newsItems = [];
       this.loadNewsitems();
+      this.loadShareSites();
       this.$scope.currentUser =  sessionStorage.getItem("CurrentUser");
       if(!this.$scope.currentUser){
         this.$scope.currentUser = "Samantha Nugent"
       }
     }
+
 
     public alert(){
       this.dataService.getTestItemById(this.$scope.searchString)
@@ -31,6 +36,19 @@ export class HomeIndexController extends BaseController{
       })
     }
 
+    public openSite(){
+      window.open(this.$scope.selectedShareSite, '_blank');
+    }
+
+
+    public loadShareSites(){
+      this.dataService.getShareSites()
+      .then(data =>{
+        App.Common.replaceArrayContents(this.$scope.shareSites, data);
+        this.$scope.selectedShareSite= "";
+
+      })
+    }
     public redirectToObject(id?: string){
       if(id){
         sessionStorage.setItem("Id",id);

@@ -4,6 +4,7 @@ module App {
     public SubjectFilters;
     public ResourceTypeFilters;
     public DocumentTypeFilters;
+    public NewsFilters;
     constructor(){
       this.GradeFilters = {
         "Filter1" :{
@@ -150,6 +151,27 @@ module App {
       },
       "Filter12" : {
         "Tag" : "Standards & Guidelines",
+      }
+    }
+
+    this.NewsFilters = {
+      "Filter1" : {
+        "Tag" : "Around the District",
+      },
+      "Filter2" : {
+        "Tag" : "School Operations",
+      },
+      "Filter3" : {
+        "Tag" : "Employee Essentials",
+      },
+      "Filter4" : {
+        "Tag" : "Superintendent",
+      },
+      "Filter5" : {
+        "Tag" : "Student Management",
+      },
+      "Filter6" : {
+        "Tag" : "Curriculum & Assessment",
       }
     }
 

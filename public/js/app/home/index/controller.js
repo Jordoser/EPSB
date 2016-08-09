@@ -20,9 +20,11 @@ var App;
                     this.$scope.name = "Search Database";
                     this.$scope.searchString = "";
                     this.$scope.searchResults = [];
+                    this.$scope.shareSites = [];
                     $(".custom-container").css("margin-top", "160px");
                     this.$scope.newsItems = [];
                     this.loadNewsitems();
+                    this.loadShareSites();
                     this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
                     if (!this.$scope.currentUser) {
                         this.$scope.currentUser = "Samantha Nugent";
@@ -39,6 +41,17 @@ var App;
                     })
                         .catch(function (ex) {
                         alert(ex);
+                    });
+                };
+                HomeIndexController.prototype.openSite = function () {
+                    window.open(this.$scope.selectedShareSite, '_blank');
+                };
+                HomeIndexController.prototype.loadShareSites = function () {
+                    var _this = this;
+                    this.dataService.getShareSites()
+                        .then(function (data) {
+                        App.Common.replaceArrayContents(_this.$scope.shareSites, data);
+                        _this.$scope.selectedShareSite = "";
                     });
                 };
                 HomeIndexController.prototype.redirectToObject = function (id) {

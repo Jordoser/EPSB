@@ -1,0 +1,21 @@
+div(Id="curriculumDiv" ng-controller='curriculumController')
+  h2(style="padding-bottom: 15px;") District resources
+  div
+    ul.nav.nav-tabs(role='tablist' id="myTabs")
+      li.active(role='presentation')
+        a(href='#home', aria-controls='home', role='tab', data-toggle='tab') Grade & Subject
+      li(role='presentation')
+        a(href='#profile', aria-controls='profile', role='tab', data-toggle='tab') Curriculum & Teaching Topics  
+    .tab-content
+      #home.tab-pane.active.grade-pain(role='tabpanel')
+        img(src="images/gradeandsubject.png")
+      #profile.tab-pane.topic-pain(role='tabpanel')
+        img(src="images/teachingstuff.png")
+    
+
+
+script(src='js/app/curriculum/dataService.js')
+script(src='js/app/curriculum/index/controller.js')
+script(src='js/app/curriculum/index/main.js')
+script.
+  angular.bootstrap(document.getElementById('curriculumDiv'),["curriculumApp"])

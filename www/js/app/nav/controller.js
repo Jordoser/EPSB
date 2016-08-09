@@ -10,41 +10,44 @@ var App;
         "use strict";
         var NavController = (function (_super) {
             __extends(NavController, _super);
-            function NavController($scope, $timeout, dataService) {
+            function NavController($scope, $timeout, $q, dataService) {
                 _super.call(this, $scope, $timeout, $timeout);
                 this.$scope = $scope;
                 this.$timeout = $timeout;
+                this.$q = $q;
                 this.dataService = dataService;
                 this.$scope.menuClosed = true;
                 this.$scope.searchArea = "";
                 this.$scope.openItemId = "";
+                this.$scope.searchString = "";
                 this.$scope.navItems = [];
                 this.$scope.l2NavItems = [];
                 this.$scope.l3NavItems = [];
                 this.$scope.l4NavItems = [];
+                this.$scope.applications = [];
                 this.$scope.navigatedItems = [];
                 this.$scope.selectedItemIds = [];
                 this.loadNav();
+                this.loadApps();
                 this.initiateClock();
                 this.initiateDay();
+                this.$scope.applicationsItem = {
+                    Name: "Applications",
+                    PageUrl: "applications.html"
+                };
+                this.$scope.searchItem = {
+                    Name: "Search",
+                    PageUrl: "searchResults.html"
+                };
                 this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
                 if (!this.$scope.currentUser) {
                     this.$scope.currentUser = "Samantha Nugent";
                 }
                 this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
+                if (!this.$scope.navigatedItems) {
+                    this.$scope.navigatedItems = [];
+                }
             }
-            NavController.prototype.loadNav = function () {
-                var _this = this;
-                this.dataService.getNavItems()
-                    .then(function (data) {
-                    for (var i = 0; i < data.length; i++) {
-                        _this.$scope.navItems.push(data[i]);
-                    }
-                })
-                    .catch(function (ex) {
-                    alert(ex);
-                });
-            };
             NavController.prototype.swapUsers = function () {
                 if (this.$scope.currentUser == "Samantha Nugent") {
                     sessionStorage.setItem("CurrentUser", "Steve Jacob");
@@ -54,8 +57,90 @@ var App;
                 }
                 window.location.reload();
             };
-            NavController.prototype.openL2NavForItem = function (item, forceClose) {
-                if (forceClose === void 0) { forceClose = false; }
+            NavController.prototype.search = function () {
+                sessionStorage.setItem("SearchString", this.$scope.searchString);
+                this.redirectToL1Nav(this.$scope.searchItem);
+            };
+            NavController.prototype.loadApps = function () {
+                var _this = this;
+                this.dataService.getApps()
+                    .then(function (data) {
+                    data = _.sortBy(data, function (o) { return (o.Favorite == 'false'); });
+                    App.Common.replaceArrayContents(_this.$scope.applications, data);
+                });
+            };
+            NavController.prototype.loadNav = function () {
+                var _this = this;
+                var deferred = this.$q.defer();
+                this.dataService.getNavItems()
+                    .then(function (data) {
+                    if (data.length == 0) {
+                        deferred.resolve(false);
+                    }
+                    else {
+                        for (var i = 0; i < data.length; i++) {
+                            _this.$scope.navItems.push(data[i]);
+                        }
+                        deferred.resolve(true);
+                    }
+                })
+                    .catch(function (ex) {
+                    alert(ex);
+                });
+                return deferred.promise;
+            };
+            NavController.prototype.loadNavItems = function (item) {
+                var _this = this;
+                var contentArea = $(".content-area");
+                contentArea.bind("click", this.clickToClose);
+                this.$scope.l2NavItems.length = 0;
+                this.$scope.openItemId = item.Id;
+                var deferred = this.$q.defer();
+                this.dataService.getL2NavItems(item.Id)
+                    .then(function (data) {
+                    if (data.length == 0) {
+                        deferred.resolve(false);
+                    }
+                    else {
+                        deferred.resolve(true);
+                        App.Common.replaceArrayContents(_this.$scope.l2NavItems, data);
+                    }
+                });
+                return deferred.promise;
+            };
+            NavController.prototype.loadL3NavItems = function (item) {
+                var _this = this;
+                var deferred = this.$q.defer();
+                this.dataService.getL3NavItems(item.Id)
+                    .then(function (data) {
+                    if (data.length == 0) {
+                        deferred.resolve(false);
+                    }
+                    else {
+                        deferred.resolve(true);
+                        App.Common.replaceArrayContents(_this.$scope.l3NavItems, data);
+                    }
+                });
+                return deferred.promise;
+            };
+            NavController.prototype.loadL4NavItems = function (item) {
+                var _this = this;
+                var deferred = this.$q.defer();
+                this.dataService.getL4NavItems(item.Id)
+                    .then(function (data) {
+                    if (data.length == 0) {
+                        deferred.resolve(false);
+                    }
+                    else {
+                        deferred.resolve(true);
+                        App.Common.replaceArrayContents(_this.$scope.l4NavItems, data);
+                    }
+                });
+                return deferred.promise;
+            };
+            NavController.prototype.openL2NavForItem = function (item, isClick) {
+                var _this = this;
+                if (isClick === void 0) { isClick = false; }
                 if (this.IsOpenItem(item.Id)) {
                     this.closeL2Nav();
                     return;
@@ -63,14 +148,76 @@ var App;
                 if (this.$scope.selectedItemIds[0] && this.$scope.selectedItemIds[0] != "") {
                     this.closeL3Nav();
                 }
-                this.$scope.selectedItemIds[0] = item;
-                var l1nav = $('.l1-nav');
-                var l1Width = l1nav.width();
-                $('.l2-nav').animate({ "left": l1Width + "px" }, 10);
-                this.loadNavItems(item);
-                if (this.IsNavigated(item.Id) && (this.$scope.navigatedItems[1] && this.$scope.navigatedItems[1] != "")) {
-                    this.openL3NavForItem(this.$scope.navigatedItems[1], true, l1Width);
+                this.loadNavItems(item).then(function (hasChildren) {
+                    if (hasChildren) {
+                        _this.$scope.selectedItemIds[0] = item;
+                        var l1nav = $('.l1-nav');
+                        var l1Width = l1nav.width();
+                        $('.l2-nav').animate({ "left": l1Width + "px" }, 10);
+                        if (_this.IsNavigated(item.Id) && (_this.$scope.navigatedItems[1] && _this.$scope.navigatedItems[1] != "")) {
+                            _this.openL3NavForItem(_this.$scope.navigatedItems[1], true, l1Width);
+                        }
+                    }
+                    else if (isClick) {
+                        _this.redirectToL1Nav(item);
+                    }
+                });
+            };
+            NavController.prototype.openL3NavForItem = function (item, isChain, extraOffset, isClick) {
+                var _this = this;
+                if (isChain === void 0) { isChain = false; }
+                if (extraOffset === void 0) { extraOffset = 0; }
+                if (isClick === void 0) { isClick = false; }
+                if (this.IsOpenItem(item.Id) && !isChain) {
+                    this.closeL3Nav();
+                    return;
                 }
+                if (this.$scope.selectedItemIds[1] && this.$scope.selectedItemIds[1] != "") {
+                    this.closeL4Nav();
+                }
+                this.loadL3NavItems(item).then(function (hasChildren) {
+                    if (hasChildren) {
+                        _this.$scope.selectedItemIds[1] = item;
+                        var l2nav = $('.l2-nav');
+                        var l2Width = l2nav.width();
+                        var l2Offset = l2nav.offset().left;
+                        var overallOffest = (!l2Offset) ? extraOffset : l2Offset;
+                        var offset = l2Width + overallOffest;
+                        $('.l3-nav').css("left", l2Offset + "px");
+                        $('.l3-nav').animate({ "left": (offset) + "px" }, 10);
+                        if (_this.IsNavigated(item.Id) && (_this.$scope.navigatedItems[2] && _this.$scope.navigatedItems[2] != "")) {
+                            _this.openL4NavForItem(_this.$scope.navigatedItems[2], true, offset);
+                        }
+                    }
+                    else if (isClick) {
+                        _this.redirectToL2Nav(item);
+                    }
+                });
+            };
+            NavController.prototype.openL4NavForItem = function (item, isChain, extraOffset, isClick) {
+                var _this = this;
+                if (isChain === void 0) { isChain = false; }
+                if (extraOffset === void 0) { extraOffset = 0; }
+                if (isClick === void 0) { isClick = false; }
+                if (this.IsOpenItem(item.Id) && !isChain) {
+                    this.closeL4Nav();
+                    return;
+                }
+                this.loadL4NavItems(item).then(function (hasChildren) {
+                    if (hasChildren) {
+                        _this.$scope.selectedItemIds[2] = item;
+                        var l3nav = $('.l3-nav');
+                        var l3Width = l3nav.width();
+                        var l3Offset = l3nav.offset().left;
+                        var offsetOverall = (!l3Offset) ? extraOffset : l3Offset;
+                        var offset = l3Width + offsetOverall;
+                        $('.l4-nav').css("left", l3Offset + "px");
+                        $('.l4-nav').animate({ "left": (offset) + "px" }, 10);
+                    }
+                    else if (isClick) {
+                        _this.redirectToL3Nav(item);
+                    }
+                });
             };
             NavController.prototype.closeL2Nav = function () {
                 var _this = this;
@@ -123,60 +270,6 @@ var App;
                     _this.$scope.selectedItemIds[2] = '';
                 }, 500);
             };
-            NavController.prototype.openL3NavForItem = function (item, isChain, extraOffset) {
-                if (isChain === void 0) { isChain = false; }
-                if (extraOffset === void 0) { extraOffset = 0; }
-                if (this.IsOpenItem(item.Id) && !isChain) {
-                    this.closeL3Nav();
-                    return;
-                }
-                if (this.$scope.selectedItemIds[1] && this.$scope.selectedItemIds[1] != "") {
-                    this.closeL4Nav();
-                }
-                this.$scope.selectedItemIds[1] = item;
-                var l2nav = $('.l2-nav');
-                var l2Width = l2nav.width();
-                var l2Offset = l2nav.offset().left;
-                var overallOffest = (!l2Offset) ? extraOffset : l2Offset;
-                var offset = l2Width + overallOffest;
-                $('.l3-nav').css("left", l2Offset + "px");
-                $('.l3-nav').animate({ "left": (offset) + "px" }, 10);
-                this.loadL3NavItems(item);
-                if (this.IsNavigated(item.Id) && (this.$scope.navigatedItems[2] && this.$scope.navigatedItems[2] != "")) {
-                    this.openL4NavForItem(this.$scope.navigatedItems[2], true, offset);
-                }
-            };
-            NavController.prototype.loadL3NavItems = function (item) {
-                var _this = this;
-                this.dataService.getL3NavItems(item.Id)
-                    .then(function (data) {
-                    App.Common.replaceArrayContents(_this.$scope.l3NavItems, data);
-                });
-            };
-            NavController.prototype.openL4NavForItem = function (item, isChain, extraOffset) {
-                if (isChain === void 0) { isChain = false; }
-                if (extraOffset === void 0) { extraOffset = 0; }
-                if (this.IsOpenItem(item.Id) && !isChain) {
-                    this.closeL4Nav();
-                    return;
-                }
-                this.$scope.selectedItemIds[2] = item;
-                var l3nav = $('.l3-nav');
-                var l3Width = l3nav.width();
-                var l3Offset = l3nav.offset().left;
-                var offsetOverall = (!l3Offset) ? extraOffset : l3Offset;
-                var offset = l3Width + offsetOverall;
-                $('.l4-nav').css("left", l3Offset + "px");
-                $('.l4-nav').animate({ "left": (offset) + "px" }, 10);
-                this.loadL4NavItems(item);
-            };
-            NavController.prototype.loadL4NavItems = function (item) {
-                var _this = this;
-                this.dataService.getL4NavItems(item.Id)
-                    .then(function (data) {
-                    App.Common.replaceArrayContents(_this.$scope.l4NavItems, data);
-                });
-            };
             NavController.prototype.displayApps = function () {
                 var item = $(".app-row");
                 var currentHeight = item.height();
@@ -195,6 +288,10 @@ var App;
                 if (IsBreadCrumb === void 0) { IsBreadCrumb = false; }
                 var navArray = (IsBreadCrumb) ? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
                 navArray[0] = item;
+                if (item.PageUrl) {
+                    App.Common.navigateL1(navArray, item.PageUrl);
+                    return;
+                }
                 App.Common.navigateL1(navArray);
             };
             NavController.prototype.redirectToL2Nav = function (item, IsBreadCrumb) {
@@ -236,28 +333,27 @@ var App;
                         break;
                 }
             };
-            NavController.prototype.loadNavItems = function (item) {
-                var _this = this;
-                var contentArea = $(".content-area");
-                contentArea.bind("click", this.clickToClose);
-                this.$scope.l2NavItems.length = 0;
-                this.$scope.openItemId = item.Id;
-                this.dataService.getL2NavItems(item.Id)
-                    .then(function (data) {
-                    App.Common.replaceArrayContents(_this.$scope.l2NavItems, data);
-                });
+            NavController.prototype.openApplicationDrawer = function () {
+                var appDrawer2 = $(".application-drawer");
+                appDrawer2.toggleClass("right-nav-open");
             };
             NavController.prototype.IsOpenItem = function (itemId) {
                 var matchingItems = $.grep(this.$scope.selectedItemIds, function (item) {
                     return item.Id == itemId;
                 });
-                return matchingItems.length > 0;
+                if (!matchingItems) {
+                    return false;
+                }
+                return (matchingItems.length > 0);
             };
             NavController.prototype.IsNavigated = function (itemId) {
                 var matchingItems = $.grep(this.$scope.navigatedItems, function (item) {
                     return item.Id == itemId;
                 });
-                return matchingItems.length > 0;
+                if (!matchingItems) {
+                    return false;
+                }
+                return (matchingItems.length > 0);
             };
             NavController.prototype.initiateClock = function () {
                 var _this = this;
@@ -293,7 +389,7 @@ var App;
                 var month = monthNames[date.getMonth()];
                 $(".date-time > span.date").text(day + ", " + month + " " + numberedDate);
             };
-            NavController.$inject = ['$scope', '$timeout', 'dataService'];
+            NavController.$inject = ['$scope', '$timeout', '$q', 'dataService'];
             return NavController;
         }(App.BaseController));
         Nav.NavController = NavController;

@@ -1,5 +1,5 @@
 #accordion.panel-group
-  .panel.panel-default(ng-repeat="type in documentTypes")
+  .panel.panel-default(ng-repeat="type in documentTypes" ng-show="type.Documents.length > 0")
     .panel-heading( data-toggle='collapse', data-parent='#accordion', ng-href='{{"#"+$index}}')
       h4.panel-title
         i.fa.fa-sort-desc.fa-centering

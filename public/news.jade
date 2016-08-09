@@ -1,0 +1,50 @@
+div(Id="newsDiv" ng-controller='newsController')
+  div.news-block-header
+    h1 News
+    div 
+      span Offical news from the District
+    div
+      span To view or post staff-contributed news, checkout the
+        a   Bulletin Board
+  div.search-flex-wrapper(style="display: flex;")
+    div.related-tags
+      div
+        span(style="font-weight: bold") News By Category
+        div.news-filters(style="display: flex;" ng-click="ctrl.changeTag('');")
+          i.fa(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': categoryFilter != '', 'fa-circle': categoryFilter == ''}")
+          span All categories
+          br 
+        div.news-filters(ng-repeat="tag in newsFilters",style="display: flex;" ng-click="ctrl.changeTag(tag.Tag);")
+          i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': categoryFilter != tag.Tag, 'fa-circle': categoryFilter == tag.Tag}")
+          span {{tag.Tag}}
+          br 
+        span(style="font-weight: bold") Date
+        div.news-filters(ng-repeat="tag in dateFilters",style="display: flex;")
+          i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': dateFilter != tag.Name, 'fa-circle': dateFilter == tag.Name}")
+          span {{tag.Name}}
+          br 
+
+    div.searchResults(ng-show="news.length > 0" style="margin-left: 15px;")
+      div.news-category-header
+        span.bold Category
+        h2(ng-show="categoryFilter == ''") All Categories
+        h2(ng-show="categoryFilter != ''") {{categoryFilter}}
+      span Showing 1 - {{news.length}}
+      div
+        span Filter by: Month
+        select(ng-options="month as month for month in months" ng-model="monthFilter" style="margin-left: 15px;")
+      div(ng-repeat="item in news" ng-show="ctrl.containsMonth(item)")
+        hr
+        div.large-text.clickable(style="font-weight: bold" ng-bind-html="item.Name | highlight:searchString" ng-click="ctrl.redirectToContentPage(item)")
+        div
+          span.tag-text {{item.Metadata.CreatedOn}}
+        span(ng-repeat="tag in item.Tags")
+          span.tag-text(ng-bind-html="tag | fullhighlight:searchString")
+          span.tag-text(ng-show="$index < item.Tags.length -1") ,  
+
+        
+script(src='js/app/news/dataService.js')
+script(src='js/app/news/controller.js')
+script(src='js/app/news/main.js')
+script.
+  angular.bootstrap(document.getElementById('newsDiv'),["newsApp"])
