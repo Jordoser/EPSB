@@ -3,69 +3,103 @@ module App {
     public TopContent
     constructor(){
       this.TopContent = {
+        //BEGIN TOP CONTENT FOR CUSTODIANS
+          
           "TopContent1" :{
+            "Name" : "Building & Systems",
+            "Id" : "District Staff Resources",
+            "Level" :  "2",
+            "ContentId" : "Building & Systems",
+            "Role" : "Custodian"
+          },
+          "TopContent2" :{
+            "Name" : "Cleaning",
+            "Id" : "Cleaning",
+            "Level" :  "2",
+            "ContentId" : "Cleaning",
+            "Role" : "Custodian"
+          },
+          "TopContent3" :{
+            "Name" : "Custodial & Maintenance Equipment",
+            "Id" : "Custodial & Maintenance Equipment",
+            "Level" :  "2",
+            "ContentId" : "Custodial & Maintenance Equipment",
+            "Role" : "Custodian"
+          },
+          "TopContent4" :{
+            "Name" : "Grounds & Outside Spaces",
+            "Id" : "Grounds & Outside Spaces",
+            "Level" :  "2",
+            "ContentId" : "Grounds & Outside Spaces",
+            "Role" : "Custodian"
+          },
+          "TopContent5" :{
+            "Name" : "Hazards & Assessments",
+            "Id" : "Hazards & Assessments",
+            "Level" :  "2",
+            "ContentId" : "Hazards & Assessments",
+            "Role" : "Custodian"
+          },
+          "TopContent6" :{
+            "Name" : "Safe Working Conditions",
+            "Id" : "Safe Working Conditions",
+            "Level" :  "2",
+            "ContentId" : "Safe Working Conditions",
+            "Role" : "Custodian"
+          },
+          "TopContent7" :{
+            "Name" : "Technology",
+            "Id" : "Technology",
+            "Level" :  "2",
+            "ContentId" : "Technology",
+            "Role" : "Custodian"
+          },
+          //END TOP CONTENT FOR CUSTODIANS
+
+          //BEGIN TOP CONTENT FOR TEACHERS
+          "TopContent8" :{
             "Name" : "Grade & Subject Resources",
             "Id" : "Grade & Subject Resources",
             "Level" :  "2",
             "ContentId" : "Grade & Subject Resources",
             "Role" : "Teacher"
           },
-          "TopContent2" :{
-            "Name" : "District Staff Resources",
-            "Id" : "District Staff Resources",
-            "Level" :  "1",
-            "ContentId" : "District Staff Resources",
-            "Role" : "Custodian"
-          },
-          "TopContent3" :{
+          "TopContent9" :{
             "Name" : "Curriculum & Teaching Topics",
             "Id" : "Curriculum & Teaching Topics",
             "Level" :  "2",
             "ContentId" : "Curriculum & Teaching Topics",
             "Role" : "Teacher"
           },
-          "TopContent4" :{
-            "Name" : "Custodial & Maintenance",
-            "Id" : "Custodial & Maintenance",
-            "Level" :  "2",
-            "ContentId" : "Custodial & Maintenance",
-            "Role" : "Custodian"
-          },
-          "TopContent5" :{
+          "TopConten10" :{
             "Name" : "Inclusive Learning",
             "Id" : "Inclusive Learning",
             "Level" :  "2",
             "ContentId" : "Inclusive Learning",
             "Role" : "Teacher"
           },
-          "TopContent6" :{
-            "Name" : "Facility Use",
-            "Id" : "Facility Use",
-            "Level" :  "2",
-            "ContentId" : "Facility Use",
-            "Role" : "Custodian"
-          },
-          "TopContent7" :{
+          "TopContent11" :{
             "Name" : "IT Services Help Desk",
             "Id" : "IT Services Help Desk",
             "Level" :  "2",
             "ContentId" : "IT Services Help Desk",
             "Role" : "Teacher"
           },
-          "TopContent8" :{
+          "TopContent12" :{
             "Name" : "Distribution Centre",
             "Id" : "Distribution Centre",
             "Level" :  "2",
             "ContentId" : "Distribution Centre",
             "Role" : "Teacher"
           },
-          "TopContent9" :{
+          "TopContent13" :{
             "Name" : "Purchasing Goods & Services",
             "Id" : "Purchasing Goods & Services",
             "Level" :  "2",
             "ContentId" : "Purchasing Goods & Services",
             "Role" : "Teacher"
           }
+          //END TOP CONTENT FOR TEACHERS
       }
     }
   }

@@ -9,6 +9,13 @@ var App;
                     "RelatedTopics": "",
                     "PageAuditId": "School Operations",
                     "Tags": ["School Operations"]
+                },
+                "LevelOneContent2": {
+                    "Id": "Central Staff Resources",
+                    "Description": "Resources for central staff.",
+                    "RelatedTopics": "",
+                    "PageAuditId": "Central Staff Resources",
+                    "Tags": ["Central Staff Resources"]
                 }
             };
         }
