@@ -72,7 +72,19 @@ module App {
           "Id" : "Sexual Orientation & Gender Identity",
           "Description": "Building access, crime prevention, and vandalism.",
           "RelatedTopics" : "",
-          "PageAuditId": "Security"
+          "PageAuditId": "Sexual Orientation & Gender Identity"
+        },
+        "LevelThreeContent12":{
+          "Id" : "Time Reporting",
+          "Description": "Procedures and forms for time reporting.",
+          "RelatedTopics" : "",
+          "PageAuditId": "Time Reporting"
+        },
+         "LevelThreeContent13":{
+          "Id" : "RRSP",
+          "Description": "RRSP benefits and payroll deductions.",
+          "RelatedTopics" : "",
+          "PageAuditId": "Time Reporting"
         }
       }
     }

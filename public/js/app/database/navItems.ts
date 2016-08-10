@@ -1233,52 +1233,38 @@ module App {
           //END L3 ITEMS FOR MODIFIED WORK ARRANGEMENTS
 
           //BEGIN L3 ITEMS FOR PAY & EXPENSES
-          "l3NavItem114" : {
-           "Id" : "Casual Pay",
-           "Name" : "Casual Pay",
-           "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-           "l2NavId" : "Pay & Expenses for Teachers",
-           "ContentId" : "Casual Pay"
-          },
           "l3NavItem115" : {
            "Id" : "Direct Deposit",
            "Name" : "Direct Deposit",
-           "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+           "Description" : "Procedures for signing up for or altering direct deposit.",
            "l2NavId" : "Pay & Expenses for Teachers",
            "ContentId" : "Direct Deposit"
           },
           "l3NavItem116" : {
            "Id" : "Expenses",
            "Name" : "Expenses",
-           "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+           "Description" : "Information on expense reimbursement and advances.",
            "l2NavId" : "Pay & Expenses for Teachers",
            "ContentId" : "Expenses"
-          },
-          "l3NavItem117" : {
-           "Id" : "Overtime",
-           "Name" : "Overtime",
-           "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-           "l2NavId" : "Pay & Expenses for Teachers",
-           "ContentId" : "Overtime"
           },
           "l3NavItem118" : {
            "Id" : "RRSP",
            "Name" : "RRSP",
-           "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+           "Description" : "RRSP benefits and payroll deductions.",
            "l2NavId" : "Pay & Expenses for Teachers",
            "ContentId" : "RRSP"
           },
           "l3NavItem119" : {
            "Id" : "Taxes",
            "Name" : "Taxes",
-           "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+           "Description" : "Information on taxes.",
            "l2NavId" : "Pay & Expenses for Teachers",
            "ContentId" : "Taxes"
           },
           "l3NavItem120" : {
            "Id" : "Time Reporting",
            "Name" : "Time Reporting",
-           "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+           "Description" : "Procedures and forms for time reporting.",
            "l2NavId" : "Pay & Expenses for Teachers",
            "ContentId" : "Time Reporting"
           },
