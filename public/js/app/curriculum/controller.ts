@@ -31,6 +31,22 @@ export class CurriculumController extends BaseController{
           this.loadContentTypeTags();
           this.loadGradeAndSubjectResource();
           this.loadGradeAndSubjectResource(true)
+
+          var filterSet = JSON.parse(localStorage.getItem("FilterAndSet"));
+          switch(filterSet.SetNumber) {
+            case 1:
+                this.changeGradeTag(filterSet.Filter)
+                break;
+            case 2:
+              this.changeSubjectTag(filterSet.Filter)
+              break;
+            case 3:
+             $('a[href="#profile"]').trigger('click');
+              this.changeCurriculumTag(filterSet.Filter,true)
+              break;
+            default:
+                break;
+        }
     }
 
       public loadGradeTags(){
@@ -71,7 +87,7 @@ export class CurriculumController extends BaseController{
       }
 
       public loadGradeAndSubjectResource(isCurric = false){
-        this.dataService.getGradeAndSubject([this.$scope.gradeFilter,this.$scope.subjectFilter,this.$scope.resourceFilter])
+        this.dataService.getGradeAndSubject([this.$scope.gradeFilter,this.$scope.subjectFilter,this.$scope.resourceFilter,this.$scope.contentTypeFilter,this.$scope.curriculumFilter,this.$scope.curriculumTypeFilter])
         .then(data=>{
           if(isCurric){
               App.Common.replaceArrayContents(this.$scope.curriculumArray, data)
@@ -103,9 +119,21 @@ export class CurriculumController extends BaseController{
       }
 
       public changeCurriculumTag(tag,curriculum = false){
-          this.$scope.curriculumTypeFilter = tag
+          this.$scope.curriculumFilter = tag
           this.loadGradeAndSubjectResource(curriculum);
       }
+
+      public clearFilters(){
+        this.$scope.curriculumFilter = "";
+        this.$scope.gradeFilter= "";
+        this.$scope.subjectFilter ="";
+        this.$scope.contentTypeFilter ="";
+        this.$scope.curriculumFilter = "";
+        this.$scope.curriculumTypeFilter =""
+        this.loadGradeAndSubjectResource()
+        this.loadGradeAndSubjectResource(true)
+      }
+
 
   }
 }

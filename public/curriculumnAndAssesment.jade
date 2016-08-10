@@ -3,9 +3,9 @@ div(Id="curriculumDiv" ng-controller='curriculumController')
   div
     ul.nav.nav-tabs(role='tablist' id="myTabs")
       li.active(role='presentation')
-        a(href='#home', aria-controls='home', role='tab', data-toggle='tab') Grade & Subject
+        a(href='#home', aria-controls='home', role='tab', data-toggle='tab' ng-click="ctrl.clearFilters()") Grade & Subject
       li(role='presentation')
-        a(href='#profile', aria-controls='profile', role='tab', data-toggle='tab') Curriculum & Teaching Topics  
+        a(href='#profile', aria-controls='profile', role='tab', data-toggle='tab' ng-click="ctrl.clearFilters()") Curriculum & Teaching Topics  
     .tab-content
       #home.tab-pane.active.grade-pain(role='tabpanel')
         div.content-flex-wrapper
@@ -45,8 +45,11 @@ div(Id="curriculumDiv" ng-controller='curriculumController')
               div.filter-chip(ng-show="subjectFilter != ''" ng-click="ctrl.changeSubjectTag('')")
                 span {{subjectFilter}}
                     span.remove-chip &nbsp;&nbsp;x
-              div.filter-chip(ng-show="resourceFilter != ''" ng-click="resourceFilter = ''; ctrl.loadResources();")
+              div.filter-chip(ng-show="resourceFilter != ''" ng-click="ctrl.changeContentTypeFilter('')")
                 span {{typeFilter}}
+                    span.remove-chip &nbsp;&nbsp;x
+              div.filter-chip(ng-show="contentTypeFilter != ''" ng-click="ctrl.changeContentTag('', true)")
+                span {{contentTypeFilter}}
                     span.remove-chip &nbsp;&nbsp;x
             div.filter-alert-area(ng-show="gradeAndSubjectArray.length == 0")
               span(ng-show="gradeFilter == '' && subjectFilter == '' && resourceFilter == ''") Please select search criteria:
@@ -76,13 +79,13 @@ div(Id="curriculumDiv" ng-controller='curriculumController')
                 i(class="fa fa-star-o default-icon")
                 span Set default criteria
             div.grade-select-wrapper.select-row
-              span CURRICULM AND TEACHING TOPICS
-                div.news-filters(ng-repeat="tag in curriculumTags",style="display: flex;" ng-click="ctrl.changeCurriculumTag(tag.Tag);")
+              span Curriculum & Teaching Topics
+                div.news-filters(ng-repeat="tag in curriculumTags",style="display: flex;" ng-click="ctrl.changeCurriculumTag(tag.Tag,true);")
                   i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': curriculumFilter != tag.Tag, 'fa-circle': curriculumFilter == tag.Tag}")
                   span {{tag.Tag}}
                   br 
             div.resource-select-wrapper.select-row
-              span CURRICULUM RESOUCE TYPE
+              span Curriculum Resource Type
               .div.news-filters(ng-repeat="tag in curriculumTypeTags",style="display: flex;" ng-click="ctrl.changeCurriculumType(tag.Tag, true);"  ng-show="$index  <= maxContent")
                   i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': curriculumTypeFilter != tag.Tag, 'fa-circle': curriculumTypeFilter == tag.Tag}")
                   span {{tag.Tag}}
@@ -96,14 +99,14 @@ div(Id="curriculumDiv" ng-controller='curriculumController')
           div.resources-wrapper
             span.resoures-header.bold  Results:
             div.chips-wrapper
-              div.filter-chip(ng-show="gradeFilter != ''" ng-click="gradeFilter = ''; ctrl.loadResources();")
-                span {{gradeFilter}}
+              div.filter-chip(ng-show="curriculumFilter != ''" ng-click="ctrl.changeCurriculumTag('',true);")
+                span {{curriculumFilter}}
                   span.remove-chip &nbsp;&nbsp;x
-              div.filter-chip(ng-show="subjectFilter != ''" ng-click="subjectFilter = ''; ctrl.loadResources();")
-                span {{subjectFilter}}
+              div.filter-chip(ng-show="curriculumTypeFilter != ''" ng-click="ctrl.changeCurriculumType('', true);")
+                span {{curriculumTypeFilter}}
                     span.remove-chip &nbsp;&nbsp;x
-              div.filter-chip(ng-show="typeFilter != ''" ng-click="typeFilter = ''; ctrl.loadResources();")
-                span {{typeFilter}}
+              div.filter-chip(ng-show="contentTypeFilter != ''" ng-click="ctrl.changeContentTag('', true)")
+                span {{contentTypeFilter}}
                     span.remove-chip &nbsp;&nbsp;x
             div.filter-alert-area(ng-show="resourceArray.length == 0")
               span(ng-show="gradeFilter == '' && subjectFilter == '' && typeFilter == ''") Please select search criteria:
@@ -120,6 +123,9 @@ div(Id="curriculumDiv" ng-controller='curriculumController')
               span.resource-header.navigateable {{resource.Name}}
               br
               span {{resource.Description}}
+              br
+              span.small-text.text-muted(ng-repeat="tag in resource.Tags") {{tag}}
+                span(ng-show="$index != resource.Tags.length -1") ,   
           
     
 

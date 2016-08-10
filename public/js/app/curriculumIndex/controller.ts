@@ -38,5 +38,13 @@ export class CurriculumIndexController extends BaseController{
         })
 
       }
+
+      public redirect(filter, setNumber){
+        var filterSet = {Filter: filter,SetNumber: setNumber}
+        var filterSetString = JSON.stringify(filterSet);
+        localStorage.setItem("FilterAndSet",filterSetString)
+        window.location.href = "curriculumnAndAssesment";
+
+      }
   }
 }

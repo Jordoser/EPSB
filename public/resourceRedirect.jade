@@ -14,15 +14,15 @@ div(Id="curriculumIndexDiv" ng-controller='curriculumIndexController')
           div.option-set-wrapper
             span.bold Grade
             div.option-set
-              a.option(ng-repeat="grade in gradeTags") {{grade.Tag}}
+              a.option(ng-repeat="grade in gradeTags" ng-click="ctrl.redirect(grade.Tag, 1)") {{grade.Tag}}
           div.option-set-wrapper
             span.bold Subjects
             div.option-set
-              a.option(ng-repeat="subject in subjectTags") {{subject.Tag}}
+              a.option(ng-repeat="subject in subjectTags" ng-click="ctrl.redirect(subject.Tag, 2)") {{subject.Tag}}
           div.option-set-wrapper
             span.bold Curriculum Resource
             div.option-set
-              a.option(ng-repeat="curricTag in curriculumTags") {{curricTag.Tag}}
+              a.option(ng-repeat="curricTag in curriculumTags" ng-click="ctrl.redirect(curricTag.Tag, 3)") {{curricTag.Tag}}
       .secondary-info
         div.app-item-wrapper
           span.sub-heading CONTACTS
