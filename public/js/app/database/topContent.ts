@@ -4,10 +4,10 @@ module App {
     constructor(){
       this.TopContent = {
           "TopContent1" :{
-            "Name" : "School Operations",
-            "Id" : "School Operations",
-            "Level" :  "1",
-            "ContentId" : "School Operations",
+            "Name" : "Grade & Subject Resources",
+            "Id" : "Grade & Subject Resources",
+            "Level" :  "2",
+            "ContentId" : "Grade & Subject Resources",
             "Role" : "Teacher"
           },
           "TopContent2" :{
@@ -18,10 +18,10 @@ module App {
             "Role" : "Custodian"
           },
           "TopContent3" :{
-            "Name" : "Classroom & Program",
-            "Id" : "Classroom & Program",
+            "Name" : "Curriculum & Teaching Topics",
+            "Id" : "Curriculum & Teaching Topics",
             "Level" :  "2",
-            "ContentId" : "Classroom & Program",
+            "ContentId" : "Curriculum & Teaching Topics",
             "Role" : "Teacher"
           },
           "TopContent4" :{
@@ -33,7 +33,7 @@ module App {
           },
           "TopContent5" :{
             "Name" : "Inclusive Learning",
-            "Id" : "Inclusive Learnings",
+            "Id" : "Inclusive Learning",
             "Level" :  "2",
             "ContentId" : "Inclusive Learning",
             "Role" : "Teacher"
@@ -44,6 +44,27 @@ module App {
             "Level" :  "2",
             "ContentId" : "Facility Use",
             "Role" : "Custodian"
+          },
+          "TopContent7" :{
+            "Name" : "IT Services Help Desk",
+            "Id" : "IT Services Help Desk",
+            "Level" :  "2",
+            "ContentId" : "IT Services Help Desk",
+            "Role" : "Teacher"
+          },
+          "TopContent8" :{
+            "Name" : "Distribution Centre",
+            "Id" : "Distribution Centre",
+            "Level" :  "2",
+            "ContentId" : "Distribution Centre",
+            "Role" : "Teacher"
+          },
+          "TopContent9" :{
+            "Name" : "Purchasing Goods & Services",
+            "Id" : "Purchasing Goods & Services",
+            "Level" :  "2",
+            "ContentId" : "Purchasing Goods & Services",
+            "Role" : "Teacher"
           }
       }
     }
