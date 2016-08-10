@@ -116,41 +116,53 @@ module App {
 
 //Todo change to content types
     this.DocumentTypeFilters ={
-      "Filter1" : {
-        "Tag" : "Applications",
+      "Filter1": {
+         "Tag": "Applications"
       },
-      "Filter2" : {
-        "Tag" : "Calendars",
+      "Filter2": {
+         "Tag": "Calendars"
       },
-      "Filter3" : {
-        "Tag" : "Contacts",
+      "Filter3": {
+         "Tag": "Checklists"
       },
-      "Filter4" : {
-        "Tag" : "Contracts & Agreements",
+      "Filter4": {
+         "Tag": "Contacts"
       },
-      "Filter5" : {
-        "Tag" : "External Sites",
+      "Filter5": {
+         "Tag": "Contracts & Agreements"
       },
-      "Filter6" : {
-        "Tag" : "Forms & Templates",
+      "Filter6": {
+         "Tag": "External Sites"
       },
-      "Filter7" : {
-        "Tag" : "Manuals & Plans",
+      "Filter7": {
+         "Tag": "Forms & Templates"
       },
-      "Filter8" : {
-        "Tag" : "News Articles",
+      "Filter8": {
+         "Tag": "Images & Graphics"
       },
-      "Filter9" : {
-        "Tag" : "Policies",
+      "Filter9": {
+         "Tag": "Manuals & Plans"
       },
-      "Filter10" : {
-        "Tag" : "Procedures",
+      "Filter10": {
+         "Tag": "News Articles"
       },
-      "Filter11" : {
-        "Tag" : "Reports",
+      "Filter11": {
+         "Tag": "Policies"
       },
-      "Filter12" : {
-        "Tag" : "Standards & Guidelines",
+      "Filter12": {
+         "Tag": "Presentations"
+      },
+      "Filter13": {
+         "Tag": "Procedures"
+      },
+      "Filter14": {
+         "Tag": "Reports"
+      },
+      "Filter15": {
+         "Tag": "Standards & Guidelines"
+      },
+      "Filter16": {
+         "Tag": "Videos"
       }
     }
 
@@ -159,19 +171,34 @@ module App {
         "Tag" : "Around the District",
       },
       "Filter2" : {
-        "Tag" : "School Operations",
+        "Tag" : "Budget & Finance",
       },
       "Filter3" : {
-        "Tag" : "Employee Essentials",
+        "Tag" : "Centre for Education",
       },
       "Filter4" : {
-        "Tag" : "Superintendent",
+        "Tag" : "Curriculum & Assessment",
       },
       "Filter5" : {
-        "Tag" : "Student Management",
+        "Tag" : "Employee Essentials",
       },
       "Filter6" : {
-        "Tag" : "Curriculum & Assessment",
+        "Tag" : "Health & Safety",
+      },
+      "Filter7" : {
+        "Tag" : "Leadership",
+      },
+      "Filter8" : {
+        "Tag" : "Professional Development",
+      },
+      "Filter9" : {
+        "Tag" : "School Operations",
+      },
+      "Filter10" : {
+        "Tag" : "Student Management",
+      },
+      "Filter11" : {
+        "Tag" : "Technology",
       }
     }
 

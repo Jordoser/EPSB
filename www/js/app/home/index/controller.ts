@@ -8,15 +8,22 @@ export class HomeIndexController extends BaseController{
       super($scope,$timeout,dataService);
       this.$scope.name = "Search Database";
       this.$scope.searchString = ""
+
       this.$scope.searchResults = [];
+      this.$scope.shareSites = [];
+      this.$scope.topContent = []
+
       $(".custom-container").css("margin-top", "160px")
       this.$scope.newsItems = [];
       this.loadNewsitems();
+      this.loadShareSites();
+      this.loadTopContent();
       this.$scope.currentUser =  sessionStorage.getItem("CurrentUser");
       if(!this.$scope.currentUser){
         this.$scope.currentUser = "Samantha Nugent"
       }
     }
+
 
     public alert(){
       this.dataService.getTestItemById(this.$scope.searchString)
@@ -31,6 +38,37 @@ export class HomeIndexController extends BaseController{
       })
     }
 
+    public openSite(){
+      window.open('https://projects.invisionapp.com/d/main#/console/8220681/180087853/preview', '_blank');
+    }
+
+    public redirectToTop(item){
+        var nav1 = []
+        if(item.Level ==1){
+          nav1[0] = item
+        App.Common.navigateL1(nav1)
+      } else if(item.Level ==2){
+        nav1[0] = "";
+        nav1[1] = item;
+      App.Common.navigateL2(nav1)
+      }
+    }
+    public loadShareSites(){
+      this.dataService.getShareSites()
+      .then(data =>{
+        App.Common.replaceArrayContents(this.$scope.shareSites, data);
+        this.$scope.selectedShareSite= "";
+
+      })
+    }
+
+    public loadTopContent(){
+      this.dataService.getTopContent()
+      .then(data =>{
+        App.Common.replaceArrayContents(this.$scope.topContent, data);
+
+      })
+    }
     public redirectToObject(id?: string){
       if(id){
         sessionStorage.setItem("Id",id);

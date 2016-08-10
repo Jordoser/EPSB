@@ -11,6 +11,9 @@ module App.Home.Index{
       searchResults: Array<any>;
       newsItems: Array<any>;
       featuredStory: any;
-          currentUser: any;
+      currentUser: any;
+      shareSites: Array<any>;
+      selectedShareSite: any;
+      topContent: Array<any>
   }
 }

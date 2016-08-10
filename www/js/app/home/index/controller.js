@@ -20,9 +20,13 @@ var App;
                     this.$scope.name = "Search Database";
                     this.$scope.searchString = "";
                     this.$scope.searchResults = [];
+                    this.$scope.shareSites = [];
+                    this.$scope.topContent = [];
                     $(".custom-container").css("margin-top", "160px");
                     this.$scope.newsItems = [];
                     this.loadNewsitems();
+                    this.loadShareSites();
+                    this.loadTopContent();
                     this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
                     if (!this.$scope.currentUser) {
                         this.$scope.currentUser = "Samantha Nugent";
@@ -39,6 +43,36 @@ var App;
                     })
                         .catch(function (ex) {
                         alert(ex);
+                    });
+                };
+                HomeIndexController.prototype.openSite = function () {
+                    window.open('https://projects.invisionapp.com/d/main#/console/8220681/180087853/preview', '_blank');
+                };
+                HomeIndexController.prototype.redirectToTop = function (item) {
+                    var nav1 = [];
+                    if (item.Level == 1) {
+                        nav1[0] = item;
+                        App.Common.navigateL1(nav1);
+                    }
+                    else if (item.Level == 2) {
+                        nav1[0] = "";
+                        nav1[1] = item;
+                        App.Common.navigateL2(nav1);
+                    }
+                };
+                HomeIndexController.prototype.loadShareSites = function () {
+                    var _this = this;
+                    this.dataService.getShareSites()
+                        .then(function (data) {
+                        App.Common.replaceArrayContents(_this.$scope.shareSites, data);
+                        _this.$scope.selectedShareSite = "";
+                    });
+                };
+                HomeIndexController.prototype.loadTopContent = function () {
+                    var _this = this;
+                    this.dataService.getTopContent()
+                        .then(function (data) {
+                        App.Common.replaceArrayContents(_this.$scope.topContent, data);
                     });
                 };
                 HomeIndexController.prototype.redirectToObject = function (id) {

@@ -30,6 +30,8 @@ module App {
     public NewsFilters;
 
     public Documents;
+    public ShareSites;
+    public TopContent;
 
     constructor(){
       var navItems = new NavItemsDatabase();
@@ -85,6 +87,13 @@ module App {
 
       var doucments = new DocumentsDatabase();
       this.Documents = doucments.Documents;
+
+      var shareSites = new ShareSites();
+      this.ShareSites = shareSites.ShareSites;
+
+
+      var topContent = new TopContent();
+      this.TopContent = topContent.TopContent;
 
     }
   }

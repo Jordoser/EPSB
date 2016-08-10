@@ -9,7 +9,9 @@ export class NewsController extends BaseController{
       this.$scope.currentItem = null;
       this.$scope.news = []
       this.$scope.newsFilters = [];
+      this.$scope.months = ["","January", "February", "March", "April", "May", "June", "July","August", "September","October", "November", "December"]
       this.$scope.categoryFilter = "";
+      this.$scope.monthFilter = "";
       this.$scope.dateFilter = "2015-2016";
       this.$scope.searchString = ""
       this.loadNews();
@@ -49,6 +51,13 @@ export class NewsController extends BaseController{
     public changeTag(tag){
       this.$scope.categoryFilter = tag;
       this.loadNews();
+    }
+
+    public containsMonth(item){
+      if(this.$scope.monthFilter == ""){
+        return true;
+      }
+       return item.Metadata.CreatedOn.indexOf(this.$scope.monthFilter) > -1
     }
 
   }

@@ -58,8 +58,8 @@ module App {
         },
         "LevelTwoContent8":{
           "Id" : "Family & Community",
-          "Description": "Booga booga! Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "Description": "We value our many partners in education: families, school councils, community groups, businesses,\
+           post-secondary institutions and donors. There are lots of ways to support teaching and learning in our schools.",
           "RelatedTopics" : "",
           "PageAuditId": "Familty & Community",
         },
@@ -119,13 +119,98 @@ module App {
           "Id" : "Awards",
           "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud \
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
-           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "RelatedTopics" : "",
           "PageAuditId": "Awards",
         },
-
+        "LevelTwoContent17":{
+          "Id" : "Benefits for Teachers",
+          "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "RelatedTopics" : "",
+          "PageAuditId": "Benefits for Teachers",
+        },
+        "LevelTwoContent18":{
+          "Id" : "Career Stages",
+          "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "RelatedTopics" : "",
+          "PageAuditId": "Career Stages",
+        },
+        "LevelTwoContent19":{
+          "Id" : "Career Opportunities",
+          "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "RelatedTopics" : "",
+          "PageAuditId": "Career Opportunities",
+        },
+        "LevelTwoContent20":{
+          "Id" : "Employment Contracts & Agreements",
+          "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "RelatedTopics" : "",
+          "PageAuditId": "Employment Contracts & Agreements",
+        },
+        "LevelTwoContent21":{
+          "Id" : "Health & Safety",
+          "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "RelatedTopics" : "",
+          "PageAuditId": "Health & Safety",
+        },
+        "LevelTwoContent22":{
+          "Id" : "Leaves of Absence for Teachers",
+          "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "RelatedTopics" : "",
+          "PageAuditId": "Leaves of Absence for Teachers",
+        },
+        "LevelTwoContent23":{
+          "Id" : "Modified Work Arrangements",
+          "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "RelatedTopics" : "",
+          "PageAuditId": "Modified Work Arrangements",
+        },
+        "LevelTwoContent24":{
+          "Id" : "Pay & Expenses for Teachers",
+          "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "RelatedTopics" : "",
+          "PageAuditId": "Pay & Expenses for Teachers",
+        },
+        "LevelTwoContent25":{
+          "Id" : "Professional Development",
+          "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "RelatedTopics" : "",
+          "PageAuditId": "Professional Development",
+        },
+        "LevelTwoContent26":{
+          "Id" : "Staff Conduct & Responsibility",
+          "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "RelatedTopics" : "",
+          "PageAuditId": "Staff Conduct & Responsibility",
+        },
+        "LevelTwoContent27":{
+          "Id" : "Vacation & Public Holidays for Teachers",
+          "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "RelatedTopics" : "",
+          "PageAuditId": "Vacation & Public Holidays for Teachers",
+        }
         // END EMPLOYEE ESSENTIALS CONTENT
       }
     }

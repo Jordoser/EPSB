@@ -5,6 +5,7 @@ module App {
     public ResourceTypeFilters;
     public DocumentTypeFilters;
     public NewsFilters;
+    public CurriculumSubjectFilters;
     constructor(){
       this.GradeFilters = {
         "Filter1" :{
@@ -163,6 +164,27 @@ module App {
       },
       "Filter16": {
          "Tag": "Videos"
+      }
+    }
+
+    this.CurriculumSubjectFilters = {
+      "Filter1": {
+         "Tag": "Behaviour Management"
+      },
+      "Filter2": {
+         "Tag": "Combined Grades"
+      },
+      "Filter3": {
+         "Tag": "Compentencies"
+      },
+      "Filter4": {
+         "Tag": "Early Education"
+      },
+      "Filter5": {
+         "Tag": "English Language Learning (ELL)"
+      },
+      "Filter6": {
+         "Tag": "First Nations Metis & Inuit"
       }
     }
 

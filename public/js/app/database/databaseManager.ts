@@ -28,6 +28,7 @@ module App {
     public ResourceTypeFilters;
     public DocumentTypeFilters
     public NewsFilters;
+    public CurriculumSubjectFilters;
 
     public Documents;
     public ShareSites;
@@ -72,6 +73,7 @@ module App {
       this.SubjectFilters = tagFilters.SubjectFilters;
       this.DocumentTypeFilters = tagFilters.DocumentTypeFilters;
       this.NewsFilters = tagFilters.NewsFilters;
+      this.CurriculumSubjectFilters = tagFilters.CurriculumSubjectFilters;
 
 
       var resources = new ResourcesDatabase();

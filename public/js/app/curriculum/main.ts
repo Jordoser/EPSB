@@ -23,19 +23,22 @@ module App.curriculum{
 
 
   export interface ICurriculumScope extends IBaseScope{
-      currentItem: any;
-      L3Items: Array<any>;
-      relatedCurriculumItems: Array<any>;
-      selectedCurriculum: any
-      pageContent: any;
-      pageAudit: any;
-      curriculum: Array<any>;
-      categoryFilter: string;
-      dateFilter: string;
-      curriculumFilters: Array<any>
-      searchString:string;
-      dateFilters:Array<any>
-      months:Array<any>;
-      monthFilter: any;
+    gradeTags: Array<any>;
+    subjectTags: Array<any>;
+    curriculumTags: Array<any>;
+    curriculumTypeTags: Array<any>;
+    contentTypeTags: Array<any>;
+    curriculumArray: Array<any>;
+    maxSubjects: number;
+    maxContent: number;
+
+
+    gradeFilter: string;
+    subjectFilter: string;
+    resourceFilter: string;
+    contentTypeFilter: string;
+    curriculumTypeFilter: string;
+    curriculumFilter: string;
+    gradeAndSubjectArray: Array<any>
   }
 }

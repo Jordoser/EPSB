@@ -63,7 +63,18 @@
 @NeedToKnowHeight: 500px;
 
 
-
+.option-set{
+  display: flex;
+  flex-direction: column;
+  max-height: 250px;
+  flex-wrap: wrap;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.option{
+  max-height: 30px;
+  min-height: 30px;
+}
 
 
 .large-text{
@@ -325,9 +336,9 @@ text-overflow: ellipsis; // This is where the magic happens
   display: flex;
 }
 .select-criteria{
-  background-color: @gray-lighter;
+
   width: 200px;
-  height: 400px;
+
   padding: 15px;
 
   .select-header{

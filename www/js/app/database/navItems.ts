@@ -360,14 +360,16 @@ module App {
             "Name" : "Grade & Subject Resources",
             "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
             "l1NavId": "Curriculum & Assessment",
-            "ContentId" : "Grade & Subject Resources"
+            "ContentId" : "Grade & Subject Resources",
+            "PageUrl": "curriculumnAndAssesment.html"
         },
         "l2NavItem46" : {
             "Id" : "Curriculum & Teaching Topics",
             "Name" : "Curriculum & Teaching Topics",
             "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
             "l1NavId": "Curriculum & Assessment",
-            "ContentId" : "Curriculum & Teaching Topics"
+            "ContentId" : "Curriculum & Teaching Topics",
+            "PageUrl": "curriculumnAndAssesment.html"
         }
         //END L2 ITEMS FOR CURRICULUM & ASSESSNENT
       }

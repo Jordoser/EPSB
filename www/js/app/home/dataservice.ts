@@ -34,5 +34,14 @@ module App.Home{
         return this.expandPropery([item.MetadataId], "Metadata", "Id")
     }
 
+    public getShareSites() : ng.IPromise<Array<any>>{
+      return this.getItems("ShareSites");
+    }
+    public getTopContent() : ng.IPromise<Array<any>>{
+      return this.getItems("TopContent");
+    }
+
+
+
   }
 }

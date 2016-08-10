@@ -37,6 +37,10 @@ var App;
             this.Metadata = metadata.Metadata;
             var doucments = new App.DocumentsDatabase();
             this.Documents = doucments.Documents;
+            var shareSites = new App.ShareSites();
+            this.ShareSites = shareSites.ShareSites;
+            var topContent = new App.TopContent();
+            this.TopContent = topContent.TopContent;
         }
         return JSONDatabase;
     }());
