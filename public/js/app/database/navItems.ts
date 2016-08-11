@@ -243,14 +243,7 @@ module App {
             "ContentId" : "Vacation & Public Holidays for Teachers"
         },
         //BEGIN L2 ITEMS FOR CENTRAL STAFF RESOURCES
-        "l2NavItem28" : {
-            "Id" : "Centre for Education",
-            "Name" : "Centre for Education",
-            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-            "l1NavId": "Central Staff Resources",
-            "ContentId" : "Centre for Education"
-        },
-         "l2NavItem29" : {
+        "l2NavItem29" : {
             "Id" : "Communications Resources for Central Staff",
             "Name" : "Communications Resources for Central Staff",
             "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
@@ -1448,31 +1441,8 @@ module App {
            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
            "l2NavId" : "Staff Conduct & Responsibility",
            "ContentId" : "Workplace Violence"
-          },
-          //END L3 ITEMS FOR STAFF CONDUCT & RESPONSIBILITY
-
-          //BEGIN L3 ITEMS FOR CENTRE FOR EDUCATION
-          "l3NavItem150" : {
-           "Id" : "Blackboard Deli",
-           "Name" : "Blackboard Deli",
-           "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-           "l2NavId" : "Centre for Education",
-           "ContentId" : "Blackboard Deli"
-          },
-          "l3NavItem151" : {
-           "Id" : "Conference Centre",
-           "Name" : "Conference Centre",
-           "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-           "l2NavId" : "Centre for Education",
-           "ContentId" : "Conference Centre"
-          },
-          "l3NavItem152" : {
-           "Id" : "Parking",
-           "Name" : "Parking",
-           "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-           "l2NavId" : "Centre for Education",
-           "ContentId" : "Parking"
           }
+          //END L3 ITEMS FOR STAFF CONDUCT & RESPONSIBILITY
 
       }
       this.LevelFourNavItems = {

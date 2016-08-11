@@ -234,17 +234,6 @@ var App;
                     "l1NavId": "Employee Essentials",
                     "ContentId": "Vacation & Public Holidays for Teachers"
                 },
-<<<<<<< Updated upstream
-=======
-                //BEGIN L2 ITEMS FOR CENTRAL STAFF RESOURCES
-                "l2NavItem28": {
-                    "Id": "Centre for Education",
-                    "Name": "Centre for Education",
-                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-                    "l1NavId": "Central Staff Resources",
-                    "ContentId": "Centre for Education"
-                },
->>>>>>> Stashed changes
                 "l2NavItem29": {
                     "Id": "Communications Resources for Central Staff",
                     "Name": "Communications Resources for Central Staff",
@@ -1366,29 +1355,6 @@ var App;
                     "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "l2NavId": "Staff Conduct & Responsibility",
                     "ContentId": "Workplace Violence"
-                },
-                //END L3 ITEMS FOR STAFF CONDUCT & RESPONSIBILITY
-                //BEGIN L3 ITEMS FOR CENTRE FOR EDUCATION
-                "l3NavItem150": {
-                    "Id": "Blackboard Deli",
-                    "Name": "Blackboard Deli",
-                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    "l2NavId": "Centre for Education",
-                    "ContentId": "Blackboard Deli"
-                },
-                "l3NavItem151": {
-                    "Id": "Conference Centre",
-                    "Name": "Conference Centre",
-                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    "l2NavId": "Centre for Education",
-                    "ContentId": "Conference Centre"
-                },
-                "l3NavItem152": {
-                    "Id": "Parking",
-                    "Name": "Parking",
-                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    "l2NavId": "Centre for Education",
-                    "ContentId": "Parking"
                 }
             };
             this.LevelFourNavItems = {
