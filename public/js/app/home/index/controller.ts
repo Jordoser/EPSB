@@ -39,7 +39,7 @@ export class HomeIndexController extends BaseController{
     }
 
     public openSite(){
-      window.open('https://projects.invisionapp.com/d/main#/console/8220681/180087853/preview', '_blank');
+      window.open('http://hm8r4m.axshare.com/home.html', '_blank');
     }
 
     public redirectToTop(item){
