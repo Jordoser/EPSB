@@ -6,6 +6,11 @@ module App {
     public LevelFourNavItems
     constructor(){
       this.LevelOneNavItems = {
+        "NavItem0" : {
+            "Id": "Meadowlark School",
+            "Name" : "Meadowlark School",
+            "ContentId" : "Meadowlark School"
+        },
         "NavItem1" : {
             "Id": "School Operations",
             "Name" : "School Operations",
@@ -36,6 +41,14 @@ module App {
         },
       }
       this.LevelTwoNavItems = {
+        //BEGIN L2 ITEMS FOR MEADOWLARK SCHOOL
+        "l2NavItem-1" : {
+            "Id" : "Documents",
+            "Name" : "Documents",
+            "Description" : "Document storage for local school content.",
+            "l1NavId": "Meadowlark School",
+            "PageUrl" : "schoolDocuments.html"
+        },
         //BEGIN L2 ITEMS FOR SCHOOL OPERATIONS
         "l2NavItem1" : {
             "Id" : "Budget & Finance",
