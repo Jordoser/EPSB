@@ -68,8 +68,9 @@ export class NavController extends BaseController{
     }
 
 
-    public search(){
-        sessionStorage.setItem("SearchString", this.$scope.searchString);
+    public search(searchParam = ""){
+        searchParam = (searchParam == "")? this.$scope.searchString: searchParam;
+        sessionStorage.setItem("SearchString", searchParam);
         this.redirectToL1Nav(this.$scope.searchItem)
     }
 

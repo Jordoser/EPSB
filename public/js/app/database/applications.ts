@@ -73,7 +73,7 @@ module App {
           "Favorite" : "false",
           "Tags" : [""]
         },
-        "Application11" : {
+        "Application11.5" : {
           "Id": "Fees Management System (FMS)",
           "Name" : "Fees Management System (FMS)",
           "Description": "Application description.",
@@ -150,7 +150,7 @@ module App {
           "Favorite" : "false",
           "Tags" : [""]
         },
-        
+
         "Application21" : {
           "Id": "T4 Content Management System",
           "Name" : "T4 Content Management System",

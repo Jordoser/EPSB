@@ -12,7 +12,7 @@ div(ng-controller='navController' Id="navDiv")
         li(ng-click="ctrl.openL2NavForItem(item,true)" ng-repeat="item in navItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}")
           div {{item.Name}}
       ul.secondary-nav
-        li
+        li(ng-click="ctrl.search('Forms & Templates')")
           div Forms & Templates
         li
           div Policies
@@ -58,7 +58,8 @@ div(ng-controller='navController' Id="navDiv")
     .top-wrapper
       .top-row
         img.logo(src="images/epsblogo.png" ng-click="ctrl.redirectHome()")
-        img(src="images/menuitems.png" style="padding-right: 15px;padding-top: 20px;" ng-click="ctrl.openApplicationDrawer()").pull-right
+        img(src="images/apps.png" style="padding-right: 15px;padding-top: 20px;" ng-click="ctrl.openApplicationDrawer()").pull-right
+        img(src="images/menuitems.png" style="padding-right: 15px;padding-top: 20px;").pull-right
       .search-bar.col-md-12.no-padding
         label(for="searchText" id="searchLabel")
           i.fa.fa-search.fa-3(ng-click="ctrl.search()")
