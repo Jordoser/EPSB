@@ -86,7 +86,7 @@ div(Id="curriculumDiv" ng-controller='curriculumController')
                   br 
             div.resource-select-wrapper.select-row
               span Curriculum Resource Type
-              .div.news-filters(ng-repeat="tag in curriculumTypeTags",style="display: flex;" ng-click="ctrl.changeCurriculumType(tag.Tag, true);"  ng-show="$index  <= maxContent")
+              .div.news-filters(ng-repeat="tag in curriculumTypeTags",style="display: flex;" ng-click="ctrl.changeCurriculumTypeTag(tag.Tag, true);"  ng-show="$index  <= maxContent")
                   i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': curriculumTypeFilter != tag.Tag, 'fa-circle': curriculumTypeFilter == tag.Tag}")
                   span {{tag.Tag}}
                   br 
@@ -102,7 +102,7 @@ div(Id="curriculumDiv" ng-controller='curriculumController')
               div.filter-chip(ng-show="curriculumFilter != ''" ng-click="ctrl.changeCurriculumTag('',true);")
                 span {{curriculumFilter}}
                   span.remove-chip &nbsp;&nbsp;x
-              div.filter-chip(ng-show="curriculumTypeFilter != ''" ng-click="ctrl.changeCurriculumType('', true);")
+              div.filter-chip(ng-show="curriculumTypeFilter != ''" ng-click="ctrl.changeCurriculumTypeTag('', true);")
                 span {{curriculumTypeFilter}}
                     span.remove-chip &nbsp;&nbsp;x
               div.filter-chip(ng-show="contentTypeFilter != ''" ng-click="ctrl.changeContentTag('', true)")
