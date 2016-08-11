@@ -8,5 +8,6 @@ module App.levelFour{
   export interface ILevelFourScope extends IBaseScope{
     currentItem: any;
     documentTypes: Array<any>;
+    employeeBar:boolean;
   }
 }

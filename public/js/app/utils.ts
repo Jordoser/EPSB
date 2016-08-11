@@ -2,12 +2,21 @@ module App {
   "use strict";
     export interface IBaseScope extends ng.IScope {
          ctrl: BaseController;
+         contractType: string;
      }
 
      export class BaseController {
        constructor(public $scope: IBaseScope,public $timeout: ng.ITimeoutService, public dataService){
          this.$scope.ctrl = this;
          this.dataService = dataService;
+         this.$scope.contractType = "Teachers & Principals"
+         $(function () {
+           var popover = $('[data-toggle="popover"]')
+           if(popover){
+             popover.popover()
+           }
+
+          })
        }
 
    }
@@ -233,6 +242,50 @@ module App {
       public static redirectHome(){
         this.navigate("index.html",[]);
       }
+    }
+
+    export class Directives{
+      public static scopedPopover($compile,$http) {
+        return{
+            restrict: "A",
+            replace: false,
+            scope: {
+                currencies:"=data",
+                selected:"=selected"
+            },
+            link: function (scope: any, element, attrs) {
+                var html =
+                '<div style="color: black !important" class="currency-popup">' +
+                  '<div><span>Your contract Type is :</span></div>' +
+                  '<div class="bold">{{selected}}<div>' +
+                  '<div><span class="small-text text-muted">Report an Error</span></div>' +
+                  '<hr class="hr-thin"/>'+
+                  '<div><span class="small-text bold">CONTRACT TYPES</span></div>' +
+                  '<div ng-click="selected = &#39;Custodial&#39;"><a>Custodial</a></div>' +
+                  '<div ng-click="selected = &#39;Exempt&#39;"><a>Exempt</a></div>' +
+                  '<div ng-click="selected = &#39;Leadership&#39;"><a>Leadership</a></div>' +
+                  '<div ng-click="selected = &#39;Maintenance&#39;"><a>Maintenance</a></div>' +
+                  '<div ng-click="selected = &#39;Support&#39;"><a>Support</a></div>' +
+                  '<div ng-click="selected = &#39;Teachers & Principals&#39;"><a>Teachers & Principals</a></div>' +
+                '</div>';
+                var compiled = $compile(html)(scope);
+                $(element).popover({
+                    content:compiled,
+                    html: true,
+                    placement:'bottom',
+                    trigger: 'manual'
+                });
+                $(element).bind('click', function() {
+                	$(element).popover('toggle');
+                });
+
+              scope.alertTest = (()=>{
+                alert("test")
+              })
+        }
+      }
+    }
+
     }
 
 }

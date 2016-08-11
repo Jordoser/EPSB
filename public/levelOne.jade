@@ -1,5 +1,6 @@
-div(Id="levelOneDiv" ng-controller='levelOneController')
-        
+div(Id="levelOneDiv" ng-controller='levelOneController') 
+  div(ng-show="employeeBar")
+    != partial("_partials/employeeBar")
   .content-area
     .info-wrapper
       .primary-info

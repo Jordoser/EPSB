@@ -13,7 +13,8 @@ module App {
         },
         "NavItem2" : {
             "Id": "Curriculum & Assessment",
-            "Name" : "Curriculum & Assessment"
+            "Name" : "Curriculum & Assessment",
+            "PageUrl" : "resourceRedirect.html"
         },
         "NavItem3" : {
             "Id": "Central Staff Resources",
@@ -21,7 +22,6 @@ module App {
             "ContentId" : "Central Staff Resources"
         },
         "NavItem4" : {
-
             "Id": "Employee Essentials",
             "Name" : "Employee Essentials"
         },

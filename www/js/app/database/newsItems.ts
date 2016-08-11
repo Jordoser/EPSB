@@ -5,8 +5,9 @@ module App {
       this.NewsItems = {
         "NewsItem1" : {
           "Id" : "News1",
-          "Name" : "Distribution Centre closed for inventory August 15–19",
-          "Description" : "The Distribution Centre will be closed for inventory count for the week of August 15–19. No orders will be processed during this time.",
+          "Name" : "Dunluce students celebrate their reading goal with 'pie in the face' event",
+          "Description" : "Students from Dunluce School collectively read more than 1.1 million minutes this last school year and celebrated by\
+           holding an event where they could throw pies at their principal or homeroom teachers. Students threw pies at Bryan Evans ...",
           "Tags" : ["Around the District", "Featured"],
           "Image" : "http://gossipandgab.com/wp-content/uploads/2015/01/High-School-Teacher-and-Students-Dance-To-Uptown-Funk-500x282.jpg",
           "MetadataId": "NewsItem1"

@@ -4,20 +4,26 @@ module App.curriculum{
       super($http, $q);
     }
 
-    public getApplicationContent(){
-      return this.getItemByKeyValue("OtherContent","Id","Curriculum")
+    public getGradeTags(): ng.IPromise<Array<any>>{
+      return this.getItems("GradeFilters")
     }
 
-    public getCurriculum(tags: Array<any>): ng.IPromise<Array<any>>{
-      return this.getItemsByTag(tags,"CurriculumItems")
+    public getSubjectTags(): ng.IPromise<Array<any>>{
+      return this.getItems("SubjectFilters")
     }
 
-    public getCurriculumFilters(): ng.IPromise<Array<any>>{
-      return this.getItems("CurriculumFilters")
+    public getCurriculumTags(): ng.IPromise<Array<any>>{
+      return this.getItems("CurriculumSubjectFilters")
     }
 
-    public getMetadata(Id): ng.IPromise<any>{
-      return this.getItemByKeyValue("Metadata","Id",Id)
+    public getCurriculumTypeTags(): ng.IPromise<Array<any>>{
+      return this.getItems("ResourceTypeFilters")
+    }
+    public getGradeAndSubject(Tags: Array<string>): ng.IPromise<Array<any>>{
+      return this.getItemsByTag(Tags, "Resources")
+    }
+    public getContentTags(): ng.IPromise<Array<any>>{
+      return this.getItems("DocumentTypeFilters")
     }
   }
 }

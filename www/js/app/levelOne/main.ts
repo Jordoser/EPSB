@@ -10,5 +10,6 @@ module App.levelOne{
     sectionItems: Array<any>;
     relatedNews : Array<any>;
     relatedApps : Array<any>;
+    employeeBar: boolean;
   }
 }

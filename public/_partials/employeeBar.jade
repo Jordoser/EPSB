@@ -1,0 +1,17 @@
+div(style="width: 100%; padding: 30px; background-color: gray; display: table;")
+  div(style="display: table-cell; color: white; float: left;")
+    div.bold VIEWING CONTRACT INFORMATION FOR:
+    div(style="font-size: 2em") {{contractType}}
+  div.contract-change
+    div 
+      div(style="display:inline")
+        i.fa.fa-sort-desc(style="margin-top: 15px;padding-right: 5px;vertical-align: top;")
+      span(tabindex="0" 
+      role="button" 
+      data-toggle="popover" 
+      data-html="true" 
+      title="Dismissible popover"
+      selected="contractType"
+      data-placement="bottom" 
+      bz-popover) Change Contract Type
+      

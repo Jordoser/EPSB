@@ -29,6 +29,7 @@ var App;
             this.SubjectFilters = tagFilters.SubjectFilters;
             this.DocumentTypeFilters = tagFilters.DocumentTypeFilters;
             this.NewsFilters = tagFilters.NewsFilters;
+            this.CurriculumSubjectFilters = tagFilters.CurriculumSubjectFilters;
             var resources = new App.ResourcesDatabase();
             this.Resources = resources.Resources;
             var applications = new App.ApplicationsDatabase();

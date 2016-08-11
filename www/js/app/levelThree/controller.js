@@ -19,6 +19,7 @@ var App;
                 this.$scope.sectionItems = [];
                 this.$scope.documentTypes = [];
                 this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
+                this.$scope.employeeBar = this.navArray[0].Id == "Employee Essentials";
                 this.currentItemIdNav = this.navArray[2];
                 this.loadl3Item(this.currentItemIdNav.ContentId);
             }

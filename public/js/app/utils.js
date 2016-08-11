@@ -8,29 +8,26 @@ var App;
             this.dataService = dataService;
             this.$scope.ctrl = this;
             this.dataService = dataService;
+            this.$scope.contractType = "Teachers & Principals";
+            $(function () {
+                var popover = $('[data-toggle="popover"]');
+                if (popover) {
+                    popover.popover();
+                }
+            });
         }
         return BaseController;
     }());
     App.BaseController = BaseController;
-    /*
-       -Superclass to be extened by other dataService, mangages data from json files and local/session storage
-       -Allows for query on kvp's, load of entire set, and saving of object in set (saving is per session)
-    */
     var BaseJsonDataService = (function () {
         function BaseJsonDataService($http, $q) {
             this.$http = $http;
             this.$q = $q;
             this.jsonDataBase = new App.JSONDatabase();
         }
-        /*
-             -GETS FULL LIST OF ITEMS OF THE DATABASE NAME ENTERED
-             -TRIES TO ACCESS SESSION STORAGE FOR CACHED DATA
-             -ON CACHE MISS GET DATA FROM JSON FILE
-       */
         BaseJsonDataService.prototype.getItems = function (dataBase, showDeleted) {
             if (showDeleted === void 0) { showDeleted = false; }
             var deferred = this.$q.defer();
-            //If database has already been loaded into session storage load from there
             var isSessionStored = sessionStorage.getItem("IsSessionStored" + dataBase);
             if (isSessionStored) {
                 var data = $.parseJSON(sessionStorage.getItem(dataBase));
@@ -45,7 +42,6 @@ var App;
                 deferred.resolve(data);
                 return deferred.promise;
             }
-            //If not send a request to the file system and then parse the json into an array
             var data = this.jsonDataBase[dataBase];
             var dataArray = [];
             $.each(data, function (key, val) {
@@ -58,14 +54,12 @@ var App;
                     }
                 }
             });
-            //put the item into session storage for later request
             var jsonData = JSON.stringify(dataArray);
             sessionStorage.setItem("IsSessionStored" + dataBase, "True");
             sessionStorage.setItem(dataBase, jsonData);
             deferred.resolve(dataArray);
             return deferred.promise;
         };
-        //Get any items with matching key value pairs
         BaseJsonDataService.prototype.getItemByKeyValue = function (dataBase, key, value) {
             var deferred = this.$q.defer();
             this.getItems(dataBase)
@@ -110,28 +104,20 @@ var App;
             });
             return deferred.promise;
         };
-        /*
-             -Updates specific object if the object exists
-             -Push the updated "DB" to cache (session storage)
-        */
         BaseJsonDataService.prototype.setItem = function (dataBase, key, object) {
             var deferred = this.$q.defer();
             this.getItems(dataBase)
                 .then(function (data) {
-                //Find the correct object in the database
                 var filteredItem = $.grep(data, function (item) {
                     return item[key] == object[key];
                 });
-                //If the item does not exist push item with new ID
                 if (filteredItem.length == 0 || filteredItem.length > 1) {
                     data.push(object);
                 }
                 else {
-                    //replace old data
                     var i = data.indexOf(filteredItem[0]);
                     data[i] = object;
                 }
-                //update cached data
                 var jsonData = JSON.stringify(data);
                 sessionStorage.setItem("IsSessionStored" + dataBase, "True");
                 sessionStorage.setItem(dataBase, jsonData);
@@ -158,7 +144,6 @@ var App;
     var Common = (function () {
         function Common() {
         }
-        // http://slavik.meltser.info/the-efficient-way-to-create-guid-uuid-in-javascript-with-explanation/
         Common.guid = function () {
             var gen = function (s) {
                 var p = (Math.random().toString(16) + "000000000").substr(2, 8);
@@ -211,5 +196,49 @@ var App;
         return Common;
     }());
     App.Common = Common;
+    var Directives = (function () {
+        function Directives() {
+        }
+        Directives.scopedPopover = function ($compile, $http) {
+            return {
+                restrict: "A",
+                replace: false,
+                scope: {
+                    currencies: "=data",
+                    selected: "=selected"
+                },
+                link: function (scope, element, attrs) {
+                    var html = '<div style="color: black !important" class="currency-popup">' +
+                        '<div><span>Your contract Type is :</span></div>' +
+                        '<div class="bold">{{selected}}<div>' +
+                        '<div><span class="small-text text-muted">Report an Error</span></div>' +
+                        '<hr class="hr-thin"/>' +
+                        '<div><span class="small-text bold">CONTRACT TYPES</span></div>' +
+                        '<div ng-click="selected = &#39;Custodial&#39;"><a>Custodial</a></div>' +
+                        '<div ng-click="selected = &#39;Exempt&#39;"><a>Exempt</a></div>' +
+                        '<div ng-click="selected = &#39;Leadership&#39;"><a>Leadership</a></div>' +
+                        '<div ng-click="selected = &#39;Maintenance&#39;"><a>Maintenance</a></div>' +
+                        '<div ng-click="selected = &#39;Support&#39;"><a>Support</a></div>' +
+                        '<div ng-click="selected = &#39;Teachers & Principals&#39;"><a>Teachers & Principals</a></div>' +
+                        '</div>';
+                    var compiled = $compile(html)(scope);
+                    $(element).popover({
+                        content: compiled,
+                        html: true,
+                        placement: 'bottom',
+                        trigger: 'manual'
+                    });
+                    $(element).bind('click', function () {
+                        $(element).popover('toggle');
+                    });
+                    scope.alertTest = (function () {
+                        alert("test");
+                    });
+                }
+            };
+        };
+        return Directives;
+    }());
+    App.Directives = Directives;
 })(App || (App = {}));
 //# sourceMappingURL=utils.js.map

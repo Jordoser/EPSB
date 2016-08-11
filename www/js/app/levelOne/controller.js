@@ -20,6 +20,7 @@ var App;
                 this.$scope.relatedApps = [];
                 this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
                 this.currentItemIdNav = this.navArray[0];
+                this.$scope.employeeBar = this.navArray[0].Id == "Employee Essentials";
                 this.loadl1Item(this.currentItemIdNav.ContentId);
             }
             LevelOneController.prototype.loadl1Item = function (Id) {
