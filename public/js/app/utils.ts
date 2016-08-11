@@ -217,9 +217,9 @@ module App {
           this.navigate("levelFour.html", navArray);
         }
 
-      static navigateL3(navArray: Array<any>){
+      static navigateL3(navArray: Array<any>,pageUrl = "levelThree.html"){
         navArray = navArray.splice(0,3)
-        this.navigate("levelThree.html", navArray);
+        this.navigate(pageUrl, navArray);
       }
 
       static navigateL2(navArray: Array<any>, pageUrl = "levelTwo.html"){

@@ -27,7 +27,7 @@ module App.Nav{
     }
 
     public getApps(): ng.IPromise<Array<any>>{
-      return this.getItems("Applications")
+      return this.getItemByKeyValue("Applications","Favorite","true")
     }
 
   }

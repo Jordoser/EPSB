@@ -968,7 +968,8 @@ module App {
             "Name"  : "Applications",
             "Description" : "Access to all district software applications. Some may require sign in.",
             "l2NavId": "Technology",
-            "ContentId" : "Applications"
+            "ContentId" : "Applications",
+            "PageUrl" : "applications.html"
           },
           "l3NavItem79" :{
             "Id" : "Computers & Tablets",

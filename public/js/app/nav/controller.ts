@@ -345,6 +345,10 @@ export class NavController extends BaseController{
     public redirectToL3Nav(item, IsBreadCrumb = false){
       var navArray = (IsBreadCrumb)? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
       navArray[2] = item
+      if(item.PageUrl){
+        App.Common.navigateL3(navArray, item.PageUrl)
+        return;
+      }
       App.Common.navigateL3(navArray)
     }
 
