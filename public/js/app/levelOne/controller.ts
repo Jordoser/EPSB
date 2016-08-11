@@ -45,9 +45,9 @@ export class LevelOneController extends BaseController{
     }
 
     public loadRelatedNews(Tags: Array<string>){
-        this.dataService.getRelatedNews(Tags)
+        this.dataService.getItemsByTag(Tags,"NewsItems")
         .then(data =>{
-          App.Common.replaceArrayContents(this.$scope.relatedNews, data)
+          App.Common.replaceArrayContents(this.$scope.relatedNews, <any>data)
           for(var i = 0; i < this.$scope.relatedNews.length; i++){
             this.loadMetadata(this.$scope.relatedNews[i], i, this.$scope.relatedNews);
           }
