@@ -9,7 +9,7 @@ div(Id="homeIndexDiv" ng-controller='homeIndexController')
             .need-to-know-flex(style="flex-direction:column;")
               .featured-story(style="display: flex;")
                 .story-img(style="min-width: 445px;max-width: 445px;height: 225px;")
-                  img(src="{{featuredStory.Image}}" style="max-width:100%;max-height:100%;")
+                  img(src="images/featuredImage.jpg" style="max-width:100%;max-height:100%;")
                 .story-info
                   span.text-muted.small-text {{featuredStory.Metadata.CreatedOn}}
                     span(ng-repeat="tag in featuredStory.Tags") |&nbsp{{tag}}&nbsp

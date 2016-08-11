@@ -73,7 +73,7 @@ var App;
                     "Favorite": "false",
                     "Tags": [""]
                 },
-                "Application11": {
+                "Application11.5": {
                     "Id": "Fees Management System (FMS)",
                     "Name": "Fees Management System (FMS)",
                     "Description": "Application description.",

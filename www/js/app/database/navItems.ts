@@ -6,6 +6,11 @@ module App {
     public LevelFourNavItems
     constructor(){
       this.LevelOneNavItems = {
+        "NavItem0" : {
+            "Id": "Meadowlark School",
+            "Name" : "Meadowlark School",
+            "ContentId" : "Meadowlark School"
+        },
         "NavItem1" : {
             "Id": "School Operations",
             "Name" : "School Operations",
@@ -13,7 +18,8 @@ module App {
         },
         "NavItem2" : {
             "Id": "Curriculum & Assessment",
-            "Name" : "Curriculum & Assessment"
+            "Name" : "Curriculum & Assessment",
+            "PageUrl" : "resourceRedirect.html"
         },
         "NavItem3" : {
             "Id": "Central Staff Resources",
@@ -21,7 +27,6 @@ module App {
             "ContentId" : "Central Staff Resources"
         },
         "NavItem4" : {
-
             "Id": "Employee Essentials",
             "Name" : "Employee Essentials"
         },
@@ -36,6 +41,14 @@ module App {
         },
       }
       this.LevelTwoNavItems = {
+        //BEGIN L2 ITEMS FOR MEADOWLARK SCHOOL
+        "l2NavItem-1" : {
+            "Id" : "Documents",
+            "Name" : "Documents",
+            "Description" : "Document storage for local school content.",
+            "l1NavId": "Meadowlark School",
+            "PageUrl" : "schoolDocuments.html"
+        },
         //BEGIN L2 ITEMS FOR SCHOOL OPERATIONS
         "l2NavItem1" : {
             "Id" : "Budget & Finance",
@@ -968,7 +981,8 @@ module App {
             "Name"  : "Applications",
             "Description" : "Access to all district software applications. Some may require sign in.",
             "l2NavId": "Technology",
-            "ContentId" : "Applications"
+            "ContentId" : "Applications",
+            "PageUrl" : "applications.html"
           },
           "l3NavItem79" :{
             "Id" : "Computers & Tablets",

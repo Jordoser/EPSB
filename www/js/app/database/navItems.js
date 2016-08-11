@@ -3,6 +3,11 @@ var App;
     var NavItemsDatabase = (function () {
         function NavItemsDatabase() {
             this.LevelOneNavItems = {
+                "NavItem0": {
+                    "Id": "Meadowlark School",
+                    "Name": "Meadowlark School",
+                    "ContentId": "Meadowlark School"
+                },
                 "NavItem1": {
                     "Id": "School Operations",
                     "Name": "School Operations",
@@ -10,7 +15,8 @@ var App;
                 },
                 "NavItem2": {
                     "Id": "Curriculum & Assessment",
-                    "Name": "Curriculum & Assessment"
+                    "Name": "Curriculum & Assessment",
+                    "PageUrl": "resourceRedirect.html"
                 },
                 "NavItem3": {
                     "Id": "Central Staff Resources",
@@ -32,6 +38,13 @@ var App;
                 },
             };
             this.LevelTwoNavItems = {
+                "l2NavItem-1": {
+                    "Id": "Documents",
+                    "Name": "Documents",
+                    "Description": "Document storage for local school content.",
+                    "l1NavId": "Meadowlark School",
+                    "PageUrl": "schoolDocuments.html"
+                },
                 "l2NavItem1": {
                     "Id": "Budget & Finance",
                     "Name": "Budget & Finance",
@@ -906,7 +919,8 @@ var App;
                     "Name": "Applications",
                     "Description": "Access to all district software applications. Some may require sign in.",
                     "l2NavId": "Technology",
-                    "ContentId": "Applications"
+                    "ContentId": "Applications",
+                    "PageUrl": "applications.html"
                 },
                 "l3NavItem79": {
                     "Id": "Computers & Tablets",

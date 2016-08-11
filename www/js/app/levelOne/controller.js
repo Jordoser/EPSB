@@ -23,6 +23,9 @@ var App;
                 this.$scope.employeeBar = this.navArray[0].Id == "Employee Essentials";
                 this.loadl1Item(this.currentItemIdNav.ContentId);
             }
+            LevelOneController.prototype.alertTest = function () {
+                alert("Test");
+            };
             LevelOneController.prototype.loadl1Item = function (Id) {
                 var _this = this;
                 this.dataService.getItemById(Id)

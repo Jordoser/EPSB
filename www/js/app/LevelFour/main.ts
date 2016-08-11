@@ -3,6 +3,7 @@ module App.levelFour{
   angular.module('levelFourApp',[])
   .controller('levelFourController', LevelFourController)
   .service('dataService',LevelFourDataService)
+  .directive('bzPopover',App.Directives.scopedPopover)
 
 
   export interface ILevelFourScope extends IBaseScope{

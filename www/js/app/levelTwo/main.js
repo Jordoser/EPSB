@@ -5,7 +5,8 @@ var App;
         "use strict";
         angular.module('levelTwoApp', [])
             .controller('levelTwoController', levelTwo.LevelTwoController)
-            .service('dataService', levelTwo.LevelTwoDataService);
+            .service('dataService', levelTwo.LevelTwoDataService)
+            .directive('bzPopover', App.Directives.scopedPopover);
     })(levelTwo = App.levelTwo || (App.levelTwo = {}));
 })(App || (App = {}));
 //# sourceMappingURL=main.js.map

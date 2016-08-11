@@ -90,7 +90,6 @@ var App;
                                 _this.$scope.featuredStory = data[i];
                                 var truncate = data[i].Description.length > 125;
                                 if (truncate) {
-                                    _this.$scope.featuredStory.Description = _this.$scope.featuredStory.Description.substring(0, 125) + " ...";
                                 }
                                 _this.loadMetadata(_this.$scope.featuredStory);
                             }

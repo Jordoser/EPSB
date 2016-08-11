@@ -61,15 +61,29 @@ export class NavController extends BaseController{
     public swapUsers(){
       if(this.$scope.currentUser == "Samantha Nugent"){
         sessionStorage.setItem("CurrentUser", "Steve Jacob");
+          var indexOf = _.findIndex(this.$scope.navItems, (item) => {
+          var itemId = item.Id
+          return (itemId == 'Meadowlark School')
+        });
+        this.$scope.navItems[indexOf].Name = "The Center For Education"
+        this.dataService.setItem("LevelOneNavItems","Id",this.$scope.navItems[indexOf])
       }else{
           sessionStorage.setItem("CurrentUser",  "Samantha Nugent");
+          var indexOf = _.findIndex(this.$scope.navItems, (item) => {
+          var itemId = item.Id
+            return (itemId == 'Meadowlark School')
+          });
+          this.$scope.navItems[indexOf].Name = "Meadowlark School"
+          this.dataService.setItem("LevelOneNavItems","Id",this.$scope.navItems[indexOf])
       }
+
       window.location.reload()
     }
 
 
-    public search(){
-        sessionStorage.setItem("SearchString", this.$scope.searchString);
+    public search(searchParam = ""){
+        searchParam = (searchParam == "")? this.$scope.searchString: searchParam;
+        sessionStorage.setItem("SearchString", searchParam);
         this.redirectToL1Nav(this.$scope.searchItem)
     }
 
@@ -345,6 +359,10 @@ export class NavController extends BaseController{
     public redirectToL3Nav(item, IsBreadCrumb = false){
       var navArray = (IsBreadCrumb)? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
       navArray[2] = item
+      if(item.PageUrl){
+        App.Common.navigateL3(navArray, item.PageUrl)
+        return;
+      }
       App.Common.navigateL3(navArray)
     }
 

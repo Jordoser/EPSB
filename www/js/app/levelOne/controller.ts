@@ -18,6 +18,10 @@ export class LevelOneController extends BaseController{
         this.loadl1Item(this.currentItemIdNav.ContentId);
     }
 
+
+    public alertTest(){
+      alert("Test")
+    }
     public loadl1Item(Id: string){
       this.dataService.getItemById(Id)
       .then(data => {

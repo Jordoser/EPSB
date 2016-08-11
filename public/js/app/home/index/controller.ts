@@ -84,7 +84,7 @@ export class HomeIndexController extends BaseController{
               this.$scope.featuredStory = data[i]
               var truncate =data[i].Description.length > 125;
               if(truncate){
-                this.$scope.featuredStory.Description = this.$scope.featuredStory.Description.substring(0,125) + " ..."
+                //this.$scope.featuredStory.Description = this.$scope.featuredStory.Description.substring(0,250) + " ..."
               }
               this.loadMetadata(this.$scope.featuredStory)
             }else{
