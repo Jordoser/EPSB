@@ -55,7 +55,7 @@
 @topNavBarHeight: 100px;
 @NavItemHeight: 60px;
 @SubNavItemHeight: 30px;
-@NavWidth:250px;
+@NavWidth:225px;
 @l2NavColor: #0E0081;
 @l3NavColor: #341989;
 @l4NavColor: #4A457A;
@@ -142,12 +142,15 @@ overflow: hidden;
   display: inline-block;
 }
 .application-info{
-    padding: @DefaultPadding;
+  padding-bottom: 15px;
+padding-left: 15px;
+padding-right: 15px;
         width: 90%;
 }
 
 .application-icon{
         width: 10% !important;
+        margin-top: -15px;
 }
 
 .application-name{
@@ -189,9 +192,12 @@ overflow: hidden;
 }
 .need-to-know-wrapper{
   width: 100%;
-  height: @NeedToKnowHeight;
-  background-color:white;
-  padding: calc(@DefaultPadding * 2);
+  height: 500px;
+  background-color: white;
+  margin: calc(30px);
+  border-bottom: 2px solid @gray-dark;
+  /* border-bottom: 2px solid coral; */
+  padding-right: 15px;
   overflow-y: auto;
 }
 .story-info{
@@ -223,7 +229,7 @@ text-overflow: ellipsis; // This is where the magic happens
 }
 .story-img{
   height: 50%;
-  background-color: blue;
+  background-color: #337ab7;
 
   img{
     width: 100%;
@@ -311,6 +317,7 @@ text-overflow: ellipsis; // This is where the magic happens
 .sub-nav{
   padding-left: 0;
   padding-top: 25px;
+  font-size: 0.9em;
 
 .open-nav-item{
   font-weight: bolder !important;
@@ -386,14 +393,14 @@ text-overflow: ellipsis; // This is where the magic happens
 
   .resource-header{
     font-size: 1.2em;
-    color: blue;
+    color: #337ab7;
   }
   .resource-metadata{
     font-size: 0.8em;
     color: @gray;
   }
   .user-name{
-    color: blue;
+    color: #337ab7;
   }
 }
 
@@ -458,14 +465,14 @@ text-overflow: ellipsis; // This is where the magic happens
 }
 
 .news-tags{
-  color: blue;
+  color: #337ab7;
   font-size: 0.8em;
 }
 
 .news-item{
   padding-bottom: 15px;
   .news-text{
-    color: blue;
+    color: #337ab7;
     &:hover{
       text-decoration: underline;
       cursor: pointer;
@@ -476,7 +483,7 @@ text-overflow: ellipsis; // This is where the magic happens
 .app-item{
   padding-bottom: 15px;
   .app-text{
-    color: blue;
+    color: #337ab7;
     &:hover{
       text-decoration: underline;
       cursor: pointer;
@@ -527,7 +534,7 @@ padding-bottom: 30px;
 
 .navigateable:hover{
   cursor: pointer;
-  color: blue;
+  color: #337ab7;
   text-decoration: underline;
 }
 
@@ -627,7 +634,7 @@ padding-bottom: 30px;
   }
   .section-item-header{
     font-size: 1em;
-    color: blue;
+    color: #337ab7;
     cursor: pointer;
     font-weight: bold;
 
@@ -670,15 +677,18 @@ padding-bottom: 30px;
 }
 .custom-container{
   width: 100%;
+  max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
     flex-direction: column;
-    position: absolute;
+
 overflow-y: auto;
-    margin-top: 215px;
+
 padding-left: @NavWidth;
 
 
   .content-area{
-
+    padding-top: 225px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 25px;
@@ -693,7 +703,7 @@ padding-left: @NavWidth;
 
 }
 .contact-name{
-  color: blue;
+  color: #337ab7;
   &:hover{
     text-decoration: underline;
     cursor: pointer;
@@ -766,7 +776,7 @@ padding-left: @NavWidth;
         display:table-cell;
         vertical-align : middle;
         :hover{
-          color: blue;
+          color: #337ab7;
         }
       }
       i{
@@ -778,7 +788,7 @@ padding-left: @NavWidth;
           text-align: center;
           font-size: 1.3em;
           :hover{
-            color: blue;
+            color: #337ab7;
 
           }
       }
@@ -793,7 +803,7 @@ padding-left: @NavWidth;
   .l4-item{
     padding-bottom: 15px;
     :hover{
-      color: blue;
+      color: #337ab7;
     }
   }
 }
@@ -880,7 +890,7 @@ justify-content: flex-start;
   font-size: .9em;
   cursor: pointer;
   :hover{
-    color: blue;
+    color: #337ab7;
   }
 }
 
@@ -892,7 +902,7 @@ justify-content: flex-start;
   font-weight: bold;
   cursor: pointer;
   :hover{
-    color: blue;
+    color: #337ab7;
   }
 }
 
@@ -910,6 +920,7 @@ justify-content: flex-start;
   position: fixed;
   padding-left: @NavWidth;
   height: 200px;
+  top: 0;
   width: 100%;
   .top-row{
     height: @topNavBarHeight;
@@ -970,7 +981,7 @@ justify-content: flex-start;
   color:@gray-light;
   cursor: pointer;
   &:hover{
-    color: blue;
+    color: #337ab7;
     text-decoration: underline;
   }
 }
@@ -988,7 +999,7 @@ justify-content: flex-start;
   right:0;
   width: 300px;
   height: 170px;
-  background-color: blue;
+  background-color: #337ab7;
       z-index: 10000;
 }
 .top-bar{
@@ -1064,6 +1075,7 @@ position: absolute;
   width: @NavWidth;
   margin-top: @topNavBarHeight;
   height: 100%;
+  top: 0;
   background-color: white;
   border-right: 1px solid @gray-light;
   position: fixed;
@@ -1074,6 +1086,7 @@ transition: all 0.5s;
     width: 100%;
     height: @topNavBarHeight;
     display: table;
+    top: 0;
     background-color: @gray-lighter;
     text-align: center;
     border-right: none;
@@ -1134,11 +1147,11 @@ transition: all 0.5s;
       list-style-type: none;
       height: @NavItemHeight;
       border-bottom: 1px solid @gray-light;
-      background: linear-gradient(to left, white 50%, @gray 50%);
+      background:  white;
        background-size: 200% 100%;
-       background-position:right bottom;
 
-       transition:all 0.5s ease;
+
+
 
       cursor: pointer;
       div{
@@ -1150,7 +1163,7 @@ transition: all 0.5s;
       }
     }
     li:hover, li.open-nav-item {
-      background-position:left bottom;
+      background: @gray;
       color: white;
     }
   }
@@ -1222,7 +1235,7 @@ and (max-width : 1024px) {
 
 .container{
 padding-left: 215px;
-padding-top: 215px;
+padding-top: 225px;
 }
 
 

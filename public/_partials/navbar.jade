@@ -64,7 +64,7 @@ div(ng-controller='navController' Id="navDiv")
         label(for="searchText" id="searchLabel")
           i.fa.fa-search.fa-3(ng-click="ctrl.search()")
           form(ng-submit="ctrl.search()")
-            input.search-input(type="text" id="searchText" ng-model="searchString")
+            input.search-input(type="text" id="searchText" ng-model="searchString"  placeholder="Search...")
       .bread-crumb.col-sm-12.small-text(ng-if="navigatedItems.length > 0")
         span.bread-crumb-l2(ng-click="ctrl.redirectHome()") Home
           span.bread-crumb-separator(ng-if="navigatedItems.length > 0") &nbsp>&nbsp;

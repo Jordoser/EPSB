@@ -12,9 +12,9 @@ module App {
             "ContentId" : "Meadowlark School"
         },
         "NavItem1" : {
-            "Id": "School Bollocks",
-            "Name" : "School Bollocks",
-            "ContentId" : "School Bollocks"
+            "Id": "School Operations",
+            "Name" : "School Operations",
+            "ContentId" : "School Operations"
         },
         "NavItem2" : {
             "Id": "Curriculum & Assessment",
@@ -347,22 +347,7 @@ module App {
         //END L2 ITEMS FOR ABOUT EPS
 
         //BEGIN L2 ITEMS FOR CURRICULUM & ASSESSNENT
-        "l2NavItem45" : {
-            "Id" : "Grade & Subject Resources",
-            "Name" : "Grade & Subject Resources",
-            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-            "l1NavId": "Curriculum & Assessment",
-            "ContentId" : "Grade & Subject Resources",
-            "PageUrl": "curriculumnAndAssesment.html"
-        },
-        "l2NavItem46" : {
-            "Id" : "Curriculum & Teaching Topics",
-            "Name" : "Curriculum & Teaching Topics",
-            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-            "l1NavId": "Curriculum & Assessment",
-            "ContentId" : "Curriculum & Teaching Topics",
-            "PageUrl": "curriculumnAndAssesment.html"
-        }
+
         //END L2 ITEMS FOR CURRICULUM & ASSESSNENT
       }
 
@@ -1058,11 +1043,11 @@ module App {
            "ContentId" : "Employee & Family Assistance"
           },
           "l3NavItem89" : {
-           "Id" : "Emplyee Health Services",
-           "Name" : "Emplyee Health Services",
+           "Id" : "Employee Health Services",
+           "Name" : "Employee Health Services",
            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
            "l2NavId" : "Benefits for Teachers",
-           "ContentId" : "Emplyee Health Services"
+           "ContentId" : "Employee Health Services"
           },
           "l3NavItem90" : {
            "Id" : "Fitness",

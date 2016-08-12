@@ -7,7 +7,7 @@ export class CurriculumController extends BaseController{
     constructor(public $scope: ICurriculumScope,  public $timeout: ng.ITimeoutService, public dataService: CurriculumDataService){
       super($scope,$timeout,$timeout);
 
-          this.$scope.maxSubjects = 8
+          this.$scope.maxSubjects = 6
           this.$scope.maxContent = 8
           this.$scope.gradeTags = [];
           this.$scope.subjectTags = [];
@@ -59,6 +59,7 @@ export class CurriculumController extends BaseController{
       public loadSubjectTags(){
         this.dataService.getSubjectTags()
         .then(data => {
+          data = _.sortBy(data, (o)=>{return (o.Core != 'true')})
           App.Common.replaceArrayContents(this.$scope.subjectTags, data);
         })
 

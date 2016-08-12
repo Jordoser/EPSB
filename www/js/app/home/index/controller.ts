@@ -46,10 +46,18 @@ export class HomeIndexController extends BaseController{
         var nav1 = []
         if(item.Level ==1){
           nav1[0] = item
+          if(item.PageUrl){
+            App.Common.navigateL1(nav1,item.PageUrl)
+            return
+          }
         App.Common.navigateL1(nav1)
       } else if(item.Level ==2){
         nav1[0] = "";
         nav1[1] = item;
+        if(item.PageUrl){
+          App.Common.navigateL2(nav1,item.PageUrl)
+          return
+        }
       App.Common.navigateL2(nav1)
       }
     }

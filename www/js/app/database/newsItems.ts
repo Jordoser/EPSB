@@ -6,8 +6,7 @@ module App {
         "NewsItem1" : {
           "Id" : "News1",
           "Name" : "Dunluce students celebrate their reading goal with 'pie in the face' event",
-          "Description" : "Students from Dunluce School collectively read more than 1.1 million minutes this last school year and celebrated by\
-           holding an event where they could throw pies at their principal or homeroom teachers. Students threw pies at Bryan Evans ...",
+          "Description" : "Students from Dunluce School collectively read more than 1.1 million minutes this last school year!",
           "Tags" : ["Around the District", "Featured"],
           "Image" : "http://gossipandgab.com/wp-content/uploads/2015/01/High-School-Teacher-and-Students-Dance-To-Uptown-Funk-500x282.jpg",
           "MetadataId": "NewsItem1"

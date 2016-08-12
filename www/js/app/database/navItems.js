@@ -332,22 +332,6 @@ var App;
                     "l1NavId": "About EPS",
                     "ContentId": "Superintendent"
                 },
-                "l2NavItem45": {
-                    "Id": "Grade & Subject Resources",
-                    "Name": "Grade & Subject Resources",
-                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-                    "l1NavId": "Curriculum & Assessment",
-                    "ContentId": "Grade & Subject Resources",
-                    "PageUrl": "curriculumnAndAssesment.html"
-                },
-                "l2NavItem46": {
-                    "Id": "Curriculum & Teaching Topics",
-                    "Name": "Curriculum & Teaching Topics",
-                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-                    "l1NavId": "Curriculum & Assessment",
-                    "ContentId": "Curriculum & Teaching Topics",
-                    "PageUrl": "curriculumnAndAssesment.html"
-                }
             };
             this.LevelThreeNavItems = {
                 "l3NavItem1": {
@@ -993,11 +977,11 @@ var App;
                     "ContentId": "Employee & Family Assistance"
                 },
                 "l3NavItem89": {
-                    "Id": "Emplyee Health Services",
-                    "Name": "Emplyee Health Services",
+                    "Id": "Employee Health Services",
+                    "Name": "Employee Health Services",
                     "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "l2NavId": "Benefits for Teachers",
-                    "ContentId": "Emplyee Health Services"
+                    "ContentId": "Employee Health Services"
                 },
                 "l3NavItem90": {
                     "Id": "Fitness",

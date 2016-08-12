@@ -19,7 +19,7 @@ var App;
                 this.currentItemIdNav = JSON.parse(sessionStorage.getItem("NavArray"))[3];
                 this.$scope.documentTypes = [];
                 this.loadl4Item(this.currentItemIdNav.ContentId);
-                this.$scope.employeeBar = this.navArray[0].Id == "Employee Essentials";
+                this.navArray = [];
             }
             LevelFourController.prototype.loadl4Item = function (Id) {
                 var _this = this;
