@@ -83,6 +83,86 @@ var App;
            include student materials, outcomes & criteria, competency connections, and student exemplars.",
                     "MetadataId": "Alberta Assessment Consortium Performance Assessments Metadata",
                     "Tags": ["1-3", "4-6", "7-9", "10-12", "Mathematics", "Assessments"]
+                },
+                "Resource11": {
+                    "Id": "Alberta Cross-Curricular Competencies",
+                    "Name": "Alberta Cross-Curricular Competencies",
+                    "Description": "Basic list of Alberta Education's Cross-Curricular Competencies",
+                    "MetadataId": "Alberta Cross-Curricular Competencies Metadata",
+                    "Tags": ["1-3", "4-6", "7-9", "10-12", "Competencies", "Instructional Resource"]
+                },
+                "Resource12": {
+                    "Id": "Curriculum Development Indicator Guide",
+                    "Name": "Curriculum Development Indicator Guide",
+                    "Description": "Alberta Education's Cross-curricular Competencies and Draft Competency Indicators.",
+                    "MetadataId": "Curriculum Development Indicator Guide Metadata",
+                    "Tags": ["1-3", "4-6", "7-9", "10-12", "Competencies", "Instructional Resource"]
+                },
+                "Resource13": {
+                    "Id": "Edmonton Regional Learning Consortium Cross-curricular Competency Overview",
+                    "Name": "Edmonton Regional Learning Consortium Cross-curricular Competency Overview",
+                    "Description": "This collection of Cross-curricular Competency overview documents was developed \
+          by the Edmonton Regional Learning Consortium as a result of a grant from Alberta Education to support\
+           implementation. Each document provides an overview of one Cross-curricular Competency along with key\
+            understandings, implications for planning and instruction and questions for reflections and discussions.",
+                    "MetadataId": "Edmonton Regional Learning Consortium Cross-curricular Competency Overview Metadata",
+                    "Tags": ["1-3", "4-6", "7-9", "10-12", "Competencies", "Instructional Resource"]
+                },
+                "Resource14": {
+                    "Id": "Critical Thinking – Competency",
+                    "Name": "Critical Thinking – Competency",
+                    "Description": "Students may learn about competencies in various learning environments.\
+           Students need to understand the common language of the competencies across all grades and subjects.",
+                    "MetadataId": "Critical Thinking – Competency Metadata",
+                    "Tags": ["1-3", "4-6", "7-9", "10-12", "Competencies", "Instructional Resource"]
+                },
+                "Resource15": {
+                    "Id": "Communication – Competency",
+                    "Name": "Communication – Competency",
+                    "Description": "Students may learn about competencies in various learning environments.\
+           Students need to understand the common language of the competencies across all grades and subjects.",
+                    "MetadataId": "Communication – Competency Metadata",
+                    "Tags": ["1-3", "4-6", "7-9", "10-12", "Competencies", "Instructional Resource"]
+                },
+                "Resource16": {
+                    "Id": "Problem Solving – Competency",
+                    "Name": "Problem Solving – Competency",
+                    "Description": "Students may learn about competencies in various learning environments.\
+           Students need to understand the common language of the competencies across all grades and subjects.",
+                    "MetadataId": "Problem Solving – Competency Metadata",
+                    "Tags": ["1-3", "4-6", "7-9", "10-12", "Competencies", "Instructional Resource"]
+                },
+                "Resource17": {
+                    "Id": "Collaboration – Competency",
+                    "Name": "Collaboration – Competency",
+                    "Description": "Students may learn about competencies in various learning environments.\
+           Students need to understand the common language of the competencies across all grades and subjects.",
+                    "MetadataId": "Collaboration – Competency Metadata",
+                    "Tags": ["1-3", "4-6", "7-9", "10-12", "Competencies", "Instructional Resource"]
+                },
+                "Resource18": {
+                    "Id": "Manage Information – Competency",
+                    "Name": "Manage Information – Competency",
+                    "Description": "Students may learn about competencies in various learning environments.\
+           Students need to understand the common language of the competencies across all grades and subjects.",
+                    "MetadataId": "Manage Information – Competency Metadata",
+                    "Tags": ["1-3", "4-6", "7-9", "10-12", "Competencies", "Instructional Resource"]
+                },
+                "Resource19": {
+                    "Id": "Cultural & Global Citizenship – Competency",
+                    "Name": "Cultural & Global Citizenship – Competency",
+                    "Description": "Students may learn about competencies in various learning environments.\
+           Students need to understand the common language of the competencies across all grades and subjects.",
+                    "MetadataId": "Cultural & Global Citizenship – Competency Metadata",
+                    "Tags": ["1-3", "4-6", "7-9", "10-12", "Competencies", "Instructional Resource"]
+                },
+                "Resource20": {
+                    "Id": "Creativity & Innovation – Competency",
+                    "Name": "Creativity & Innovation – Competency",
+                    "Description": "Students may learn about competencies in various learning environments.\
+           Students need to understand the common language of the competencies across all grades and subjects.",
+                    "MetadataId": "Creativity & Innovation – Competency Metadata",
+                    "Tags": ["1-3", "4-6", "7-9", "10-12", "Competencies", "Instructional Resource"]
                 }
             };
         }
