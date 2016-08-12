@@ -202,6 +202,38 @@ var App;
                     "Link": "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
                     "MetadataId": "RRSP Payroll Deduction Application Metadata",
                     "Tags": ["RRSP", "Forms & Templates"]
+                },
+                "Document26": {
+                    "Id": "EPS New Employee Guide",
+                    "Name": "EPS New Employee Guide",
+                    "Description": "",
+                    "Link": "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+                    "MetadataId": "EPS New Employee Guide Metadata",
+                    "Tags": ["New Employees", "Manuals & Plans"]
+                },
+                "Document27": {
+                    "Id": "Application for Direct Deposit of Pay",
+                    "Name": "Application for Direct Deposit of Pay",
+                    "Description": "",
+                    "Link": "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+                    "MetadataId": "Application for Direct Deposit of Pay Metadata",
+                    "Tags": ["New Employees", "Forms & Templates"]
+                },
+                "Document28": {
+                    "Id": "District Staff Code of Conduct",
+                    "Name": "District Staff Code of Conduct",
+                    "Description": "",
+                    "Link": "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+                    "MetadataId": "District Staff Code of Conduct Metadata",
+                    "Tags": ["New Employees", "Policies"]
+                },
+                "Document29": {
+                    "Id": "Board and Staff Relations",
+                    "Name": "Board and Staff Relations",
+                    "Description": "",
+                    "Link": "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+                    "MetadataId": "Board and Staff Relations Metadata",
+                    "Tags": ["New Employees", "Policies"]
                 }
             };
         }
