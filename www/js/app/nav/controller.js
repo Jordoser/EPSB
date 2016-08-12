@@ -31,6 +31,7 @@ var App;
                 this.loadApps();
                 this.initiateClock();
                 this.initiateDay();
+                this.navListener();
                 this.$scope.applicationsItem = {
                     Name: "Applications",
                     PageUrl: "applications.html"
@@ -48,6 +49,21 @@ var App;
                     this.$scope.navigatedItems = [];
                 }
             }
+            NavController.prototype.navListener = function () {
+                var that = this;
+                $(document).mouseup(function (e) {
+                    var container = $('.left-nav');
+                    if (!container.is(e.target)
+                        && container.has(e.target).length === 0) {
+                        that.closeL2Nav();
+                        var open = $(".right-nav-open");
+                        if (open[0]) {
+                            var appDrawer2 = $(".application-drawer");
+                            appDrawer2.toggleClass("right-nav-open");
+                        }
+                    }
+                });
+            };
             NavController.prototype.swapUsers = function () {
                 if (this.$scope.currentUser == "Samantha Nugent") {
                     sessionStorage.setItem("CurrentUser", "Steve Jacob");

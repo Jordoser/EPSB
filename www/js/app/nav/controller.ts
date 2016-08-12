@@ -25,7 +25,7 @@ export class NavController extends BaseController{
       this.loadApps();
       this.initiateClock();
       this.initiateDay();
-
+      this.navListener();
       /*
       $('.popover-dismiss').popover({
         trigger: 'focus'
@@ -56,7 +56,24 @@ export class NavController extends BaseController{
 
     }
 
+    public navListener(){
+      var that =this
+      $(document).mouseup(function (e)
+      {
+          var container = $('.left-nav');
 
+          if (!container.is(e.target) // if the target of the click isn't the container...
+              && container.has(<any>e.target).length === 0) // ... nor a descendant of the container
+          {
+              that.closeL2Nav();
+              var open = $(".right-nav-open");
+              if(open[0]){
+                var appDrawer2 = $(".application-drawer");
+                appDrawer2.toggleClass("right-nav-open");
+              }
+          }
+      });
+    }
 
     public swapUsers(){
       if(this.$scope.currentUser == "Samantha Nugent"){

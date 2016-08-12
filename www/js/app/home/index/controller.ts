@@ -13,7 +13,7 @@ export class HomeIndexController extends BaseController{
       this.$scope.shareSites = [];
       this.$scope.topContent = []
 
-      $(".custom-container").css("margin-top", "160px")
+      //  $(".custom-container").css("margin-top", "160px")
       this.$scope.newsItems = [];
       this.loadNewsitems();
       this.loadShareSites();

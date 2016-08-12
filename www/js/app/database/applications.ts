@@ -57,7 +57,7 @@ module App {
           "Name" : "E-Biz",
           "Description": "Expense claims.",
           "Favorite" : "true",
-          "Tags" : ["Teacher"]
+          "Tags" : ["Teacher", "School Operations"]
         },
         "Application9" : {
           "Id": "Energy Management",
