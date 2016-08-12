@@ -49,7 +49,7 @@ var App;
             };
             LevelOneController.prototype.loadRelatedNews = function (Tags) {
                 var _this = this;
-                this.dataService.getRelatedNews(Tags)
+                this.dataService.getItemsByTag(Tags, "NewsItems")
                     .then(function (data) {
                     App.Common.replaceArrayContents(_this.$scope.relatedNews, data);
                     for (var i = 0; i < _this.$scope.relatedNews.length; i++) {

@@ -11,27 +11,30 @@ div(Id="curriculumDiv" ng-controller='curriculumController')
         div.content-flex-wrapper
           div.select-criteria
             div.select-header-wrapper
-              span.select-header.bold SEARCH CRITERIA
-              br
-              div.select-default.select-row
-                i(class="fa fa-star-o default-icon")
-                span Set default criteria
             div.grade-select-wrapper.select-row
-              span Grades
-                div.news-filters(ng-repeat="tag in gradeTags",style="display: flex;" ng-click="ctrl.changeGradeTag(tag.Tag);")
-                  i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': gradeFilter != tag.Tag, 'fa-circle': gradeFilter == tag.Tag}")
-                  span {{tag.Tag}}
-                  br 
+              span.bold Grades
+              div.news-filters(ng-repeat="tag in gradeTags",style="display: flex;" ng-click="ctrl.changeGradeTag(tag.Tag);")
+                i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': gradeFilter != tag.Tag, 'fa-circle': gradeFilter == tag.Tag}")
+                span {{tag.Tag}}
+                br 
             div.subject-select-wrapper.select-row
-              span Subject
-                div.news-filters(ng-repeat="tag in subjectTags",style="display: flex;" ng-click="ctrl.changeSubjectTag(tag.Tag);"  ng-show="$index  <= maxSubjects")
-                  i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': subjectFilter != tag.Tag, 'fa-circle': subjectFilter == tag.Tag}")
+              span.bold Subject
+              div.news-filters(ng-repeat="tag in subjectTags",style="display: flex;" ng-click="ctrl.changeSubjectTag(tag.Tag);"  ng-show="$index  < maxSubjects")
+                i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': subjectFilter != tag.Tag, 'fa-circle': subjectFilter == tag.Tag}")
+                span {{tag.Tag}}
+                br 
+              div(ng-show="subjectTags.length > maxSubjects")
+                button(ng-click="maxSubjects = subjectTags.length") + See More
+              div(ng-show="subjectTags.length == maxSubjects")
+                button(ng-click="maxSubjects = 6") - See Less
+            div.resource-select-wrapper.select-row
+              span.bold Curriculum Resource Type
+              div.news-filters(ng-repeat="tag in curriculumTypeTags",style="display: flex;" ng-click="ctrl.changeCurriculumTypeTag(tag.Tag);"  ng-show="$index  <= maxContent")
+                  i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': curriculumTypeFilter != tag.Tag, 'fa-circle': curriculumTypeFilter == tag.Tag}")
                   span {{tag.Tag}}
                   br 
-                div(ng-show="subjectTags.length > maxSubjects")
-                  button(ng-click="maxSubjects = subjectTags.length") + See More
             div.resource-select-wrapper.select-row
-              span Resource Type
+              span.bold Resource Type
               .div.news-filters(ng-repeat="tag in contentTypeTags",style="display: flex;" ng-click="ctrl.changeContentTag(tag.Tag);"  ng-show="$index  <= maxContent")
                   i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': contentTypeFilter != tag.Tag, 'fa-circle': contentTypeFilter == tag.Tag}")
                   span {{tag.Tag}}
@@ -45,10 +48,10 @@ div(Id="curriculumDiv" ng-controller='curriculumController')
               div.filter-chip(ng-show="subjectFilter != ''" ng-click="ctrl.changeSubjectTag('')")
                 span {{subjectFilter}}
                     span.remove-chip &nbsp;&nbsp;x
-              div.filter-chip(ng-show="resourceFilter != ''" ng-click="ctrl.changeContentTypeFilter('')")
-                span {{typeFilter}}
+              div.filter-chip(ng-show="curriculumTypeFilter != ''" ng-click="ctrl.changeCurriculumTypeTag('');")
+                span {{curriculumTypeFilter}}
                     span.remove-chip &nbsp;&nbsp;x
-              div.filter-chip(ng-show="contentTypeFilter != ''" ng-click="ctrl.changeContentTag('', true)")
+              div.filter-chip(ng-show="contentTypeFilter != ''" ng-click="ctrl.changeContentTag('')")
                 span {{contentTypeFilter}}
                     span.remove-chip &nbsp;&nbsp;x
             div.filter-alert-area(ng-show="gradeAndSubjectArray.length == 0")
@@ -73,25 +76,20 @@ div(Id="curriculumDiv" ng-controller='curriculumController')
         div.content-flex-wrapper
           div.select-criteria
             div.select-header-wrapper
-              span.select-header.bold SEARCH CRITERIA
-              br
-              div.select-default.select-row
-                i(class="fa fa-star-o default-icon")
-                span Set default criteria
             div.grade-select-wrapper.select-row
-              span Curriculum & Teaching Topics
-                div.news-filters(ng-repeat="tag in curriculumTags",style="display: flex;" ng-click="ctrl.changeCurriculumTag(tag.Tag,true);")
-                  i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': curriculumFilter != tag.Tag, 'fa-circle': curriculumFilter == tag.Tag}")
-                  span {{tag.Tag}}
-                  br 
+              span.bold Curriculum & Teaching Topics
+              div.news-filters(ng-repeat="tag in curriculumTags",style="display: flex;" ng-click="ctrl.changeCurriculumTag(tag.Tag,true);")
+                i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': curriculumFilter != tag.Tag, 'fa-circle': curriculumFilter == tag.Tag}")
+                span {{tag.Tag}}
+                br 
             div.resource-select-wrapper.select-row
-              span Curriculum Resource Type
-              .div.news-filters(ng-repeat="tag in curriculumTypeTags",style="display: flex;" ng-click="ctrl.changeCurriculumTypeTag(tag.Tag, true);"  ng-show="$index  <= maxContent")
+              span.bold Curriculum Resource Type
+              div.news-filters(ng-repeat="tag in curriculumTypeTags",style="display: flex;" ng-click="ctrl.changeCurriculumTypeTag(tag.Tag, true);"  ng-show="$index  <= maxContent")
                   i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': curriculumTypeFilter != tag.Tag, 'fa-circle': curriculumTypeFilter == tag.Tag}")
                   span {{tag.Tag}}
                   br 
             div.resource-select-wrapper.select-row
-              span Resource Type
+              span.bold Resource Type
               .div.news-filters(ng-repeat="tag in contentTypeTags",style="display: flex;" ng-click="ctrl.changeContentTag(tag.Tag, true);"  ng-show="$index  <= maxContent")
                   i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': contentTypeFilter != tag.Tag, 'fa-circle': contentTypeFilter == tag.Tag}")
                   span {{tag.Tag}}

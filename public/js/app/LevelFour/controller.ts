@@ -3,7 +3,7 @@ module App.levelFour{
 
 export class LevelFourController extends BaseController{
     public static $inject = ['$scope','$timeout','dataService'];
-
+    private navArray;
     private currentItemIdNav;
     constructor(public $scope: ILevelFourScope,  public $timeout: ng.ITimeoutService, public dataService: LevelFourDataService){
       super($scope,$timeout,$timeout);

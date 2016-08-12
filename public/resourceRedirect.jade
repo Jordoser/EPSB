@@ -20,7 +20,7 @@ div(Id="curriculumIndexDiv" ng-controller='curriculumIndexController')
             div.option-set
               a.option(ng-repeat="subject in subjectTags" ng-click="ctrl.redirect(subject.Tag, 2)") {{subject.Tag}}
           div.option-set-wrapper
-            span.bold Curriculum Resource
+            span.bold Curriculum & Teaching Topics
             div.option-set
               a.option(ng-repeat="curricTag in curriculumTags" ng-click="ctrl.redirect(curricTag.Tag, 3)") {{curricTag.Tag}}
       .secondary-info

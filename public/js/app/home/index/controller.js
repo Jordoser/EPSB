@@ -46,17 +46,25 @@ var App;
                     });
                 };
                 HomeIndexController.prototype.openSite = function () {
-                    window.open('http://hm8r4m.axshare.com/home.html', '_blank');
+                    window.open('EPSShareSite/home.html', '_blank');
                 };
                 HomeIndexController.prototype.redirectToTop = function (item) {
                     var nav1 = [];
                     if (item.Level == 1) {
                         nav1[0] = item;
+                        if (item.PageUrl) {
+                            App.Common.navigateL1(nav1, item.PageUrl);
+                            return;
+                        }
                         App.Common.navigateL1(nav1);
                     }
                     else if (item.Level == 2) {
                         nav1[0] = "";
                         nav1[1] = item;
+                        if (item.PageUrl) {
+                            App.Common.navigateL2(nav1, item.PageUrl);
+                            return;
+                        }
                         App.Common.navigateL2(nav1);
                     }
                 };

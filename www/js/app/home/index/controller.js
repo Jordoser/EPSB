@@ -46,7 +46,7 @@ var App;
                     });
                 };
                 HomeIndexController.prototype.openSite = function () {
-                    window.open('http://hm8r4m.axshare.com/home.html', '_blank');
+                    window.open('EPSShareSite/home.html', '_blank');
                 };
                 HomeIndexController.prototype.redirectToTop = function (item) {
                     var nav1 = [];
@@ -90,7 +90,6 @@ var App;
                                 _this.$scope.featuredStory = data[i];
                                 var truncate = data[i].Description.length > 125;
                                 if (truncate) {
-                                    _this.$scope.featuredStory.Description = _this.$scope.featuredStory.Description.substring(0, 125) + " ...";
                                 }
                                 _this.loadMetadata(_this.$scope.featuredStory);
                             }

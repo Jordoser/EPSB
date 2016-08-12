@@ -39,7 +39,8 @@ module App {
           "Tag" : "English as a Second Language"
         },
         "Filter5" :{
-          "Tag" : "English Language Arts"
+          "Tag" : "English Language Arts",
+          "Core" : "true"
         },
         "Filter6" :{
           "Tag" : "Enviromental & Outdoor Education"
@@ -48,7 +49,8 @@ module App {
           "Tag" : "Ethics"
         },
         "Filter8" :{
-          "Tag" : "Fine Arts"
+          "Tag" : "Fine Arts",
+          "Core" : "true"
         },
         "Filter9" :{
           "Tag" : "French (FSL & Francisation)"
@@ -69,22 +71,26 @@ module App {
           "Tag" : "Locally Developed Courses (LDCs)"
         },
         "Filter16" :{
-          "Tag" : "Mathematics"
+          "Tag" : "Mathematics",
+          "Core" : "true"
         },
         "Filter17" :{
           "Tag" : "Off-campus Education"
         },
         "Filter19" :{
-          "Tag" : "Physical Education"
+          "Tag" : "Physical Education",
+          "Core" : "true"
         },
         "Filter20" :{
           "Tag" : "Primary Grades (K-3)"
         },
         "Filter21" :{
-          "Tag" : "Science"
+          "Tag" : "Science",
+          "Core" : "true"
         },
         "Filter22" :{
-          "Tag" : "Social Science"
+          "Tag" : "Social Science",
+          "Core" : "true"
         },
         "Filter23" :{
           "Tag" : "Social Studies"

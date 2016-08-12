@@ -39,7 +39,7 @@ export class HomeIndexController extends BaseController{
     }
 
     public openSite(){
-      window.open('http://hm8r4m.axshare.com/home.html', '_blank');
+      window.open('EPSShareSite/home.html', '_blank');
     }
 
     public redirectToTop(item){
@@ -84,7 +84,7 @@ export class HomeIndexController extends BaseController{
               this.$scope.featuredStory = data[i]
               var truncate =data[i].Description.length > 125;
               if(truncate){
-                this.$scope.featuredStory.Description = this.$scope.featuredStory.Description.substring(0,125) + " ..."
+                //this.$scope.featuredStory.Description = this.$scope.featuredStory.Description.substring(0,250) + " ..."
               }
               this.loadMetadata(this.$scope.featuredStory)
             }else{

@@ -62,7 +62,8 @@ module App {
             "Id" : "Curriculum & Assessment Resources",
             "Level" :  "2",
             "ContentId" : "Curriculum & Assessment Resources",
-            "Role" : "Teacher"
+            "Role" : "Teacher",
+            "PageUrl" : "resourceRedirect.html"
           },
           "TopConten10" :{
             "Name" : "Inclusive Learning",
