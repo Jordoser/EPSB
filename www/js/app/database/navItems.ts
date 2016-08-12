@@ -12,9 +12,9 @@ module App {
             "ContentId" : "Meadowlark School"
         },
         "NavItem1" : {
-            "Id": "School Operations",
-            "Name" : "School Operations",
-            "ContentId" : "School Operations"
+            "Id": "School Bollocks",
+            "Name" : "School Bollocks",
+            "ContentId" : "School Bollocks"
         },
         "NavItem2" : {
             "Id": "Curriculum & Assessment",

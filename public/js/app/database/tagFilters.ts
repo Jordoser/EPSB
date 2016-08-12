@@ -96,19 +96,16 @@ module App {
 
       this.ResourceTypeFilters = {
         "Filter1" : {
-          "Tag" : "Program of Studies",
-        },
-        "Filter2" : {
           "Tag" : "Assessments",
         },
+        "Filter2" : {
+          "Tag" : "Instructional Resources",
+        },
         "Filter3" : {
-          "Tag" : "Classroom Resources",
+          "Tag" : "Lead Teacher Resources",
         },
         "Filter4" : {
-          "Tag" : "Competencies",
-        },
-        "Filter5" : {
-          "Tag" : "Focus on Reading",
+          "Tag" : "Program of Studies",
         },
         "Filter6" : {
           "Tag" : "Research & Support",
@@ -172,19 +169,46 @@ module App {
          "Tag": "Behaviour Management"
       },
       "Filter2": {
-         "Tag": "Combined Grades"
+         "Tag": "Books & Libraries"
       },
       "Filter3": {
-         "Tag": "Compentencies"
+         "Tag": "Combined Grades"
       },
       "Filter4": {
-         "Tag": "Early Education"
+         "Tag": "Competencies"
       },
       "Filter5": {
-         "Tag": "English Language Learning (ELL)"
+         "Tag": "Early Education"
       },
       "Filter6": {
+         "Tag": "English Language Learning (ELL)"
+      },
+      "Filter7": {
          "Tag": "First Nations Metis & Inuit"
+      },
+      "Filter8": {
+         "Tag": "Focus on Reading"
+      },
+      "Filter9": {
+         "Tag": "Literacy"
+      },
+      "Filter10": {
+         "Tag": "Literacy Interventions"
+      },
+      "Filter11": {
+         "Tag": "Numeracy"
+      },
+      "Filter12": {
+         "Tag": "Professional Development"
+      },
+      "Filter13": {
+         "Tag": "Special Education"
+      },
+      "Filter14": {
+         "Tag": "Teaching & Learning with Technology"
+      },
+      "Filter15": {
+         "Tag": "Universal Design for Learning (UDL)"
       }
     }
 

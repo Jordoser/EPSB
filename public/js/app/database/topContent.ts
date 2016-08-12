@@ -4,7 +4,7 @@ module App {
     constructor(){
       this.TopContent = {
         //BEGIN TOP CONTENT FOR CUSTODIANS
-          
+
           "TopContent1" :{
             "Name" : "Building & Systems",
             "Id" : "District Staff Resources",
@@ -58,17 +58,10 @@ module App {
 
           //BEGIN TOP CONTENT FOR TEACHERS
           "TopContent8" :{
-            "Name" : "Grade & Subject Resources",
-            "Id" : "Grade & Subject Resources",
+            "Name" : "Curriculum & Assessment Resources",
+            "Id" : "Curriculum & Assessment Resources",
             "Level" :  "2",
-            "ContentId" : "Grade & Subject Resources",
-            "Role" : "Teacher"
-          },
-          "TopContent9" :{
-            "Name" : "Curriculum & Teaching Topics",
-            "Id" : "Curriculum & Teaching Topics",
-            "Level" :  "2",
-            "ContentId" : "Curriculum & Teaching Topics",
+            "ContentId" : "Curriculum & Assessment Resources",
             "Role" : "Teacher"
           },
           "TopConten10" :{
