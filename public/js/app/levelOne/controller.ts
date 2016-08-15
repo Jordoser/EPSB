@@ -27,8 +27,10 @@ export class LevelOneController extends BaseController{
       .then(data => {
         this.$scope.currentItem = data[0]
         this.loadSectionItems(Id);
-        this.loadRelatedNews(data[0].Tags);
-        this.loadRelatedApps(data[0].Tags)
+        if(data[0]){
+          this.loadRelatedNews(data[0].Tags);
+          this.loadRelatedApps(data[0].Tags)
+        }
       });
     }
 

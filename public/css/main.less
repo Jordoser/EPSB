@@ -62,7 +62,17 @@
 @DefaultPadding : 15px;
 @NeedToKnowHeight: 500px;
 
-
+span.nav-menu-text{
+  width: 85%;
+  display: inline-block;
+}
+  i.fa.fa-angle-right.pull-right{
+    width: 10%;
+    font-size: 1.2em;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+  }
 .option-set{
   display: flex;
   flex-direction: column;
@@ -260,6 +270,7 @@ text-overflow: ellipsis; // This is where the magic happens
 }
 
 .doc-info-wrapper{
+  width: 90%;
   margin-top: -5px;
 }
 
@@ -329,10 +340,11 @@ text-overflow: ellipsis; // This is where the magic happens
 
   }
   li{
-
+    margin-top: 6px;
     list-style-type: none;
     height: @SubNavItemHeight;
-    display: table-row;
+    display: table;
+    width: 100%;
     cursor: pointer;
     div{
       padding-left: 25px;

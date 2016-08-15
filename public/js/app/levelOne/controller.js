@@ -32,8 +32,10 @@ var App;
                     .then(function (data) {
                     _this.$scope.currentItem = data[0];
                     _this.loadSectionItems(Id);
-                    _this.loadRelatedNews(data[0].Tags);
-                    _this.loadRelatedApps(data[0].Tags);
+                    if (data[0]) {
+                        _this.loadRelatedNews(data[0].Tags);
+                        _this.loadRelatedApps(data[0].Tags);
+                    }
                 });
             };
             LevelOneController.prototype.loadSectionItems = function (Id) {

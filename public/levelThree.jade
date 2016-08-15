@@ -1,7 +1,7 @@
 div(Id="levelThreeDiv" ng-controller='levelThreeController')
-  div(ng-show="employeeBar")
-    != partial("_partials/employeeBar")
   .content-area
+    div(ng-show="employeeBar")
+      != partial("_partials/employeeBar")
     .info-wrapper
       .primary-info
         h2 {{currentItem.Id}} Overview

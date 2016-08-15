@@ -50,6 +50,7 @@ export class NavController extends BaseController{
 
       this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
 
+
       if(!this.$scope.navigatedItems){
         this.$scope.navigatedItems = [];
       }
@@ -61,16 +62,20 @@ export class NavController extends BaseController{
       $(document).mouseup(function (e)
       {
           var container = $('.left-nav');
+          var appsButton = $('#appsIcon')
+          var appsNav = $('.right-nav')
 
-          if (!container.is(e.target) // if the target of the click isn't the container...
-              && container.has(<any>e.target).length === 0) // ... nor a descendant of the container
+          if ((!container.is(e.target) // if the target of the click isn't the container...
+              && container.has(<any>e.target).length === 0)) // ... nor a descendant of the container
           {
               that.closeL2Nav();
-              var open = $(".right-nav-open");
-              if(open[0]){
-                var appDrawer2 = $(".application-drawer");
-                appDrawer2.toggleClass("right-nav-open");
-              }
+
+          }
+          var open = $(".right-nav-open");
+          if((open[0] && (!appsNav.is(e.target)
+              && appsNav.has(<any>e.target).length === 0)) && !appsButton.is(e.target) ){
+            var appDrawer2 = $(".application-drawer");
+            appDrawer2.toggleClass("right-nav-open");
           }
       });
     }
@@ -82,7 +87,7 @@ export class NavController extends BaseController{
           var itemId = item.Id
           return (itemId == 'Meadowlark School')
         });
-        this.$scope.navItems[indexOf].Name = "The Center For Education"
+        this.$scope.navItems[indexOf].Name = "The Centre For Education"
         this.dataService.setItem("LevelOneNavItems","Id",this.$scope.navItems[indexOf])
       }else{
           sessionStorage.setItem("CurrentUser",  "Samantha Nugent");
@@ -136,6 +141,7 @@ export class NavController extends BaseController{
       return deferred.promise;
     }
 
+    //L2 Nav
     public loadNavItems(item): ng.IPromise<any>{
       var contentArea = $(".content-area")
       contentArea.bind("click", this.clickToClose);
@@ -148,8 +154,14 @@ export class NavController extends BaseController{
           deferred.resolve(false);
         }
         else{
+
           deferred.resolve(true)
           App.Common.replaceArrayContents(this.$scope.l2NavItems,data)
+
+          for(var i =0; i < this.$scope.l2NavItems.length; i++){
+            this.$scope.l2NavItems[i].hasChildren = false;
+            this.findl3Children(this.$scope.l2NavItems[i])
+          }
         }
 
       })
@@ -166,6 +178,11 @@ export class NavController extends BaseController{
                else{
                  deferred.resolve(true)
                  App.Common.replaceArrayContents(this.$scope.l3NavItems,data)
+
+                 for(var i =0; i < this.$scope.l3NavItems.length; i++){
+                   this.$scope.l3NavItems[i].hasChildren = false;
+                   this.findl4Children(this.$scope.l3NavItems[i])
+                 }
                }
 
 
@@ -187,6 +204,20 @@ export class NavController extends BaseController{
 
         })
       return deferred.promise;
+    }
+
+    public findl3Children(item){
+      this.dataService.getL3NavItems(item.Id)
+      .then(data => {
+        item.hasChildren = (data.length > 0)
+      })
+    }
+
+    public findl4Children(item){
+      this.dataService.getL4NavItems(item.Id)
+      .then(data => {
+        item.hasChildren = (data.length > 0)
+      })
     }
 
 
