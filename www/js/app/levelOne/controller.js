@@ -20,16 +20,22 @@ var App;
                 this.$scope.relatedApps = [];
                 this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
                 this.currentItemIdNav = this.navArray[0];
+                this.$scope.employeeBar = this.navArray[0].Id == "Employee Essentials";
                 this.loadl1Item(this.currentItemIdNav.ContentId);
             }
+            LevelOneController.prototype.alertTest = function () {
+                alert("Test");
+            };
             LevelOneController.prototype.loadl1Item = function (Id) {
                 var _this = this;
                 this.dataService.getItemById(Id)
                     .then(function (data) {
                     _this.$scope.currentItem = data[0];
                     _this.loadSectionItems(Id);
-                    _this.loadRelatedNews(data[0].Tags);
-                    _this.loadRelatedApps(data[0].Tags);
+                    if (data[0]) {
+                        _this.loadRelatedNews(data[0].Tags);
+                        _this.loadRelatedApps(data[0].Tags);
+                    }
                 });
             };
             LevelOneController.prototype.loadSectionItems = function (Id) {
@@ -45,7 +51,7 @@ var App;
             };
             LevelOneController.prototype.loadRelatedNews = function (Tags) {
                 var _this = this;
-                this.dataService.getRelatedNews(Tags)
+                this.dataService.getItemsByTag(Tags, "NewsItems")
                     .then(function (data) {
                     App.Common.replaceArrayContents(_this.$scope.relatedNews, data);
                     for (var i = 0; i < _this.$scope.relatedNews.length; i++) {

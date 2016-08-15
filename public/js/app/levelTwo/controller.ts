@@ -13,6 +13,7 @@ export class LevelTwoController extends BaseController{
         this.$scope.documentTypes =  [];
         this.navArray = JSON.parse(sessionStorage.getItem("NavArray"))
         this.currentItemIdNav = this.navArray[1];
+        this.$scope.employeeBar =  this.navArray[0].Id == "Employee Essentials"
         this.loadl2Item(this.currentItemIdNav.ContentId);
 
     }

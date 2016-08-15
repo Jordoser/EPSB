@@ -85,8 +85,7 @@ var App;
                 },
                 "LevelTwoContent12": {
                     "Id": "Staff Management & Hiring",
-                    "Description": "Booga booga! Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "Description": "",
                     "RelatedTopics": "",
                     "PageAuditId": "Staff Management & Hiring",
                 },
@@ -129,9 +128,8 @@ var App;
                 },
                 "LevelTwoContent18": {
                     "Id": "Career Stages",
-                    "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "Description": "Throughout your working life, there are many different stages and transitions. This information is organized to help\
+          you through someof the big events you may face along the way.",
                     "RelatedTopics": "",
                     "PageAuditId": "Career Stages",
                 },
@@ -145,9 +143,8 @@ var App;
                 },
                 "LevelTwoContent20": {
                     "Id": "Employment Contracts & Agreements",
-                    "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "Description": "The employment benefits and conditions for each EPS staff member are defined by the collective agreement or \
+          terms & conditions document that covers their position.",
                     "RelatedTopics": "",
                     "PageAuditId": "Employment Contracts & Agreements",
                 },
@@ -169,9 +166,8 @@ var App;
                 },
                 "LevelTwoContent23": {
                     "Id": "Modified Work Arrangements",
-                    "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "Description": "EPS offers a variet of ways to modify your working schedule, including deferrment of wages so you can take an extended leave,\
+          job exhanges and secondments, and job sharing opportunities.",
                     "RelatedTopics": "",
                     "PageAuditId": "Modified Work Arrangements",
                 },
@@ -206,6 +202,17 @@ var App;
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "RelatedTopics": "",
                     "PageAuditId": "Vacation & Public Holidays for Teachers",
+<<<<<<< HEAD
+=======
+                },
+                "LevelTwoContent28": {
+                    "Id": "Communications Resources for Central Staff",
+                    "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "RelatedTopics": "",
+                    "PageAuditId": "Communications Resources for Central Staff",
+>>>>>>> origin/master
                 }
             };
         }

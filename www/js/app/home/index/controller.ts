@@ -8,15 +8,22 @@ export class HomeIndexController extends BaseController{
       super($scope,$timeout,dataService);
       this.$scope.name = "Search Database";
       this.$scope.searchString = ""
+
       this.$scope.searchResults = [];
-      $(".custom-container").css("margin-top", "160px")
+      this.$scope.shareSites = [];
+      this.$scope.topContent = []
+
+      //  $(".custom-container").css("margin-top", "160px")
       this.$scope.newsItems = [];
       this.loadNewsitems();
+      this.loadShareSites();
+      this.loadTopContent();
       this.$scope.currentUser =  sessionStorage.getItem("CurrentUser");
       if(!this.$scope.currentUser){
         this.$scope.currentUser = "Samantha Nugent"
       }
     }
+
 
     public alert(){
       this.dataService.getTestItemById(this.$scope.searchString)
@@ -31,6 +38,45 @@ export class HomeIndexController extends BaseController{
       })
     }
 
+    public openSite(){
+      window.open('EPSShareSite/home.html', '_blank');
+    }
+
+    public redirectToTop(item){
+        var nav1 = []
+        if(item.Level ==1){
+          nav1[0] = item
+          if(item.PageUrl){
+            App.Common.navigateL1(nav1,item.PageUrl)
+            return
+          }
+        App.Common.navigateL1(nav1)
+      } else if(item.Level ==2){
+        nav1[0] = "";
+        nav1[1] = item;
+        if(item.PageUrl){
+          App.Common.navigateL2(nav1,item.PageUrl)
+          return
+        }
+      App.Common.navigateL2(nav1)
+      }
+    }
+    public loadShareSites(){
+      this.dataService.getShareSites()
+      .then(data =>{
+        App.Common.replaceArrayContents(this.$scope.shareSites, data);
+        this.$scope.selectedShareSite= "";
+
+      })
+    }
+
+    public loadTopContent(){
+      this.dataService.getTopContent()
+      .then(data =>{
+        App.Common.replaceArrayContents(this.$scope.topContent, data);
+
+      })
+    }
     public redirectToObject(id?: string){
       if(id){
         sessionStorage.setItem("Id",id);
@@ -46,7 +92,7 @@ export class HomeIndexController extends BaseController{
               this.$scope.featuredStory = data[i]
               var truncate =data[i].Description.length > 125;
               if(truncate){
-                this.$scope.featuredStory.Description = this.$scope.featuredStory.Description.substring(0,125) + " ..."
+                //this.$scope.featuredStory.Description = this.$scope.featuredStory.Description.substring(0,250) + " ..."
               }
               this.loadMetadata(this.$scope.featuredStory)
             }else{

@@ -1,6 +1,7 @@
 div(Id="levelTwoDiv" ng-controller='levelTwoController')
-        
   .content-area
+    div(ng-show="employeeBar")
+      != partial("_partials/employeeBar")
     .info-wrapper
       .primary-info
         h2 {{currentItem.Id}} Overview

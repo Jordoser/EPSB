@@ -1,57 +1,64 @@
-div(Id="homeIndexDiv" ng-controller='homeIndexController')
-  .content-area.no-padding
+div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="padding-top: 175px")
     .info-wrapper.full-width.no-padding
       .primary-info.no-padding
         .info-wrapper-center
           .need-to-know-wrapper
             .header.full-width(style="margin-top: -15px;")
-              h3.no-padding Need to Know News
+              h3.no-padding Featured Story
             .need-to-know-flex(style="flex-direction:column;")
               .featured-story(style="display: flex;")
-                .story-img(style="min-width: 445px;max-width: 445px;height: 225px;")
-                  img(src="{{featuredStory.Image}}" style="max-width:100%;max-height:100%;")
+                .story-img(style="min-width: 300px;max-width: 300px;height: 175px;")
+                  img(src="images/featuredImage.jpg" style="max-width:100%;max-height:100%;")
                 .story-info
                   span.text-muted.small-text {{featuredStory.Metadata.CreatedOn}}
                     span(ng-repeat="tag in featuredStory.Tags") |&nbsp{{tag}}&nbsp
                   p.bold.no-margin {{featuredStory.Name}}
                   p {{featuredStory.Description}}
               .story-scroll-wrapper
+                span(style="padding-bottom:15px; display: block").small-text.bold Recent News:
                 .story.news-item(ng-repeat="story in newsItems")
                   p.news-text.no-margin {{story.Name}}
                   span.text-muted.small-text {{story.Metadata.CreatedOn}}
                     span(ng-repeat="tag in story.Tags") |&nbsp{{tag}}&nbsp
                   hr.thin-padding-hr
                 .scroll-footer
-          .dynamic-info-wrapper(style="margin-left:auto; margin-right:auto; padding-left: 30px; padding-top: 15px;")
-            div(ng-if="currentUser == 'Steve Jacob'")
-              .large-text
-                span.bold Quick Links
-                span(style="font-style: italic;")  for Custodians
-              .top-content(style="margin-top: 30px;")
-                .bold.small-text TOP CONTENT
-                div(ng-repeat="item in topContent" ng-show="item.Role == 'Custodian'")
-                  a(ng-click="ctrl.redirectToTop(item)") 
-                    i.fa.fa-file-o(style="margin-right:10px;")
-                    span(stlye="padding-left:10px;"){{item.Name}}
+          .dynamic-info-wrapper(style="margin-left:auto; margin-right:auto; padding-left: 30px; padding-top: 15px;" )
+            div(ng-if="currentUser == 'Steve Jacob'" style="display:flex")
+              .left-content
+                .large-text
+                  span.bold Quick Links
+                  span(style="font-style: italic;")  for Custodians
+                .top-content(style="margin-top: 30px;")
+                  .bold(style="margin-bottom: 5px; font-size: 1.3em;") TOP CONTENT
+                  div(ng-repeat="item in topContent" ng-show="item.Role == 'Custodian'" style="margin-left: 15px;")
+                    a(ng-click="ctrl.redirectToTop(item)") 
+                      i.fa.fa-file-o(style="margin-right:10px;")
+                      span(stlye="padding-left:10px;"){{item.Name}}
+              .right-content(style="margin-left:auto;")
+                img(src="images/bulletinboard.png")
 
             div(ng-if="currentUser == 'Samantha Nugent'")
-              .large-text
-                  span.bold Quick Links
-                  span(style="font-style: italic;")  for Teachers
-              .bold TEACHER MADE CURRICULUM RESOURCES
-              .text-muted A place for teachers to share resources with each other
-              select(selectpicker='' style="width: 500px;" ng-model="selectedShareSite" ng-options="site.Url as site.Name for site in shareSites track by site.Url")
-              button(ng-click="ctrl.openSite()" ng-disabled="selectedShareSite == ''") GO
-              .top-content(style="margin-top: 30px;")
-                .bold.small-text TOP CONTENT
-                div(ng-repeat="item in topContent" ng-show="item.Role == 'Teacher'")
-                  a(ng-click="ctrl.redirectToTop(item)")
-                    i.fa.fa-file-o(style="margin-right:10px;")
-                    span(stlye="padding-left:10px;"){{item.Name}}
+              .left-content.pull-left
+                .large-text
+                    span.bold Quick Links
+                    span(style="font-style: italic;")  for Teachers
+                .bold TEACHER MADE CURRICULUM RESOURCES
+                .text-muted A place for teachers to share resources with each other
+                select(selectpicker='' style="min-width: 500px; width: 75%" ng-model="selectedShareSite" ng-options="site.Url as site.Name for site in shareSites track by site.Url")
+                  option(disabled="" selected="" value="") Subject...
+                button(ng-click="ctrl.openSite()" ng-disabled="selectedShareSite == ''") GO
+                .top-content(style="margin-top: 30px;").pull-left
+                  .bold(style="margin-bottom: 5px; font-size: 1.3em;") TOP CONTENT
+                  div(ng-repeat="item in topContent" ng-show="item.Role == 'Teacher'" style="margin-left: 15px;")
+                    a(ng-click="ctrl.redirectToTop(item)")
+                      i.fa.fa-file-o(style="margin-right:10px;")
+                      span(stlye="padding-left:10px;"){{item.Name}}
+                .right-content.pull-right
+                  img(src="images/bulletinboard.png")
 
             .dates-wrapper
             .quicklins-wrapper
-      .secondary-info.extra-wide.no-padding.pull-right(style="margin-left:auto")
+      .secondary-info.extra-wide.no-padding.pull-right(style="margin-left:auto; margin-right: 15px")
         img(src="images/cfesidebar.png" ng-if="currentUser == 'Steve Jacob'")
         img(src="images/meadowlark.png" ng-if="currentUser == 'Samantha Nugent'")
 script(src='js/app/home/dataService.js')

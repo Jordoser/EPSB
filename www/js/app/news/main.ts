@@ -35,5 +35,7 @@ module App.news{
       newsFilters: Array<any>
       searchString:string;
       dateFilters:Array<any>
+      months:Array<any>;
+      monthFilter: any;
   }
 }

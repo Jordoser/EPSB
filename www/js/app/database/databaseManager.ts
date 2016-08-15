@@ -28,8 +28,11 @@ module App {
     public ResourceTypeFilters;
     public DocumentTypeFilters
     public NewsFilters;
+    public CurriculumSubjectFilters;
 
     public Documents;
+    public ShareSites;
+    public TopContent;
 
     constructor(){
       var navItems = new NavItemsDatabase();
@@ -70,6 +73,7 @@ module App {
       this.SubjectFilters = tagFilters.SubjectFilters;
       this.DocumentTypeFilters = tagFilters.DocumentTypeFilters;
       this.NewsFilters = tagFilters.NewsFilters;
+      this.CurriculumSubjectFilters = tagFilters.CurriculumSubjectFilters;
 
 
       var resources = new ResourcesDatabase();
@@ -85,6 +89,13 @@ module App {
 
       var doucments = new DocumentsDatabase();
       this.Documents = doucments.Documents;
+
+      var shareSites = new ShareSites();
+      this.ShareSites = shareSites.ShareSites;
+
+
+      var topContent = new TopContent();
+      this.TopContent = topContent.TopContent;
 
     }
   }

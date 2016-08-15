@@ -1,21 +1,135 @@
-div(Id="curriculumDiv" ng-controller='curriculumController')
+div.content-area(Id="curriculumDiv" ng-controller='curriculumController')
   h2(style="padding-bottom: 15px;") District resources
   div
     ul.nav.nav-tabs(role='tablist' id="myTabs")
       li.active(role='presentation')
-        a(href='#home', aria-controls='home', role='tab', data-toggle='tab') Grade & Subject
+        a(href='#home', aria-controls='home', role='tab', data-toggle='tab' ng-click="ctrl.clearFilters()") Grade & Subject
       li(role='presentation')
-        a(href='#profile', aria-controls='profile', role='tab', data-toggle='tab') Curriculum & Teaching Topics  
+        a(href='#profile', aria-controls='profile', role='tab', data-toggle='tab' ng-click="ctrl.clearFilters()") Curriculum & Teaching Topics  
     .tab-content
       #home.tab-pane.active.grade-pain(role='tabpanel')
-        img(src="images/gradeandsubject.png" style="padding-left: 10px;margin-top: -5px;")
+        div.content-flex-wrapper
+          div.select-criteria
+            div.select-header-wrapper
+            div.grade-select-wrapper.select-row
+              span.bold Grades
+              div.news-filters(ng-repeat="tag in gradeTags",style="display: flex;" ng-click="ctrl.changeGradeTag(tag.Tag);")
+                i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': gradeFilter != tag.Tag, 'fa-circle': gradeFilter == tag.Tag}")
+                span {{tag.Tag}}
+                br 
+            div.subject-select-wrapper.select-row
+              span.bold Subject
+              div.news-filters(ng-repeat="tag in subjectTags",style="display: flex;" ng-click="ctrl.changeSubjectTag(tag.Tag);"  ng-show="$index  < maxSubjects")
+                i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': subjectFilter != tag.Tag, 'fa-circle': subjectFilter == tag.Tag}")
+                span {{tag.Tag}}
+                br 
+              div(ng-show="subjectTags.length > maxSubjects")
+                button(ng-click="maxSubjects = subjectTags.length") + See More
+              div(ng-show="subjectTags.length == maxSubjects")
+                button(ng-click="maxSubjects = 6") - See Less
+            div.resource-select-wrapper.select-row
+              span.bold Curriculum Resource Type
+              div.news-filters(ng-repeat="tag in curriculumTypeTags",style="display: flex;" ng-click="ctrl.changeCurriculumTypeTag(tag.Tag);"  ng-show="$index  <= maxContent")
+                  i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': curriculumTypeFilter != tag.Tag, 'fa-circle': curriculumTypeFilter == tag.Tag}")
+                  span {{tag.Tag}}
+                  br 
+            div.resource-select-wrapper.select-row
+              span.bold Resource Type
+              .div.news-filters(ng-repeat="tag in contentTypeTags",style="display: flex;" ng-click="ctrl.changeContentTag(tag.Tag);"  ng-show="$index  <= maxContent")
+                  i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': contentTypeFilter != tag.Tag, 'fa-circle': contentTypeFilter == tag.Tag}")
+                  span {{tag.Tag}}
+                  br 
+          div.resources-wrapper
+            span.resoures-header.bold  Results:
+            div.chips-wrapper
+              div.filter-chip(ng-show="gradeFilter != ''" ng-click="ctrl.changeGradeTag('');")
+                span {{gradeFilter}}
+                  span.remove-chip &nbsp;&nbsp;x
+              div.filter-chip(ng-show="subjectFilter != ''" ng-click="ctrl.changeSubjectTag('')")
+                span {{subjectFilter}}
+                    span.remove-chip &nbsp;&nbsp;x
+              div.filter-chip(ng-show="curriculumTypeFilter != ''" ng-click="ctrl.changeCurriculumTypeTag('');")
+                span {{curriculumTypeFilter}}
+                    span.remove-chip &nbsp;&nbsp;x
+              div.filter-chip(ng-show="contentTypeFilter != ''" ng-click="ctrl.changeContentTag('')")
+                span {{contentTypeFilter}}
+                    span.remove-chip &nbsp;&nbsp;x
+            div.filter-alert-area(ng-show="gradeAndSubjectArray.length == 0")
+              span(ng-show="gradeFilter == '' && subjectFilter == '' && resourceFilter == ''") Please select search criteria:
+              span(ng-show="!(gradeFilter == '' && subjectFilter == '' && resourceFilter == '')") No results match the current search criteria
+            div.resource-skeleton(ng-show="gradeAndSubjectArray.length == 0 && resourceFilter == '' && subjectFilter == '' && resourceFilter == ''")
+              hr.thin-padding-hr
+              div.skeleton-header
+              div.skeleton-metadata
+              div.skeleton-description
+              div.skeleton-description-middle-line
+              div.skeleton-description
+            div.resource-wrapper(ng-repeat="resource in gradeAndSubjectArray")
+              hr.thin-padding-hr
+              span.resource-header.navigateable {{resource.Name}}
+              br
+              span {{resource.Description}}
+              br
+              span.small-text.text-muted(ng-repeat="tag in resource.Tags") {{tag}}
+                span(ng-show="$index != resource.Tags.length -1") ,   
       #profile.tab-pane.topic-pain(role='tabpanel')
-        img(src="images/teachingstuff.png")
+        div.content-flex-wrapper
+          div.select-criteria
+            div.select-header-wrapper
+            div.grade-select-wrapper.select-row
+              span.bold Curriculum & Teaching Topics
+              div.news-filters(ng-repeat="tag in curriculumTags",style="display: flex;" ng-click="ctrl.changeCurriculumTag(tag.Tag,true);")
+                i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': curriculumFilter != tag.Tag, 'fa-circle': curriculumFilter == tag.Tag}")
+                span {{tag.Tag}}
+                br 
+            div.resource-select-wrapper.select-row
+              span.bold Curriculum Resource Type
+              div.news-filters(ng-repeat="tag in curriculumTypeTags",style="display: flex;" ng-click="ctrl.changeCurriculumTypeTag(tag.Tag, true);"  ng-show="$index  <= maxContent")
+                  i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': curriculumTypeFilter != tag.Tag, 'fa-circle': curriculumTypeFilter == tag.Tag}")
+                  span {{tag.Tag}}
+                  br 
+            div.resource-select-wrapper.select-row
+              span.bold Resource Type
+              .div.news-filters(ng-repeat="tag in contentTypeTags",style="display: flex;" ng-click="ctrl.changeContentTag(tag.Tag, true);"  ng-show="$index  <= maxContent")
+                  i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': contentTypeFilter != tag.Tag, 'fa-circle': contentTypeFilter == tag.Tag}")
+                  span {{tag.Tag}}
+                  br 
+          div.resources-wrapper
+            span.resoures-header.bold  Results:
+            div.chips-wrapper
+              div.filter-chip(ng-show="curriculumFilter != ''" ng-click="ctrl.changeCurriculumTag('',true);")
+                span {{curriculumFilter}}
+                  span.remove-chip &nbsp;&nbsp;x
+              div.filter-chip(ng-show="curriculumTypeFilter != ''" ng-click="ctrl.changeCurriculumTypeTag('', true);")
+                span {{curriculumTypeFilter}}
+                    span.remove-chip &nbsp;&nbsp;x
+              div.filter-chip(ng-show="contentTypeFilter != ''" ng-click="ctrl.changeContentTag('', true)")
+                span {{contentTypeFilter}}
+                    span.remove-chip &nbsp;&nbsp;x
+            div.filter-alert-area(ng-show="resourceArray.length == 0")
+              span(ng-show="gradeFilter == '' && subjectFilter == '' && typeFilter == ''") Please select search criteria:
+              span(ng-show="!(gradeFilter == '' && subjectFilter == '' && typeFilter == '')") No results match the current search criteria
+            div.resource-skeleton(ng-show="resourceArray.length == 0 && gradeFilter == '' && subjectFilter == '' && typeFilter == ''")
+              hr.thin-padding-hr
+              div.skeleton-header
+              div.skeleton-metadata
+              div.skeleton-description
+              div.skeleton-description-middle-line
+              div.skeleton-description
+            div.resource-wrapper(ng-repeat="resource in curriculumArray")
+              hr.thin-padding-hr
+              span.resource-header.navigateable {{resource.Name}}
+              br
+              span {{resource.Description}}
+              br
+              span.small-text.text-muted(ng-repeat="tag in resource.Tags") {{tag}}
+                span(ng-show="$index != resource.Tags.length -1") ,   
+          
     
 
 
 script(src='js/app/curriculum/dataService.js')
-script(src='js/app/curriculum/index/controller.js')
-script(src='js/app/curriculum/index/main.js')
+script(src='js/app/curriculum/controller.js')
+script(src='js/app/curriculum/main.js')
 script.
   angular.bootstrap(document.getElementById('curriculumDiv'),["curriculumApp"])

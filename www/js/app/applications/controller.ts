@@ -26,5 +26,7 @@ export class ApplicationsController extends BaseController{
       })
     }
 
+
+
   }
 }

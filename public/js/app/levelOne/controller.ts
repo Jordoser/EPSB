@@ -14,16 +14,23 @@ export class LevelOneController extends BaseController{
         this.$scope.relatedApps = [];
         this.navArray = JSON.parse(sessionStorage.getItem("NavArray"))
         this.currentItemIdNav = this.navArray[0];
+        this.$scope.employeeBar =  this.navArray[0].Id == "Employee Essentials"
         this.loadl1Item(this.currentItemIdNav.ContentId);
     }
 
+
+    public alertTest(){
+      alert("Test")
+    }
     public loadl1Item(Id: string){
       this.dataService.getItemById(Id)
       .then(data => {
         this.$scope.currentItem = data[0]
         this.loadSectionItems(Id);
-        this.loadRelatedNews(data[0].Tags);
-        this.loadRelatedApps(data[0].Tags)
+        if(data[0]){
+          this.loadRelatedNews(data[0].Tags);
+          this.loadRelatedApps(data[0].Tags)
+        }
       });
     }
 
@@ -40,9 +47,9 @@ export class LevelOneController extends BaseController{
     }
 
     public loadRelatedNews(Tags: Array<string>){
-        this.dataService.getRelatedNews(Tags)
+        this.dataService.getItemsByTag(Tags,"NewsItems")
         .then(data =>{
-          App.Common.replaceArrayContents(this.$scope.relatedNews, data)
+          App.Common.replaceArrayContents(this.$scope.relatedNews, <any>data)
           for(var i = 0; i < this.$scope.relatedNews.length; i++){
             this.loadMetadata(this.$scope.relatedNews[i], i, this.$scope.relatedNews);
           }

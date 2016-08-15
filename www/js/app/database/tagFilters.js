@@ -33,7 +33,8 @@ var App;
                     "Tag": "English as a Second Language"
                 },
                 "Filter5": {
-                    "Tag": "English Language Arts"
+                    "Tag": "English Language Arts",
+                    "Core": "true"
                 },
                 "Filter6": {
                     "Tag": "Enviromental & Outdoor Education"
@@ -42,7 +43,8 @@ var App;
                     "Tag": "Ethics"
                 },
                 "Filter8": {
-                    "Tag": "Fine Arts"
+                    "Tag": "Fine Arts",
+                    "Core": "true"
                 },
                 "Filter9": {
                     "Tag": "French (FSL & Francisation)"
@@ -63,22 +65,26 @@ var App;
                     "Tag": "Locally Developed Courses (LDCs)"
                 },
                 "Filter16": {
-                    "Tag": "Mathematics"
+                    "Tag": "Mathematics",
+                    "Core": "true"
                 },
                 "Filter17": {
                     "Tag": "Off-campus Education"
                 },
                 "Filter19": {
-                    "Tag": "Physical Education"
+                    "Tag": "Physical Education",
+                    "Core": "true"
                 },
                 "Filter20": {
                     "Tag": "Primary Grades (K-3)"
                 },
                 "Filter21": {
-                    "Tag": "Science"
+                    "Tag": "Science",
+                    "Core": "true"
                 },
                 "Filter22": {
-                    "Tag": "Social Science"
+                    "Tag": "Social Science",
+                    "Core": "true"
                 },
                 "Filter23": {
                     "Tag": "Social Studies"
@@ -89,19 +95,16 @@ var App;
             };
             this.ResourceTypeFilters = {
                 "Filter1": {
-                    "Tag": "Program of Studies",
-                },
-                "Filter2": {
                     "Tag": "Assessments",
                 },
+                "Filter2": {
+                    "Tag": "Instructional Resources",
+                },
                 "Filter3": {
-                    "Tag": "Classroom Resources",
+                    "Tag": "Lead Teacher Resources",
                 },
                 "Filter4": {
-                    "Tag": "Competencies",
-                },
-                "Filter5": {
-                    "Tag": "Focus on Reading",
+                    "Tag": "Program of Studies",
                 },
                 "Filter6": {
                     "Tag": "Research & Support",
@@ -109,40 +112,99 @@ var App;
             };
             this.DocumentTypeFilters = {
                 "Filter1": {
-                    "Tag": "Applications",
+                    "Tag": "Applications"
                 },
                 "Filter2": {
-                    "Tag": "Calendars",
+                    "Tag": "Calendars"
                 },
                 "Filter3": {
-                    "Tag": "Contacts",
+                    "Tag": "Checklists"
                 },
                 "Filter4": {
-                    "Tag": "Contracts & Agreements",
+                    "Tag": "Contacts"
                 },
                 "Filter5": {
-                    "Tag": "External Sites",
+                    "Tag": "Contracts & Agreements"
                 },
                 "Filter6": {
-                    "Tag": "Forms & Templates",
+                    "Tag": "External Sites"
                 },
                 "Filter7": {
-                    "Tag": "Manuals & Plans",
+                    "Tag": "Forms & Templates"
                 },
                 "Filter8": {
-                    "Tag": "News Articles",
+                    "Tag": "Images & Graphics"
                 },
                 "Filter9": {
-                    "Tag": "Policies",
+                    "Tag": "Manuals & Plans"
                 },
                 "Filter10": {
-                    "Tag": "Procedures",
+                    "Tag": "News Articles"
                 },
                 "Filter11": {
-                    "Tag": "Reports",
+                    "Tag": "Policies"
                 },
                 "Filter12": {
-                    "Tag": "Standards & Guidelines",
+                    "Tag": "Presentations"
+                },
+                "Filter13": {
+                    "Tag": "Procedures"
+                },
+                "Filter14": {
+                    "Tag": "Reports"
+                },
+                "Filter15": {
+                    "Tag": "Standards & Guidelines"
+                },
+                "Filter16": {
+                    "Tag": "Videos"
+                }
+            };
+            this.CurriculumSubjectFilters = {
+                "Filter1": {
+                    "Tag": "Behaviour Management"
+                },
+                "Filter2": {
+                    "Tag": "Books & Libraries"
+                },
+                "Filter3": {
+                    "Tag": "Combined Grades"
+                },
+                "Filter4": {
+                    "Tag": "Competencies"
+                },
+                "Filter5": {
+                    "Tag": "Early Education"
+                },
+                "Filter6": {
+                    "Tag": "English Language Learning (ELL)"
+                },
+                "Filter7": {
+                    "Tag": "First Nations Metis & Inuit"
+                },
+                "Filter8": {
+                    "Tag": "Focus on Reading"
+                },
+                "Filter9": {
+                    "Tag": "Literacy"
+                },
+                "Filter10": {
+                    "Tag": "Literacy Interventions"
+                },
+                "Filter11": {
+                    "Tag": "Numeracy"
+                },
+                "Filter12": {
+                    "Tag": "Professional Development"
+                },
+                "Filter13": {
+                    "Tag": "Special Education"
+                },
+                "Filter14": {
+                    "Tag": "Teaching & Learning with Technology"
+                },
+                "Filter15": {
+                    "Tag": "Universal Design for Learning (UDL)"
                 }
             };
             this.NewsFilters = {
@@ -150,19 +212,34 @@ var App;
                     "Tag": "Around the District",
                 },
                 "Filter2": {
-                    "Tag": "School Operations",
+                    "Tag": "Budget & Finance",
                 },
                 "Filter3": {
-                    "Tag": "Employee Essentials",
+                    "Tag": "Centre for Education",
                 },
                 "Filter4": {
-                    "Tag": "Superintendent",
+                    "Tag": "Curriculum & Assessment",
                 },
                 "Filter5": {
-                    "Tag": "Student Management",
+                    "Tag": "Employee Essentials",
                 },
                 "Filter6": {
-                    "Tag": "Curriculum & Assessment",
+                    "Tag": "Health & Safety",
+                },
+                "Filter7": {
+                    "Tag": "Leadership",
+                },
+                "Filter8": {
+                    "Tag": "Professional Development",
+                },
+                "Filter9": {
+                    "Tag": "School Operations",
+                },
+                "Filter10": {
+                    "Tag": "Student Management",
+                },
+                "Filter11": {
+                    "Tag": "Technology",
                 }
             };
         }

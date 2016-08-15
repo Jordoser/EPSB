@@ -3,7 +3,7 @@ module App.levelFour{
 
 export class LevelFourController extends BaseController{
     public static $inject = ['$scope','$timeout','dataService'];
-
+    private navArray;
     private currentItemIdNav;
     constructor(public $scope: ILevelFourScope,  public $timeout: ng.ITimeoutService, public dataService: LevelFourDataService){
       super($scope,$timeout,$timeout);
@@ -11,6 +11,10 @@ export class LevelFourController extends BaseController{
         this.currentItemIdNav = JSON.parse(sessionStorage.getItem("NavArray"))[3];
         this.$scope.documentTypes = [];
         this.loadl4Item(this.currentItemIdNav.ContentId);
+        this.navArray = [];
+
+        //this.$scope.employeeBar =  this.navArray[0].Id == "Employee Essentials"
+
 
     }
 

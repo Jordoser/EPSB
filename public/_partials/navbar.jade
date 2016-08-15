@@ -1,6 +1,6 @@
 div(ng-controller='navController' Id="navDiv")
   .left-nav.top.l1-nav
-    a.popover-dismiss(ng-click="ctrl.swapUsers()" tabindex="0" style="display: block;" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?")
+    a.popover-dismiss(ng-click="ctrl.swapUsers()" tabindex="0" style="display: block;")
       .user-pane
         .user-wrapper
           img.user-icon(src="images/usericon.png")
@@ -9,10 +9,10 @@ div(ng-controller='navController' Id="navDiv")
             i(class="fa fa-sort-desc fa-1")
     .nav-items
       ul.main-nav
-        li(ng-click="ctrl.openL2NavForItem(item,true)" ng-repeat="item in navItems" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}")
+        li(ng-click="ctrl.openL2NavForItem(item,true)" ng-repeat="item in navItems track by $index" ng-class="{'open-nav-item' : ctrl.IsOpenItem(item.Id)}")
           div {{item.Name}}
       ul.secondary-nav
-        li
+        li(ng-click="ctrl.search('Forms & Templates')")
           div Forms & Templates
         li
           div Policies
@@ -27,7 +27,9 @@ div(ng-controller='navController' Id="navDiv")
         li(ng-click="ctrl.redirectToL1Nav(selectedItemIds[0])" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}")
           div {{selectedItemIds[0].Name}} Overview
         li(ng-repeat="item in l2NavItems" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}" ng-click="ctrl.openL3NavForItem(item,false,0,true)")
-          div {{item.Name}}
+          div
+            span.nav-menu-text{{item.Name}}
+            i.fa.fa-angle-right.pull-right(ng-show="item.hasChildren")
   .left-nav.l3-nav(style='z-index: 800')
     .nav-items
       .nav-header {{selectedItemIds[1].Name}}        
@@ -35,7 +37,9 @@ div(ng-controller='navController' Id="navDiv")
         li(ng-click="ctrl.redirectToL2Nav(selectedItemIds[1])" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}")
           div {{selectedItemIds[1].Name}} Overview
         li(ng-repeat="item in l3NavItems" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}" ng-click="ctrl.openL4NavForItem(item,false,0,true)")
-          div {{item.Name}}
+          div
+            span.nav-menu-text{{item.Name}}
+            i.fa.fa-angle-right.pull-right(ng-show="item.hasChildren")
   .left-nav.l4-nav(style='z-index: 700')
     .nav-header {{selectedItemIds[2].Name}}
     .nav-items        
@@ -57,13 +61,14 @@ div(ng-controller='navController' Id="navDiv")
   .top-nav
     .top-wrapper
       .top-row
-        img.logo(src="images/epsblogo.png" ng-click="ctrl.redirectHome()")
-        img(src="images/menuitems.png" style="padding-right: 15px;padding-top: 20px;" ng-click="ctrl.openApplicationDrawer()").pull-right
+        img.logo(src="images/epsblogo.png" ng-click="ctrl.redirectHome()" style="cursor: pointer")
+        img(src="images/apps.png" id="appsIcon" style="padding-right: 15px;padding-top: 20px;" ng-click="ctrl.openApplicationDrawer()").pull-right
+        img(src="images/menuitems.png" style="padding-right: 15px;padding-top: 20px;").pull-right
       .search-bar.col-md-12.no-padding
         label(for="searchText" id="searchLabel")
           i.fa.fa-search.fa-3(ng-click="ctrl.search()")
           form(ng-submit="ctrl.search()")
-            input.search-input(type="text" id="searchText" ng-model="searchString")
+            input.search-input(type="text" id="searchText" ng-model="searchString"  placeholder="Search...")
       .bread-crumb.col-sm-12.small-text(ng-if="navigatedItems.length > 0")
         span.bread-crumb-l2(ng-click="ctrl.redirectHome()") Home
           span.bread-crumb-separator(ng-if="navigatedItems.length > 0") &nbsp>&nbsp;

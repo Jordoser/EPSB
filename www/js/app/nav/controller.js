@@ -31,6 +31,7 @@ var App;
                 this.loadApps();
                 this.initiateClock();
                 this.initiateDay();
+                this.navListener();
                 this.$scope.applicationsItem = {
                     Name: "Applications",
                     PageUrl: "applications.html"
@@ -48,17 +49,49 @@ var App;
                     this.$scope.navigatedItems = [];
                 }
             }
+            NavController.prototype.navListener = function () {
+                var that = this;
+                $(document).mouseup(function (e) {
+                    var container = $('.left-nav');
+                    var appsButton = $('#appsIcon');
+                    var appsNav = $('.right-nav');
+                    if ((!container.is(e.target)
+                        && container.has(e.target).length === 0)) {
+                        that.closeL2Nav();
+                    }
+                    var open = $(".right-nav-open");
+                    if ((open[0] && (!appsNav.is(e.target)
+                        && appsNav.has(e.target).length === 0)) && !appsButton.is(e.target)) {
+                        var appDrawer2 = $(".application-drawer");
+                        appDrawer2.toggleClass("right-nav-open");
+                    }
+                });
+            };
             NavController.prototype.swapUsers = function () {
                 if (this.$scope.currentUser == "Samantha Nugent") {
                     sessionStorage.setItem("CurrentUser", "Steve Jacob");
+                    var indexOf = _.findIndex(this.$scope.navItems, function (item) {
+                        var itemId = item.Id;
+                        return (itemId == 'Meadowlark School');
+                    });
+                    this.$scope.navItems[indexOf].Name = "The Centre For Education";
+                    this.dataService.setItem("LevelOneNavItems", "Id", this.$scope.navItems[indexOf]);
                 }
                 else {
                     sessionStorage.setItem("CurrentUser", "Samantha Nugent");
+                    var indexOf = _.findIndex(this.$scope.navItems, function (item) {
+                        var itemId = item.Id;
+                        return (itemId == 'Meadowlark School');
+                    });
+                    this.$scope.navItems[indexOf].Name = "Meadowlark School";
+                    this.dataService.setItem("LevelOneNavItems", "Id", this.$scope.navItems[indexOf]);
                 }
                 window.location.reload();
             };
-            NavController.prototype.search = function () {
-                sessionStorage.setItem("SearchString", this.$scope.searchString);
+            NavController.prototype.search = function (searchParam) {
+                if (searchParam === void 0) { searchParam = ""; }
+                searchParam = (searchParam == "") ? this.$scope.searchString : searchParam;
+                sessionStorage.setItem("SearchString", searchParam);
                 this.redirectToL1Nav(this.$scope.searchItem);
             };
             NavController.prototype.loadApps = function () {
@@ -104,6 +137,10 @@ var App;
                     else {
                         deferred.resolve(true);
                         App.Common.replaceArrayContents(_this.$scope.l2NavItems, data);
+                        for (var i = 0; i < _this.$scope.l2NavItems.length; i++) {
+                            _this.$scope.l2NavItems[i].hasChildren = false;
+                            _this.findl3Children(_this.$scope.l2NavItems[i]);
+                        }
                     }
                 });
                 return deferred.promise;
@@ -119,6 +156,10 @@ var App;
                     else {
                         deferred.resolve(true);
                         App.Common.replaceArrayContents(_this.$scope.l3NavItems, data);
+                        for (var i = 0; i < _this.$scope.l3NavItems.length; i++) {
+                            _this.$scope.l3NavItems[i].hasChildren = false;
+                            _this.findl4Children(_this.$scope.l3NavItems[i]);
+                        }
                     }
                 });
                 return deferred.promise;
@@ -137,6 +178,18 @@ var App;
                     }
                 });
                 return deferred.promise;
+            };
+            NavController.prototype.findl3Children = function (item) {
+                this.dataService.getL3NavItems(item.Id)
+                    .then(function (data) {
+                    item.hasChildren = (data.length > 0);
+                });
+            };
+            NavController.prototype.findl4Children = function (item) {
+                this.dataService.getL4NavItems(item.Id)
+                    .then(function (data) {
+                    item.hasChildren = (data.length > 0);
+                });
             };
             NavController.prototype.openL2NavForItem = function (item, isClick) {
                 var _this = this;
@@ -298,12 +351,20 @@ var App;
                 if (IsBreadCrumb === void 0) { IsBreadCrumb = false; }
                 var navArray = (IsBreadCrumb) ? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
                 navArray[1] = item;
+                if (item.PageUrl) {
+                    App.Common.navigateL2(navArray, item.PageUrl);
+                    return;
+                }
                 App.Common.navigateL2(navArray);
             };
             NavController.prototype.redirectToL3Nav = function (item, IsBreadCrumb) {
                 if (IsBreadCrumb === void 0) { IsBreadCrumb = false; }
                 var navArray = (IsBreadCrumb) ? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
                 navArray[2] = item;
+                if (item.PageUrl) {
+                    App.Common.navigateL3(navArray, item.PageUrl);
+                    return;
+                }
                 App.Common.navigateL3(navArray);
             };
             NavController.prototype.redirectToL4Nav = function (item, IsBreadCrumb) {

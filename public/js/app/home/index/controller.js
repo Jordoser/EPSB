@@ -22,7 +22,6 @@ var App;
                     this.$scope.searchResults = [];
                     this.$scope.shareSites = [];
                     this.$scope.topContent = [];
-                    $(".custom-container").css("margin-top", "160px");
                     this.$scope.newsItems = [];
                     this.loadNewsitems();
                     this.loadShareSites();
@@ -46,17 +45,25 @@ var App;
                     });
                 };
                 HomeIndexController.prototype.openSite = function () {
-                    window.open(this.$scope.selectedShareSite, '_blank');
+                    window.open('EPSShareSite/home.html', '_blank');
                 };
                 HomeIndexController.prototype.redirectToTop = function (item) {
                     var nav1 = [];
                     if (item.Level == 1) {
                         nav1[0] = item;
+                        if (item.PageUrl) {
+                            App.Common.navigateL1(nav1, item.PageUrl);
+                            return;
+                        }
                         App.Common.navigateL1(nav1);
                     }
                     else if (item.Level == 2) {
                         nav1[0] = "";
                         nav1[1] = item;
+                        if (item.PageUrl) {
+                            App.Common.navigateL2(nav1, item.PageUrl);
+                            return;
+                        }
                         App.Common.navigateL2(nav1);
                     }
                 };
@@ -90,7 +97,6 @@ var App;
                                 _this.$scope.featuredStory = data[i];
                                 var truncate = data[i].Description.length > 125;
                                 if (truncate) {
-                                    _this.$scope.featuredStory.Description = _this.$scope.featuredStory.Description.substring(0, 125) + " ...";
                                 }
                                 _this.loadMetadata(_this.$scope.featuredStory);
                             }

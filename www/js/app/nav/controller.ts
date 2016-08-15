@@ -25,7 +25,7 @@ export class NavController extends BaseController{
       this.loadApps();
       this.initiateClock();
       this.initiateDay();
-
+      this.navListener();
       /*
       $('.popover-dismiss').popover({
         trigger: 'focus'
@@ -50,26 +50,62 @@ export class NavController extends BaseController{
 
       this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
 
+
       if(!this.$scope.navigatedItems){
         this.$scope.navigatedItems = [];
       }
 
     }
 
+    public navListener(){
+      var that =this
+      $(document).mouseup(function (e)
+      {
+          var container = $('.left-nav');
+          var appsButton = $('#appsIcon')
+          var appsNav = $('.right-nav')
 
+          if ((!container.is(e.target) // if the target of the click isn't the container...
+              && container.has(<any>e.target).length === 0)) // ... nor a descendant of the container
+          {
+              that.closeL2Nav();
+
+          }
+          var open = $(".right-nav-open");
+          if((open[0] && (!appsNav.is(e.target)
+              && appsNav.has(<any>e.target).length === 0)) && !appsButton.is(e.target) ){
+            var appDrawer2 = $(".application-drawer");
+            appDrawer2.toggleClass("right-nav-open");
+          }
+      });
+    }
 
     public swapUsers(){
       if(this.$scope.currentUser == "Samantha Nugent"){
         sessionStorage.setItem("CurrentUser", "Steve Jacob");
+          var indexOf = _.findIndex(this.$scope.navItems, (item) => {
+          var itemId = item.Id
+          return (itemId == 'Meadowlark School')
+        });
+        this.$scope.navItems[indexOf].Name = "The Centre For Education"
+        this.dataService.setItem("LevelOneNavItems","Id",this.$scope.navItems[indexOf])
       }else{
           sessionStorage.setItem("CurrentUser",  "Samantha Nugent");
+          var indexOf = _.findIndex(this.$scope.navItems, (item) => {
+          var itemId = item.Id
+            return (itemId == 'Meadowlark School')
+          });
+          this.$scope.navItems[indexOf].Name = "Meadowlark School"
+          this.dataService.setItem("LevelOneNavItems","Id",this.$scope.navItems[indexOf])
       }
+
       window.location.reload()
     }
 
 
-    public search(){
-        sessionStorage.setItem("SearchString", this.$scope.searchString);
+    public search(searchParam = ""){
+        searchParam = (searchParam == "")? this.$scope.searchString: searchParam;
+        sessionStorage.setItem("SearchString", searchParam);
         this.redirectToL1Nav(this.$scope.searchItem)
     }
 
@@ -105,6 +141,7 @@ export class NavController extends BaseController{
       return deferred.promise;
     }
 
+    //L2 Nav
     public loadNavItems(item): ng.IPromise<any>{
       var contentArea = $(".content-area")
       contentArea.bind("click", this.clickToClose);
@@ -117,8 +154,14 @@ export class NavController extends BaseController{
           deferred.resolve(false);
         }
         else{
+
           deferred.resolve(true)
           App.Common.replaceArrayContents(this.$scope.l2NavItems,data)
+
+          for(var i =0; i < this.$scope.l2NavItems.length; i++){
+            this.$scope.l2NavItems[i].hasChildren = false;
+            this.findl3Children(this.$scope.l2NavItems[i])
+          }
         }
 
       })
@@ -135,6 +178,11 @@ export class NavController extends BaseController{
                else{
                  deferred.resolve(true)
                  App.Common.replaceArrayContents(this.$scope.l3NavItems,data)
+
+                 for(var i =0; i < this.$scope.l3NavItems.length; i++){
+                   this.$scope.l3NavItems[i].hasChildren = false;
+                   this.findl4Children(this.$scope.l3NavItems[i])
+                 }
                }
 
 
@@ -156,6 +204,20 @@ export class NavController extends BaseController{
 
         })
       return deferred.promise;
+    }
+
+    public findl3Children(item){
+      this.dataService.getL3NavItems(item.Id)
+      .then(data => {
+        item.hasChildren = (data.length > 0)
+      })
+    }
+
+    public findl4Children(item){
+      this.dataService.getL4NavItems(item.Id)
+      .then(data => {
+        item.hasChildren = (data.length > 0)
+      })
     }
 
 
@@ -334,6 +396,10 @@ export class NavController extends BaseController{
     public redirectToL2Nav(item, IsBreadCrumb = false){
       var navArray = (IsBreadCrumb)? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
       navArray[1] = item
+      if(item.PageUrl){
+        App.Common.navigateL2(navArray, item.PageUrl)
+        return;
+      }
       App.Common.navigateL2(navArray)
     }
 
@@ -341,6 +407,10 @@ export class NavController extends BaseController{
     public redirectToL3Nav(item, IsBreadCrumb = false){
       var navArray = (IsBreadCrumb)? this.$scope.navigatedItems.slice() : this.$scope.selectedItemIds.slice();
       navArray[2] = item
+      if(item.PageUrl){
+        App.Common.navigateL3(navArray, item.PageUrl)
+        return;
+      }
       App.Common.navigateL3(navArray)
     }
 

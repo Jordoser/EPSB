@@ -39,46 +39,124 @@ module App {
           "Tags" : ["Teacher"]
         },
         "Application6" : {
+          "Id": "Archibus",
+          "Name" : "Archibus",
+          "Description": "Application description.",
+          "Favorite" : "false",
+          "Tags" : [""]
+        },
+        "Application7" : {
+          "Id": "Budget Planning System (BPS)",
+          "Name" : "Budget Planning System (BPS)",
+          "Description": "Budget planning application.",
+          "Favorite" : "false",
+          "Tags" : [""]
+        },
+        "Application8" : {
           "Id": "E-Biz",
           "Name" : "E-Biz",
           "Description": "Expense claims.",
           "Favorite" : "true",
-          "Tags" : ["Teacher"]
+          "Tags" : ["Teacher", "School Operations"]
         },
-        "Application7" : {
+        "Application9" : {
+          "Id": "Energy Management",
+          "Name" : "Energy Management",
+          "Description": "Application description.",
+          "Favorite" : "false",
+          "Tags" : [""]
+        },
+        "Application10" : {
+          "Id": "EPS Dashboard",
+          "Name" : "EPS Dashboard",
+          "Description": "Application description.",
+          "Favorite" : "false",
+          "Tags" : [""]
+        },
+        "Application11.5" : {
+          "Id": "Fees Management System (FMS)",
+          "Name" : "Fees Management System (FMS)",
+          "Description": "Application description.",
+          "Favorite" : "false",
+          "Tags" : [""]
+        },
+        "Application11" : {
+          "Id": "GradeBook",
+          "Name" : "GradeBook",
+          "Description": "Application description.",
+          "Favorite" : "false",
+          "Tags" : [""]
+        },
+        "Application12" : {
+          "Id": "myBlueprint",
+          "Name" : "myBlueprint",
+          "Description": "Application description.",
+          "Favorite" : "false",
+          "Tags" : [""]
+        },
+        "Application13" : {
           "Id": "Orbit",
           "Name" : "Orbit",
           "Description": "Online IT requests.",
           "Favorite" : "true",
           "Tags" : ["Teacher"]
         },
-        "Application8" : {
+        "Application14" : {
+          "Id": "Online Student Course Request (OSCR)",
+          "Name" : "Online Student Course Request (OSCR)",
+          "Description": "Application description.",
+          "Favorite" : "false",
+          "Tags" : [""]
+        },
+        "Application15" : {
           "Id": "Pinpoint Student",
           "Name" : "Pinpoint Student",
           "Description": "Student records.",
           "Favorite" : "true",
           "Tags" : ["Teacher"]
         },
-        "Application9" : {
+        "Application16" : {
           "Id": "Power School",
           "Name" : "Power School",
           "Description": "Application description.",
           "Favorite" : "true",
           "Tags" : ["Teacher"]
         },
-        "Application10" : {
+        "Application17" : {
           "Id": "Power Teachers",
           "Name" : "Power Teachers",
           "Description": "Application description.",
           "Favorite" : "true",
           "Tags" : ["Teacher"]
         },
-        "Application11" : {
+        "Application18" : {
           "Id": "SchoolZone",
           "Name" : "SchoolZone",
           "Description": "School and student information.",
           "Favorite" : "true",
           "Tags" : ["Teacher"]
+        },
+        "Application19" : {
+          "Id": "SmartFind",
+          "Name" : "SmartFind",
+          "Description": "Supply services booking.",
+          "Favorite" : "true",
+          "Tags" : ["Teacher"]
+        },
+        "Application20" : {
+          "Id": "Secure After Hours Building Access (SAHBA)",
+          "Name" : "Secure After Hours Building Access (SAHBA)",
+          "Description": "Application description.",
+          "Favorite" : "false",
+          "Tags" : [""]
+        },
+
+        "Application21" : {
+          "Id": "T4 Content Management System",
+          "Name" : "T4 Content Management System",
+          "Description": "Application description.",
+          "Favorite" : "false",
+          "Tags" : [""]
         }
       }
     }
