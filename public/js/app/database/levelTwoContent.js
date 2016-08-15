@@ -202,8 +202,6 @@ var App;
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "RelatedTopics": "",
                     "PageAuditId": "Vacation & Public Holidays for Teachers",
-<<<<<<< HEAD
-=======
                 },
                 "LevelTwoContent28": {
                     "Id": "Communications Resources for Central Staff",
@@ -212,7 +210,6 @@ var App;
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "RelatedTopics": "",
                     "PageAuditId": "Communications Resources for Central Staff",
->>>>>>> origin/master
                 }
             };
         }

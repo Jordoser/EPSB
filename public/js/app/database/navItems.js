@@ -38,8 +38,6 @@ var App;
                 },
             };
             this.LevelTwoNavItems = {
-<<<<<<< HEAD
-=======
                 "l2NavItem-1": {
                     "Id": "Documents",
                     "Name": "Documents",
@@ -47,7 +45,6 @@ var App;
                     "l1NavId": "Meadowlark School",
                     "PageUrl": "schoolDocuments.html"
                 },
->>>>>>> origin/master
                 "l2NavItem1": {
                     "Id": "Budget & Finance",
                     "Name": "Budget & Finance",
@@ -237,16 +234,6 @@ var App;
                     "l1NavId": "Employee Essentials",
                     "ContentId": "Vacation & Public Holidays for Teachers"
                 },
-<<<<<<< HEAD
-                "l2NavItem28": {
-                    "Id": "Archives & Museum",
-                    "Name": "Archives & Museum",
-                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-                    "l1NavId": "District Staff Resources",
-                    "ContentId": "Archives & Museum"
-                },
-=======
->>>>>>> origin/master
                 "l2NavItem29": {
                     "Id": "Communications Resources for Central Staff",
                     "Name": "Communications Resources for Central Staff",
@@ -345,25 +332,6 @@ var App;
                     "l1NavId": "About EPS",
                     "ContentId": "Superintendent"
                 },
-<<<<<<< HEAD
-                "l2NavItem45": {
-                    "Id": "Grade & Subject Resources",
-                    "Name": "Grade & Subject Resources",
-                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-                    "l1NavId": "Curriculum & Assessment",
-                    "ContentId": "Grade & Subject Resources",
-                    "PageUrl": "curriculumnAndAssesment.html"
-                },
-                "l2NavItem46": {
-                    "Id": "Curriculum & Teaching Topics",
-                    "Name": "Curriculum & Teaching Topics",
-                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-                    "l1NavId": "Curriculum & Assessment",
-                    "ContentId": "Curriculum & Teaching Topics",
-                    "PageUrl": "curriculumnAndAssesment.html"
-                }
-=======
->>>>>>> origin/master
             };
             this.LevelThreeNavItems = {
                 "l3NavItem1": {
@@ -1183,16 +1151,6 @@ var App;
                     "l2NavId": "Modified Work Arrangements",
                     "ContentId": "Job Sharing"
                 },
-<<<<<<< HEAD
-                "l3NavItem114": {
-                    "Id": "Casual Pay",
-                    "Name": "Casual Pay",
-                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    "l2NavId": "Pay & Expenses for Teachers",
-                    "ContentId": "Casual Pay"
-                },
-=======
->>>>>>> origin/master
                 "l3NavItem115": {
                     "Id": "Direct Deposit",
                     "Name": "Direct Deposit",
@@ -1385,18 +1343,11 @@ var App;
             };
             this.LevelFourNavItems = {
                 "l4NavItem1": {
-<<<<<<< HEAD
-                    "Id": "Appliances",
-                    "Name": "Appliances",
-                    "ContentId": "Appliances",
-                    "l3NavId": "Equipment",
-=======
                     "Id": "Buses",
                     "Name": "Buses",
                     "Description": "Yellow buses and charters.",
                     "ContentId": "Buses",
                     "l3NavId": "Student Transportation",
->>>>>>> origin/master
                 },
                 "l4NavItem2": {
                     "Id": "School Vehicles",

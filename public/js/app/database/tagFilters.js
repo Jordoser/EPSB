@@ -95,21 +95,6 @@ var App;
             };
             this.ResourceTypeFilters = {
                 "Filter1": {
-<<<<<<< HEAD
-                    "Tag": "Program of Studies",
-                },
-                "Filter2": {
-                    "Tag": "Assessments",
-                },
-                "Filter3": {
-                    "Tag": "Classroom Resources",
-                },
-                "Filter4": {
-                    "Tag": "Competencies",
-                },
-                "Filter5": {
-                    "Tag": "Focus on Reading",
-=======
                     "Tag": "Assessments",
                 },
                 "Filter2": {
@@ -120,7 +105,6 @@ var App;
                 },
                 "Filter4": {
                     "Tag": "Program of Studies",
->>>>>>> origin/master
                 },
                 "Filter6": {
                     "Tag": "Research & Support",
@@ -178,30 +162,6 @@ var App;
             };
             this.CurriculumSubjectFilters = {
                 "Filter1": {
-<<<<<<< HEAD
-                    "Tag": "Around the District",
-                },
-                "Filter2": {
-                    "Tag": "Budget & Finance",
-                },
-                "Filter3": {
-                    "Tag": "Centre for Education",
-                },
-                "Filter4": {
-                    "Tag": "Curriculum & Assessment",
-                },
-                "Filter5": {
-                    "Tag": "Employee Essentials",
-                },
-                "Filter6": {
-                    "Tag": "Health & Safety",
-                },
-                "Filter7": {
-                    "Tag": "Leadership",
-                },
-                "Filter8": {
-                    "Tag": "Professional Development",
-=======
                     "Tag": "Behaviour Management"
                 },
                 "Filter2": {
@@ -236,7 +196,6 @@ var App;
                 },
                 "Filter12": {
                     "Tag": "Professional Development"
->>>>>>> origin/master
                 },
                 "Filter13": {
                     "Tag": "Special Education"
