@@ -48,11 +48,20 @@ export class LevelThreeController extends BaseController{
         }
       })
     }
+    public loadMetadata(Item){
+      this.dataService.getMetadataById(Item.MetadataId)
+      .then(data => {
+        Item.Metadata = data[0];
+      })
+    }
 
     public loadDocumentForTag(Tags: Array<any>, refrenceArray: Array<any>){
       this.dataService.getTaggedDocuments(Tags)
       .then(data => {
         App.Common.replaceArrayContents(refrenceArray, data)
+        for(var i =0; i < refrenceArray.length; i++){
+          this.loadMetadata(refrenceArray[i])
+        }
       })
     }
   }

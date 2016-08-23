@@ -40,10 +40,20 @@ var App;
                     }
                 });
             };
+            LevelFourController.prototype.loadMetadata = function (Item) {
+                this.dataService.getMetadataById(Item.MetadataId)
+                    .then(function (data) {
+                    Item.Metadata = data[0];
+                });
+            };
             LevelFourController.prototype.loadDocumentForTag = function (Tags, refrenceArray) {
+                var _this = this;
                 this.dataService.getTaggedDocuments(Tags)
                     .then(function (data) {
                     App.Common.replaceArrayContents(refrenceArray, data);
+                    for (var i = 0; i < refrenceArray.length; i++) {
+                        _this.loadMetadata(refrenceArray[i]);
+                    }
                 });
             };
             LevelFourController.$inject = ['$scope', '$timeout', 'dataService'];

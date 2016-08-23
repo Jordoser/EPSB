@@ -7,14 +7,30 @@
           
     .panel-collapse.collapse(id="{{$index}}")
         .panel-body
-          table
+          table(style='word-break: break-all;')
+            thead
+              tr
+                th
+                 span.small-text FILE
+                th(width='25%')
+                  span.small-text NAME
+                th(width='35%')
+                  span.small-text DESCRIPTION
+                th(width='20%')
+                  span.small-text CREATED BY
+                th(width='15%')
+                  span.small-text LAST MODIFIED
             tbody
-              tr(ng-repeat="document in type.Documents")
+              tr(ng-repeat="document in type.Documents" style="margin-bottom:10px;")
                 td
                   i.fa.pull-left.fa-file-text-o
-                td
+                td(width='25%')
                   {{document.Name}}
-                td
+                td(width='35%')
+                  {{document.Description}}
+                td(width='20%')
+                  {{document.Metadata.CreatedBy}}
+                td(width='15%')
                   {{document.Metadata.CreatedOn}}
                 
         

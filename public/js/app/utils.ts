@@ -180,6 +180,12 @@ module App {
         }
 
 
+        public getMetadataById(Id: string): ng.IPromise<Array<any>>{
+          return this.expandPropery([Id], "Metadata", "Id");
+        }
+
+
+
     }
 
     export class Common{
