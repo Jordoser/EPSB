@@ -1,6 +1,6 @@
 div(ng-controller='navController' Id="navDiv")
   .left-nav.top.l1-nav
-    a.popover-dismiss(ng-click="ctrl.swapUsers()" tabindex="0" style="display: block;")
+    a.popover-dismiss(ng-click="ctrl.redirectToL1Nav(userItem)" tabindex="0" style="display: block;")
       .user-pane
         .user-wrapper
           img.user-icon(src="images/usericon.png")
@@ -62,8 +62,29 @@ div(ng-controller='navController' Id="navDiv")
     .top-wrapper
       .top-row
         img.logo(src="images/epsblogo.png" ng-click="ctrl.redirectHome()" style="cursor: pointer")
-        img(src="images/apps.png" id="appsIcon" style="padding-right: 15px;padding-top: 20px;" ng-click="ctrl.openApplicationDrawer()").pull-right
-        img(src="images/menuitems.png" style="padding-right: 15px;padding-top: 20px;").pull-right
+        img(src="images/apps.png" id="appsIcon" class="popover-icon" style="padding-right: 15px;padding-top: 20px;" ng-click="ctrl.openApplicationDrawer()").pull-right
+        img(src="images/schools.png" id="schoolIcon" class="popover-icon" style="padding-right: 15px;padding-top: 20px;" 
+          data-container="body" data-toggle="popover" 
+          data-placement="bottom"
+          data-html="true"
+          data-content="<div><a>School Directory</a></div><hr class='thin-padding-hr'/><div><a>Find a School<a></div>").pull-right
+        img(src="images/contacts.png" id="contactIcon" class="popover-icon" style="padding-right: 15px;padding-top: 20px;" 
+          data-container="body" data-toggle="popover" 
+          data-placement="bottom" 
+          data-html="true"
+          data-content="" ).pull-right
+        img(src="images/calendars.png" id="calendarIcon" class="popover-icon" style="padding-right: 15px;padding-top: 20px;" 
+          data-container="body" 
+          data-toggle="popover" 
+          data-html="true"
+          data-placement="bottom" 
+          data-content="<div><a>2015-2016 Calendar</a></div><hr class='thin-padding-hr'/><div><a>2016-2017 Calendar<a></div><hr class='thin-padding-hr'/><div><a>District Calendar</a></div>").pull-right
+        img(src="images/googleapps.png" id="googleIcon" class="popover-icon" style="padding-right: 30px;padding-top: 22px;" 
+          data-container="body"
+          data-toggle="popover" 
+          data-html="true"
+          data-placement="bottom" 
+          data-content="<div><a>Gmail</a></div><hr class='thin-padding-hr'/><div><a>Google Docs<a></div><hr class='thin-padding-hr'/><div><a>Google Drive</a></div>").pull-right
       .search-bar.col-md-12.no-padding
         label(for="searchText" id="searchLabel")
           i.fa.fa-search.fa-3(ng-click="ctrl.search()")

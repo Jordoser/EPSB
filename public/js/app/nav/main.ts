@@ -22,6 +22,7 @@ module App.Nav{
       navLevel: string;
       applications: Array<any>;
       applicationsItem: any;
+      userItem: any;
       searchItem: any;
   }
 }

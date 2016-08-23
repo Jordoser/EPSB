@@ -27,11 +27,10 @@ export class NavController extends BaseController{
       this.initiateDay();
       this.navListener();
       /*
-      $('.popover-dismiss').popover({
-        trigger: 'focus'
+      $('.POPOVER-DISMISS').POPOVER({
+        TRIGGER: 'FOCUS'
       })
       */
-
 
       this.$scope.applicationsItem = {
         Name: "Applications",
@@ -43,10 +42,16 @@ export class NavController extends BaseController{
         PageUrl: "searchResults.html"
       }
 
+      this.$scope.userItem = {
+        Name: "User",
+        PageUrl: "userInfo.html"
+      }
+
       this.$scope.currentUser =  sessionStorage.getItem("CurrentUser");
       if(!this.$scope.currentUser){
         this.$scope.currentUser = "Samantha Nugent"
       }
+
 
       this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
 
@@ -61,9 +66,22 @@ export class NavController extends BaseController{
       var that =this
       $(document).mouseup(function (e)
       {
+
+
+
+          var popovers = $(".popover-icon")
           var container = $('.left-nav');
           var appsButton = $('#appsIcon')
           var appsNav = $('.right-nav')
+
+          if(!popovers.is(e.target) && popovers.has(<any>e.target).length === 0){
+            popovers.popover('destroy');
+            popovers.popover();
+          }else{
+            popovers.popover();
+          }
+
+
 
           if ((!container.is(e.target) // if the target of the click isn't the container...
               && container.has(<any>e.target).length === 0)) // ... nor a descendant of the container
@@ -78,6 +96,10 @@ export class NavController extends BaseController{
             appDrawer2.toggleClass("right-nav-open");
           }
       });
+    }
+
+    public redirectToUser(){
+
     }
 
     public swapUsers(){

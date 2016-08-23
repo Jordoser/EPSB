@@ -7,8 +7,14 @@
           
     .panel-collapse.collapse(id="{{$index}}")
         .panel-body
-          div.panel-document(ng-repeat="document in type.Documents")
-            i.fa.pull-left.fa-file-text-o
-            div.doc-info-wrapper.pull-right
-              a(href="{{document.Link}}" target="_blank") {{document.Name}}
-              div.text-muted.small-text {{document.Metadata.CreatedOn}}
+          table
+            tbody
+              tr(ng-repeat="document in type.Documents")
+                td
+                  i.fa.pull-left.fa-file-text-o
+                td
+                  {{document.Name}}
+                td
+                  {{document.Metadata.CreatedOn}}
+                
+        

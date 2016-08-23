@@ -21,7 +21,8 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
                   span.text-muted.small-text {{story.Metadata.CreatedOn}}
                     span(ng-repeat="tag in story.Tags") |&nbsp{{tag}}&nbsp
                   hr.thin-padding-hr
-                .scroll-footer
+          .scroll-footer
+            span(style='color: black') Scroll for more stories
           .dynamic-info-wrapper(style="margin-left:auto; margin-right:auto; padding-left: 30px; padding-top: 15px;" )
             div(ng-if="currentUser == 'Steve Jacob'" style="display:flex")
               .left-content
@@ -44,9 +45,9 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
                     span(style="font-style: italic;")  for Teachers
                 .bold TEACHER MADE CURRICULUM RESOURCES
                 .text-muted A place for teachers to share resources with each other
-                select(selectpicker='' style="min-width: 500px; width: 75%" ng-model="selectedShareSite" ng-options="site.Url as site.Name for site in shareSites track by site.Url")
+                select.teacher-select(selectpicker=''  style="min-width: 500px; width: 75%" ng-model="selectedShareSite" ng-options="site.Url as site.Name for site in shareSites track by site.Url")
                   option(disabled="" selected="" value="") Subject...
-                button(ng-click="ctrl.openSite()" ng-disabled="selectedShareSite == ''") GO
+                button.techer-select-button(ng-click="ctrl.openSite()" ng-disabled="selectedShareSite == ''") GO
                 .top-content(style="margin-top: 30px;").pull-left
                   .bold(style="margin-bottom: 5px; font-size: 1.3em;") TOP CONTENT
                   div(ng-repeat="item in topContent" ng-show="item.Role == 'Teacher'" style="margin-left: 15px;")
@@ -59,8 +60,18 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
             .dates-wrapper
             .quicklins-wrapper
       .secondary-info.extra-wide.no-padding.pull-right(style="margin-left:auto; margin-right: 15px")
-        img(src="images/cfesidebar.png" ng-if="currentUser == 'Steve Jacob'")
-        img(src="images/meadowlark.png" ng-if="currentUser == 'Samantha Nugent'")
+        div.location-select-wrapper
+          div.bold.small-text YOUR LOCATION AT A GLANCE:
+          div
+            select.teacher-select(selectpicker ng-model='selectedLocation' style="width: 100%; margin-bottom: 10px; margin-top: 5px;")
+              option(selected value='MS') Meadowlark School
+              option(value = 'CFE') Center For Education
+          div.text-muted.small-text Report an Error
+        hr
+        div( ng-if="selectedLocation == 'CFE'")
+          img(src="images/cfesidebar.png")
+        div(ng-if="selectedLocation == 'MS'")
+          img(src="images/meadowlark.png" )
 script(src='js/app/home/dataService.js')
 script(src='js/app/home/index/controller.js')
 script(src='js/app/home/index/main.js')

@@ -30,6 +30,7 @@ var App;
                     if (!this.$scope.currentUser) {
                         this.$scope.currentUser = "Samantha Nugent";
                     }
+                    this.$scope.selectedLocation = 'MS';
                 }
                 HomeIndexController.prototype.alert = function () {
                     var _this = this;

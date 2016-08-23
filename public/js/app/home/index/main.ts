@@ -15,5 +15,6 @@ module App.Home.Index{
       shareSites: Array<any>;
       selectedShareSite: any;
       topContent: Array<any>
+      selectedLocation: string;
   }
 }
