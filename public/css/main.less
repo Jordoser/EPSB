@@ -184,7 +184,7 @@ padding-right: 15px;
 }
 
 .application-name{
-
+  font-weight: bold;
 }
 
 .application-item{
@@ -1096,19 +1096,20 @@ position: absolute;
 }
 
 .right-nav{
-  width: @NavWidth;
+  width: 275px;
   margin-top: @topNavBarHeight;
   height: 95%;
   position: fixed;
-  right: -@NavWidth;
+  right: -275px;
   transition: all 0.5s;
-  background-color: @gray-dark;
+  background-color: black;
   padding-bottom: 50px;
-    overflow: scroll;
+    overflow: none;
 }
 
 .right-nav-open{
   right:0 !important;
+  overflow-y: auto;
 }
 
 .left-nav{
