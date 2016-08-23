@@ -9,26 +9,31 @@ module App {
         "NavItem0" : {
             "Id": "Meadowlark School",
             "Name" : "Meadowlark School",
-            "ContentId" : "Meadowlark School"
+            "ContentId" : "Meadowlark School",
+            "Blurb" : "Resources specific to your school/location all stored in one easy to find place."
         },
         "NavItem1" : {
             "Id": "School Operations",
             "Name" : "School Operations",
-            "ContentId" : "School Operations"
+            "ContentId" : "School Operations",
+            "Blurb" : "Everything you need to know about your school and how to operate it."
         },
         "NavItem2" : {
             "Id": "Curriculum & Assessment",
             "Name" : "Curriculum & Assessment",
-            "PageUrl" : "resourceRedirect.html"
+            "PageUrl" : "resourceRedirect.html",
+            "Blurb" : "Edmonton Public School offical content for curriculm and student assesment."
         },
         "NavItem3" : {
             "Id": "Central Staff Resources",
             "Name" : "Central Staff Resources",
-            "ContentId" : "Central Staff Resources"
+            "ContentId" : "Central Staff Resources",
+            "Blurb" : "A blurb having to do with central staff."
         },
         "NavItem4" : {
             "Id": "Employee Essentials",
-            "Name" : "Employee Essentials"
+            "Name" : "Employee Essentials",
+            "Blurb" : "Everything you need to know about your employment in one place."
         },
         "NavItem5" : {
             "Id": "News & Events",
@@ -37,7 +42,8 @@ module App {
         },
         "NavItem6" : {
             "Id": "About EPS",
-            "Name" : "About EPS"
+            "Name" : "About EPS",
+            "Blurb" : "Blurb about the about EPS nav item .... blurb."
         },
       }
       this.LevelTwoNavItems = {

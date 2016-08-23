@@ -55,7 +55,7 @@ var App;
                     .then(function (data) {
                     App.Common.replaceArrayContents(_this.$scope.relatedNews, data);
                     for (var i = 0; i < _this.$scope.relatedNews.length; i++) {
-                        _this.loadMetadata(_this.$scope.relatedNews[i], i, _this.$scope.relatedNews);
+                        _this.loadMetadata(_this.$scope.relatedNews[i]);
                     }
                 });
             };
@@ -65,14 +65,24 @@ var App;
                     .then(function (data) {
                     App.Common.replaceArrayContents(_this.$scope.relatedApps, data);
                     for (var i = 0; i < _this.$scope.relatedApps.length; i++) {
-                        _this.loadMetadata(_this.$scope.relatedApps[i], i, _this.$scope.relatedApps);
+                        _this.loadMetadata(_this.$scope.relatedApps[i]);
                     }
                 });
             };
-            LevelOneController.prototype.loadMetadata = function (resource, index, returnArray) {
-                this.dataService.getMetadata(resource)
+            LevelOneController.prototype.loadMetadata = function (Item) {
+                this.dataService.getMetadataById(Item.MetadataId)
                     .then(function (data) {
-                    returnArray[index].Metadata = data[0];
+                    Item.Metadata = data[0];
+                });
+            };
+            LevelOneController.prototype.loadDocumentForTag = function (Tags, refrenceArray) {
+                var _this = this;
+                this.dataService.getTaggedDocuments(Tags)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(refrenceArray, data);
+                    for (var i = 0; i < refrenceArray.length; i++) {
+                        _this.loadMetadata(refrenceArray[i]);
+                    }
                 });
             };
             LevelOneController.$inject = ['$scope', '$timeout', 'dataService'];

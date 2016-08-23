@@ -51,7 +51,7 @@ export class LevelOneController extends BaseController{
         .then(data =>{
           App.Common.replaceArrayContents(this.$scope.relatedNews, <any>data)
           for(var i = 0; i < this.$scope.relatedNews.length; i++){
-            this.loadMetadata(this.$scope.relatedNews[i], i, this.$scope.relatedNews);
+            this.loadMetadata(this.$scope.relatedNews[i]);
           }
         })
     }
@@ -61,16 +61,26 @@ export class LevelOneController extends BaseController{
       .then(data =>{
         App.Common.replaceArrayContents(this.$scope.relatedApps, data)
         for(var i = 0; i < this.$scope.relatedApps.length; i++){
-          this.loadMetadata(this.$scope.relatedApps[i], i, this.$scope.relatedApps);
+          this.loadMetadata(this.$scope.relatedApps[i]);
+        }
+      })
+    }
+    public loadMetadata(Item){
+      this.dataService.getMetadataById(Item.MetadataId)
+      .then(data => {
+        Item.Metadata = data[0];
+      })
+    }
+
+    public loadDocumentForTag(Tags: Array<any>, refrenceArray: Array<any>){
+      this.dataService.getTaggedDocuments(Tags)
+      .then(data => {
+        App.Common.replaceArrayContents(refrenceArray, data)
+        for(var i =0; i < refrenceArray.length; i++){
+          this.loadMetadata(refrenceArray[i])
         }
       })
     }
 
-    public loadMetadata(resource, index, returnArray){
-      this.dataService.getMetadata(resource)
-      .then(data =>{
-        returnArray[index].Metadata = data[0]
-      });
-    }
   }
 }

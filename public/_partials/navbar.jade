@@ -22,10 +22,12 @@ div(ng-controller='navController' Id="navDiv")
           div Professional Development
   .left-nav.l2-nav(style='z-index: 900')
     .nav-items
-      .nav-header {{selectedItemIds[0].Name}}
+      .nav-header(style="padding: 10px;")
+        div(ng-click="ctrl.redirectToL1Nav(selectedItemIds[0])" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}")
+          div {{selectedItemIds[0].Name}}
+          div.small-text(style='font-weight: normal; padding-top:10px;') {{selectedItemIds[0].Blurb}}
       ul.hidden-nav.sub-nav
-        li(ng-click="ctrl.redirectToL1Nav(selectedItemIds[0])" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}")
-          div {{selectedItemIds[0].Name}} Overview
+      
         li(ng-repeat="item in l2NavItems" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}" ng-click="ctrl.openL3NavForItem(item,false,0,true)")
           div
             span.nav-menu-text{{item.Name}}
