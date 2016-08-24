@@ -20,7 +20,7 @@ div(ng-controller='navController' Id="navDiv")
           div Career Opportunities
         li
           div Professional Development
-  .left-nav.l2-nav(style='z-index: 900')
+  .left-nav.l2-nav.slide-nav(style='z-index: 900')
     .nav-items
       .nav-header(style="padding: 10px;")
         div(ng-click="ctrl.redirectToL1Nav(selectedItemIds[0])" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}")
@@ -32,7 +32,7 @@ div(ng-controller='navController' Id="navDiv")
           div
             span.nav-menu-text{{item.Name}}
             i.fa.fa-angle-right.pull-right(ng-show="item.hasChildren")
-  .left-nav.l3-nav(style='z-index: 800')
+  .left-nav.l3-nav.slide-nav(style='z-index: 800')
     .nav-items
       .nav-header {{selectedItemIds[1].Name}}        
       ul.hidden-nav.sub-nav
@@ -42,7 +42,7 @@ div(ng-controller='navController' Id="navDiv")
           div
             span.nav-menu-text{{item.Name}}
             i.fa.fa-angle-right.pull-right(ng-show="item.hasChildren")
-  .left-nav.l4-nav(style='z-index: 700')
+  .left-nav.l4-nav.slide-nav(style='z-index: 700')
     .nav-header {{selectedItemIds[2].Name}}
     .nav-items        
       ul.hidden-nav.sub-nav
