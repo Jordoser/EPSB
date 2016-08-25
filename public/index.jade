@@ -34,7 +34,7 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
                   div(ng-repeat="item in topContent" ng-show="item.Role == 'Custodian'" style="margin-left: 15px;")
                     a(ng-click="ctrl.redirectToTop(item)") 
                       i.fa.fa-file-o(style="margin-right:10px;")
-                      span(stlye="padding-left:10px;"){{item.Name}}
+                      span(stlye="padding-left:10px;") {{item.Name}}
               .right-content(style="margin-left:auto;")
                 img(src="images/bulletinboard.png")
 
@@ -53,7 +53,7 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
                   div(ng-repeat="item in topContent" ng-show="item.Role == 'Teacher'" style="margin-left: 15px;")
                     a(ng-click="ctrl.redirectToTop(item)")
                       i.fa.fa-file-o(style="margin-right:10px;")
-                      span(stlye="padding-left:10px;"){{item.Name}}
+                      span(stlye="padding-left:10px;") {{item.Name}}
                 .right-content.pull-right
                   img(src="images/bulletinboard.png")
 

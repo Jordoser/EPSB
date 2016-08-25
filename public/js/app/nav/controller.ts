@@ -53,6 +53,22 @@ export class NavController extends BaseController{
       }
 
 
+          var kkeys = [], konami = ["38","38",'40','40','37','39','37','39','66','65','13'];
+          var that = this;
+          window.addEventListener("keydown", function(e){
+              kkeys.push( e.keyCode );
+              if(konami.indexOf(e.keyCode.toString()) == -1){
+                kkeys = [];
+              }
+              if ( kkeys.toString().indexOf( konami.toString() ) >= 0 ){
+                  that.swapUsers();
+                  kkeys = [];
+                  }
+          }, true);
+
+
+
+
       this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
 
 
@@ -73,12 +89,17 @@ export class NavController extends BaseController{
           var container = $('.left-nav');
           var appsButton = $('#appsIcon')
           var appsNav = $('.right-nav')
+          var layoutfooter = $('.layout-footer')
 
           if(!popovers.is(e.target) && popovers.has(<any>e.target).length === 0){
             popovers.popover('destroy');
             popovers.popover();
           }else{
             popovers.popover();
+          }
+
+          if(layoutfooter.is(e.target)){
+            that.swapUsers()
           }
 
 
