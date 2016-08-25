@@ -7,7 +7,7 @@ div(Id="levelOneDiv" ng-controller='levelOneController')
         h2 {{currentItem.Id}} Overview
         .descripton-wrapper
           div.primary-image
-          p {{currentItem.Description}}
+          p(ng-bind-html='currentItem.Description | trust')
         != partial("_partials/sectionItems")
       .secondary-info
         div.news-item-wrapper

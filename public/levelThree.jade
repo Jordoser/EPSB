@@ -6,7 +6,7 @@ div(Id="levelThreeDiv" ng-controller='levelThreeController')
       .primary-info
         h2 {{currentItem.Id}} Overview
         .descripton-wrapper
-          p {{currentItem.Description}}
+          p(ng-bind-html="currentItem.Description | trust")
         .section-items-mini
           != partial("_partials/sectionItems")
         != partial("_partials/documentsAccordian")

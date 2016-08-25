@@ -6,7 +6,7 @@ div(Id="levelTwoDiv" ng-controller='levelTwoController')
       .primary-info
         h2 {{currentItem.Id}} Overview
         .descripton-wrapper
-          p {{currentItem.Description}}
+            p(ng-bind-html="currentItem.Description | trust")
         != partial("_partials/sectionItems")
         != partial("_partials/documentsAccordian")
       .secondary-info
