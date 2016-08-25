@@ -29,8 +29,11 @@ module App.curriculum{
     curriculumTypeTags: Array<any>;
     contentTypeTags: Array<any>;
     curriculumArray: Array<any>;
+    currentItem: any;
     maxSubjects: number;
     maxContent: number;
+    shareSites : Array<any>
+    selectedShareSite: any;
 
 
     gradeFilter: string;
