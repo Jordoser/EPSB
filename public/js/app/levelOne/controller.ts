@@ -12,10 +12,12 @@ export class LevelOneController extends BaseController{
         this.$scope.sectionItems = []
         this.$scope.relatedNews = [];
         this.$scope.relatedApps = [];
+        this.$scope.documentTypes = [];
         this.navArray = JSON.parse(sessionStorage.getItem("NavArray"))
         this.currentItemIdNav = this.navArray[0];
         this.$scope.employeeBar =  this.navArray[0].Id == "Employee Essentials"
         this.loadl1Item(this.currentItemIdNav.ContentId);
+        this.loadDocumentFilters();
     }
 
 
@@ -87,6 +89,17 @@ export class LevelOneController extends BaseController{
       this.dataService.getMetadataById(Item.MetadataId)
       .then(data => {
         Item.Metadata = data[0];
+      })
+    }
+
+    public loadDocumentFilters(){
+      this.dataService.getDocumentTypeFilters()
+      .then(data => {
+        App.Common.replaceArrayContents(this.$scope.documentTypes, data)
+        for(var i = 0; i < this.$scope.documentTypes.length; i++){
+          this.$scope.documentTypes[i].Documents = []
+          this.loadDocumentForTag([this.currentItemIdNav.Id, data[i].Tag],  this.$scope.documentTypes[i].Documents)
+        }
       })
     }
 

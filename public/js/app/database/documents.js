@@ -73,7 +73,7 @@ var App;
                     "Description": "",
                     "Link": "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
                     "MetadataId": "Volunteers - Registration and Records Checks Policy Metadata",
-                    "Tags": ["Volunteers", "Policies"]
+                    "Tags": ["Volunteers", "School Operations", "Policies"]
                 },
                 "Document10": {
                     "Id": "Liability Insurance of Volunteer Drivers Policy",

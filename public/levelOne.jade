@@ -19,6 +19,7 @@ div(Id="levelOneDiv" ng-controller='levelOneController')
           div.primary-image
           p(ng-bind-html='currentItem.Description | trust')
         != partial("_partials/sectionItems")
+        != partial("_partials/documentsAccordian")
       .secondary-info.desktop
         div.news-item-wrapper
           span.sub-heading NEWS

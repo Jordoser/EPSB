@@ -18,10 +18,12 @@ var App;
                 this.$scope.sectionItems = [];
                 this.$scope.relatedNews = [];
                 this.$scope.relatedApps = [];
+                this.$scope.documentTypes = [];
                 this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
                 this.currentItemIdNav = this.navArray[0];
                 this.$scope.employeeBar = this.navArray[0].Id == "Employee Essentials";
                 this.loadl1Item(this.currentItemIdNav.ContentId);
+                this.loadDocumentFilters();
             }
             LevelOneController.prototype.alertTest = function () {
                 alert("Test");
@@ -88,6 +90,17 @@ var App;
                 this.dataService.getMetadataById(Item.MetadataId)
                     .then(function (data) {
                     Item.Metadata = data[0];
+                });
+            };
+            LevelOneController.prototype.loadDocumentFilters = function () {
+                var _this = this;
+                this.dataService.getDocumentTypeFilters()
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.documentTypes, data);
+                    for (var i = 0; i < _this.$scope.documentTypes.length; i++) {
+                        _this.$scope.documentTypes[i].Documents = [];
+                        _this.loadDocumentForTag([_this.currentItemIdNav.Id, data[i].Tag], _this.$scope.documentTypes[i].Documents);
+                    }
                 });
             };
             LevelOneController.prototype.loadDocumentForTag = function (Tags, refrenceArray) {
