@@ -3,20 +3,21 @@ div(Id="levelOneDiv" ng-controller='levelOneController')
     div(ng-show="employeeBar")
       != partial("_partials/employeeBar")
     .mobile.l1-mobile-nav(style='margin: 15px;' ng-click="ctrl.toggleExpandingNav()")
-      div(style='width: 100%; border: 1px solid black') In this section
+      div.teacher-select(style='width: 100%; border: 1px solid black') In this section
       .expanding-nav
         div.mobile-item-wrapper(ng-repeat="item in sectionItems track by $index")
-          div.mobile-row(id='{{$index}}-l1' ng-click="ctrl.redirectToL1Nav(item)")
+          div.mobile-row(id='{{$index}}-l1' ng-click="ctrl.redirectToL1Nav(item);$event.stopPropagation();")
             div {{item.Name}}
-            div.expand-button-wrapper.pull-right
+            div.expand-button-wrapper.pull-right(ng-show='item.hasChildren')
               button.expand-mobile(ng-click='ctrl.mobileL1(item,$index);$event.stopPropagation(); ')
                 i.fa.fa-sort-desc(ng-hide='ctrl.isOpenMobile($index)')
                 i.fa.fa-sort-asc(ng-show='ctrl.isOpenMobile($index)')
+          div.mobile-l2(id='{{$index}}-l2')
+            div.mobile-row-l2(ng-repeat="item in l3NavItems" ng-click="ctrl.redirectToL2Nav(item)") {{item.Name}}
     .info-wrapper
       .primary-info
         h2 {{currentItem.Id}} Overview
         .descripton-wrapper
-          div.primary-image
           p(ng-bind-html='currentItem.Description | trust')
         != partial("_partials/sectionItems")
         != partial("_partials/documentsAccordian")

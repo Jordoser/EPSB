@@ -252,6 +252,8 @@ export class NavController extends BaseController{
         else{
           for(var i = 0; i < data.length; i++){
             this.$scope.navItems.push(data[i])
+            this.$scope.navItems[i].hasChildren = false;
+            this.findl2Children(this.$scope.navItems[i])
           }
           deferred.resolve(true)
         }
@@ -328,6 +330,14 @@ export class NavController extends BaseController{
       return deferred.promise;
     }
 
+
+
+    public findl2Children(item){
+      this.dataService.getL2NavItems(item.Id)
+      .then(data => {
+        item.hasChildren = (data.length > 0)
+      })
+    }
     public findl3Children(item){
       this.dataService.getL3NavItems(item.Id)
       .then(data => {

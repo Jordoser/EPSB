@@ -128,7 +128,7 @@ div(ng-controller='navController' Id="navDiv")
           i.fa.fa-bars
         img.logo(src="images/epsblogo.png" ng-click="ctrl.redirectHome()" style="cursor: pointer; z-index: 9999999999")
         button.menu-hamburger.pull-right(ng-click="ctrl.toggleMobileRight()")
-          i.fa.fa-plus-square-o
+          i.fa.fa-th
       .search-bar.col-md-12.no-padding(style='z-index: 9999999999')
         label(for="searchText" id="searchLabel")
           i.fa.fa-search.fa-3(ng-click="ctrl.search()")
@@ -146,7 +146,7 @@ div(ng-controller='navController' Id="navDiv")
           div.mobile-row(id='{{$index}}-l1' ng-click="ctrl.redirectToL1Nav(item)")
             div {{item.Name}}
             div.expand-button-wrapper.pull-right
-              button.expand-mobile(ng-click='ctrl.mobileL1(item,$index);$event.stopPropagation(); ')
+              button.expand-mobile(ng-click='ctrl.mobileL1(item,$index);$event.stopPropagation(); ' ng-show="item.hasChildren")
                 i.fa.fa-sort-desc(ng-hide='ctrl.isOpenMobile($index)')
                 i.fa.fa-sort-asc(ng-show='ctrl.isOpenMobile($index)')
           div.mobile-l2(id='{{$index}}-l2')
