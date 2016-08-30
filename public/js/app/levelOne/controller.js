@@ -121,6 +121,10 @@ var App;
                 this.navArray[1] = item;
                 App.Common.navigateL2(this.navArray);
             };
+            LevelOneController.prototype.redirectToSectionItemL3 = function (item) {
+                this.navArray[2] = item;
+                App.Common.navigateL3(this.navArray);
+            };
             LevelOneController.prototype.loadRelatedNews = function (Tags) {
                 var _this = this;
                 this.dataService.getItemsByTag(Tags, "NewsItems")

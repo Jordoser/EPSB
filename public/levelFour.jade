@@ -8,7 +8,7 @@ div(Id="levelFourDiv" ng-controller='levelFourController')
         .descripton-wrapper
           p(ng-bind-html="currentItem.Description | trust")
         != partial("_partials/documentsAccordian")
-      .secondary-info
+      .secondary-info.desktop
         
 script(src='js/app/levelFour/dataService.js')
 script(src='js/app/levelFour/controller.js')

@@ -133,6 +133,11 @@ export class LevelOneController extends BaseController{
       App.Common.navigateL2(this.navArray)
     }
 
+    public redirectToSectionItemL3(item){
+      this.navArray[2] = item;
+      App.Common.navigateL3(this.navArray)
+    }
+
     public loadRelatedNews(Tags: Array<string>){
         this.dataService.getItemsByTag(Tags,"NewsItems")
         .then(data =>{
