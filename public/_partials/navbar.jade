@@ -127,6 +127,8 @@ div(ng-controller='navController' Id="navDiv")
         button.menu-hamburger(ng-click='ctrl.toggleMobile()')
           i.fa.fa-bars
         img.logo(src="images/epsblogo.png" ng-click="ctrl.redirectHome()" style="cursor: pointer; z-index: 9999999999")
+        button.menu-hamburger.pull-right(ng-click="ctrl.toggleMobileRight()")
+          i.fa.fa-plus-square-o
       .search-bar.col-md-12.no-padding(style='z-index: 9999999999')
         label(for="searchText" id="searchLabel")
           i.fa.fa-search.fa-3(ng-click="ctrl.search()")
@@ -152,6 +154,71 @@ div(ng-controller='navController' Id="navDiv")
       div.close-wrapper
         button.close-mobile(ng-click='ctrl.toggleMobile()')
           i.fa.fa-times
+    div.mobile-menu-right
+      div.close-wrapper
+        button.close-mobile(ng-click='ctrl.toggleMobileRight()')
+          i.fa.fa-times
+      div.row-wrapper
+        div.mobile-item-wrapper
+          div.mobile-row(id='google-l1')
+            div Google Apps
+            div.expand-button-wrapper.pull-right
+              button.expand-mobile(ng-click='ctrl.mobileL1Right("google");$event.stopPropagation(); ')
+                i.fa.fa-sort-desc(ng-hide='ctrl.isOpenMobile("google")')
+                i.fa.fa-sort-asc(ng-show='ctrl.isOpenMobile("google")')
+          div.mobile-l2(id='google-l2')
+            div.mobile-row-l2() Gmail
+            div.mobile-row-l2() Google Docs
+            div.mobile-row-l2() Google Drive
+          div.mobile-item-wrapper
+            div.mobile-row(id='calendars-l1')
+              div Calendars
+              div.expand-button-wrapper.pull-right
+                button.expand-mobile(ng-click='ctrl.mobileL1Right("calendars");$event.stopPropagation(); ')
+                  i.fa.fa-sort-desc(ng-hide='ctrl.isOpenMobile("calendars")')
+                  i.fa.fa-sort-asc(ng-show='ctrl.isOpenMobile("calendars")')
+            div.mobile-l2(id='calendars-l2')
+              div.mobile-row-l2() 2015-2016 Calendar
+              div.mobile-row-l2() 2016-2017 Calendar
+              div.mobile-row-l2() District Calendar
+          div.mobile-item-wrapper
+            div.mobile-row(id='contact-l1')
+              div Contacts
+              div.expand-button-wrapper.pull-right
+                button.expand-mobile(ng-click='ctrl.mobileL1Right("contact");$event.stopPropagation(); ')
+                  i.fa.fa-sort-desc(ng-hide='ctrl.isOpenMobile("contact")')
+                  i.fa.fa-sort-asc(ng-show='ctrl.isOpenMobile("contact")')
+            div.mobile-l2(id='contact-l2')
+        div.mobile-item-wrapper
+          div.mobile-row(id='schools-l1')
+            div Calendars
+            div.expand-button-wrapper.pull-right
+              button.expand-mobile(ng-click='ctrl.mobileL1Right("schools");$event.stopPropagation(); ')
+                i.fa.fa-sort-desc(ng-hide='ctrl.isOpenMobile("schools")')
+                i.fa.fa-sort-asc(ng-show='ctrl.isOpenMobile("schools")')
+          div.mobile-l2(id='schools-l2')
+            div.mobile-row-l2() School Directory
+            div.mobile-row-l2() Find a School
+          div.mobile-row(id='apps-l1' ng-click="ctrl.redirectToL1Nav(item)")
+            div My Apps
+            div.expand-button-wrapper.pull-right
+              button.expand-mobile(ng-click='ctrl.mobileL1Right("apps");$event.stopPropagation(); ')
+                i.fa.fa-sort-desc(ng-hide='ctrl.isOpenMobile("apps")')
+                i.fa.fa-sort-asc(ng-show='ctrl.isOpenMobile("apps")')
+          div.mobile-l2(id='apps-l2')
+            table.l2-table(style='width: 100%;')
+              tbody
+                tr(ng-repeat="app in applications")
+                  td
+                    i.fa.fa-picture-o
+                  td
+                    span {{app.Name}}
+                    br
+                    span.application-desc.text-muted {{app.Description}}
+                  td
+                    i.fa.fa-star(ng-show="app.Favorite == 'true'")
+                    i.fa.fa-star-o(ng-show="app.Favorite != 'true'")
+      
   script(src='js/app/nav/dataService.js')
   script(src='js/app/nav/controller.js')
   script(src='js/app/nav/main.js')

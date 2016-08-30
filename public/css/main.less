@@ -1338,8 +1338,8 @@ margin-right: auto;
     }
     .custom-container{
       padding-left: 0 !important;
-
     }
+
     .content-area{
         padding-top: 115px !important;
     }
@@ -1363,8 +1363,32 @@ margin-right: auto;
       z-index: 9999999;
       left: -100%;
       transition:all .2s ease-out;
+      max-height: 100%;
+      overflow: auto;
     }
 
+    .mobile-menu-right{
+      right: -100%;
+      max-height: 100%;
+      overflow: auto;
+      position: fixed;
+        display: flex;
+        width: 100%;
+      background-color: @gray-dark;
+      z-index: 9999999;
+      color: white;
+      transition:all .2s ease-out;
+      .row-wrapper{
+        border-left: 1px solid @gray
+      }
+    }
+    .l2-table{
+      background-color: @gray-dark;
+    }
+
+    .open-mobile-right{
+      right: 0 !important;
+    }
     .open-mobile{
       left: 0 !important;
     }

@@ -78,11 +78,18 @@ export class NavController extends BaseController{
 
     }
 
+    public toggleRightNav(){
 
+    }
 
     public toggleMobile(){
     var menu = $('.mobile-menu')
     menu.toggleClass('open-mobile');
+    }
+
+    public toggleMobileRight(){
+    var menu = $('.mobile-menu-right')
+    menu.toggleClass('open-mobile-right');
     }
 
     public mobileL1(l1Nav, subNavIndex){
@@ -106,6 +113,35 @@ export class NavController extends BaseController{
         })
 
       })
+
+
+
+      var allNavs =  $('.mobile-row')
+      allNavs.removeClass('open-nav-item-mobile');
+
+
+      nav.toggleClass('open-nav-item-mobile')
+    }
+
+    public mobileL1Right(subNavIndex){
+      var allSubs = $('.mobile-l2')
+      var nav = $('#' + subNavIndex + "-l1")
+      allSubs.animate({'height': "0"},10);
+
+
+      if(nav.hasClass('open-nav-item-mobile')){
+          nav.removeClass('open-nav-item-mobile');
+          return;
+      }
+
+        var subNav = $('#' + subNavIndex + "-l2")
+        subNav.css('height', 'auto')
+        var height = subNav.height();
+        subNav.css('height', '0')
+        subNav.animate({'height': height + "px"},10);
+
+
+
 
 
 
