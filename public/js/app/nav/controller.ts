@@ -78,6 +78,49 @@ export class NavController extends BaseController{
 
     }
 
+
+
+    public toggleMobile(){
+    var menu = $('.mobile-menu')
+    menu.toggleClass('open-mobile');
+    }
+
+    public mobileL1(l1Nav, subNavIndex){
+      var allSubs = $('.mobile-l2')
+      var nav = $('#' + subNavIndex + "-l1")
+      allSubs.animate({'height': "0"},10);
+
+
+      if(nav.hasClass('open-nav-item-mobile')){
+          nav.removeClass('open-nav-item-mobile');
+          return;
+      }
+      this.loadNavItems(l1Nav)
+      .then(data => {
+        this.$timeout(()=>{
+          var subNav = $('#' + subNavIndex + "-l2")
+          subNav.css('height', 'auto')
+          var height = subNav.height();
+          subNav.css('height', '0')
+          subNav.animate({'height': height + "px"},10);
+        })
+
+      })
+
+
+
+      var allNavs =  $('.mobile-row')
+      allNavs.removeClass('open-nav-item-mobile');
+
+
+      nav.toggleClass('open-nav-item-mobile')
+    }
+
+
+    public isOpenMobile(navIndex){
+        var nav = $('#' + navIndex + "-l1");
+        return(nav.hasClass('open-nav-item-mobile'))
+    }
     public navListener(){
       var that =this
       $(document).mouseup(function (e)
