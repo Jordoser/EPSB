@@ -26,6 +26,21 @@ var App;
             LevelOneController.prototype.alertTest = function () {
                 alert("Test");
             };
+            LevelOneController.prototype.toggleExpandingNav = function () {
+                var menu = $('.expanding-nav');
+                var contentArea = $('.content-area');
+                var initialHeight = menu.height();
+                menu.css("height", "auto");
+                var menuHeight = menu.height();
+                if (initialHeight) {
+                    menu.animate({ "height": "0" }, 10);
+                    contentArea.removeClass('content-area-open');
+                    return;
+                }
+                menu.css("height", "0");
+                menu.animate({ "height": menuHeight + "px" }, 10);
+                contentArea.toggleClass('content-area-open');
+            };
             LevelOneController.prototype.loadl1Item = function (Id) {
                 var _this = this;
                 this.dataService.getItemById(Id)
