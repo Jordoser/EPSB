@@ -59,7 +59,8 @@ div(Id="newsDiv" ng-controller='newsController').content-area
         select(ng-options="month as month for month in months" ng-model="monthFilter" style="margin-left: 15px;")
       div(ng-repeat="item in news" ng-show="ctrl.containsMonth(item)")
         hr
-        div.large-text.clickable(style="font-weight: bold" ng-bind-html="item.Name | highlight:searchString" ng-click="ctrl.redirectToContentPage(item)")
+        div.large-text.clickable(style="font-weight: bold; color:black !important" href="newsStory")
+          a(href="newsStory" style="color: black !important" ng-bind-html="item.Name | highlight:searchString")
         div
           span.tag-text {{item.Metadata.CreatedOn}}
         span(ng-repeat="tag in item.Tags")

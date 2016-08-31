@@ -55,6 +55,13 @@ module App {
             "l1NavId": "Meadowlark School",
             "PageUrl" : "schoolDocuments.html"
         },
+        "l2NavItem-2" : {
+            "Id" : "Principals Message",
+            "Name" : "Principals Message",
+            "Description" : "Document storage for local school content.",
+            "l1NavId": "Meadowlark School",
+            "PageUrl" : "principalsMessage.html"
+        },
         //BEGIN L2 ITEMS FOR SCHOOL OPERATIONS
         "l2NavItem1" : {
             "Id" : "Budget & Finance",

@@ -17,7 +17,8 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
               .story-scroll-wrapper
                 span(style="padding-bottom:15px; display: block").small-text.bold Recent News:
                 .story.news-item(ng-repeat="story in newsItems")
-                  p.news-text.no-margin {{story.Name}}
+                  div
+                    a.news-text.no-margin(href="newsStory") {{story.Name}}
                   span.text-muted.small-text {{story.Metadata.CreatedOn}}
                     span(ng-repeat="tag in story.Tags") |&nbsp{{tag}}&nbsp
                   hr.thin-padding-hr
@@ -93,12 +94,12 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
                   .story-info
                     span.text-muted.small-text {{featuredStory.Metadata.CreatedOn}}
                       span(ng-repeat="tag in featuredStory.Tags") |&nbsp{{tag}}&nbsp
-                    p.bold.no-margin {{featuredStory.Name}}
+                    p.bold.no-margin(href="newsStory") {{featuredStory.Name}}
                     p {{featuredStory.Description}}
                 .story-scroll-wrapper
                   span(style="padding-bottom:15px; display: block").small-text.bold Recent News:
                   .story.news-item(ng-repeat="story in newsItems")
-                    p.news-text.no-margin {{story.Name}}
+                    p.news-text.no-margin(href="newsStory") {{story.Name}}
                     span.text-muted.small-text {{story.Metadata.CreatedOn}}
                       span(ng-repeat="tag in story.Tags") |&nbsp{{tag}}&nbsp
                     hr.thin-padding-hr
