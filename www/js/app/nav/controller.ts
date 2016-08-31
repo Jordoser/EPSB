@@ -176,6 +176,7 @@ export class NavController extends BaseController{
             popovers.popover('destroy');
             popovers.popover();
           }else{
+            popovers.popover('destroy');
             popovers.popover();
           }
 

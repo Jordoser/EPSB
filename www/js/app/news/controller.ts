@@ -20,6 +20,31 @@ export class NewsController extends BaseController{
       this.$scope.dateFilters = [{Name:"2015-2016",Start:2015, End: 2016},{Name:"2014-2015",Start:2014, End: 2015},{Name:"2013-2014",Start:2013, End: 2014}]
     }
 
+
+    public toggleFilters(){
+      var menu = $('.curric-facet-menu')
+      menu.toggleClass('open-mobile')
+    }
+
+
+    public toggleSubFilter(divId: string){
+      let menu = $('#' + divId)
+      const initialHeight = menu.height();
+
+      if(initialHeight){
+        menu.animate({'height': '0'},10)
+        return
+      }
+      menu.css('height','auto');
+      var height = menu.height();
+      menu.css('height', '0');
+      menu.animate({'height': height + 'px'},10)
+
+      this.$timeout(() =>{
+        menu.css('height', 'auto')
+      },200)
+
+    }
     public loadNewsContent(){
       this.dataService.getApplicationContent().then(data =>{
         this.$scope.currentItem = data[0];

@@ -132,6 +132,7 @@ var App;
                         popovers.popover();
                     }
                     else {
+                        popovers.popover('destroy');
                         popovers.popover();
                     }
                     if (layoutfooter.is(e.target)) {
