@@ -24,7 +24,7 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
           .scroll-footer
             span(style='color: black') Scroll for more stories
           .dynamic-info-wrapper(style="margin-left:auto; margin-right:auto; padding-left: 30px; padding-top: 15px;" )
-            div(ng-if="currentUser == 'Steve Jacob'" style="display:flex")
+            div.bottom-flex(ng-if="currentUser == 'Steve Jacob'")
               .left-content
                 .large-text
                   span.bold Quick Links
@@ -37,8 +37,9 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
                       span(stlye="padding-left:10px;") {{item.Name}}
               .right-content(style="margin-left:auto;")
                 img(src="images/bulletinboard.png")
+                img(src="images/classifieds.png")
 
-            div(ng-if="currentUser == 'Samantha Nugent'")
+            div.bottom-flex(ng-if="currentUser == 'Samantha Nugent'")
               .left-content.pull-left
                 .large-text
                     span.bold Quick Links
@@ -56,6 +57,7 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
                       span(stlye="padding-left:10px;") {{item.Name}}
                 .right-content.pull-right
                   img(src="images/bulletinboard.png")
+                  img(src="images/classifieds.png")
 
             .dates-wrapper
             .quicklins-wrapper
@@ -116,7 +118,7 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
             div(ng-if="selectedLocation == 'MS'")
               img(src="images/meadowlark.png" style="margin-left: auto;margin-right: auto;display: table-caption;")
         .dynamic-info-wrapper(style="margin-left:auto; margin-right:auto; padding-left: 30px; padding-top: 15px;" )
-          div(ng-if="currentUser == 'Steve Jacob'" style="display:flex")
+          div.bottom-flex(ng-if="currentUser == 'Steve Jacob'" style="display:flex")
             .left-content
               .large-text
                 span.bold Quick Links
@@ -129,8 +131,9 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
                     span(stlye="padding-left:10px;") {{item.Name}}
             .right-content(style="margin-left:auto;")
               img(src="images/bulletinboard.png")
+              img(src="images/classifieds.png")
 
-          div(ng-if="currentUser == 'Samantha Nugent'")
+          div.bottom-flex(ng-if="currentUser == 'Samantha Nugent'")
             .left-content.pull-left
               .large-text
                   span.bold Quick Links
@@ -148,6 +151,7 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
                     span(stlye="padding-left:10px;") {{item.Name}}
               .right-content.pull-right
                 img(src="images/bulletinboard.png")
+                img(src="images/classifieds.png")
 script(src='js/app/home/dataService.js')
 script(src='js/app/home/index/controller.js')
 script(src='js/app/home/index/main.js')
