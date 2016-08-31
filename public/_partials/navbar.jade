@@ -51,20 +51,22 @@ div(ng-controller='navController' Id="navDiv")
               i.fa.fa-angle-right.pull-right(ng-show="item.hasChildren")
     .left-nav.l3-nav.slide-nav(style='z-index: 800')
       .nav-items
-        .nav-header {{selectedItemIds[1].Name}}        
+        .nav-header(style="padding: 10px;")
+          div(ng-click="ctrl.redirectToL2Nav(selectedItemIds[1])" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}")
+            div {{selectedItemIds[1].Name}}
+            div.small-text(style='font-weight: normal; padding-top:10px;') {{selectedItemIds[1].Blurb}}        
         ul.hidden-nav.sub-nav
-          li(ng-click="ctrl.redirectToL2Nav(selectedItemIds[1])" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}")
-            div {{selectedItemIds[1].Name}} Overview
           li(ng-repeat="item in l3NavItems" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}" ng-click="ctrl.openL4NavForItem(item,false,0,true)")
             div
               span.nav-menu-text {{item.Name}}
               i.fa.fa-angle-right.pull-right(ng-show="item.hasChildren")
     .left-nav.l4-nav.slide-nav(style='z-index: 700')
-      .nav-header {{selectedItemIds[2].Name}}
+      .nav-header(style="padding: 10px;")
+        div(ng-click="ctrl.redirectToL3Nav(selectedItemIds[2])" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}")
+          div {{selectedItemIds[2].Name}}
+          div.small-text(style='font-weight: normal; padding-top:10px;') {{selectedItemIds[2].Blurb}}
       .nav-items        
         ul.hidden-nav.sub-nav
-          li(ng-click="ctrl.redirectToL3Nav(selectedItemIds[2])" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}")
-            div {{selectedItemIds[2].Name}} Overview
           li(ng-repeat="item in l4NavItems" ng-class="{'open-nav-item' : ctrl.IsNavigated(item.Id)}" ng-click="ctrl.redirectToL4Nav(item)")
             div {{item.Name}}
     .right-nav.application-drawer(style='z-index: 1000; color: white !important')
@@ -88,24 +90,24 @@ div(ng-controller='navController' Id="navDiv")
         .top-row
           img.logo.desktop-tablet(src="images/epsblogo.png" ng-click="ctrl.redirectHome()" style="cursor: pointer")
           
-          img(src="images/apps.png" id="appsIcon" class="popover-icon" style="padding-right: 15px;padding-top: 20px;" ng-click="ctrl.openApplicationDrawer()").pull-right
-          img(src="images/schools.png" id="schoolIcon" class="popover-icon" style="padding-right: 15px;padding-top: 20px;" 
+          img(src="images/apps.png" id="appsIcon" class="popover-icon" style="padding-right: 10px;padding-top: 20px;" ng-click="ctrl.openApplicationDrawer()").pull-right
+          img(src="images/schools.png" id="schoolIcon" class="popover-icon" style="padding-right: 10px;padding-top: 20px;" 
             data-container="body" data-toggle="popover" 
             data-placement="bottom"
             data-html="true"
             data-content="<div><a>School Directory</a></div><hr class='thin-padding-hr'/><div><a>Find a School<a></div>").pull-right
-          img(src="images/contacts.png" id="contactIcon" class="popover-icon" style="padding-right: 15px;padding-top: 20px;" 
+          img(src="images/contacts.png" id="contactIcon" class="popover-icon" style="padding-right: 10px;padding-top: 20px;" 
             data-container="body" data-toggle="popover" 
             data-placement="bottom" 
             data-html="true"
             data-content="" ).pull-right
-          img(src="images/calendars.png" id="calendarIcon" class="popover-icon" style="padding-right: 15px;padding-top: 20px;" 
+          img(src="images/calendars.png" id="calendarIcon" class="popover-icon" style="padding-right: 10px;padding-top: 20px;" 
             data-container="body" 
             data-toggle="popover" 
             data-html="true"
             data-placement="bottom" 
             data-content="<div><a>2015-2016 Calendar</a></div><hr class='thin-padding-hr'/><div><a>2016-2017 Calendar<a></div><hr class='thin-padding-hr'/><div><a>District Calendar</a></div>").pull-right
-          img(src="images/googleapps.png" id="googleIcon" class="popover-icon" style="padding-right: 30px;padding-top: 22px;" 
+          img(src="images/googleapps.png" id="googleIcon" class="popover-icon" style="padding-right: 25px;padding-top: 22px;" 
             data-container="body"
             data-toggle="popover" 
             data-html="true"

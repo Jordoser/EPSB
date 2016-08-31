@@ -69,11 +69,11 @@ div.content-area(Id="curriculumDiv" ng-controller='curriculumController')
       button.close-mobile(ng-click='ctrl.toggleFilters("curricMobile")')
         i.fa.fa-times
   div.row-col(style='display: flex;')
-    div.pull-left.full-mobile(style="width: 50%")
+    div.pull-left.full-mobile(style="width: 50%; margin-right: 15px;")
       h2(style="padding-bottom: 15px;") District resources
       p {{currentItem.Description}}
-    div.pull-right.full-mobile(style="width: 50%; padding-left: 15px; align-self: center; padding-bottom: 15px")
-      div(style='margin: 15px;')
+    div.pull-right.full-mobile(style="width: 50%; align-self: center; padding-bottom: 15px")
+      div
         span.bold Teacher made curriculum resources
         select.teacher-select(selectpicker='' id='curricSelect' style="width: 75%" ng-model="selectedShareSite" ng-options="site.Url as site.Name for site in shareSites track by site.Url")
           option(disabled="" selected="" value="") Subject...

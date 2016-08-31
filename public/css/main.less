@@ -55,7 +55,7 @@
 @topNavBarHeight: 100px;
 @NavItemHeight: 60px;
 @SubNavItemHeight: 30px;
-@NavWidth:225px;
+@NavWidth:260px;
 @l2NavColor: black;
 @l3NavColor: lighten(black, 10);
 @l4NavColor: lighten(black, 20);
@@ -354,6 +354,9 @@ this is a typing test cool everything seems up to date
     padding-left: 25px;
     padding-bottom: 25px;
     padding-top: 25px;
+    &:hover{
+      cursor: pointer;
+    }
 }
 .sub-nav{
   padding-left: 0;
@@ -744,7 +747,8 @@ padding-left: @NavWidth;
     padding-top: 225px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
 
   }
 }
@@ -1223,7 +1227,7 @@ transition: all 0.5s;
       }
     }
     li:hover, li.open-nav-item {
-      background: @gray;
+      background: black;
       color: white;
     }
   }
@@ -1243,7 +1247,7 @@ transition: all 0.5s;
       cursor: pointer;
       div{
         padding-left: 25px;
-        color: @gray-light;
+        color: @gray;
         height: 30px;
         display:table-cell;
         vertical-align : middle;
@@ -1360,6 +1364,12 @@ transition:transform .2s ease-out;
 max-width: 100%;
   }
 }
+
+.left-content{
+    .large-text{
+      margin-bottom: 15px;
+    }
+}
 @media (max-width: 1100px)  {
 
   .bottom-flex{
@@ -1435,7 +1445,8 @@ max-width: 100%;
       height: auto !important;
     }
     .custom-container{
-      padding-left: 0 !important;
+      padding-left: 15px !important;
+      padding-right: 15px !important;
     }
     .info-wrapper{
       padding: 15px;
@@ -1549,13 +1560,15 @@ max-width: 100%;
     }
 
     .mobile-row-l2{
-        height: 25px;
+
         max-width: 100%;
         border-bottom: white 1px solid;
         color: white;
         line-height: 25px;
         padding-left: 30px;
         background-color: @gray;
+        padding-top: 5px;
+padding-bottom: 5px;
     }
     .expand-button-wrapper{
         margin-left: auto;
@@ -1576,7 +1589,7 @@ max-width: 100%;
     .mobile-l2{
       height: 0;
       transition:all .2s ease-out;
-      background-color: coral;
+      background-color: @gray-dark;
           overflow: hidden;
     }
     .close-wrapper{

@@ -30,7 +30,7 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
                   span.bold Quick Links
                   span(style="font-style: italic;")  for Custodians
                 .top-content(style="margin-top: 30px;")
-                  .bold(style="margin-bottom: 5px; font-size: 1.3em;") TOP CONTENT
+                  .bold(style="margin-bottom: 5px;") TOP CONTENT
                   div(ng-repeat="item in topContent" ng-show="item.Role == 'Custodian'" style="margin-left: 15px;")
                     a(ng-click="ctrl.redirectToTop(item)") 
                       i.fa.fa-file-o(style="margin-right:10px;")
@@ -50,7 +50,7 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
                   option(disabled="" selected="" value="") Subject...
                 button.techer-select-button(ng-click="ctrl.openSite()" ng-disabled="selectedShareSite == ''") GO
                 .top-content(style="margin-top: 30px;").pull-left
-                  .bold(style="margin-bottom: 5px; font-size: 1.3em;") TOP CONTENT
+                  .bold(style="margin-bottom: 5px;") TOP CONTENT
                   div(ng-repeat="item in topContent" ng-show="item.Role == 'Teacher'" style="margin-left: 15px;")
                     a(ng-click="ctrl.redirectToTop(item)")
                       i.fa.fa-file-o(style="margin-right:10px;")
@@ -124,7 +124,7 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
                 span.bold Quick Links
                 span(style="font-style: italic;")  for Custodians
               .top-content(style="margin-top: 30px;")
-                .bold(style="margin-bottom: 5px; font-size: 1.3em;") TOP CONTENT
+                .bold(style="margin-bottom: 5px;") TOP CONTENT
                 div(ng-repeat="item in topContent" ng-show="item.Role == 'Custodian'" style="margin-left: 15px;")
                   a(ng-click="ctrl.redirectToTop(item)") 
                     i.fa.fa-file-o(style="margin-right:10px;")
@@ -144,7 +144,7 @@ div.content-area(Id="homeIndexDiv" ng-controller='homeIndexController' style="pa
                 option(disabled="" selected="" value="") Subject...
               button.techer-select-button(ng-click="ctrl.openSite()" ng-disabled="selectedShareSite == ''") GO
               .top-content(style="margin-top: 30px;").pull-left
-                .bold(style="margin-bottom: 5px; font-size: 1.3em;") TOP CONTENT
+                .bold(style="margin-bottom: 5px;") TOP CONTENT
                 div(ng-repeat="item in topContent" ng-show="item.Role == 'Teacher'" style="margin-left: 15px;")
                   a(ng-click="ctrl.redirectToTop(item)")
                     i.fa.fa-file-o(style="margin-right:10px;")
