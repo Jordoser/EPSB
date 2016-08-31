@@ -27,11 +27,10 @@ export class NavController extends BaseController{
       this.initiateDay();
       this.navListener();
       /*
-      $('.popover-dismiss').popover({
-        trigger: 'focus'
+      $('.POPOVER-DISMISS').POPOVER({
+        TRIGGER: 'FOCUS'
       })
       */
-
 
       this.$scope.applicationsItem = {
         Name: "Applications",
@@ -43,10 +42,32 @@ export class NavController extends BaseController{
         PageUrl: "searchResults.html"
       }
 
+      this.$scope.userItem = {
+        Name: "User",
+        PageUrl: "userInfo.html"
+      }
+
       this.$scope.currentUser =  sessionStorage.getItem("CurrentUser");
       if(!this.$scope.currentUser){
         this.$scope.currentUser = "Samantha Nugent"
       }
+
+
+          var kkeys = [], konami = ["38","38",'40','40','37','39','37','39','66','65','13'];
+          var that = this;
+          window.addEventListener("keydown", function(e){
+              kkeys.push( e.keyCode );
+              if(konami.indexOf(e.keyCode.toString()) == -1){
+                kkeys = [];
+              }
+              if ( kkeys.toString().indexOf( konami.toString() ) >= 0 ){
+                  that.swapUsers();
+                  kkeys = [];
+                  }
+          }, true);
+
+
+
 
       this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
 
@@ -57,13 +78,112 @@ export class NavController extends BaseController{
 
     }
 
+    public toggleRightNav(){
+
+    }
+
+    public toggleMobile(){
+    var menu = $('.mobile-menu')
+    menu.toggleClass('open-mobile');
+    /*var body = $('body')
+    body.toggleClass('push-menu')*/
+    }
+
+    public toggleMobileRight(){
+    var menu = $('.mobile-menu-right')
+    menu.toggleClass('open-mobile-right');
+    }
+
+    public mobileL1(l1Nav, subNavIndex){
+      var allSubs = $('.mobile-l2')
+      var nav = $('#' + subNavIndex + "-l1")
+      allSubs.animate({'height': "0"},10);
+
+
+      if(nav.hasClass('open-nav-item-mobile')){
+          nav.removeClass('open-nav-item-mobile');
+          return;
+      }
+      this.loadNavItems(l1Nav)
+      .then(data => {
+        this.$timeout(()=>{
+          var subNav = $('#' + subNavIndex + "-l2")
+          subNav.css('height', 'auto')
+          var height = subNav.height();
+          subNav.css('height', '0')
+          subNav.animate({'height': height + "px"},10);
+        })
+
+      })
+
+
+
+      var allNavs =  $('.mobile-row')
+      allNavs.removeClass('open-nav-item-mobile');
+
+
+      nav.toggleClass('open-nav-item-mobile')
+    }
+
+    public mobileL1Right(subNavIndex){
+      var allSubs = $('.mobile-l2')
+      var nav = $('#' + subNavIndex + "-l1")
+      allSubs.animate({'height': "0"},10);
+
+
+      if(nav.hasClass('open-nav-item-mobile')){
+          nav.removeClass('open-nav-item-mobile');
+          return;
+      }
+
+        var subNav = $('#' + subNavIndex + "-l2")
+        subNav.css('height', 'auto')
+        var height = subNav.height();
+        subNav.css('height', '0')
+        subNav.animate({'height': height + "px"},10);
+
+
+
+
+
+
+      var allNavs =  $('.mobile-row')
+      allNavs.removeClass('open-nav-item-mobile');
+
+
+      nav.toggleClass('open-nav-item-mobile')
+    }
+
+
+    public isOpenMobile(navIndex){
+        var nav = $('#' + navIndex + "-l1");
+        return(nav.hasClass('open-nav-item-mobile'))
+    }
     public navListener(){
       var that =this
       $(document).mouseup(function (e)
       {
+
+
+
+          var popovers = $(".popover-icon")
           var container = $('.left-nav');
           var appsButton = $('#appsIcon')
           var appsNav = $('.right-nav')
+          var layoutfooter = $('.layout-footer')
+
+          if(!popovers.is(e.target) && popovers.has(<any>e.target).length === 0){
+            popovers.popover('destroy');
+            popovers.popover();
+          }else{
+            popovers.popover();
+          }
+
+          if(layoutfooter.is(e.target)){
+            that.swapUsers()
+          }
+
+
 
           if ((!container.is(e.target) // if the target of the click isn't the container...
               && container.has(<any>e.target).length === 0)) // ... nor a descendant of the container
@@ -78,6 +198,10 @@ export class NavController extends BaseController{
             appDrawer2.toggleClass("right-nav-open");
           }
       });
+    }
+
+    public redirectToUser(){
+
     }
 
     public swapUsers(){
@@ -130,6 +254,8 @@ export class NavController extends BaseController{
         else{
           for(var i = 0; i < data.length; i++){
             this.$scope.navItems.push(data[i])
+            this.$scope.navItems[i].hasChildren = false;
+            this.findl2Children(this.$scope.navItems[i])
           }
           deferred.resolve(true)
         }
@@ -206,6 +332,14 @@ export class NavController extends BaseController{
       return deferred.promise;
     }
 
+
+
+    public findl2Children(item){
+      this.dataService.getL2NavItems(item.Id)
+      .then(data => {
+        item.hasChildren = (data.length > 0)
+      })
+    }
     public findl3Children(item){
       this.dataService.getL3NavItems(item.Id)
       .then(data => {

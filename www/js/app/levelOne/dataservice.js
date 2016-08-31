@@ -20,6 +20,9 @@ var App;
             LevelOneDataService.prototype.getSectionItemsById = function (Id) {
                 return this.getItemByKeyValue("LevelTwoNavItems", "l1NavId", Id);
             };
+            LevelOneDataService.prototype.getL3NavItems = function (levelTwoId) {
+                return this.getItemByKeyValue("LevelThreeNavItems", "l2NavId", levelTwoId);
+            };
             LevelOneDataService.prototype.getRelatedNews = function (Tags) {
                 return this.getItemsByTag(Tags, "NewsItems");
             };

@@ -5,7 +5,7 @@ var App;
             this.LevelOneContent = {
                 "LevelOneContent1": {
                     "Id": "School Operations",
-                    "Description": "Information and resources you need to manage the daily operations for your school.",
+                    "Description": "<p>Information and resources you need to manage the daily operations for your school.<p>",
                     "RelatedTopics": "",
                     "PageAuditId": "School Operations",
                     "Tags": ["School Operations"]

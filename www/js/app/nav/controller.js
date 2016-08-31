@@ -40,21 +40,103 @@ var App;
                     Name: "Search",
                     PageUrl: "searchResults.html"
                 };
+                this.$scope.userItem = {
+                    Name: "User",
+                    PageUrl: "userInfo.html"
+                };
                 this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
                 if (!this.$scope.currentUser) {
                     this.$scope.currentUser = "Samantha Nugent";
                 }
+                var kkeys = [], konami = ["38", "38", '40', '40', '37', '39', '37', '39', '66', '65', '13'];
+                var that = this;
+                window.addEventListener("keydown", function (e) {
+                    kkeys.push(e.keyCode);
+                    if (konami.indexOf(e.keyCode.toString()) == -1) {
+                        kkeys = [];
+                    }
+                    if (kkeys.toString().indexOf(konami.toString()) >= 0) {
+                        that.swapUsers();
+                        kkeys = [];
+                    }
+                }, true);
                 this.$scope.navigatedItems = JSON.parse(sessionStorage.getItem("NavArray"));
                 if (!this.$scope.navigatedItems) {
                     this.$scope.navigatedItems = [];
                 }
             }
+            NavController.prototype.toggleRightNav = function () {
+            };
+            NavController.prototype.toggleMobile = function () {
+                var menu = $('.mobile-menu');
+                menu.toggleClass('open-mobile');
+            };
+            NavController.prototype.toggleMobileRight = function () {
+                var menu = $('.mobile-menu-right');
+                menu.toggleClass('open-mobile-right');
+            };
+            NavController.prototype.mobileL1 = function (l1Nav, subNavIndex) {
+                var _this = this;
+                var allSubs = $('.mobile-l2');
+                var nav = $('#' + subNavIndex + "-l1");
+                allSubs.animate({ 'height': "0" }, 10);
+                if (nav.hasClass('open-nav-item-mobile')) {
+                    nav.removeClass('open-nav-item-mobile');
+                    return;
+                }
+                this.loadNavItems(l1Nav)
+                    .then(function (data) {
+                    _this.$timeout(function () {
+                        var subNav = $('#' + subNavIndex + "-l2");
+                        subNav.css('height', 'auto');
+                        var height = subNav.height();
+                        subNav.css('height', '0');
+                        subNav.animate({ 'height': height + "px" }, 10);
+                    });
+                });
+                var allNavs = $('.mobile-row');
+                allNavs.removeClass('open-nav-item-mobile');
+                nav.toggleClass('open-nav-item-mobile');
+            };
+            NavController.prototype.mobileL1Right = function (subNavIndex) {
+                var allSubs = $('.mobile-l2');
+                var nav = $('#' + subNavIndex + "-l1");
+                allSubs.animate({ 'height': "0" }, 10);
+                if (nav.hasClass('open-nav-item-mobile')) {
+                    nav.removeClass('open-nav-item-mobile');
+                    return;
+                }
+                var subNav = $('#' + subNavIndex + "-l2");
+                subNav.css('height', 'auto');
+                var height = subNav.height();
+                subNav.css('height', '0');
+                subNav.animate({ 'height': height + "px" }, 10);
+                var allNavs = $('.mobile-row');
+                allNavs.removeClass('open-nav-item-mobile');
+                nav.toggleClass('open-nav-item-mobile');
+            };
+            NavController.prototype.isOpenMobile = function (navIndex) {
+                var nav = $('#' + navIndex + "-l1");
+                return (nav.hasClass('open-nav-item-mobile'));
+            };
             NavController.prototype.navListener = function () {
                 var that = this;
                 $(document).mouseup(function (e) {
+                    var popovers = $(".popover-icon");
                     var container = $('.left-nav');
                     var appsButton = $('#appsIcon');
                     var appsNav = $('.right-nav');
+                    var layoutfooter = $('.layout-footer');
+                    if (!popovers.is(e.target) && popovers.has(e.target).length === 0) {
+                        popovers.popover('destroy');
+                        popovers.popover();
+                    }
+                    else {
+                        popovers.popover();
+                    }
+                    if (layoutfooter.is(e.target)) {
+                        that.swapUsers();
+                    }
                     if ((!container.is(e.target)
                         && container.has(e.target).length === 0)) {
                         that.closeL2Nav();
@@ -66,6 +148,8 @@ var App;
                         appDrawer2.toggleClass("right-nav-open");
                     }
                 });
+            };
+            NavController.prototype.redirectToUser = function () {
             };
             NavController.prototype.swapUsers = function () {
                 if (this.$scope.currentUser == "Samantha Nugent") {
@@ -113,6 +197,8 @@ var App;
                     else {
                         for (var i = 0; i < data.length; i++) {
                             _this.$scope.navItems.push(data[i]);
+                            _this.$scope.navItems[i].hasChildren = false;
+                            _this.findl2Children(_this.$scope.navItems[i]);
                         }
                         deferred.resolve(true);
                     }
@@ -178,6 +264,12 @@ var App;
                     }
                 });
                 return deferred.promise;
+            };
+            NavController.prototype.findl2Children = function (item) {
+                this.dataService.getL2NavItems(item.Id)
+                    .then(function (data) {
+                    item.hasChildren = (data.length > 0);
+                });
             };
             NavController.prototype.findl3Children = function (item) {
                 this.dataService.getL3NavItems(item.Id)

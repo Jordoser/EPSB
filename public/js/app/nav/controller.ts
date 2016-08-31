@@ -85,6 +85,8 @@ export class NavController extends BaseController{
     public toggleMobile(){
     var menu = $('.mobile-menu')
     menu.toggleClass('open-mobile');
+    /*var body = $('body')
+    body.toggleClass('push-menu')*/
     }
 
     public toggleMobileRight(){

@@ -54,6 +54,30 @@ export class CurriculumController extends BaseController{
         }
     }
 
+    public toggleFilters(){
+      var menu = $('.curric-facet-menu')
+      menu.toggleClass('open-mobile')
+    }
+
+
+    public toggleSubFilter(divId: string){
+      let menu = $('#' + divId)
+      const initialHeight = menu.height();
+
+      if(initialHeight){
+        menu.animate({'height': '0'},10)
+        return
+      }
+      menu.css('height','auto');
+      var height = menu.height();
+      menu.css('height', '0');
+      menu.animate({'height': height + 'px'},10)
+
+      this.$timeout(() =>{
+        menu.css('height', 'auto')
+      },200)
+
+    }
     public openSite(){
       window.open('EPSShareSite/home.html', '_blank');
     }

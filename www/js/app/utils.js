@@ -134,6 +134,9 @@ var App;
         BaseJsonDataService.prototype.getTaggedDocuments = function (TagArray) {
             return this.getItemsByTag(TagArray, "Documents");
         };
+        BaseJsonDataService.prototype.getMetadataById = function (Id) {
+            return this.expandPropery([Id], "Metadata", "Id");
+        };
         BaseJsonDataService.$inject = [
             '$http',
             '$q'

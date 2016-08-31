@@ -16,6 +16,8 @@ export class CurriculumController extends BaseController{
           this.$scope.contentTypeTags= [];
           this.$scope.gradeAndSubjectArray = [];
           this.$scope.curriculumArray = [];
+          this.$scope.shareSites = [];
+          this.$scope.selectedShareSite= "";
 
           this.$scope.gradeFilter = '';
           this.$scope.subjectFilter  = '';
@@ -23,7 +25,10 @@ export class CurriculumController extends BaseController{
           this.$scope.contentTypeFilter= '';
           this.$scope.curriculumTypeFilter = ''
           this.$scope.curriculumFilter = ''
+          this.$scope.currentItem
 
+          this.loadDistrictContent();
+          this.loadShareSites();
           this.loadGradeTags();
           this.loadSubjectTags();
           this.loadCurriculumTags();
@@ -47,6 +52,26 @@ export class CurriculumController extends BaseController{
             default:
                 break;
         }
+    }
+
+    public openSite(){
+      window.open('EPSShareSite/home.html', '_blank');
+    }
+    public loadShareSites(){
+      this.dataService.getShareSites()
+      .then(data =>{
+        App.Common.replaceArrayContents(this.$scope.shareSites, data);
+        this.$scope.selectedShareSite= "";
+
+      })
+    }
+
+
+    public loadDistrictContent(){
+      this.dataService.getDistrictContent()
+      .then(data =>{
+        this.$scope.currentItem = data[0];
+      })
     }
 
       public loadGradeTags(){

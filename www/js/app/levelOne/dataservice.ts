@@ -18,6 +18,10 @@ module App.levelOne{
       return this.getItemByKeyValue("LevelTwoNavItems", "l1NavId", Id)
     }
 
+    public getL3NavItems(levelTwoId: string): ng.IPromise<Array<any>>{
+      return this.getItemByKeyValue("LevelThreeNavItems","l2NavId",levelTwoId)
+    }
+    
     public getRelatedNews(Tags: Array<string>) : ng.IPromise<Array<any>>{
       return this.getItemsByTag(Tags,"NewsItems")
     }

@@ -11,6 +11,9 @@ module App.curriculum{
     public getSubjectTags(): ng.IPromise<Array<any>>{
       return this.getItems("SubjectFilters")
     }
+    public getShareSites() : ng.IPromise<Array<any>>{
+      return this.getItems("ShareSites");
+    }
 
     public getCurriculumTags(): ng.IPromise<Array<any>>{
       return this.getItems("CurriculumSubjectFilters")
@@ -24,6 +27,9 @@ module App.curriculum{
     }
     public getContentTags(): ng.IPromise<Array<any>>{
       return this.getItems("DocumentTypeFilters")
+    }
+    public getDistrictContent(): ng.IPromise<any>{
+      return this.getItemByKeyValue("OtherContent","Id","Resources")
     }
   }
 }

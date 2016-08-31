@@ -4,6 +4,11 @@ module App.levelTwo{
   .controller('levelTwoController', LevelTwoController)
   .service('dataService',LevelTwoDataService)
   .directive('bzPopover',App.Directives.scopedPopover)
+  .filter("trust", ['$sce', function($sce) {
+      return function(htmlCode){
+        return $sce.trustAsHtml(htmlCode);
+      }
+    }]);
 
 
   export interface ILevelTwoScope extends IBaseScope{
