@@ -54,14 +54,15 @@ export class CurriculumController extends BaseController{
         }
     }
 
-    public toggleFilters(){
-      var menu = $('.curric-facet-menu')
+    public toggleFilters(menuId: string){
+      var menu = $('#' + menuId)
       menu.toggleClass('open-mobile')
     }
 
 
-    public toggleSubFilter(divId: string){
-      let menu = $('#' + divId)
+
+    public toggleSubFilter(parentDivId: string, divId: string){
+      let menu = $(`#${parentDivId} #${divId}`)
       const initialHeight = menu.height();
 
       if(initialHeight){

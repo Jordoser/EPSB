@@ -1,16 +1,16 @@
 div.content-area(Id="curriculumDiv" ng-controller='curriculumController')
-  div.curric-facet-menu.mobile-flex
+  div.curric-facet-menu.mobile-flex(id ="gradeAndSubjectMobile")
     div.select-criteria
       div.select-header-wrapper
       div.grade-select-wrapper.select-row
-        span.bold.filter-span(ng-click="ctrl.toggleSubFilter('gradeMobileFilter')") Grades
+        span.bold.filter-span(ng-click="ctrl.toggleSubFilter('gradeAndSubjectMobile','gradeMobileFilter')") Grades
         div.filter-mobile-wrapper(id='gradeMobileFilter')
           div.news-filters(ng-repeat="tag in gradeTags",style="display: flex;" ng-click="ctrl.changeGradeTag(tag.Tag);")
             i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': gradeFilter != tag.Tag, 'fa-circle': gradeFilter == tag.Tag}")
             span {{tag.Tag}}
             br 
       div.subject-select-wrapper.select-row
-        span.bold.filter-span(ng-click="ctrl.toggleSubFilter('subjectMobileFilter')") Subject
+        span.bold.filter-span(ng-click="ctrl.toggleSubFilter('gradeAndSubjectMobile','subjectMobileFilter')") Subject
         div.filter-mobile-wrapper(id='subjectMobileFilter')
           div.news-filters(ng-repeat="tag in subjectTags",style="display: flex;" ng-click="ctrl.changeSubjectTag(tag.Tag);"  ng-show="$index  < maxSubjects")
             i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': subjectFilter != tag.Tag, 'fa-circle': subjectFilter == tag.Tag}")
@@ -25,21 +25,48 @@ div.content-area(Id="curriculumDiv" ng-controller='curriculumController')
               i.fa.fa-minus-square-o
               span  See Less
       div.resource-select-wrapper.select-row
-        span.bold.filter-span(ng-click="ctrl.toggleSubFilter('curricResourceMobileFilter')") Curriculum Resource Type
+        span.bold.filter-span(ng-click="ctrl.toggleSubFilter('gradeAndSubjectMobile','curricResourceMobileFilter')") Curriculum Resource Type
         div.filter-mobile-wrapper(id='curricResourceMobileFilter')
           div.news-filters(ng-repeat="tag in curriculumTypeTags",style="display: flex;" ng-click="ctrl.changeCurriculumTypeTag(tag.Tag);"  ng-show="$index  <= maxContent")
               i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': curriculumTypeFilter != tag.Tag, 'fa-circle': curriculumTypeFilter == tag.Tag}")
               span {{tag.Tag}}
               br 
       div.resource-select-wrapper.select-row
-        span.bold.filter-span(ng-click="ctrl.toggleSubFilter('resourceTypeMobileFilter')") Resource Type
+        span.bold.filter-span(ng-click="ctrl.toggleSubFilter('gradeAndSubjectMobile','resourceTypeMobileFilter')") Resource Type
         div.filter-mobile-wrapper(id='resourceTypeMobileFilter')
           .div.news-filters(ng-repeat="tag in contentTypeTags",style="display: flex;" ng-click="ctrl.changeContentTag(tag.Tag);"  ng-show="$index  <= maxContent")
               i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': contentTypeFilter != tag.Tag, 'fa-circle': contentTypeFilter == tag.Tag}")
               span {{tag.Tag}}
               br 
     .close-wrapper
-      button.close-mobile(ng-click='ctrl.toggleFilters()')
+      button.close-mobile(ng-click='ctrl.toggleFilters("gradeAndSubjectMobile")')
+        i.fa.fa-times
+  div.curric-facet-menu.mobile-flex(id ="curricMobile")
+    div.select-criteria
+      div.select-header-wrapper
+      div.grade-select-wrapper.select-row
+        span.bold.filter-span(ng-click="ctrl.toggleSubFilter('curricMobile','gradeMobileFilter')") Curriculum & Teaching Topics
+        div.filter-mobile-wrapper(id='gradeMobileFilter')
+          div.news-filters(ng-repeat="tag in curriculumTags",style="display: flex;" ng-click="ctrl.changeCurriculumTag(tag.Tag,true);")
+            i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': curriculumFilter != tag.Tag, 'fa-circle': curriculumFilter == tag.Tag}")
+            span {{tag.Tag}}
+            br 
+      div.resource-select-wrapper.select-row
+        span.bold.filter-span(ng-click="ctrl.toggleSubFilter('curricMobile','curricResourceMobileFilter')") Curriculum Resource Type
+        div.filter-mobile-wrapper(id='curricResourceMobileFilter')
+          div.news-filters(ng-repeat="tag in curriculumTypeTags",style="display: flex;" ng-click="ctrl.changeCurriculumTypeTag(tag.Tag);"  ng-show="$index  <= maxContent")
+              i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': curriculumTypeFilter != tag.Tag, 'fa-circle': curriculumTypeFilter == tag.Tag}")
+              span {{tag.Tag}}
+              br 
+      div.resource-select-wrapper.select-row
+        span.bold.filter-span(ng-click="ctrl.toggleSubFilter('curricMobile','resourceTypeMobileFilter')") Resource Type
+        div.filter-mobile-wrapper(id='resourceTypeMobileFilter')
+          .div.news-filters(ng-repeat="tag in contentTypeTags",style="display: flex;" ng-click="ctrl.changeContentTag(tag.Tag);"  ng-show="$index  <= maxContent")
+              i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': contentTypeFilter != tag.Tag, 'fa-circle': contentTypeFilter == tag.Tag}")
+              span {{tag.Tag}}
+              br 
+    .close-wrapper
+      button.close-mobile(ng-click='ctrl.toggleFilters("curricMobile")')
         i.fa.fa-times
   div.row-col(style='display: flex;')
     div.pull-left.full-mobile(style="width: 50%")
@@ -51,8 +78,7 @@ div.content-area(Id="curriculumDiv" ng-controller='curriculumController')
         select.teacher-select(selectpicker='' id='curricSelect' style="width: 75%" ng-model="selectedShareSite" ng-options="site.Url as site.Name for site in shareSites track by site.Url")
           option(disabled="" selected="" value="") Subject...
         button.techer-select-button(ng-click="ctrl.openSite()" id='curric-button' ng-disabled="selectedShareSite == ''") GO
-      .mobile.l1-mobile-nav(style='margin: 15px;' ng-click="ctrl.toggleFilters()")
-        div.teacher-select(style='width: 100%; border: 1px solid black') Filter
+    
   div
     ul.nav.nav-tabs(role='tablist' id="myTabs")
       li.active(role='presentation')
@@ -97,6 +123,8 @@ div.content-area(Id="curriculumDiv" ng-controller='curriculumController')
                   span {{tag.Tag}}
                   br 
           div.resources-wrapper
+            .mobile.l1-mobile-nav(style='margin: 15px;' ng-click="ctrl.toggleFilters('gradeAndSubjectMobile')")
+              div.teacher-select(style='width: 100%; border: 1px solid black') Filter
             span.resoures-header(ng-show='gradeFilter != "" || subjectFilter  != "" || contentTypeFilter  != "" || curriculumFilter  != ""') {{gradeAndSubjectArray.length}} Results for:
             div.chips-wrapper
               div.filter-chip(ng-show="gradeFilter != ''" ng-click="ctrl.changeGradeTag('');")
@@ -152,6 +180,8 @@ div.content-area(Id="curriculumDiv" ng-controller='curriculumController')
                   span {{tag.Tag}}
                   br 
           div.resources-wrapper
+            .mobile.l1-mobile-nav(style='margin: 15px;' ng-click="ctrl.toggleFilters('curricMobile')")
+              div.teacher-select(style='width: 100%; border: 1px solid black') Filter
             span.resoures-header.bold(ng-show='curriculumTypeFilter  != "" || contentTypeFilter  != "" || curriculumFilter  != ""') {{curriculumArray.length}} Results for:
             div.chips-wrapper
               div.filter-chip(ng-show="curriculumFilter != ''" ng-click="ctrl.changeCurriculumTag('',true);")
