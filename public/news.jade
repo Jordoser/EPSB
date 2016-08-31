@@ -1,4 +1,27 @@
 div(Id="newsDiv" ng-controller='newsController').content-area
+  div.curric-facet-menu.mobile-flex
+    div.select-criteria
+      div.select-header-wrapper
+      div.grade-select-wrapper.select-row
+        span.bold.filter-span(ng-click="ctrl.toggleSubFilter('gradeMobileFilter')") News By Category
+        div.filter-mobile-wrapper(id='gradeMobileFilter')
+          div.news-filters(style="display: flex;" ng-click="ctrl.changeTag('');")
+            i.fa(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': categoryFilter != '', 'fa-circle': categoryFilter == ''}")
+            span All categories
+            br 
+          div.news-filters(ng-repeat="tag in newsFilters",style="display: flex;" ng-click="ctrl.changeTag(tag.Tag);")
+            i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': categoryFilter != tag.Tag, 'fa-circle': categoryFilter == tag.Tag}")
+            span {{tag.Tag}}
+      div.grade-select-wrapper.select-row
+        span.bold.filter-span(ng-click="ctrl.toggleSubFilter('datemobile')") Date
+        div.filter-mobile-wrapper(id='datemobile')
+          div.news-filters(ng-repeat="tag in dateFilters",style="display: flex;")
+            i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': dateFilter != tag.Name, 'fa-circle': dateFilter == tag.Name}")
+            span {{tag.Name}}
+            br 
+    .close-wrapper
+      button.close-mobile(ng-click='ctrl.toggleFilters()')
+        i.fa.fa-times
   div.news-block-header
     h1 News
     div 
@@ -6,8 +29,10 @@ div(Id="newsDiv" ng-controller='newsController').content-area
     div
       span To view or post staff-contributed news, checkout the
         a   Bulletin Board
+  .mobile.l1-mobile-nav(style='margin: 15px;' ng-click="ctrl.toggleFilters()")
+    div.teacher-select(style='width: 100%; border: 1px solid black') Filter
   div.search-flex-wrapper(style="display: flex;")
-    div.related-tags
+    div.related-tags.desktop
       div
         span(style="font-weight: bold") News By Category
         div.news-filters(style="display: flex;" ng-click="ctrl.changeTag('');")
@@ -23,7 +48,6 @@ div(Id="newsDiv" ng-controller='newsController').content-area
           i.fa.fa-circle-o(style="margin-right: 5px; margin-top: 4px;" ng-class="{'fa-circle-o': dateFilter != tag.Name, 'fa-circle': dateFilter == tag.Name}")
           span {{tag.Name}}
           br 
-
     div.searchResults(ng-show="news.length > 0" style="margin-left: 15px;")
       div.news-category-header
         span.bold Category
