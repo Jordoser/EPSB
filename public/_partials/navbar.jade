@@ -86,7 +86,8 @@ div(ng-controller='navController' Id="navDiv")
     .top-nav
       .top-wrapper
         .top-row
-          img.logo(src="images/epsblogo.png" ng-click="ctrl.redirectHome()" style="cursor: pointer")
+          img.logo.desktop-tablet(src="images/epsblogo.png" ng-click="ctrl.redirectHome()" style="cursor: pointer")
+          img.logo.phone(src="images/epsbsmall.png" ng-click="ctrl.redirectHome()" style="cursor: pointer")
           img(src="images/apps.png" id="appsIcon" class="popover-icon" style="padding-right: 15px;padding-top: 20px;" ng-click="ctrl.openApplicationDrawer()").pull-right
           img(src="images/schools.png" id="schoolIcon" class="popover-icon" style="padding-right: 15px;padding-top: 20px;" 
             data-container="body" data-toggle="popover" 
@@ -126,7 +127,8 @@ div(ng-controller='navController' Id="navDiv")
       .top-row
         button.menu-hamburger(ng-click='ctrl.toggleMobile()')
           i.fa.fa-bars
-        img.logo(src="images/epsblogo.png" ng-click="ctrl.redirectHome()" style="cursor: pointer; z-index: 9999999999")
+        img.logo.desktop-tablet(src="images/epsblogo.png" ng-click="ctrl.redirectHome()" style="cursor: pointer")
+        img.logo.phone(src="images/epsbsmall.png" ng-click="ctrl.redirectHome()" style="cursor: pointer")
         button.menu-hamburger.pull-right(ng-click="ctrl.toggleMobileRight()")
           i.fa.fa-th
       .search-bar.col-md-12.no-padding(style='z-index: 9999999999')

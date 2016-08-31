@@ -23,7 +23,7 @@ div(Id="curriculumIndexDiv" ng-controller='curriculumIndexController')
             span.bold Curriculum & Teaching Topics
             div.option-set
               a.option(ng-repeat="curricTag in curriculumTags" ng-click="ctrl.redirect(curricTag.Tag, 3)") {{curricTag.Tag}}
-      .secondary-info
+      .secondary-info.desktop
         div.app-item-wrapper
           span.sub-heading CONTACTS
           div.app-item(ng-repeat="app in relatedApps")

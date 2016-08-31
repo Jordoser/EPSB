@@ -1,9 +1,9 @@
 div.content-area(Id="curriculumDiv" ng-controller='curriculumController')
-  div(style='display: flex;')
-    div.pull-left(style="width: 50%")
+  div.row-col(style='display: flex;')
+    div.pull-left.full-mobile(style="width: 50%")
       h2(style="padding-bottom: 15px;") District resources
       p {{currentItem.Description}}
-    div.pull-right(style="width: 50%; padding-left: 15px; align-self: center;")
+    div.pull-right.full-mobile(style="width: 50%; padding-left: 15px; align-self: center; padding-bottom: 15px")
       span.bold Teacher made curriculum resources
       select.teacher-select(selectpicker=''  style="width: 75%" ng-model="selectedShareSite" ng-options="site.Url as site.Name for site in shareSites track by site.Url")
         option(disabled="" selected="" value="") Subject...

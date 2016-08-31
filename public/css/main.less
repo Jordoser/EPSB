@@ -389,7 +389,9 @@ this is a typing test cool everything seems up to date
 
   }
 }
-
+.half-half{
+  width: 50%;
+}
 .content-flex-wrapper{
   display: flex;
 }
@@ -1255,6 +1257,9 @@ transition: all 0.5s;
 
 }
 
+.row-col{
+      flex-direction: row;
+}
 
 @media only screen
 and (max-width : 1024px) {
@@ -1263,6 +1268,8 @@ and (max-width : 1024px) {
     display: none;
   }
 }
+
+
 
 
 .app-row{
@@ -1336,8 +1343,20 @@ margin-right: auto;
     .desktop{
       display: none;
     }
+    .row-col{
+          flex-direction: column;
+    }
+    .full-mobile{
+      width: 100% !important;
+    }
     .mobile{
       display: block;
+    }
+    .option-set{
+      max-height: none;
+    }
+    .need-to-know-flex{
+      height: auto !important;
     }
     .custom-container{
       padding-left: 0 !important;
@@ -1387,6 +1406,12 @@ margin-right: auto;
       border: 1px solid white !important;
       color: white;
       background-color: @gray-dark;
+    }
+    .teacher-select{
+      min-width: 0 !important;
+    }
+    .left-content{
+      width: 100%;
     }
   .mobile-menu{
       width: 100%;
@@ -1439,6 +1464,10 @@ margin-right: auto;
 
       }
 
+    }
+
+    .section-flex-container .section-flex-item{
+      max-width: none;
     }
 
     .mobile-row-l2{
@@ -1494,4 +1523,20 @@ margin-right: auto;
       height: 75%;
       margin-top: 5px;
     }
+
+    .desktop-tablet{
+      display: inline;
+    }
+    .phone{
+      display: none;
+    }
+}
+
+@media (max-width: 450px) {
+  .desktop-tablet{
+    display: none !important;
+  }
+  .phone{
+    display: inline !important;
+  }
 }

@@ -19,7 +19,8 @@ div(Id="levelOneDiv" ng-controller='levelOneController')
         h2 {{currentItem.Id}} Overview
         .descripton-wrapper
           p(ng-bind-html='currentItem.Description | trust')
-        != partial("_partials/sectionItems")
+        div.desktop
+          != partial("_partials/sectionItems")
         != partial("_partials/documentsAccordian")
       .secondary-info.desktop
         div.news-item-wrapper
