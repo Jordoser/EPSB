@@ -29,6 +29,9 @@ var App;
             LevelOneDataService.prototype.getRelatedApps = function (Tags) {
                 return this.getItemsByTag(Tags, "Applications");
             };
+            LevelOneDataService.prototype.getRelatedContacts = function (Tags) {
+                return this.getItemsByTag(Tags, "UserContacts");
+            };
             LevelOneDataService.prototype.getMetadata = function (item) {
                 return this.expandPropery([item.MetadataId], "Metadata", "Id");
             };

@@ -17,7 +17,7 @@ module App {
           "PositionId" : "Equipment Manager",
           "PhoneNumber" : "780.444.2222 Ext. 123",
           "Email" : "first.last@domain.com",
-          "Tags": [""]
+          "Tags": ["Budget & Finance"]
         },
         "Contact3" : {
           "Id" :"Linda Jones",
@@ -25,7 +25,7 @@ module App {
           "PositionId" : "Rental Services",
           "PhoneNumber" : "780.444.2222 Ext. 123",
           "Email" : "first.last@domain.com",
-          "Tags": [""]
+          "Tags": ["Building & Systems"]
         },
         "Contact4" : {
           "Id" :"Shirley Chandler",
@@ -33,7 +33,7 @@ module App {
           "PositionId" : "Rental Services",
           "PhoneNumber" : "780.444.2222 Ext. 123",
           "Email" : "first.last@domain.com",
-          "Tags": [""]
+          "Tags": ["Vandalism"]
         },
         "Contact5" : {
           "Id" :"Steve Larson",

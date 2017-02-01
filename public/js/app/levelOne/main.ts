@@ -16,8 +16,8 @@ module App.levelOne{
     sectionItems: Array<any>;
     relatedNews : Array<any>;
     relatedApps : Array<any>;
-    documentTypes: Array<any>;
     relatedContacts: Array<any>;
+    documentTypes: Array<any>;
     l3NavItems: Array<any>;
     employeeBar: boolean;
   }

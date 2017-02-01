@@ -12,6 +12,7 @@ export class LevelOneController extends BaseController{
         this.$scope.sectionItems = []
         this.$scope.relatedNews = [];
         this.$scope.relatedApps = [];
+        this.$scope.relatedContacts = [];
         this.$scope.documentTypes = [];
         this.$scope.l3NavItems = [];
         this.navArray = JSON.parse(sessionStorage.getItem("NavArray"))
@@ -51,6 +52,7 @@ export class LevelOneController extends BaseController{
         if(data[0]){
           this.loadRelatedNews(data[0].Tags);
           this.loadRelatedApps(data[0].Tags)
+          this.loadRelatedContacts(data[0].Tags)
         }
       });
     }
@@ -157,6 +159,18 @@ export class LevelOneController extends BaseController{
         }
       })
     }
+
+    //Todo add load related contacts
+    public loadRelatedContacts (Tags: Array<string>){
+      this.dataService.getRelatedContacts(Tags)
+      .then(data => {
+        App.Common.replaceArrayContents(this.$scope.relatedContacts, data)
+        // for(var i = 0; i < this.$scope.relatedApps.length; i++){
+        //   this.loadMetadata(this.$scope.relatedContacts[i]);
+        // }
+      })
+    }
+
     public loadMetadata(Item){
       this.dataService.getMetadataById(Item.MetadataId)
       .then(data => {

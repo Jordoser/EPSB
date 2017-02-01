@@ -13,6 +13,7 @@ module App {
            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "RelatedTopics" : "",
           "PageAuditId": "Budget & Finance",
+          "Tags" : ["Budget & Finance"]
         },
         "LevelTwoContent2":{
           "Id" : "Classroom & Program",
@@ -20,6 +21,7 @@ module App {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "RelatedTopics" : "",
           "PageAuditId": "Classroom & Program",
+          "Tags" : []
         },
         "LevelTwoContent3":{
           "Id" : "Custodial & Maintenance",
@@ -27,6 +29,7 @@ module App {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "RelatedTopics" : "",
           "PageAuditId": "Custodial & Maintenance",
+          "Tags" : []
         },
         "LevelTwoContent4":{
           "Id" : "Communications for Schools",
@@ -34,6 +37,7 @@ module App {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "RelatedTopics" : "",
           "PageAuditId": "Communications for Schools",
+          "Tags" : []
         },
         "LevelTwoContent5":{
           "Id" : "Emergency & Security",
@@ -41,6 +45,7 @@ module App {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "RelatedTopics" : "",
           "PageAuditId": "Emergency & Security",
+          "Tags" : []
         },
         "LevelTwoContent6":{
           "Id" : "Enrolment & Registration",
@@ -48,6 +53,7 @@ module App {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "RelatedTopics" : "",
           "PageAuditId": "Enrolment & Registration",
+          "Tags" : []
         },
         "LevelTwoContent7":{
           "Id" : "Facility Use",
@@ -55,6 +61,7 @@ module App {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "RelatedTopics" : "",
           "PageAuditId": "Facility Use",
+          "Tags" : []
         },
         "LevelTwoContent8":{
           "Id" : "Family & Community",
@@ -62,6 +69,7 @@ module App {
            post-secondary institutions and donors. There are lots of ways to support teaching and learning in our schools.",
           "RelatedTopics" : "",
           "PageAuditId": "Familty & Community",
+          "Tags" : []
         },
         "LevelTwoContent9":{
           "Id" : "Inclusive Learning",
@@ -69,6 +77,7 @@ module App {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "RelatedTopics" : "",
           "PageAuditId": "Inclusive Learning",
+          "Tags" : []
         },
         "LevelTwoContent10":{
           "Id" : "Privacy & Safe Learning Environments",
@@ -76,6 +85,7 @@ module App {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "RelatedTopics" : "",
           "PageAuditId": "Privacy & Safe Learning Environments",
+          "Tags" : []
         },
         "LevelTwoContent11":{
           "Id" : "School Events & Activities",
@@ -83,12 +93,14 @@ module App {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "RelatedTopics" : "",
           "PageAuditId": "School Events & Activities",
+          "Tags" : []
         },
         "LevelTwoContent12":{
           "Id" : "Staff Management & Hiring",
           "Description": "",
           "RelatedTopics" : "",
           "PageAuditId": "Staff Management & Hiring",
+          "Tags" : []
         },
         "LevelTwoContent13":{
           "Id" : "Student Management",
@@ -96,6 +108,7 @@ module App {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "RelatedTopics" : "",
           "PageAuditId": "Student Management",
+          "Tags" : []
         },
         "LevelTwoContent14":{
           "Id" : "Supplies & Equipment",
@@ -103,6 +116,7 @@ module App {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "RelatedTopics" : "",
           "PageAuditId": "Supplies & Equipment",
+          "Tags" : []
         },
         "LevelTwoContent15":{
           "Id" : "Technology",
@@ -110,6 +124,7 @@ module App {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "RelatedTopics" : "",
           "PageAuditId": "Technology",
+          "Tags" : []
         },
         // END SCHOOL OPERATIONS CONTENT
 
@@ -121,6 +136,7 @@ module App {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "RelatedTopics" : "",
           "PageAuditId": "Awards",
+          "Tags" : []
         },
         "LevelTwoContent17":{
           "Id" : "Benefits for Teachers",
@@ -129,6 +145,7 @@ module App {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "RelatedTopics" : "",
           "PageAuditId": "Benefits for Teachers",
+          "Tags" : []
         },
         "LevelTwoContent18":{
           "Id" : "Career Stages",
@@ -136,6 +153,7 @@ module App {
           you through someof the big events you may face along the way.",
           "RelatedTopics" : "",
           "PageAuditId": "Career Stages",
+          "Tags" : []
         },
         "LevelTwoContent19":{
           "Id" : "Career Opportunities",
@@ -144,6 +162,7 @@ module App {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "RelatedTopics" : "",
           "PageAuditId": "Career Opportunities",
+          "Tags" : []
         },
         "LevelTwoContent20":{
           "Id" : "Employment Contracts & Agreements",
@@ -151,6 +170,7 @@ module App {
           terms & conditions document that covers their position.",
           "RelatedTopics" : "",
           "PageAuditId": "Employment Contracts & Agreements",
+          "Tags" : []
         },
         "LevelTwoContent21":{
           "Id" : "Health & Safety",
@@ -159,6 +179,7 @@ module App {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "RelatedTopics" : "",
           "PageAuditId": "Health & Safety",
+          "Tags" : []
         },
         "LevelTwoContent22":{
           "Id" : "Leaves of Absence for Teachers",
@@ -167,6 +188,7 @@ module App {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "RelatedTopics" : "",
           "PageAuditId": "Leaves of Absence for Teachers",
+          "Tags" : []
         },
         "LevelTwoContent23":{
           "Id" : "Modified Work Arrangements",
@@ -174,6 +196,7 @@ module App {
           job exhanges and secondments, and job sharing opportunities.",
           "RelatedTopics" : "",
           "PageAuditId": "Modified Work Arrangements",
+          "Tags" : []
         },
         "LevelTwoContent24":{
           "Id" : "Pay & Expenses for Teachers",
@@ -182,6 +205,7 @@ module App {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "RelatedTopics" : "",
           "PageAuditId": "Pay & Expenses for Teachers",
+          "Tags" : []
         },
         "LevelTwoContent25":{
           "Id" : "Professional Development",
@@ -190,6 +214,7 @@ module App {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "RelatedTopics" : "",
           "PageAuditId": "Professional Development",
+          "Tags" : []
         },
         "LevelTwoContent26":{
           "Id" : "Staff Conduct & Responsibility",
@@ -198,6 +223,7 @@ module App {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "RelatedTopics" : "",
           "PageAuditId": "Staff Conduct & Responsibility",
+          "Tags" : []
         },
         "LevelTwoContent27":{
           "Id" : "Vacation & Public Holidays for Teachers",
@@ -206,6 +232,7 @@ module App {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "RelatedTopics" : "",
           "PageAuditId": "Vacation & Public Holidays for Teachers",
+          "Tags" : []
         },
         // END EMPLOYEE ESSENTIALS CONTENT
 
@@ -217,6 +244,7 @@ module App {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "RelatedTopics" : "",
           "PageAuditId": "Communications Resources for Central Staff",
+          "Tags" : []
         }
       }
     }

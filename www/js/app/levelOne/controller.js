@@ -19,6 +19,7 @@ var App;
                 this.$scope.sectionItems = [];
                 this.$scope.relatedNews = [];
                 this.$scope.relatedApps = [];
+                this.$scope.relatedContacts = [];
                 this.$scope.documentTypes = [];
                 this.$scope.l3NavItems = [];
                 this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
@@ -54,6 +55,7 @@ var App;
                     if (data[0]) {
                         _this.loadRelatedNews(data[0].Tags);
                         _this.loadRelatedApps(data[0].Tags);
+                        _this.loadRelatedContacts(data[0].Tags);
                     }
                 });
             };
@@ -143,6 +145,17 @@ var App;
                     for (var i = 0; i < _this.$scope.relatedApps.length; i++) {
                         _this.loadMetadata(_this.$scope.relatedApps[i]);
                     }
+                });
+            };
+            //Todo add load related contacts
+            LevelOneController.prototype.loadRelatedContacts = function (Tags) {
+                var _this = this;
+                this.dataService.getRelatedContacts(Tags)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.relatedContacts, data);
+                    // for(var i = 0; i < this.$scope.relatedApps.length; i++){
+                    //   this.loadMetadata(this.$scope.relatedContacts[i]);
+                    // }
                 });
             };
             LevelOneController.prototype.loadMetadata = function (Item) {

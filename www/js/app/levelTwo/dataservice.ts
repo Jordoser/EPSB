@@ -21,6 +21,21 @@ module App.levelTwo{
     public getMetadataById(Id: string): ng.IPromise<Array<any>>{
       return this.expandPropery([Id], "Metadata", "Id");
     }
+     public getRelatedNews(Tags: Array<string>) : ng.IPromise<Array<any>>{
+      return this.getItemsByTag(Tags,"NewsItems")
+    }
+
+    public getRelatedApps(Tags: Array<string>) : ng.IPromise<Array<any>>{
+      return this.getItemsByTag(Tags,"Applications")
+    }
+    
+    public getRelatedContacts(Tags: Array<string>) : ng.IPromise<Array<any>>{
+      return this.getItemsByTag(Tags,"UserContacts")
+    }
+
+    public getMetadata(item: any){
+      return this.expandPropery([item.MetadataId], "Metadata", "Id")
+    }
 
   }
 }

@@ -9,9 +9,7 @@ module App {
             When we do, it's important that the volunteer drivers have adequate insurance coverage.",
             "RelatedTopics" : "",
             "PageAuditId": "Volunteer Drivers",
-            "UserContacts" : [
-              "Simon Greenfield"
-          ]
+            "Tags" : [""]
         },
         "LevelFourContent2": {
           "Id" : "Vandalism",
@@ -30,11 +28,7 @@ module App {
           </ul>",
           "RelatedTopics" : "",
           "PageAuditId": "Vandalism",
-          "UserContacts" : [
-            "Simon Greenfield",
-            "Shirley Chandler",
-            "Steve Larson"
-          ]
+          "Tags": ["Vandalism"]
         },
         "LevelFourContent3": {
           "Id" : "Buses",
@@ -43,9 +37,7 @@ module App {
            ans students in special education needs programming cannot apply for continued service in SchoolZone.",
           "RelatedTopics" : "",
           "PageAuditId": "Buses",
-          "UserContacts" : [
-            "Simon Greenfield"
-          ]
+          "Tags" : [""]
         }
       }
     }

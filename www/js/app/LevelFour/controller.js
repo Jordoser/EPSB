@@ -20,13 +20,53 @@ var App;
                 this.$scope.documentTypes = [];
                 this.loadl4Item(this.currentItemIdNav.ContentId);
                 this.navArray = [];
+                this.$scope.relatedNews = [];
+                this.$scope.relatedApps = [];
+                this.$scope.relatedContacts = [];
+                //this.$scope.employeeBar =  this.navArray[0].Id == "Employee Essentials"
             }
             LevelFourController.prototype.loadl4Item = function (Id) {
                 var _this = this;
                 this.dataService.loadItemById(Id)
                     .then(function (data) {
                     _this.$scope.currentItem = data[0];
+                    if (data[0]) {
+                        _this.loadRelatedNews(data[0].Tags);
+                        _this.loadRelatedApps(data[0].Tags);
+                        _this.loadRelatedContacts(data[0].Tags);
+                    }
                     _this.loadDocumentFilters();
+                });
+            };
+            LevelFourController.prototype.loadRelatedNews = function (Tags) {
+                var _this = this;
+                this.dataService.getItemsByTag(Tags, "NewsItems")
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.relatedNews, data);
+                    for (var i = 0; i < _this.$scope.relatedNews.length; i++) {
+                        _this.loadMetadata(_this.$scope.relatedNews[i]);
+                    }
+                });
+            };
+            LevelFourController.prototype.loadRelatedApps = function (Tags) {
+                var _this = this;
+                this.dataService.getRelatedApps(Tags)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.relatedApps, data);
+                    for (var i = 0; i < _this.$scope.relatedApps.length; i++) {
+                        _this.loadMetadata(_this.$scope.relatedApps[i]);
+                    }
+                });
+            };
+            //Todo add load related contacts
+            LevelFourController.prototype.loadRelatedContacts = function (Tags) {
+                var _this = this;
+                this.dataService.getRelatedContacts(Tags)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.relatedContacts, data);
+                    // for(var i = 0; i < this.$scope.relatedApps.length; i++){
+                    //   this.loadMetadata(this.$scope.relatedContacts[i]);
+                    // }
                 });
             };
             LevelFourController.prototype.loadDocumentFilters = function () {
