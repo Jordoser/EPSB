@@ -10,9 +10,10 @@ var App;
         var LevelTwoDataService = (function (_super) {
             __extends(LevelTwoDataService, _super);
             function LevelTwoDataService($http, $q) {
-                _super.call(this, $http, $q);
-                this.$http = $http;
-                this.$q = $q;
+                var _this = _super.call(this, $http, $q) || this;
+                _this.$http = $http;
+                _this.$q = $q;
+                return _this;
             }
             LevelTwoDataService.prototype.loadItemById = function (Id) {
                 return this.getItemByKeyValue("LevelTwoContent", "Id", Id);
@@ -22,6 +23,18 @@ var App;
             };
             LevelTwoDataService.prototype.getMetadataById = function (Id) {
                 return this.expandPropery([Id], "Metadata", "Id");
+            };
+            LevelTwoDataService.prototype.getRelatedNews = function (Tags) {
+                return this.getItemsByTag(Tags, "NewsItems");
+            };
+            LevelTwoDataService.prototype.getRelatedApps = function (Tags) {
+                return this.getItemsByTag(Tags, "Applications");
+            };
+            LevelTwoDataService.prototype.getRelatedContacts = function (Tags) {
+                return this.getItemsByTag(Tags, "UserContacts");
+            };
+            LevelTwoDataService.prototype.getMetadata = function (item) {
+                return this.expandPropery([item.MetadataId], "Metadata", "Id");
             };
             return LevelTwoDataService;
         }(App.BaseJsonDataService));

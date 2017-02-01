@@ -10,12 +10,25 @@ var App;
         var LevelFourDataService = (function (_super) {
             __extends(LevelFourDataService, _super);
             function LevelFourDataService($http, $q) {
-                _super.call(this, $http, $q);
-                this.$http = $http;
-                this.$q = $q;
+                var _this = _super.call(this, $http, $q) || this;
+                _this.$http = $http;
+                _this.$q = $q;
+                return _this;
             }
             LevelFourDataService.prototype.loadItemById = function (Id) {
                 return this.getItemByKeyValue("LevelFourContent", "Id", Id);
+            };
+            LevelFourDataService.prototype.getRelatedNews = function (Tags) {
+                return this.getItemsByTag(Tags, "NewsItems");
+            };
+            LevelFourDataService.prototype.getRelatedApps = function (Tags) {
+                return this.getItemsByTag(Tags, "Applications");
+            };
+            LevelFourDataService.prototype.getRelatedContacts = function (Tags) {
+                return this.getItemsByTag(Tags, "UserContacts");
+            };
+            LevelFourDataService.prototype.getMetadata = function (item) {
+                return this.expandPropery([item.MetadataId], "Metadata", "Id");
             };
             return LevelFourDataService;
         }(App.BaseJsonDataService));

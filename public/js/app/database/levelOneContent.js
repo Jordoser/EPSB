@@ -16,6 +16,13 @@ var App;
                     "RelatedTopics": "",
                     "PageAuditId": "Central Staff Resources",
                     "Tags": ["Central Staff Resources"]
+                },
+                "LevelOneContent3": {
+                    "Id": "Employee Essentials",
+                    "Description": "Resources for central staff.",
+                    "RelatedTopics": "",
+                    "PageAuditId": "Employee Essentials",
+                    "Tags": ["Employee Essentials"]
                 }
             };
         }

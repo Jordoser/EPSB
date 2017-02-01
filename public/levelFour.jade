@@ -9,6 +9,22 @@ div(Id="levelFourDiv" ng-controller='levelFourController')
           p(ng-bind-html="currentItem.Description | trust")
         != partial("_partials/documentsAccordian")
       .secondary-info.desktop
+        div.news-item-wrapper
+          span.sub-heading NEWS
+          div.news-item(ng-repeat="news in relatedNews")
+            span.news-text {{news.Name}}
+            p.text-muted {{news.Metadata.CreatedOn}}
+        div.app-item-wrapper
+          span.sub-heading APPS
+          div.app-item(ng-repeat="app in relatedApps")
+            span.app-text {{app.Name}}
+            br
+        div.app-item-wrapper
+          span.sub-heading Contacts
+          div.app-item(ng-repeat="contact in relatedContacts")
+            span.app-text {{contact.Name}}
+            p.text-muted {{contact.Email}}
+            br
         
 script(src='js/app/levelFour/dataService.js')
 script(src='js/app/levelFour/controller.js')

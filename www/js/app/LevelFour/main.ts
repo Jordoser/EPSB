@@ -14,6 +14,9 @@ module App.levelFour{
   export interface ILevelFourScope extends IBaseScope{
     currentItem: any;
     documentTypes: Array<any>;
+      relatedNews : Array<any>;
+    relatedApps : Array<any>;
+    relatedContacts: Array<any>;
     employeeBar:boolean;
   }
 }

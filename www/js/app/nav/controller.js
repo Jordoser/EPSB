@@ -32,6 +32,11 @@ var App;
                 this.initiateClock();
                 this.initiateDay();
                 this.navListener();
+                /*
+                $('.POPOVER-DISMISS').POPOVER({
+                  TRIGGER: 'FOCUS'
+                })
+                */
                 this.$scope.applicationsItem = {
                     Name: "Applications",
                     PageUrl: "applications.html"
@@ -70,6 +75,8 @@ var App;
             NavController.prototype.toggleMobile = function () {
                 var menu = $('.mobile-menu');
                 menu.toggleClass('open-mobile');
+                /*var body = $('body')
+                body.toggleClass('push-menu')*/
             };
             NavController.prototype.toggleMobileRight = function () {
                 var menu = $('.mobile-menu-right');
@@ -138,7 +145,7 @@ var App;
                     if (layoutfooter.is(e.target)) {
                         that.swapUsers();
                     }
-                    if ((!container.is(e.target)
+                    if ((!container.is(e.target) // if the target of the click isn't the container...
                         && container.has(e.target).length === 0)) {
                         that.closeL2Nav();
                     }
@@ -187,6 +194,8 @@ var App;
                     App.Common.replaceArrayContents(_this.$scope.applications, data);
                 });
             };
+            /*BEGIN SECTION: NAV FUNCTIONS*/
+            /*Nav Loading*/
             NavController.prototype.loadNav = function () {
                 var _this = this;
                 var deferred = this.$q.defer();
@@ -209,6 +218,7 @@ var App;
                 });
                 return deferred.promise;
             };
+            //L2 Nav
             NavController.prototype.loadNavItems = function (item) {
                 var _this = this;
                 var contentArea = $(".content-area");
@@ -284,6 +294,7 @@ var App;
                     item.hasChildren = (data.length > 0);
                 });
             };
+            /*Nav Opening*/
             NavController.prototype.openL2NavForItem = function (item, isClick) {
                 var _this = this;
                 if (isClick === void 0) { isClick = false; }
@@ -365,6 +376,7 @@ var App;
                     }
                 });
             };
+            /* Nav Closing */
             NavController.prototype.closeL2Nav = function () {
                 var _this = this;
                 this.closeL3Nav(true);
@@ -416,12 +428,14 @@ var App;
                     _this.$scope.selectedItemIds[2] = '';
                 }, 500);
             };
+            /*EMD SECTION: NAV FUNCTIONS*/
             NavController.prototype.displayApps = function () {
                 var item = $(".app-row");
                 var currentHeight = item.height();
                 var megaMenu = $(".mega-menu");
                 var currentPadding = parseInt(megaMenu.css("marginTop"));
                 if (currentHeight == 0) {
+                    //var height= item.css('height', 'auto').height();
                     var height = 150;
                     item.css('height', '0');
                     item.animate({ height: height + "px" }, { duration: 200, queue: false });

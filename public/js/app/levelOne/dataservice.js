@@ -10,9 +10,10 @@ var App;
         var LevelOneDataService = (function (_super) {
             __extends(LevelOneDataService, _super);
             function LevelOneDataService($http, $q) {
-                _super.call(this, $http, $q);
-                this.$http = $http;
-                this.$q = $q;
+                var _this = _super.call(this, $http, $q) || this;
+                _this.$http = $http;
+                _this.$q = $q;
+                return _this;
             }
             LevelOneDataService.prototype.getItemById = function (Id) {
                 return this.getItemByKeyValue("LevelOneContent", "Id", Id);
@@ -28,6 +29,9 @@ var App;
             };
             LevelOneDataService.prototype.getRelatedApps = function (Tags) {
                 return this.getItemsByTag(Tags, "Applications");
+            };
+            LevelOneDataService.prototype.getRelatedContacts = function (Tags) {
+                return this.getItemsByTag(Tags, "UserContacts");
             };
             LevelOneDataService.prototype.getMetadata = function (item) {
                 return this.expandPropery([item.MetadataId], "Metadata", "Id");

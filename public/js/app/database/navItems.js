@@ -25,11 +25,12 @@ var App;
                     "Id": "Central Staff Resources",
                     "Name": "Central Staff Resources",
                     "ContentId": "Central Staff Resources",
-                    "Blurb": "A blurb having to do with central staff."
+                    "Blurb": "Resources for central staff."
                 },
                 "NavItem4": {
                     "Id": "Employee Essentials",
                     "Name": "Employee Essentials",
+                    "ContentId": "Employee Essentials",
                     "Blurb": "Everything you need to know about your employment in one place."
                 },
                 "NavItem5": {
@@ -40,10 +41,12 @@ var App;
                 "NavItem6": {
                     "Id": "About EPS",
                     "Name": "About EPS",
+                    "ContentId": "About EPS",
                     "Blurb": "Blurb about the about EPS nav item .... blurb."
-                },
+                }
             };
             this.LevelTwoNavItems = {
+                //BEGIN L2 ITEMS FOR MEADOWLARK SCHOOL
                 "l2NavItem-1": {
                     "Id": "Documents",
                     "Name": "Documents",
@@ -58,6 +61,7 @@ var App;
                     "l1NavId": "Meadowlark School",
                     "PageUrl": "principalsMessage.html"
                 },
+                //BEGIN L2 ITEMS FOR SCHOOL OPERATIONS
                 "l2NavItem1": {
                     "Id": "Budget & Finance",
                     "Name": "Budget & Finance",
@@ -163,6 +167,8 @@ var App;
                     "l1NavId": "School Operations",
                     "ContentId": "Technology"
                 },
+                //END L2 ITEMS FOR SCHOOL OPERATIONS
+                //BEGIN L2 ITEMS FOR EMPLOYEE ESSENTIALS
                 "l2NavItem16": {
                     "Id": "Awards",
                     "Name": "Awards",
@@ -247,6 +253,7 @@ var App;
                     "l1NavId": "Employee Essentials",
                     "ContentId": "Vacation & Public Holidays for Teachers"
                 },
+                //BEGIN L2 ITEMS FOR CENTRAL STAFF RESOURCES
                 "l2NavItem29": {
                     "Id": "Communications Resources for Central Staff",
                     "Name": "Communications Resources for Central Staff",
@@ -310,6 +317,8 @@ var App;
                     "l1NavId": "Central Staff Resources",
                     "ContentId": "Technology"
                 },
+                //END L2 ITEMS FOR CENTRAL STAFF RESOURCES
+                //BEGIN L2 ITEMS FOR ABOUT EPS
                 "l2NavItem40": {
                     "Id": "Board",
                     "Name": "Board",
@@ -344,9 +353,10 @@ var App;
                     "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                     "l1NavId": "About EPS",
                     "ContentId": "Superintendent"
-                },
+                }
             };
             this.LevelThreeNavItems = {
+                //BEGIN L3 ITEMS FOR BUDGET & FINANCE
                 "l3NavItem1": {
                     "Id": "Accounting & Auditing",
                     "Name": "Accounting & Auditing",
@@ -389,6 +399,8 @@ var App;
                     "l2NavId": "Budget & Finance",
                     "ContentId": "Revenue"
                 },
+                //END L3 ITEMS FOR BUDGET & FINANCE
+                //BEGIN L3 ITEMS FOR CLASSROOM & PROGRAM
                 "l3NavItem7": {
                     "Id": "Class Size",
                     "Name": "Class Size",
@@ -417,6 +429,8 @@ var App;
                     "l2NavId": "Classroom & Programs",
                     "ContentId": "Special Programs"
                 },
+                //END L3 ITEMS FOR CLASSROOM & PROGRAM
+                //BEGIN L3 ITEMS FOR COMMUNICATIONS FOR SCHOOLS
                 "l3NavItem13": {
                     "Id": "Brochures & Booklets",
                     "Name": "Brochures & Booklets",
@@ -471,7 +485,7 @@ var App;
                     "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     "l2NavId": "Communications for Schools",
-                    "ContentId": "Signage",
+                    "ContentId": "Signage"
                 },
                 "l3NavItem20": {
                     "Id": "Stationery",
@@ -489,6 +503,8 @@ var App;
                     "l2NavId": "Communications for Schools",
                     "ContentId": "Style Guide & Logo"
                 },
+                //END L3 ITEMS FOR COMMUNICATIONS FOR SCHOOLS
+                //BEGIN L3 ITEMS FOR CUSTODIAL & MAINTENANCE
                 "l3NavItem22": {
                     "Id": "Building & Systems",
                     "Name": "Building & Systems",
@@ -537,6 +553,8 @@ var App;
                     "l2NavId": "Custodial & Maintenance",
                     "ContentId": "Safe Working Conditions"
                 },
+                //END L3 ITEMS FOR CUSTODIAL & MAINTENANCE
+                //BEGIN L3 ITEMS FOR EMERGENCY & SECURITY
                 "l3NavItem28": {
                     "Id": "Bomb Threats",
                     "Name": "Bomb Threats",
@@ -593,6 +611,8 @@ var App;
                     "l2NavId": "Emergency & Security",
                     "ContentId": "Severe Weather"
                 },
+                //END L3 ITEMS FOR EMERGENCY & SECURITY
+                //BEGIN L3 ITEMS FOR ENROLMENT & REGISTRATION
                 "l3NavItem36": {
                     "Id": "Pre-Enrolment",
                     "Name": "Pre-Enrolment",
@@ -609,6 +629,8 @@ var App;
                     "l2NavId": "Enrolment & Registration",
                     "ContentId": "Registration"
                 },
+                //END L3 ITEMS FOR ENROLMENT & REGISTRATION
+                //BEGIN L3 ITEMS FOR FACILITY USE
                 "l3NavItem38": {
                     "Id": "Community Use",
                     "Name": "Community Use",
@@ -625,6 +647,8 @@ var App;
                     "l2NavId": "Facility Use",
                     "ContentId": "Surplus Space"
                 },
+                //END L3 ITEMS FOR FACILITY USE
+                //BEGIN L3 ITEMS FOR FAMILY & COMMUNITY
                 "l3NavItem40": {
                     "Id": "Communication",
                     "Name": "Communication",
@@ -649,6 +673,8 @@ var App;
                     "l2NavId": "Family & Community",
                     "ContentId": "Volunteers"
                 },
+                //END L3 ITEMS FOR FAMILY & COMMUNITY
+                //BEGIN L3 ITEMS FOR INCLUSIVE LEARNING
                 "l3NavItem43": {
                     "Id": "Diverstiy",
                     "Name": "Diverstiy",
@@ -713,6 +739,8 @@ var App;
                     "l2NavId": "Inclusive Learning",
                     "ContentId": "Visual Impairment"
                 },
+                //END L3 ITEMS FOR INCLUSIVE LEARNING
+                //BEGIN L3 ITEMS FOR PRIVACY & SAFE LEARNING ENVIRONMENTS
                 "l3NavItem51": {
                     "Id": "Bullying Prevention",
                     "Name": "Bullying Prevention",
@@ -735,6 +763,8 @@ var App;
                     "l2NavId": "Privacy & Safe Learning Environments",
                     "ContentId": "Sexual Orientation & Gender Identity"
                 },
+                //END L3 ITEMS FOR PRIVACY & SAFE LEARNING ENVIRONMENTS
+                //BEGIN L3 ITEMS FOR PRIVACY & SCHOOL EVENTS & ACTIVITIES
                 "l3NavItem54": {
                     "Id": "Field Trips",
                     "Name": "Field Trips",
@@ -775,12 +805,14 @@ var App;
                     "l2NavId": "School Events & Activities",
                     "ContentId": "Student Organizations"
                 },
+                //END L3 ITEMS FOR PRIVACY & SCHOOL EVENTS & ACTIVITIES
+                //BEGIN L3 ITEMS FOR STAFF MANAGEMENT & HIRING
                 "l3NavItem59": {
                     "Id": "Hiring",
                     "Name": "Hiring",
                     "Description": "Appeals, job evaluations, and position descriptions.",
                     "l2NavId": "Staff Management & Hiring",
-                    "ContentId": "Hiring",
+                    "ContentId": "Hiring"
                 },
                 "l3NavItem60": {
                     "Id": "Intern Teachers",
@@ -817,6 +849,8 @@ var App;
                     "l2NavId": "Staff Management & Hiring",
                     "ContentId": "Teacher Induction"
                 },
+                //END L3 ITEMS FOR STAFF MANAGEMENT & HIRING
+                //BEGIN L3 ITEMS FOR STUDENT MANAGEMENT
                 "l3NavItem65": {
                     "Id": "Attendance",
                     "Name": "Attendance",
@@ -887,6 +921,8 @@ var App;
                     "l2NavId": "Student Management",
                     "ContentId": "Student Transportation"
                 },
+                //END L3 ITEMS FOR STUDENT MANAGEMENT
+                //BEGIN L3 ITEMS FOR SUPPLIES & EQUIPMENT
                 "l3NavItem75": {
                     "Id": "Distribution Centre",
                     "Name": "Distribution Centre",
@@ -911,6 +947,8 @@ var App;
                     "l2NavId": "Supplies & Equipment",
                     "ContentId": "Surplus Disposal"
                 },
+                //END L3 ITEMS FOR SUPPLIES & EQUIPMENT
+                //BEGIN L3 ITEMS FOR TECHNOLOGY
                 "l3NavItem78": {
                     "Id": "Applications",
                     "Name": "Applications",
@@ -975,6 +1013,8 @@ var App;
                     "l2NavId": "Technology",
                     "ContentId": "Technology Incentive Program"
                 },
+                //END L3 ITEMS FOR TECHNOLOGY
+                //BEGIN L3 ITEMS FOR BENEFITS
                 "l3NavItem87": {
                     "Id": "ASEBP",
                     "Name": "ASEBP",
@@ -1010,6 +1050,18 @@ var App;
                     "l2NavId": "Benefits for Teachers",
                     "ContentId": "Retirement & Pension"
                 },
+<<<<<<< HEAD
+                "l3NavItem450": {
+                    "Id": "RRSP",
+                    "Name": "RRSP",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Benefits for Teachers",
+                    "ContentId": "RRSP"
+                },
+=======
+                //END L3 ITEMS FOR BENEFITS
+                //BEGIN L3 ITEMS FOR CAREER STAGES
+>>>>>>> origin/master
                 "l3NavItem92": {
                     "Id": "Changing Positions",
                     "Name": "Changing Positions",
@@ -1052,6 +1104,8 @@ var App;
                     "l2NavId": "Career Stages",
                     "ContentId": "Thinking About Retirement"
                 },
+                //END L3 ITEMS FOR CAREER STAGES
+                //BEGIN L3 ITEMS FOR HEALTH & SAFETY
                 "l3NavItem98": {
                     "Id": "Ergonomics",
                     "Name": "Ergonomics",
@@ -1094,6 +1148,8 @@ var App;
                     "l2NavId": "Health & Safety",
                     "ContentId": "Workers' Compensation Board"
                 },
+                //END L3 ITEMS FOR HEALTH & SAFETY
+                //BEGIN L3 ITEMS FOR LEAVES OF ABSENCE
                 "l3NavItem104": {
                     "Id": "Community Service",
                     "Name": "Community Service",
@@ -1108,6 +1164,13 @@ var App;
                     "l2NavId": "Leaves of Absence for Teachers",
                     "ConetentId": "Jury Duty"
                 },
+                "l3NavItem401": {
+                    "Id": "Leave For The Arrival of a Child",
+                    "Name": "Leave For The Arrival of a Child",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Leaves of Absence for Teachers",
+                    "ContentId": "Leave For The Arrival of a Child"
+                },
                 "l3NavItem106": {
                     "Id": "Military Service",
                     "Name": "Military Service",
@@ -1116,11 +1179,18 @@ var App;
                     "ContentId": "Military Service"
                 },
                 "l3NavItem107": {
-                    "Id": "Maternity & Paternity",
+                    "Id": "Maternity Leave",
                     "Name": "Maternity & Paternity",
                     "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "l2NavId": "Leaves of Absence for Teachers",
                     "ContentId": "Maternity & Paternity"
+                },
+                "l3NavItem400": {
+                    "Id": "Parental / Adoptive Leave",
+                    "Name": "Parental / Adoptive Leave",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Leaves of Absence for Teachers",
+                    "ContentId": "Parental / Adoptive Leave"
                 },
                 "l3NavItem108": {
                     "Id": "Personal Leave",
@@ -1130,19 +1200,21 @@ var App;
                     "ContentId": "Personal Leave"
                 },
                 "l3NavItem109": {
-                    "Id": "Professional Leave",
-                    "Name": "Professional Leave",
+                    "Id": "Professional Improvement Leave",
+                    "Name": "Professional Improvement Leave",
                     "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "l2NavId": "Leaves of Absence for Teachers",
-                    "ContentId": "Professional Leave"
+                    "ContentId": "Professional Improvement Leave"
                 },
                 "l3NavItem110": {
-                    "Id": "Sickness",
-                    "Name": "Sickness",
+                    "Id": "Sick Leave",
+                    "Name": "Sick Leave",
                     "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "l2NavId": "Leaves of Absence for Teachers",
-                    "ContentId": "Sickness"
+                    "ContentId": "Sick Leave"
                 },
+                //END L3 ITEMS FOR LEAVES OF ABSENCE
+                //BEGIN L3 ITEMS FOR MODIFIED WORK ARRANGEMENTS
                 "l3NavItem111": {
                     "Id": "Deferred Salary",
                     "Name": "Deferred Salary",
@@ -1164,6 +1236,18 @@ var App;
                     "l2NavId": "Modified Work Arrangements",
                     "ContentId": "Job Sharing"
                 },
+<<<<<<< HEAD
+                "l3NavItem1151": {
+                    "Id": "Casual Pay",
+                    "Name": "Casual Pay",
+                    "Description": "Information for people who work on a casual basis or when teachers work outside regular hour and/or when school is out of sessions.",
+                    "l2NavId": "Pay & Expenses for Teachers",
+                    "ContentId": "Casual Pay"
+                },
+=======
+                //END L3 ITEMS FOR MODIFIED WORK ARRANGEMENTS
+                //BEGIN L3 ITEMS FOR PAY & EXPENSES
+>>>>>>> origin/master
                 "l3NavItem115": {
                     "Id": "Direct Deposit",
                     "Name": "Direct Deposit",
@@ -1179,11 +1263,12 @@ var App;
                     "ContentId": "Expenses"
                 },
                 "l3NavItem118": {
-                    "Id": "RRSP",
-                    "Name": "RRSP",
-                    "Description": "RRSP benefits and payroll deductions.",
+                    "Id": "Overtime",
+                    "Name": "Overtime",
+                    "Description": "Pay options when working during the summer, Christmas, spring or any other natural breaks at the \
+           request of the Superintendent.",
                     "l2NavId": "Pay & Expenses for Teachers",
-                    "ContentId": "RRSP"
+                    "ContentId": "Overtime"
                 },
                 "l3NavItem119": {
                     "Id": "Taxes",
@@ -1199,6 +1284,8 @@ var App;
                     "l2NavId": "Pay & Expenses for Teachers",
                     "ContentId": "Time Reporting"
                 },
+                //END L3 ITEMS FOR PAY & EXPENSES
+                //BEGIN L3 ITEMS FOR PROFESSIONAL DEVELOPMENT
                 "l3NavItem121": {
                     "Id": "Comprehensive School Health",
                     "Name": "Comprehensive School Health",
@@ -1311,6 +1398,8 @@ var App;
                     "l2NavId": "Professional Development",
                     "ContentId": "Technology"
                 },
+                //END L3 ITEMS FOR PROFESSIONAL DEVELOPMENT
+                //BEGIN L3 ITEMS FOR STAFF CONDUCT & RESPONSIBILITY
                 "l3NavItem137": {
                     "Id": "Code of Conduct",
                     "Name": "Code of Conduct",
@@ -1355,12 +1444,13 @@ var App;
                 }
             };
             this.LevelFourNavItems = {
+                //BEGIN L4 ITEMS FOR STUDENT TRANSPORTATION
                 "l4NavItem1": {
                     "Id": "Buses",
                     "Name": "Buses",
                     "Description": "Yellow buses and charters.",
                     "ContentId": "Buses",
-                    "l3NavId": "Student Transportation",
+                    "l3NavId": "Student Transportation"
                 },
                 "l4NavItem2": {
                     "Id": "School Vehicles",

@@ -14,7 +14,10 @@ module App.levelThree{
   export interface ILevelThreeScope extends IBaseScope{
     currentItem: any;
     sectionItems: Array<any>;
-    documentTypes: Array<any>
+    documentTypes: Array<any>;
+    relatedNews : Array<any>;
+    relatedApps : Array<any>;
+    relatedContacts: Array<any>;
     employeeBar:boolean;
   }
 }

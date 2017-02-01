@@ -11,20 +11,21 @@ var App;
         var GradeAndSubjectController = (function (_super) {
             __extends(GradeAndSubjectController, _super);
             function GradeAndSubjectController($scope, $timeout, dataService) {
-                _super.call(this, $scope, $timeout, $timeout);
-                this.$scope = $scope;
-                this.$timeout = $timeout;
-                this.dataService = dataService;
-                this.$scope.resourceArray = [];
-                this.$scope.gradeArray = [];
-                this.$scope.subjectArray = [];
-                this.$scope.typeArray = [];
-                this.$scope.gradeFilter = "";
-                this.$scope.subjectFilter = "";
-                this.$scope.typeFilter = "";
-                this.loadGradeFilters();
-                this.loadSubjectFilters();
-                this.loadTypeFilters();
+                var _this = _super.call(this, $scope, $timeout, $timeout) || this;
+                _this.$scope = $scope;
+                _this.$timeout = $timeout;
+                _this.dataService = dataService;
+                _this.$scope.resourceArray = [];
+                _this.$scope.gradeArray = [];
+                _this.$scope.subjectArray = [];
+                _this.$scope.typeArray = [];
+                _this.$scope.gradeFilter = "";
+                _this.$scope.subjectFilter = "";
+                _this.$scope.typeFilter = "";
+                _this.loadGradeFilters();
+                _this.loadSubjectFilters();
+                _this.loadTypeFilters();
+                return _this;
             }
             GradeAndSubjectController.prototype.loadGradeFilters = function () {
                 var _this = this;
@@ -68,9 +69,9 @@ var App;
                     _this.$scope.resourceArray[index].Metadata = data[0];
                 });
             };
-            GradeAndSubjectController.$inject = ['$scope', '$timeout', 'dataService'];
             return GradeAndSubjectController;
         }(App.BaseController));
+        GradeAndSubjectController.$inject = ['$scope', '$timeout', 'dataService'];
         gradeAndSubject.GradeAndSubjectController = GradeAndSubjectController;
     })(gradeAndSubject = App.gradeAndSubject || (App.gradeAndSubject = {}));
 })(App || (App = {}));

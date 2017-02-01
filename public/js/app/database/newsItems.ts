@@ -16,7 +16,7 @@ module App {
           "Name" : "Distribution Centre closed for inventory August 15–19",
           "Description" : "The Distribution Centre will be closed for inventory count for the \
           week of August 15–19. No orders will be processed during this time.",
-          "Tags" : ["School Operations"],
+          "Tags" : ["School Operations", "Benefits for Teachers"],
           "MetadataId": "NewsItem2"
         },
         "NewsItem3" : {

@@ -10,15 +10,28 @@ var App;
         var LevelThreeDataService = (function (_super) {
             __extends(LevelThreeDataService, _super);
             function LevelThreeDataService($http, $q) {
-                _super.call(this, $http, $q);
-                this.$http = $http;
-                this.$q = $q;
+                var _this = _super.call(this, $http, $q) || this;
+                _this.$http = $http;
+                _this.$q = $q;
+                return _this;
             }
             LevelThreeDataService.prototype.loadItemById = function (Id) {
                 return this.getItemByKeyValue("LevelThreeContent", "Id", Id);
             };
             LevelThreeDataService.prototype.getSectionItemsById = function (Id) {
                 return this.getItemByKeyValue("LevelFourNavItems", "l3NavId", Id);
+            };
+            LevelThreeDataService.prototype.getRelatedNews = function (Tags) {
+                return this.getItemsByTag(Tags, "NewsItems");
+            };
+            LevelThreeDataService.prototype.getRelatedApps = function (Tags) {
+                return this.getItemsByTag(Tags, "Applications");
+            };
+            LevelThreeDataService.prototype.getRelatedContacts = function (Tags) {
+                return this.getItemsByTag(Tags, "UserContacts");
+            };
+            LevelThreeDataService.prototype.getMetadata = function (item) {
+                return this.expandPropery([item.MetadataId], "Metadata", "Id");
             };
             return LevelThreeDataService;
         }(App.BaseJsonDataService));

@@ -20,6 +20,18 @@ var App;
             LevelThreeDataService.prototype.getSectionItemsById = function (Id) {
                 return this.getItemByKeyValue("LevelFourNavItems", "l3NavId", Id);
             };
+            LevelThreeDataService.prototype.getRelatedNews = function (Tags) {
+                return this.getItemsByTag(Tags, "NewsItems");
+            };
+            LevelThreeDataService.prototype.getRelatedApps = function (Tags) {
+                return this.getItemsByTag(Tags, "Applications");
+            };
+            LevelThreeDataService.prototype.getRelatedContacts = function (Tags) {
+                return this.getItemsByTag(Tags, "UserContacts");
+            };
+            LevelThreeDataService.prototype.getMetadata = function (item) {
+                return this.expandPropery([item.MetadataId], "Metadata", "Id");
+            };
             return LevelThreeDataService;
         }(App.BaseJsonDataService));
         levelThree.LevelThreeDataService = LevelThreeDataService;

@@ -28,11 +28,12 @@ module App {
             "Id": "Central Staff Resources",
             "Name" : "Central Staff Resources",
             "ContentId" : "Central Staff Resources",
-            "Blurb" : "A blurb having to do with central staff."
+            "Blurb" : "Resources for central staff."
         },
         "NavItem4" : {
             "Id": "Employee Essentials",
             "Name" : "Employee Essentials",
+            "ContentId" : "Employee Essentials",
             "Blurb" : "Everything you need to know about your employment in one place."
         },
         "NavItem5" : {
@@ -43,6 +44,7 @@ module App {
         "NavItem6" : {
             "Id": "About EPS",
             "Name" : "About EPS",
+            "ContentId" : "About EPS",
             "Blurb" : "Blurb about the about EPS nav item .... blurb."
         },
       }
@@ -1076,6 +1078,13 @@ module App {
            "l2NavId" : "Benefits for Teachers",
            "ContentId" : "Retirement & Pension"
           },
+          "l3NavItem450" : {
+           "Id" : "RRSP",
+           "Name" : "RRSP",
+           "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+           "l2NavId" : "Benefits for Teachers",
+           "ContentId" : "RRSP"
+          },
         //END L3 ITEMS FOR BENEFITS
 
         //BEGIN L3 ITEMS FOR CAREER STAGES
@@ -1183,6 +1192,13 @@ module App {
            "l2NavId" : "Leaves of Absence for Teachers",
            "ConetentId" : "Jury Duty"
           },
+          "l3NavItem401" : {
+           "Id" : "Leave For The Arrival of a Child",
+           "Name" : "Leave For The Arrival of a Child",
+           "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+           "l2NavId" : "Leaves of Absence for Teachers",
+           "ContentId" : "Leave For The Arrival of a Child"
+          },
           "l3NavItem106" : {
            "Id" : "Military Service",
            "Name" : "Military Service",
@@ -1191,11 +1207,18 @@ module App {
            "ContentId" : "Military Service"
           },
           "l3NavItem107" : {
-           "Id" : "Maternity & Paternity",
+           "Id" : "Maternity Leave",
            "Name" : "Maternity & Paternity",
            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
            "l2NavId" : "Leaves of Absence for Teachers",
            "ContentId" : "Maternity & Paternity"
+          },
+          "l3NavItem400" : {
+           "Id" : "Parental / Adoptive Leave",
+           "Name" : "Parental / Adoptive Leave",
+           "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+           "l2NavId" : "Leaves of Absence for Teachers",
+           "ContentId" : "Parental / Adoptive Leave"
           },
           "l3NavItem108" : {
            "Id" : "Personal Leave",
@@ -1205,18 +1228,18 @@ module App {
            "ContentId" : "Personal Leave"
           },
           "l3NavItem109" : {
-           "Id" : "Professional Leave",
-           "Name" : "Professional Leave",
+           "Id" : "Professional Improvement Leave",
+           "Name" : "Professional Improvement Leave",
            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
            "l2NavId" : "Leaves of Absence for Teachers",
-           "ContentId" : "Professional Leave"
+           "ContentId" : "Professional Improvement Leave"
           },
           "l3NavItem110" : {
-           "Id" : "Sickness",
-           "Name" : "Sickness",
+           "Id" : "Sick Leave",
+           "Name" : "Sick Leave",
            "Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
            "l2NavId" : "Leaves of Absence for Teachers",
-           "ContentId" : "Sickness"
+           "ContentId" : "Sick Leave"
           },
           //END L3 ITEMS FOR LEAVES OF ABSENCE
 
@@ -1245,6 +1268,13 @@ module App {
           //END L3 ITEMS FOR MODIFIED WORK ARRANGEMENTS
 
           //BEGIN L3 ITEMS FOR PAY & EXPENSES
+          "l3NavItem1151" : {
+           "Id" : "Casual Pay",
+           "Name" : "Casual Pay",
+           "Description" : "Information for people who work on a casual basis or when teachers work outside regular hour and/or when school is out of sessions.",
+           "l2NavId" : "Pay & Expenses for Teachers",
+           "ContentId" : "Casual Pay"
+          },
           "l3NavItem115" : {
            "Id" : "Direct Deposit",
            "Name" : "Direct Deposit",
@@ -1260,11 +1290,12 @@ module App {
            "ContentId" : "Expenses"
           },
           "l3NavItem118" : {
-           "Id" : "RRSP",
-           "Name" : "RRSP",
-           "Description" : "RRSP benefits and payroll deductions.",
+           "Id" : "Overtime",
+           "Name" : "Overtime",
+           "Description" : "Pay options when working during the summer, Christmas, spring or any other natural breaks at the \
+           request of the Superintendent.",
            "l2NavId" : "Pay & Expenses for Teachers",
-           "ContentId" : "RRSP"
+           "ContentId" : "Overtime"
           },
           "l3NavItem119" : {
            "Id" : "Taxes",

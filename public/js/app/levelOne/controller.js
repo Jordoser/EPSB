@@ -11,6 +11,24 @@ var App;
         var LevelOneController = (function (_super) {
             __extends(LevelOneController, _super);
             function LevelOneController($scope, $timeout, $q, dataService) {
+<<<<<<< HEAD
+                var _this = _super.call(this, $scope, $timeout, $timeout) || this;
+                _this.$scope = $scope;
+                _this.$timeout = $timeout;
+                _this.$q = $q;
+                _this.dataService = dataService;
+                _this.$scope.sectionItems = [];
+                _this.$scope.relatedNews = [];
+                _this.$scope.relatedApps = [];
+                _this.$scope.documentTypes = [];
+                _this.$scope.l3NavItems = [];
+                _this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
+                _this.currentItemIdNav = _this.navArray[0];
+                _this.$scope.employeeBar = _this.navArray[0].Id == "Employee Essentials";
+                _this.loadl1Item(_this.currentItemIdNav.ContentId);
+                _this.loadDocumentFilters();
+                return _this;
+=======
                 _super.call(this, $scope, $timeout, $timeout);
                 this.$scope = $scope;
                 this.$timeout = $timeout;
@@ -19,6 +37,7 @@ var App;
                 this.$scope.sectionItems = [];
                 this.$scope.relatedNews = [];
                 this.$scope.relatedApps = [];
+                this.$scope.relatedContacts = [];
                 this.$scope.documentTypes = [];
                 this.$scope.l3NavItems = [];
                 this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
@@ -26,6 +45,7 @@ var App;
                 this.$scope.employeeBar = this.navArray[0].Id == "Employee Essentials";
                 this.loadl1Item(this.currentItemIdNav.ContentId);
                 this.loadDocumentFilters();
+>>>>>>> origin/master
             }
             LevelOneController.prototype.alertTest = function () {
                 alert("Test");
@@ -54,6 +74,7 @@ var App;
                     if (data[0]) {
                         _this.loadRelatedNews(data[0].Tags);
                         _this.loadRelatedApps(data[0].Tags);
+                        _this.loadRelatedContacts(data[0].Tags);
                     }
                 });
             };
@@ -145,6 +166,17 @@ var App;
                     }
                 });
             };
+            //Todo add load related contacts
+            LevelOneController.prototype.loadRelatedContacts = function (Tags) {
+                var _this = this;
+                this.dataService.getRelatedContacts(Tags)
+                    .then(function (data) {
+                    App.Common.replaceArrayContents(_this.$scope.relatedContacts, data);
+                    // for(var i = 0; i < this.$scope.relatedApps.length; i++){
+                    //   this.loadMetadata(this.$scope.relatedContacts[i]);
+                    // }
+                });
+            };
             LevelOneController.prototype.loadMetadata = function (Item) {
                 this.dataService.getMetadataById(Item.MetadataId)
                     .then(function (data) {
@@ -172,9 +204,9 @@ var App;
                     }
                 });
             };
-            LevelOneController.$inject = ['$scope', '$timeout', '$q', 'dataService'];
             return LevelOneController;
         }(App.BaseController));
+        LevelOneController.$inject = ['$scope', '$timeout', '$q', 'dataService'];
         levelOne.LevelOneController = LevelOneController;
     })(levelOne = App.levelOne || (App.levelOne = {}));
 })(App || (App = {}));

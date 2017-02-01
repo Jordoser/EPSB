@@ -17,6 +17,18 @@ var App;
             LevelFourDataService.prototype.loadItemById = function (Id) {
                 return this.getItemByKeyValue("LevelFourContent", "Id", Id);
             };
+            LevelFourDataService.prototype.getRelatedNews = function (Tags) {
+                return this.getItemsByTag(Tags, "NewsItems");
+            };
+            LevelFourDataService.prototype.getRelatedApps = function (Tags) {
+                return this.getItemsByTag(Tags, "Applications");
+            };
+            LevelFourDataService.prototype.getRelatedContacts = function (Tags) {
+                return this.getItemsByTag(Tags, "UserContacts");
+            };
+            LevelFourDataService.prototype.getMetadata = function (item) {
+                return this.expandPropery([item.MetadataId], "Metadata", "Id");
+            };
             return LevelFourDataService;
         }(App.BaseJsonDataService));
         levelFour.LevelFourDataService = LevelFourDataService;

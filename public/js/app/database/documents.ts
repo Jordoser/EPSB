@@ -234,6 +234,14 @@ module App {
           "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
           "MetadataId" : "Board and Staff Relations Metadata",
           "Tags" : ["New Employees","Policies"]
+        },
+        "Document30" : {
+          "Id": "Benefits for Teachers from Collective Agreement",
+          "Name" : "Benefits for Teachers from Collective Agreement",
+          "Description" : "Outlines the District’s contribution to your benefits plan.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["ASEBP","Contracts & Agreements"]
         }
 
       }
