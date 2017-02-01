@@ -95,21 +95,22 @@ var App;
             };
             this.ResourceTypeFilters = {
                 "Filter1": {
-                    "Tag": "Assessments",
+                    "Tag": "Assessments"
                 },
                 "Filter2": {
-                    "Tag": "Instructional Resources",
+                    "Tag": "Instructional Resources"
                 },
                 "Filter3": {
-                    "Tag": "Lead Teacher Resources",
+                    "Tag": "Lead Teacher Resources"
                 },
                 "Filter4": {
-                    "Tag": "Program of Studies",
+                    "Tag": "Program of Studies"
                 },
                 "Filter6": {
-                    "Tag": "Research & Support",
+                    "Tag": "Research & Support"
                 }
             };
+            //Todo change to content types
             this.DocumentTypeFilters = {
                 "Filter1": {
                     "Tag": "Applications"
@@ -209,37 +210,37 @@ var App;
             };
             this.NewsFilters = {
                 "Filter1": {
-                    "Tag": "Around the District",
+                    "Tag": "Around the District"
                 },
                 "Filter2": {
-                    "Tag": "Budget & Finance",
+                    "Tag": "Budget & Finance"
                 },
                 "Filter3": {
-                    "Tag": "Centre for Education",
+                    "Tag": "Centre for Education"
                 },
                 "Filter4": {
-                    "Tag": "Curriculum & Assessment",
+                    "Tag": "Curriculum & Assessment"
                 },
                 "Filter5": {
-                    "Tag": "Employee Essentials",
+                    "Tag": "Employee Essentials"
                 },
                 "Filter6": {
-                    "Tag": "Health & Safety",
+                    "Tag": "Health & Safety"
                 },
                 "Filter7": {
-                    "Tag": "Leadership",
+                    "Tag": "Leadership"
                 },
                 "Filter8": {
-                    "Tag": "Professional Development",
+                    "Tag": "Professional Development"
                 },
                 "Filter9": {
-                    "Tag": "School Operations",
+                    "Tag": "School Operations"
                 },
                 "Filter10": {
-                    "Tag": "Student Management",
+                    "Tag": "Student Management"
                 },
                 "Filter11": {
-                    "Tag": "Technology",
+                    "Tag": "Technology"
                 }
             };
         }

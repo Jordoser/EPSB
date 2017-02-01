@@ -20,6 +20,7 @@ var App;
                 this.$scope.documentTypes = [];
                 this.loadl4Item(this.currentItemIdNav.ContentId);
                 this.navArray = [];
+                //this.$scope.employeeBar =  this.navArray[0].Id == "Employee Essentials"
             }
             LevelFourController.prototype.loadl4Item = function (Id) {
                 var _this = this;

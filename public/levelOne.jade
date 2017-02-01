@@ -33,6 +33,12 @@ div(Id="levelOneDiv" ng-controller='levelOneController')
           div.app-item(ng-repeat="app in relatedApps")
             span.app-text {{app.Name}}
             br
+        div.app-item-wrapper
+          span.sub-heading Contacts
+          div.app-item(ng-repeat="contact in relatedContacts")
+            span.app-text {{contact.Name}}
+            p.text-muted {{contact.Email}}
+            br
         
 script(src='js/app/levelOne/dataService.js')
 script(src='js/app/levelOne/controller.js')
