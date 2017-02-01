@@ -155,11 +155,7 @@ module App {
           Insurance is 100%.",
           "RelatedTopics" : "",
           "PageAuditId": "Benefits for Teachers",
-<<<<<<< HEAD
           "Tags" : ["Benefits for Teachers"]
-=======
-          "Tags" : []
->>>>>>> origin/master
         },
         "LevelTwoContent18":{
           "Id" : "Career Stages",
@@ -258,7 +254,6 @@ module App {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "RelatedTopics" : "",
           "PageAuditId": "Communications Resources for Central Staff",
-<<<<<<< HEAD
         },
         "LevelTwoContent29":{
           "Id" : "District Records",
@@ -267,9 +262,6 @@ module App {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "RelatedTopics" : "",
           "PageAuditId": "District Records",
-=======
-          "Tags" : []
->>>>>>> origin/master
         }
       }
     }

@@ -13,7 +13,6 @@ var App;
             var HomeIndexController = (function (_super) {
                 __extends(HomeIndexController, _super);
                 function HomeIndexController($scope, $timeout, dataService) {
-<<<<<<< HEAD
                     var _this = _super.call(this, $scope, $timeout, dataService) || this;
                     _this.$scope = $scope;
                     _this.$timeout = $timeout;
@@ -30,25 +29,6 @@ var App;
                     _this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
                     if (!_this.$scope.currentUser) {
                         _this.$scope.currentUser = "Samantha Nugent";
-=======
-                    _super.call(this, $scope, $timeout, dataService);
-                    this.$scope = $scope;
-                    this.$timeout = $timeout;
-                    this.dataService = dataService;
-                    this.$scope.name = "Search Database";
-                    this.$scope.searchString = "";
-                    this.$scope.searchResults = [];
-                    this.$scope.shareSites = [];
-                    this.$scope.topContent = [];
-                    //  $(".custom-container").css("margin-top", "160px")
-                    this.$scope.newsItems = [];
-                    this.loadNewsitems();
-                    this.loadShareSites();
-                    this.loadTopContent();
-                    this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
-                    if (!this.$scope.currentUser) {
-                        this.$scope.currentUser = "Samantha Nugent";
->>>>>>> origin/master
                     }
                     _this.$scope.selectedLocation = 'MS';
                     return _this;

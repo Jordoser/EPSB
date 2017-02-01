@@ -104,7 +104,6 @@ var App;
                     "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "RelatedTopics": "",
-<<<<<<< HEAD
                     "PageAuditId": "Occupational Therapy"
                 },
                 "LevelThreeContent15": {
@@ -351,11 +350,6 @@ var App;
                     "RelatedTopics": "",
                     "PageAuditId": "Time Reporting"
                 },
-=======
-                    "PageAuditId": "Occupational Therapy",
-                    "Tags": [""]
-                }
->>>>>>> origin/master
             };
         }
         return LevelThreeContentDatabase;

@@ -105,7 +105,6 @@ module App {
          "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
          "RelatedTopics" : "",
-<<<<<<< HEAD
          "PageAuditId": "Occupational Therapy"
        },
        // END SCHOOL OPERATIONS CONTENT
@@ -357,11 +356,6 @@ module App {
        },
 
        // END EMPLOYEE ESSENTIALS CONTENT
-=======
-         "PageAuditId": "Occupational Therapy",
-         "Tags": [""]
-       }
->>>>>>> origin/master
       }
     }
   }

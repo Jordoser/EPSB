@@ -3,7 +3,6 @@ var App;
     var LevelTwoContentDatabase = (function () {
         function LevelTwoContentDatabase() {
             this.LevelTwoContent = {
-                // START SCHOOL OPERATIONS CONTENT
                 "LevelTwoContent1": {
                     "Id": "Budget & Finance",
                     "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
@@ -126,8 +125,6 @@ var App;
                     "PageAuditId": "Technology",
                     "Tags": []
                 },
-                // END SCHOOL OPERATIONS CONTENT
-                // START EMPLOYEE ESSENTIALS CONTENT
                 "LevelTwoContent16": {
                     "Id": "Awards",
                     "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
@@ -154,11 +151,7 @@ var App;
           Insurance is 100%.",
                     "RelatedTopics": "",
                     "PageAuditId": "Benefits for Teachers",
-<<<<<<< HEAD
                     "Tags": ["Benefits for Teachers"]
-=======
-                    "Tags": []
->>>>>>> origin/master
                 },
                 "LevelTwoContent18": {
                     "Id": "Career Stages",
@@ -247,8 +240,6 @@ var App;
                     "PageAuditId": "Vacation & Public Holidays for Teachers",
                     "Tags": []
                 },
-                // END EMPLOYEE ESSENTIALS CONTENT
-                // START CENTRAL STAFF CONTENT
                 "LevelTwoContent28": {
                     "Id": "Communications Resources for Central Staff",
                     "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
@@ -256,7 +247,6 @@ var App;
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "RelatedTopics": "",
                     "PageAuditId": "Communications Resources for Central Staff",
-<<<<<<< HEAD
                 },
                 "LevelTwoContent29": {
                     "Id": "District Records",
@@ -265,9 +255,6 @@ var App;
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "RelatedTopics": "",
                     "PageAuditId": "District Records",
-=======
-                    "Tags": []
->>>>>>> origin/master
                 }
             };
         }

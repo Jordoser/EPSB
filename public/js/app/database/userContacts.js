@@ -9,10 +9,7 @@ var App;
                     "PositionId": "Equipment Manager",
                     "PhoneNumber": "780.444.2222 Ext. 123",
                     "Email": "first.last@domain.com",
-<<<<<<< HEAD
-=======
                     "Tags": ["School Operations"]
->>>>>>> origin/master
                 },
                 "Contact2": {
                     "Id": "David Latter",

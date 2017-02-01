@@ -16,25 +16,16 @@ var App;
                 _this.$timeout = $timeout;
                 _this.dataService = dataService;
                 $('.collapse').collapse();
-<<<<<<< HEAD
                 _this.$scope.sectionItems = [];
                 _this.$scope.documentTypes = [];
+                _this.$scope.relatedNews = [];
+                _this.$scope.relatedApps = [];
+                _this.$scope.relatedContacts = [];
                 _this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
                 _this.$scope.employeeBar = _this.navArray[0].Id == "Employee Essentials";
                 _this.currentItemIdNav = _this.navArray[2];
                 _this.loadl3Item(_this.currentItemIdNav.ContentId);
                 return _this;
-=======
-                this.$scope.sectionItems = [];
-                this.$scope.documentTypes = [];
-                this.$scope.relatedNews = [];
-                this.$scope.relatedApps = [];
-                this.$scope.relatedContacts = [];
-                this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
-                this.$scope.employeeBar = this.navArray[0].Id == "Employee Essentials";
-                this.currentItemIdNav = this.navArray[2];
-                this.loadl3Item(this.currentItemIdNav.ContentId);
->>>>>>> origin/master
             }
             LevelThreeController.prototype.loadl3Item = function (Id) {
                 var _this = this;
@@ -92,15 +83,11 @@ var App;
                     }
                 });
             };
-            //Todo add load related contacts
             LevelThreeController.prototype.loadRelatedContacts = function (Tags) {
                 var _this = this;
                 this.dataService.getRelatedContacts(Tags)
                     .then(function (data) {
                     App.Common.replaceArrayContents(_this.$scope.relatedContacts, data);
-                    // for(var i = 0; i < this.$scope.relatedApps.length; i++){
-                    //   this.loadMetadata(this.$scope.relatedContacts[i]);
-                    // }
                 });
             };
             LevelThreeController.prototype.loadMetadata = function (Item) {
