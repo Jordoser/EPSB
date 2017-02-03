@@ -57,7 +57,7 @@ var App;
                     "Name": "E-Biz",
                     "Description": "Expense claims.",
                     "Favorite": "true",
-                    "Tags": ["Teacher", "School Operations"]
+                    "Tags": ["Teacher", "School Operations", "Expenses", "Pay & Expenses For Teachers"]
                 },
                 "Application9": {
                     "Id": "Energy Management",
@@ -169,14 +169,14 @@ var App;
                     "Name": "ASEBP Members Login",
                     "Description": "Sign into your ASEBP Member Account.",
                     "Favorite": "false",
-                    "Tags": ["Benefits for Teachers"]
+                    "Tags": ["Benefits for Teachers", "ASEBP"]
                 },
                 "Application24": {
                     "Id": "ASEBP Info",
                     "Name": "ASEBP Information Site",
                     "Description": "ASEBP website, including benefits descriptions, contact information, and forms.",
                     "Favorite": "false",
-                    "Tags": ["Benefits for Teachers"]
+                    "Tags": ["Benefits for Teachers", "ASEBP"]
                 }
             };
         }

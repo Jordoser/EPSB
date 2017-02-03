@@ -1005,6 +1005,13 @@ var App;
                     "l2NavId": "Benefits for Teachers",
                     "ContentId": "Fitness"
                 },
+                "l3NavItem901": {
+                    "Id": "Group Insurance",
+                    "Name": "Group Insurance",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "l2NavId": "Benefits for Teachers",
+                    "ContentId": "Group Insurance"
+                },
                 "l3NavItem91": {
                     "Id": "Retirement & Pension",
                     "Name": "Retirement & Pension",

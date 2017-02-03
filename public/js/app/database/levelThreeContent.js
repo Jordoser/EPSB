@@ -92,13 +92,6 @@ var App;
                     "PageAuditId": "Time Reporting",
                     "Tags": [""]
                 },
-                "LevelThreeContent13": {
-                    "Id": "RRSP",
-                    "Description": "RRSP benefits and payroll deductions.",
-                    "RelatedTopics": "",
-                    "PageAuditId": "Time Reporting",
-                    "Tags": [""]
-                },
                 "LevelThreeContent14": {
                     "Id": "Occupational Therapy",
                     "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
@@ -292,7 +285,7 @@ var App;
                 "LevelThreeContent24": {
                     "Id": "Employee & Family Assistance",
                     "Description": "Edmonton Public Schools partners with Alberta School Employee Benefit Plan (ASEBP) to provide the Employee and \
-        amily Assistance Program (EFAP). This program is available to all employees who have ASEBP coverage and their dependents. The EFAP \
+        Family Assistance Program (EFAP). This program is available to all employees who have ASEBP coverage and their dependents. The EFAP \
         covers counselling services for when you need professional help with a challenging situation, as well as lifestyle and specialty \
         counselling (e.g. health, life balance and career situations) so you can access expert advice, information and coaching.",
                     "RelatedTopics": "",
@@ -303,6 +296,23 @@ var App;
                     "Description": "Edmonton Public Schools provides services aimed at maintaining and improving both individual and organization \
         health. We know our employees are our most valuable resource. We provide services in health recovery, employee and family \
         assistance and occupational health and safety.",
+                    "RelatedTopics": "",
+                    "PageAuditId": "Employee Health Services"
+                },
+                "LevelThreeContent251": {
+                    "Id": "Fitness",
+                    "Description": "All Edmonton Public Schools employees can enjoy discounts at City-operated sports and fitness centres as part of the \
+        City of Edmonton’s Corporate Wellness Program. On your first visit to a facility, let the cashier know you are an employee of a \
+        participating Corporate Wellness Program company and bring proof of employment (e.g. photo ID, current pay stub or current letter of \
+          employment). Discounts range from 15 to 20 per cent off.",
+                    "RelatedTopics": "",
+                    "PageAuditId": "Employee Health Services"
+                },
+                "LevelThreeContent252": {
+                    "Id": "Group Insurance",
+                    "Description": "Participating in the District’s group insurance is compulsory for all teachers, unless you already have group \
+        insurance coverage through your spouses’ plan. Teachers are also eligible for a Health Spending Account with an annual amount of \
+        $750 for 1.0 FTE (pro-rated for less than full-time).",
                     "RelatedTopics": "",
                     "PageAuditId": "Employee Health Services"
                 },
