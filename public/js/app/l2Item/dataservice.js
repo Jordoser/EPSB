@@ -10,10 +10,9 @@ var App;
         var L2DataService = (function (_super) {
             __extends(L2DataService, _super);
             function L2DataService($http, $q) {
-                var _this = _super.call(this, $http, $q) || this;
-                _this.$http = $http;
-                _this.$q = $q;
-                return _this;
+                _super.call(this, $http, $q);
+                this.$http = $http;
+                this.$q = $q;
             }
             L2DataService.prototype.getNavItems = function () {
                 return this.getItems("LevelOneNavItems");

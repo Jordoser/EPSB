@@ -13,25 +13,25 @@ var App;
             var HomeIndexController = (function (_super) {
                 __extends(HomeIndexController, _super);
                 function HomeIndexController($scope, $timeout, dataService) {
-                    var _this = _super.call(this, $scope, $timeout, dataService) || this;
-                    _this.$scope = $scope;
-                    _this.$timeout = $timeout;
-                    _this.dataService = dataService;
-                    _this.$scope.name = "Search Database";
-                    _this.$scope.searchString = "";
-                    _this.$scope.searchResults = [];
-                    _this.$scope.shareSites = [];
-                    _this.$scope.topContent = [];
-                    _this.$scope.newsItems = [];
-                    _this.loadNewsitems();
-                    _this.loadShareSites();
-                    _this.loadTopContent();
-                    _this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
-                    if (!_this.$scope.currentUser) {
-                        _this.$scope.currentUser = "Samantha Nugent";
+                    _super.call(this, $scope, $timeout, dataService);
+                    this.$scope = $scope;
+                    this.$timeout = $timeout;
+                    this.dataService = dataService;
+                    this.$scope.name = "Search Database";
+                    this.$scope.searchString = "";
+                    this.$scope.searchResults = [];
+                    this.$scope.shareSites = [];
+                    this.$scope.topContent = [];
+                    //  $(".custom-container").css("margin-top", "160px")
+                    this.$scope.newsItems = [];
+                    this.loadNewsitems();
+                    this.loadShareSites();
+                    this.loadTopContent();
+                    this.$scope.currentUser = sessionStorage.getItem("CurrentUser");
+                    if (!this.$scope.currentUser) {
+                        this.$scope.currentUser = "Samantha Nugent";
                     }
-                    _this.$scope.selectedLocation = 'MS';
-                    return _this;
+                    this.$scope.selectedLocation = 'MS';
                 }
                 HomeIndexController.prototype.alert = function () {
                     var _this = this;
@@ -120,9 +120,9 @@ var App;
                         item.Metadata = data[0];
                     });
                 };
+                HomeIndexController.$inject = ['$scope', '$timeout', 'dataService'];
                 return HomeIndexController;
             }(App.BaseController));
-            HomeIndexController.$inject = ['$scope', '$timeout', 'dataService'];
             Index.HomeIndexController = HomeIndexController;
         })(Index = Home.Index || (Home.Index = {}));
     })(Home = App.Home || (App.Home = {}));

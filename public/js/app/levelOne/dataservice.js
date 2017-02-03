@@ -10,10 +10,9 @@ var App;
         var LevelOneDataService = (function (_super) {
             __extends(LevelOneDataService, _super);
             function LevelOneDataService($http, $q) {
-                var _this = _super.call(this, $http, $q) || this;
-                _this.$http = $http;
-                _this.$q = $q;
-                return _this;
+                _super.call(this, $http, $q);
+                this.$http = $http;
+                this.$q = $q;
             }
             LevelOneDataService.prototype.getItemById = function (Id) {
                 return this.getItemByKeyValue("LevelOneContent", "Id", Id);

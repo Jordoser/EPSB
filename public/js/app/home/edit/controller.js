@@ -13,29 +13,28 @@ var App;
             var HomeEditController = (function (_super) {
                 __extends(HomeEditController, _super);
                 function HomeEditController($scope, $timeout, dataService) {
-                    var _this = _super.call(this, $scope, $timeout, dataService) || this;
-                    _this.$scope = $scope;
-                    _this.$timeout = $timeout;
-                    _this.dataService = dataService;
-                    _this.objectId = sessionStorage.getItem("Id");
+                    _super.call(this, $scope, $timeout, dataService);
+                    this.$scope = $scope;
+                    this.$timeout = $timeout;
+                    this.dataService = dataService;
+                    this.objectId = sessionStorage.getItem("Id");
                     sessionStorage.removeItem("Id");
-                    if (_this.objectId) {
-                        _this.loadObject();
-                        _this.loadRelatedObjects();
-                        _this.$scope.editObject = false;
+                    if (this.objectId) {
+                        this.loadObject();
+                        this.loadRelatedObjects();
+                        this.$scope.editObject = false;
                     }
                     else {
-                        _this.$scope.editObject = true;
-                        _this.objectId = App.Common.guid();
-                        _this.$scope.object = {
-                            Id: _this.objectId,
+                        this.$scope.editObject = true;
+                        this.objectId = App.Common.guid();
+                        this.$scope.object = {
+                            Id: this.objectId,
                             Description: "",
                             Name: "",
                             IsDeleted: false
                         };
                     }
-                    _this.$scope.searchResults = [];
-                    return _this;
+                    this.$scope.searchResults = [];
                 }
                 HomeEditController.prototype.loadObject = function () {
                     var _this = this;
@@ -65,9 +64,9 @@ var App;
                     this.$scope.editObject = false;
                     this.loadObject;
                 };
+                HomeEditController.$inject = ['$scope', '$timeout', 'dataService'];
                 return HomeEditController;
             }(App.BaseController));
-            HomeEditController.$inject = ['$scope', '$timeout', 'dataService'];
             Edit.HomeEditController = HomeEditController;
         })(Edit = Home.Edit || (Home.Edit = {}));
     })(Home = App.Home || (App.Home = {}));

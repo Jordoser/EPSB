@@ -10,10 +10,9 @@ var App;
         var LevelTwoDataService = (function (_super) {
             __extends(LevelTwoDataService, _super);
             function LevelTwoDataService($http, $q) {
-                var _this = _super.call(this, $http, $q) || this;
-                _this.$http = $http;
-                _this.$q = $q;
-                return _this;
+                _super.call(this, $http, $q);
+                this.$http = $http;
+                this.$q = $q;
             }
             LevelTwoDataService.prototype.loadItemById = function (Id) {
                 return this.getItemByKeyValue("LevelTwoContent", "Id", Id);

@@ -3,6 +3,7 @@ var App;
     var LevelTwoContentDatabase = (function () {
         function LevelTwoContentDatabase() {
             this.LevelTwoContent = {
+                // START SCHOOL OPERATIONS CONTENT
                 "LevelTwoContent1": {
                     "Id": "Budget & Finance",
                     "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
@@ -125,6 +126,8 @@ var App;
                     "PageAuditId": "Technology",
                     "Tags": []
                 },
+                // END SCHOOL OPERATIONS CONTENT
+                // START EMPLOYEE ESSENTIALS CONTENT
                 "LevelTwoContent16": {
                     "Id": "Awards",
                     "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
@@ -240,13 +243,15 @@ var App;
                     "PageAuditId": "Vacation & Public Holidays for Teachers",
                     "Tags": []
                 },
+                // END EMPLOYEE ESSENTIALS CONTENT
+                // START CENTRAL STAFF CONTENT
                 "LevelTwoContent28": {
                     "Id": "Communications Resources for Central Staff",
                     "Description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Communications Resources for Central Staff",
+                    "PageAuditId": "Communications Resources for Central Staff"
                 },
                 "LevelTwoContent29": {
                     "Id": "District Records",
@@ -254,7 +259,7 @@ var App;
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "RelatedTopics": "",
-                    "PageAuditId": "District Records",
+                    "PageAuditId": "District Records"
                 }
             };
         }

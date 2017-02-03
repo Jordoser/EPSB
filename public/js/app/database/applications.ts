@@ -148,7 +148,7 @@ module App {
           "Name" : "Secure After Hours Building Access (SAHBA)",
           "Description": "Application description.",
           "Favorite" : "false",
-          "Tags" : [""]
+          "Tags" : ["Building & Systems"]
         },
         "Application21" : {
           "Id": "T4 Content Management System",

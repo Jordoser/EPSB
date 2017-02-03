@@ -11,21 +11,20 @@ var App;
         var LevelTwoController = (function (_super) {
             __extends(LevelTwoController, _super);
             function LevelTwoController($scope, $timeout, dataService) {
-                var _this = _super.call(this, $scope, $timeout, $timeout) || this;
-                _this.$scope = $scope;
-                _this.$timeout = $timeout;
-                _this.dataService = dataService;
+                _super.call(this, $scope, $timeout, $timeout);
+                this.$scope = $scope;
+                this.$timeout = $timeout;
+                this.dataService = dataService;
                 $('.collapse').collapse();
-                _this.$scope.sectionItems = [];
-                _this.$scope.documentTypes = [];
-                _this.$scope.relatedNews = [];
-                _this.$scope.relatedApps = [];
-                _this.$scope.relatedContacts = [];
-                _this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
-                _this.currentItemIdNav = _this.navArray[1];
-                _this.$scope.employeeBar = _this.navArray[0].Id == "Employee Essentials";
-                _this.loadl2Item(_this.currentItemIdNav.ContentId);
-                return _this;
+                this.$scope.sectionItems = [];
+                this.$scope.documentTypes = [];
+                this.$scope.relatedNews = [];
+                this.$scope.relatedApps = [];
+                this.$scope.relatedContacts = [];
+                this.navArray = JSON.parse(sessionStorage.getItem("NavArray"));
+                this.currentItemIdNav = this.navArray[1];
+                this.$scope.employeeBar = this.navArray[0].Id == "Employee Essentials";
+                this.loadl2Item(this.currentItemIdNav.ContentId);
             }
             LevelTwoController.prototype.loadl2Item = function (Id) {
                 var _this = this;
@@ -72,11 +71,15 @@ var App;
                     }
                 });
             };
+            //Todo add load related contacts
             LevelTwoController.prototype.loadRelatedContacts = function (Tags) {
                 var _this = this;
                 this.dataService.getRelatedContacts(Tags)
                     .then(function (data) {
                     App.Common.replaceArrayContents(_this.$scope.relatedContacts, data);
+                    // for(var i = 0; i < this.$scope.relatedApps.length; i++){
+                    //   this.loadMetadata(this.$scope.relatedContacts[i]);
+                    // }
                 });
             };
             LevelTwoController.prototype.loadDocumentFilters = function () {
@@ -106,9 +109,9 @@ var App;
                     Item.Metadata = data[0];
                 });
             };
+            LevelTwoController.$inject = ['$scope', '$timeout', 'dataService'];
             return LevelTwoController;
         }(App.BaseController));
-        LevelTwoController.$inject = ['$scope', '$timeout', 'dataService'];
         levelTwo.LevelTwoController = LevelTwoController;
     })(levelTwo = App.levelTwo || (App.levelTwo = {}));
 })(App || (App = {}));

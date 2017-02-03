@@ -37,7 +37,9 @@ div(Id="levelOneDiv" ng-controller='levelOneController')
           span.sub-heading Contacts
           div.app-item(ng-repeat="contact in relatedContacts")
             span.app-text {{contact.Name}}
-            p.text-muted {{contact.Email}}
+            p.text-muted.no-margin {{contact.PositionId}}
+            p.text-muted.no-margin {{contact.Email}}
+            p.text-muted.no-margin {{contact.PhoneNumber}}
             br
         
 script(src='js/app/levelOne/dataService.js')

@@ -119,7 +119,7 @@ var App;
                     "Description": "Story description.",
                     "Tags": ["ASEBP", "Benefits for Teachers"],
                     "MetadataId": "NewsItem3"
-                },
+                }
             };
         }
         return NewsItemDatabase;

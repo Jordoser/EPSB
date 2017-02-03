@@ -11,25 +11,24 @@ var App;
         var L2Controller = (function (_super) {
             __extends(L2Controller, _super);
             function L2Controller($scope, $timeout, dataService) {
-                var _this = _super.call(this, $scope, $timeout, $timeout) || this;
-                _this.$scope = $scope;
-                _this.$timeout = $timeout;
-                _this.dataService = dataService;
-                _this.$scope.L3Items = [];
-                _this.$scope.relatedNewsItems = [];
-                _this.$scope.navigatedL2 = sessionStorage.getItem("SelectedL2");
-                _this.navLevel = sessionStorage.getItem("NavLevel");
-                _this.$scope.navigatedL3 = sessionStorage.getItem("SelectedL3");
-                _this.$scope.navigatedL4 = sessionStorage.getItem("SelectedL4");
-                if (_this.$scope.navigatedL2) {
-                    _this.LoadCurrentL2(_this.$scope.navigatedL2);
+                _super.call(this, $scope, $timeout, $timeout);
+                this.$scope = $scope;
+                this.$timeout = $timeout;
+                this.dataService = dataService;
+                this.$scope.L3Items = [];
+                this.$scope.relatedNewsItems = [];
+                this.$scope.navigatedL2 = sessionStorage.getItem("SelectedL2");
+                this.navLevel = sessionStorage.getItem("NavLevel");
+                this.$scope.navigatedL3 = sessionStorage.getItem("SelectedL3");
+                this.$scope.navigatedL4 = sessionStorage.getItem("SelectedL4");
+                if (this.$scope.navigatedL2) {
+                    this.LoadCurrentL2(this.$scope.navigatedL2);
                 }
-                _this.loadPage();
+                this.loadPage();
                 $('.custom-tab a').click(function (e) {
                     e.preventDefault();
                     $(this).tab('show');
                 });
-                return _this;
             }
             L2Controller.prototype.loadPage = function () {
                 var _this = this;
@@ -138,9 +137,9 @@ var App;
                     item.animate({ height: "0" }, 200);
                 }
             };
+            L2Controller.$inject = ['$scope', '$timeout', 'dataService'];
             return L2Controller;
         }(App.BaseController));
-        L2Controller.$inject = ['$scope', '$timeout', 'dataService'];
         l2item.L2Controller = L2Controller;
     })(l2item = App.l2item || (App.l2item = {}));
 })(App || (App = {}));

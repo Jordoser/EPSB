@@ -10,10 +10,9 @@ var App;
         var GradeAndSubjectDataService = (function (_super) {
             __extends(GradeAndSubjectDataService, _super);
             function GradeAndSubjectDataService($http, $q) {
-                var _this = _super.call(this, $http, $q) || this;
-                _this.$http = $http;
-                _this.$q = $q;
-                return _this;
+                _super.call(this, $http, $q);
+                this.$http = $http;
+                this.$q = $q;
             }
             GradeAndSubjectDataService.prototype.getGradeFilters = function () {
                 return this.getItems("GradeFilters");

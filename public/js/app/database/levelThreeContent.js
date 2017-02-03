@@ -3,6 +3,7 @@ var App;
     var LevelThreeContentDatabase = (function () {
         function LevelThreeContentDatabase() {
             this.LevelThreeContent = {
+                // START SCHOOL OPERATIONS CONTENT
                 "LevelThreeContent1": {
                     "Id": "Building & Systems",
                     "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam \
@@ -99,6 +100,8 @@ var App;
                     "RelatedTopics": "",
                     "PageAuditId": "Occupational Therapy"
                 },
+                // END SCHOOL OPERATIONS CONTENT
+                // START EMPLOYEE ESSENTIALS CONTENT
                 "LevelThreeContent15": {
                     "Id": "ASEBP",
                     "Description": "The Board’s contribution to your ASEBP benefits are: \
@@ -359,7 +362,7 @@ var App;
         supervisor for signature.  The exception is for the hourly staff, who are required to record all hours worked.",
                     "RelatedTopics": "",
                     "PageAuditId": "Time Reporting"
-                },
+                }
             };
         }
         return LevelThreeContentDatabase;
