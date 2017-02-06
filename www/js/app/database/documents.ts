@@ -195,14 +195,6 @@ module App {
           "MetadataId" : "Conditional Application 2016-17 (Print on white paper) Metadata",
           "Tags" : ["Buses","Forms & Templates"]
         },
-        "Document25" : {
-          "Id": "RRSP Payroll Deduction Application",
-          "Name" : "RRSP Payroll Deduction Application",
-          "Description" : "",
-          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
-          "MetadataId" : "RRSP Payroll Deduction Application Metadata",
-          "Tags" : ["RRSP","Forms & Templates"]
-        },
         "Document26" : {
           "Id": "EPS New Employee Guide",
           "Name" : "EPS New Employee Guide",
@@ -234,8 +226,163 @@ module App {
           "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
           "MetadataId" : "Board and Staff Relations Metadata",
           "Tags" : ["New Employees","Policies"]
+        },
+        "Document30" : {
+          "Id": "Benefits for Teachers from Collective Agreement",
+          "Name" : "Benefits for Teachers from Collective Agreement",
+          "Description" : "Outlines the District’s contribution to your benefits plan.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Benefits for Teachers","Group Insurance","Contracts & Agreements"]
+        },
+        "Document31" : {
+          "Id": "Employee and Family Assistance (EFAP) Welcome Letter",
+          "Name" : "Employee and Family Assistance (EFAP) Welcome Letter",
+          "Description" : "Learn more about EFAP services available for you and your dependents.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Benefits for Teachers","ASEBP","Employee & Family Assistance","Overviews"]
+        },
+        "Document32" : {
+          "Id": "Employee and Family Assistance (EFAP) Brochure",
+          "Name" : "Employee and Family Assistance (EFAP) Brochure",
+          "Description" : "Learn more about EFAP services available for you and your dependents.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Benefits for Teachers","ASEBP","Employee & Family Assistance","Overviews"]
+        },
+        "Document33" : {
+          "Id": "EPS–ATA Collective Agreement 2012-2016",
+          "Name" : "EPS–ATA Collective Agreement 2012-2016",
+          "Description" : "Full Collective Agreement.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Benefits for Teachers","ASEBP","Contracts & Agreements"]
+        },
+        "Document34" : {
+          "Id": "Employee and Family Assistance (EFAP) FAQs",
+          "Name" : "Employee and Family Assistance (EFAP) FAQs",
+          "Description" : "Learn more about EFAP services available for you and your dependents.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Benefits for Teachers","ASEBP","Employee & Family Assistance","Overviews"]
+        },
+        "Document35" : {
+          "Id": "Employee and Family Assistance (EFAP) Member Services Information",
+          "Name" : "Employee and Family Assistance (EFAP) FAQs",
+          "Description" : "Learn more about EFAP services available for you and your dependents.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Benefits for Teachers","ASEBP","Employee & Family Assistance","Overviews"]
+        },
+        "Document36" : {
+          "Id": "Employee Health Services Brochure",
+          "Name" : "Employee Health Services Brochure",
+          "Description" : "Health services information, including Employee and Family Assistance , Health Recovery, WCB reporting, and Occupational Health and Safety.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Benefits for Teachers","Employee Health Services","Overviews"]
+        },
+        "Document37" : {
+          "Id": "City of Edmonton Corporate Wellness Program",
+          "Name" : "City of Edmonton Corporate Wellness Program",
+          "Description" : "Health services information, including Employee and Family Assistance , Health Recovery, WCB reporting, and Occupational Health and Safety.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Benefits for Teachers","Fitness","External Sites"]
+        },
+        "Document38" : {
+          "Id": "Resignation/Retirement Form",
+          "Name" : "Resignation/Retirement Form",
+          "Description" : "Fill in this form if you’re resigning or retiring.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Retirement & Pension","Forms & Templates"]
+        },
+        "Document39" : {
+          "Id": "Alberta Teachers’ Retirement Fund",
+          "Name" : "Alberta Teachers’ Retirement Fund",
+          "Description" : "Fill in this form if you’re resigning or retiring.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Retirement & Pension","External Sites"]
+        },
+        "Document40" : {
+          "Id": "Request for Group RRSP Payroll Deduction",
+          "Name" : "Request for Group RRSP Payroll Deduction",
+          "Description" : "Fill in this form if you’d like to have your RRSP contributions deposited directly to your financial institution through payroll deductions.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["RRSP","Forms & Templates"]
+        },
+        "Document41" : {
+          "Id": "One Time Payment Form",
+          "Name" : "One Time Payment Form",
+          "Description" : "Use this form to pay wages or “honoraria” pay for people who do work for the District on a casual basis.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Casual Pay","Pay & Expenses For Teachers","Forms & Templates"]
+        },
+        "Document42" : {
+          "Id": "Teacher Supplementary Pay Report Instructions",
+          "Name" : "Teacher Supplementary Pay Report Instructions",
+          "Description" : "Use this form when teachers have worked during Christmas Break, Spring Break and Summer Break.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Casual Pay","Pay & Expenses For Teachers","Overtime","Forms & Templates"]
+        },
+        "Document43" : {
+          "Id": "Direct Deposit Enrolment Form",
+          "Name" : "Direct Deposit Enrolment Form",
+          "Description" : "Use this form to have your pay deposited into your bank account. Provide a void cheque if you’d \
+          like your pay deposited into a chequing account, or have your financial institution fill out Section C of this form.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Direct Deposit","Pay & Expenses For Teachers","Forms & Templates"]
+        },
+        "Document44" : {
+          "Id": "Advance on Expenses Form",
+          "Name" : "Advance on Expenses Form",
+          "Description" : "Use this form when requesting funds for expenses related to travel within the city, including: fuel, repairs, \
+          lease payments, insurance and license, car washes, and parking while on district business or on professional development.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Expenses","Pay & Expenses For Teachers","Forms & Templates"]
+        },
+        "Document45" : {
+          "Id": "Teacher Supplementary Pay Report Instructions",
+          "Name" : "Teacher Supplementary Pay Report Instructions",
+          "Description" : "Use this form when teachers have worked during Christmas Break, Spring Break and Summer Break.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Casual Pay","Overtime","Pay & Expenses For Teachers","Forms & Templates"]
+        },
+        "Document46" : {
+          "Id": "TD1 Federal Personal Tax Credit Returns",
+          "Name" : "TD1 Federal Personal Tax Credit Returns",
+          "Description" : "This form is used to determine the amount of tax to be deducted from your employment income.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Taxes","Pay & Expenses For Teachers","Forms & Templates"]
+        },
+        "Document47" : {
+          "Id": "TD1ab Alberta Personal Tax Credit Returns",
+          "Name" : "TD1ab Alberta Personal Tax Credit Returns",
+          "Description" : "If you’re claiming more than the basic personal amount, fill out this provincial TD1 form to \
+          determine the amount of tax to be deducted from your employment income.",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Taxes","Pay & Expenses For Teachers","Forms & Templates"]
+        },
+        "Document48" : {
+          "Id": "2016/2017 Timesheets – Teachers",
+          "Name" : "2016/2017 Timesheets – Teachers",
+          "Description" : "Fill in your timesheet and submit to your Supervisor at the end of each reporting period. Make \
+          sure you record any times you were away during the reporting period. ",
+          "Link" : "https://drive.google.com/uc?export=download&id=0B0TA8UeyyQlTNl9pa3pfSFk2QlU",
+          "MetadataId" : "Board and Staff Relations Metadata",
+          "Tags" : ["Time Reporting For Teachers","Pay & Expenses For Teachers","Forms & Templates"]
         }
-
       }
     }
   }

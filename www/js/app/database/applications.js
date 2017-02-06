@@ -26,10 +26,10 @@ var App;
                 },
                 "Application4": {
                     "Id": "PeopleSoft Self Service",
-                    "Name": "Google",
+                    "Name": "PeopleSoft Self Service",
                     "Description": "Your personal pay & benefits information.",
                     "Favorite": "true",
-                    "Tags": ["Teacher"]
+                    "Tags": ["Teacher", "Employee Essentials"]
                 },
                 "Application5": {
                     "Id": "Remote Desktop",
@@ -57,7 +57,7 @@ var App;
                     "Name": "E-Biz",
                     "Description": "Expense claims.",
                     "Favorite": "true",
-                    "Tags": ["Teacher", "School Operations"]
+                    "Tags": ["Teacher", "School Operations", "Expenses", "Pay & Expenses For Teachers"]
                 },
                 "Application9": {
                     "Id": "Energy Management",
@@ -148,7 +148,7 @@ var App;
                     "Name": "Secure After Hours Building Access (SAHBA)",
                     "Description": "Application description.",
                     "Favorite": "false",
-                    "Tags": [""]
+                    "Tags": ["Building & Systems"]
                 },
                 "Application21": {
                     "Id": "T4 Content Management System",
@@ -156,6 +156,27 @@ var App;
                     "Description": "Application description.",
                     "Favorite": "false",
                     "Tags": [""]
+                },
+                "Application22": {
+                    "Id": "Pinpoint Staff",
+                    "Name": "Pinpoint Staff",
+                    "Description": "Application description.",
+                    "Favorite": "false",
+                    "Tags": ["Employee Essentials"]
+                },
+                "Application23": {
+                    "Id": "ASEBP Login",
+                    "Name": "ASEBP Members Login",
+                    "Description": "Sign into your ASEBP Member Account.",
+                    "Favorite": "false",
+                    "Tags": ["Benefits for Teachers", "ASEBP"]
+                },
+                "Application24": {
+                    "Id": "ASEBP Info",
+                    "Name": "ASEBP Information Site",
+                    "Description": "ASEBP website, including benefits descriptions, contact information, and forms.",
+                    "Favorite": "false",
+                    "Tags": ["Benefits for Teachers", "ASEBP"]
                 }
             };
         }

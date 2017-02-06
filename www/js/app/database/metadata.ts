@@ -63,20 +63,20 @@ module App {
           "CreatedBy": "Mitchell Szpytma",
           "CreatedOn": "April 8, 2013 "
         },
-        "Metadat13" : {
+        "Metadata13" : {
           "Id": "NewsItem2",
           "CreatedBy": "Mitchell Szpytma",
           "CreatedOn": "August 3, 2016 "
         },
-        "Metadat14" : {
+        "Metadata14" : {
           "Id": "NewsItem3",
           "CreatedBy": "Mitchell Szpytma",
-          "CreatedOn": "July 22, 2016 "
+          "CreatedOn": "January 18, 2017 "
         },
-        "Metadat15" : {
+        "Metadata15" : {
           "Id": "NewsItem4",
           "CreatedBy": "Mitchell Szpytma",
-          "CreatedOn": "June 22, 2016 "
+          "CreatedOn": "February 5, 2017 "
         }
       }
     }

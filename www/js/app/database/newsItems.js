@@ -16,7 +16,7 @@ var App;
                     "Name": "Distribution Centre closed for inventory August 15–19",
                     "Description": "The Distribution Centre will be closed for inventory count for the \
           week of August 15–19. No orders will be processed during this time.",
-                    "Tags": ["School Operations"],
+                    "Tags": ["School Operations",],
                     "MetadataId": "NewsItem2"
                 },
                 "NewsItem3": {
@@ -25,7 +25,7 @@ var App;
                     "Description": "The PeopleSoft 9.2 upgrade remains on schedule and the transition\
            to the new version of PeopleSoft will still take place over the August long weekend.",
                     "Tags": ["Employee Essentials"],
-                    "MetadataId": "NewsItem3"
+                    "MetadataId": "NewsItem4"
                 },
                 "NewsItem4": {
                     "Id": "News4",
@@ -59,15 +59,6 @@ var App;
            newly acquired or discontinued. A complete and updated list of all locally developed courses \
            authorized for use in the District for 2016–2017 is available.",
                     "Tags": ["Curriculum & Assessment"],
-                    "MetadataId": "NewsItem4"
-                },
-                "NewsItem8": {
-                    "Id": "News8",
-                    "Name": "This is an article. Please read it.",
-                    "Description": "Know flexible out rated fat-free seeing out. Energy handling exclusive \
-          whenever moist relaxing advanced class removable fun coming extra. Full-bodied senses \
-          crystals save hit outside challenge. Can't discount cholesterol aroma ultimate crystals.",
-                    "Tags": ["Employee Essentials"],
                     "MetadataId": "NewsItem4"
                 },
                 "NewsItem9": {
@@ -106,14 +97,28 @@ var App;
                     "Tags": ["School Operations"],
                     "MetadataId": "NewsItem4"
                 },
-                "NewsItem13": {
-                    "Id": "News13",
-                    "Name": "Planning for Flu Season",
+                "NewsItem14": {
+                    "Id": "News14",
+                    "Name": "ASEBP Announces New Prescription Drug Program",
                     "Description": "Know flexible out rated fat-free seeing out. Energy handling exclusive \
           whenever moist relaxing advanced class removable fun coming extra. Full-bodied senses \
           crystals save hit outside challenge. Can't discount cholesterol aroma ultimate crystals.",
-                    "Tags": ["Health & Safety", "Student Management"],
-                    "MetadataId": "NewsItem4"
+                    "Tags": ["Employee Essentials", "Benefits for Teachers", "ASEBP"],
+                    "MetadataId": "NewsItem3"
+                },
+                "NewsItem15": {
+                    "Id": "News15",
+                    "Name": "City of Edmonton Announces Changes to Corporate Wellness Program",
+                    "Description": "Story description.",
+                    "Tags": ["Fitness", "Benefits for Teachers"],
+                    "MetadataId": "NewsItem3"
+                },
+                "NewsItem16": {
+                    "Id": "News16",
+                    "Name": "ASEBP Launches New Website",
+                    "Description": "Story description.",
+                    "Tags": ["ASEBP", "Benefits for Teachers"],
+                    "MetadataId": "NewsItem3"
                 }
             };
         }

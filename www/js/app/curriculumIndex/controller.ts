@@ -30,7 +30,7 @@ export class CurriculumIndexController extends BaseController{
         })
 
       }
-
+      
       public loadCurriculumTags(){
         this.dataService.getCurriculumTags()
         .then(data => {

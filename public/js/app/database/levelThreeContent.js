@@ -18,7 +18,7 @@ var App;
                     "Description": "Edmonton Public Schools believes in providing safe, caring and respectful environments for all students and staff. As part of this effort, the District has identified a variety of support material to help staff, parents and students prevent and address bullying behaviour.",
                     "RelatedTopics": "",
                     "PageAuditId": "Bullying Prevention",
-                    "Tags": [""]
+                    "Tags": ["Bullying Prevention"]
                 },
                 "LevelThreeContent3": {
                     "Id": "Volunteers",
@@ -26,14 +26,14 @@ var App;
           part of the school community and can provide support in a variety of ways, including in the classroom, in the library and with student activities such as field trips or extracurricular events.",
                     "RelatedTopics": "",
                     "PageAuditId": "Volunteers",
-                    "Tags": [""]
+                    "Tags": ["Volunteers"]
                 },
                 "LevelThreeContent4": {
                     "Id": "Student Transportation",
                     "Description": "Description...",
                     "RelatedTopics": "",
                     "PageAuditId": "Student transportation",
-                    "Tags": [""]
+                    "Tags": ["Student Transportation"]
                 },
                 "LevelThreeContent5": {
                     "Id": "Job Sharing",
@@ -42,63 +42,64 @@ var App;
             considered and agreed to prior to presenting a proposal to the principal for consideration. ",
                     "RelatedTopics": "",
                     "PageAuditId": "Job Sharing",
-                    "Tags": [""]
+                    "Tags": ["Job Sharing"]
                 },
                 "LevelThreeContent6": {
                     "Id": "New Employees",
                     "Description": "Resources to help new employees get started at EPS.",
                     "RelatedTopics": "",
                     "PageAuditId": "New Employees",
-                    "Tags": [""]
+                    "Tags": ["New Employees"]
                 },
                 "LevelThreeContent7": {
                     "Id": "Teacher Induction",
                     "Description": "Resources to help new teachers get started at EPS.",
                     "RelatedTopics": "",
                     "PageAuditId": "Teacher Induction",
-                    "Tags": [""]
+                    "Tags": ["Teacher Induction"]
                 },
                 "LevelThreeContent8": {
                     "Id": "IT Services Help Desk",
                     "Description": "Application, software and hardware support.",
                     "RelatedTopics": "",
                     "PageAuditId": "IT Services Help Desk",
-                    "Tags": [""]
+                    "Tags": ["IT Services Help Desk"]
                 },
                 "LevelThreeContent9": {
                     "Id": "Missing Child",
                     "Description": "Procedures to follow if a student is missing.",
                     "RelatedTopics": "",
                     "PageAuditId": "Missing Child",
-                    "Tags": [""]
+                    "Tags": ["Missing Child"]
                 },
                 "LevelThreeContent10": {
                     "Id": "Security",
                     "Description": "Building access, crime prevention, and vandalism.",
                     "RelatedTopics": "",
                     "PageAuditId": "Security",
-                    "Tags": [""]
+                    "Tags": ["Security"]
                 },
                 "LevelThreeContent11": {
                     "Id": "Sexual Orientation & Gender Identity",
                     "Description": "Building access, crime prevention, and vandalism.",
                     "RelatedTopics": "",
                     "PageAuditId": "Sexual Orientation & Gender Identity",
-                    "Tags": [""]
+                    "Tags": ["Sexual Orientation & Gender Identity"]
                 },
                 "LevelThreeContent12": {
                     "Id": "Time Reporting",
                     "Description": "Procedures and forms for time reporting.",
                     "RelatedTopics": "",
                     "PageAuditId": "Time Reporting",
-                    "Tags": [""]
+                    "Tags": ["Time Reporting"]
                 },
                 "LevelThreeContent14": {
                     "Id": "Occupational Therapy",
                     "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Occupational Therapy"
+                    "PageAuditId": "Occupational Therapy",
+                    "Tags": ["Occupational Therapy"]
                 },
                 // END SCHOOL OPERATIONS CONTENT
                 // START EMPLOYEE ESSENTIALS CONTENT
@@ -119,7 +120,8 @@ var App;
           to enrol in ASEBP, you’ll receive an equivalent amount that the Board would have paid if you were enrolled in \
           group insurance. The Board will pay this amount as single or family - based on your Alberta Health Care enrolment.",
                     "RelatedTopics": "",
-                    "PageAuditId": "ASEBP"
+                    "PageAuditId": "ASEBP",
+                    "Tags": ["ASEBP"]
                 },
                 "LevelThreeContent16": {
                     "Id": "Overtime",
@@ -127,7 +129,8 @@ var App;
         during the operational school year. If additional time is worked during the Summer Break, Christmas break or Spring Break, \
         teacher certificated staff can either be paid at 1/200 of salary per day worked, or time-in-lieu equal to the time worked.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Overtime"
+                    "PageAuditId": "Overtime",
+                    "Tags": ["Overtime"]
                 },
                 "LevelThreeContent17": {
                     "Id": "Pay For Substitute Teachers",
@@ -142,7 +145,8 @@ var App;
         to work is verified by a medical practitioner selected or approved by the Board. Any related medical expenses you incur from getting \
         a Board-chosen medical practitioner to verify your workplace injury, will be covered by the Board.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Pay For Substitute Teachers"
+                    "PageAuditId": "Pay For Substitute Teachers",
+                    "Tags": ["Pay For Substitute Teachers"]
                 },
                 "LevelThreeContent18": {
                     "Id": "Direct Deposit",
@@ -181,7 +185,8 @@ var App;
         parental leave.\
         <p/>If both parents work for the District, the Board may allow both parents to take parental leave at the same time.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Parental / Adoptive Leave"
+                    "PageAuditId": "Parental / Adoptive Leave",
+                    "Tags": ["Overtime"]
                 },
                 "LevelThreeContent20": {
                     "Id": "Leave For The Arrival of a Child",
@@ -195,7 +200,8 @@ var App;
         <ul><li>The date of placement, or</li>\
         <li>The day the child is released from hospital.</li></ul>",
                     "RelatedTopics": "",
-                    "PageAuditId": "Leave For The Arrival of a Child"
+                    "PageAuditId": "Leave For The Arrival of a Child",
+                    "Tags": ["Leave For The Arrival of a Child"]
                 },
                 "LevelThreeContent21": {
                     "Id": "Personal Leave",
@@ -221,7 +227,8 @@ var App;
         summer breaks or other breaks of four or more weekdays.\
         <p/>You can accumulate and use any unused days up to a maximum of three days.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Personal Leave"
+                    "PageAuditId": "Personal Leave",
+                    "Tags": ["Personal Leave"]
                 },
                 "LevelThreeContent22": {
                     "Id": "Professional Improvement Leave",
@@ -254,7 +261,8 @@ var App;
         <p/>Each school can also have a maximum of two Professional Development (PD) days per school year for activities including local \
         professional development, in-service program planning and budgeting.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Professional Improvement Leave"
+                    "PageAuditId": "Professional Improvement Leave",
+                    "Tags": ["Professional Improvement Leave"]
                 },
                 "LevelThreeContent23": {
                     "Id": "Sick Leave",
@@ -283,7 +291,8 @@ var App;
         leave will only be reinstated if you provide a medical certificate before your return date that’s signed by a medical practitioner \
         (selected or approved by the Board) that verifies you’re able to return to work on a continuing basis.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Sick Leave"
+                    "PageAuditId": "Sick Leave",
+                    "Tags": ["Sick Leave"]
                 },
                 "LevelThreeContent24": {
                     "Id": "Employee & Family Assistance",
@@ -300,7 +309,8 @@ var App;
         health. We know our employees are our most valuable resource. We provide services in health recovery, employee and family \
         assistance and occupational health and safety.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Employee Health Services"
+                    "PageAuditId": "Employee Health Services",
+                    "Tags": ["Employee Health Services"]
                 },
                 "LevelThreeContent251": {
                     "Id": "Fitness",
@@ -309,7 +319,8 @@ var App;
         participating Corporate Wellness Program company and bring proof of employment (e.g. photo ID, current pay stub or current letter of \
           employment). Discounts range from 15 to 20 per cent off.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Employee Health Services"
+                    "PageAuditId": "Employee Health Services",
+                    "Tags": ["Fitness"]
                 },
                 "LevelThreeContent252": {
                     "Id": "Group Insurance",
@@ -317,13 +328,15 @@ var App;
         insurance coverage through your spouses’ plan. Teachers are also eligible for a Health Spending Account with an annual amount of \
         $750 for 1.0 FTE (pro-rated for less than full-time).",
                     "RelatedTopics": "",
-                    "PageAuditId": "Employee Health Services"
+                    "PageAuditId": "Employee Health Services",
+                    "Tags": ["Group Insurance"]
                 },
                 "LevelThreeContent26": {
                     "Id": "Retirement & Pension",
                     "Description": "If you’re retiring from the District, please let Human Resources know at least one month before your last day of work.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Retirement & Pension"
+                    "PageAuditId": "Retirement & Pension",
+                    "Tags": ["Retirement & Pension"]
                 },
                 "LevelThreeContent27": {
                     "Id": "RRSP",
@@ -331,21 +344,24 @@ var App;
         deposit to your bank. You will need to set up an RRSP with the financial institution of your choice and provide Human Resources \
         with a copy of the “RRSP Enrolment Application” form you complete for them.",
                     "RelatedTopics": "",
-                    "PageAuditId": "RRSP"
+                    "PageAuditId": "RRSP",
+                    "Tags": ["RRSP"]
                 },
                 "LevelThreeContent28": {
                     "Id": "Casual Pay",
                     "Description": "Use these forms to ensure people who work on a casual basis or when teachers work outside regular hour and/or\
         when school is out of sessions. These forms should be approved by your DU administrator and submitted to HR for processing.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Casual Pay"
+                    "PageAuditId": "Casual Pay",
+                    "Tags": ["Casual Pay"]
                 },
                 "LevelThreeContent29": {
                     "Id": "Expenses",
                     "Description": "Edmonton Public Schools will reimburse you for out-of-pocket expenses for mileage, professional development, \
         and tuition or conference fees. The District uses iExpense, a module part of the e-Biz platform, to manage reimbursements.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Expenses"
+                    "PageAuditId": "Expenses",
+                    "Tags": ["Expenses"]
                 },
                 "LevelThreeContent30": {
                     "Id": "Taxes",
@@ -353,7 +369,8 @@ var App;
         for your income. You should fill out these forms if you are new to the District or if you want to change tax credit amounts \
         from previous TD1 forms. You don’t need to fill out a new TD1 form every year unless something changes.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Taxes"
+                    "PageAuditId": "Taxes",
+                    "Tags": ["Taxes"]
                 },
                 "LevelThreeContent31": {
                     "Id": "Time Reporting",
@@ -361,7 +378,8 @@ var App;
         Record only your exception time (i.e. vacation, sick time, banked time etc.), sign and date the bottom and then submit it to your \
         supervisor for signature.  The exception is for the hourly staff, who are required to record all hours worked.",
                     "RelatedTopics": "",
-                    "PageAuditId": "Time Reporting"
+                    "PageAuditId": "Time Reporting",
+                    "Tags": ["Time Reporting"]
                 }
             };
         }
